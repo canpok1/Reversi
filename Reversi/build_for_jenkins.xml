@@ -8,6 +8,7 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="javac_target" value="1.6"/>
     <property name="javac_source" value="1.6"/>
+    <property name="bootclasspath" value="jdk1.6.0/lib/rt.jar" />
     <property name="source_dir" value="src" />
     <property name="class_dir" value="bin" />
     <property name="javadoc_dest_dir" value="javadoc" />
@@ -43,6 +44,7 @@
             destdir="${class_dir}"
             source="${javac_source}"
             target="${javac_target}"
+            bootclasspath="${bootclasspath}"
             encoding="UTF-8" >
             <src path="${source_dir}"/>
             <classpath refid="Reversi.classpath"/>

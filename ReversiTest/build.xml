@@ -13,6 +13,7 @@
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.6"/>
     <property name="source" value="1.6"/>
+    <property name="bootclasspath" value="jdk1.6.0/lib/rt.jar" />
     <property name="Reversi.build_xml" value="build_for_jenkins.xml"/>
 
     <path id="Reversi.classpath">
@@ -21,8 +22,7 @@
     </path>
 
     <path id="JUnit 4.libraryclasspath">
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+        <pathelement location="lib/junit-4.10.jar"/>
     </path>
 
     <path id="ReversiTest.classpath">
@@ -62,6 +62,7 @@
             destdir="bin"
             source="${source}"
             target="${target}"
+            bootclasspath="${bootclasspath}"
             encoding="UTF-8" >
             <src path="src"/>
             <classpath refid="ReversiTest.classpath"/>
