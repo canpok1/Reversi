@@ -31,13 +31,13 @@
 
     <!-- クラスパス -->
     <path id="Reversi.classpath">
-        <pathelement location="Reversi/bin"/>
-        <pathelement location="Reversi/lib/core.jar"/>
+        <pathelement location="${Reversi.class_dir}"/>
+        <pathelement location="${Reversi.location}/lib/core.jar"/>
     </path>
     <path id="ReversiTest.classpath">
         <pathelement location="bin"/>
         <path refid="Reversi.classpath"/>
-        <pathelement location="ReversiTest/lib/junit-4.10.jar"/>
+        <pathelement location="${Test.location}/lib/junit-4.10.jar"/>
     </path>
 
     <!-- クラスファイルの出力先を生成 -->
