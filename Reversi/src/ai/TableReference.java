@@ -51,7 +51,7 @@ public class TableReference implements GamePlayer {
 	 * @throws IllegalArgumentException 対応する石がない場合、または盤面サイズが対応していない場合に発生
 	 */
 	@Override
-	public NextMove getNextMove(int stone, Board board) {
+	public NextMove think(int stone, Board board) {
 
 		long start = System.currentTimeMillis();
 

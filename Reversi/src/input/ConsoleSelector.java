@@ -12,14 +12,14 @@ import core.NextMove;
  * @author tanabe
  *
  */
-public class ConsoleInput implements NextMoveInputter {
+public class ConsoleSelector implements NextMoveSelector {
 
 	/**
 	 * {@inheritDoc}
 	 * 入出力エラーが発生した場合は負の座標の手を返します。
 	 */
 	@Override
-	public NextMove getNextMove(int stone, String message) {
+	public NextMove select(int stone, String message) {
 
 		// 引数チェック
 		if((stone != Board.WHITE_STONE)
@@ -90,9 +90,9 @@ public class ConsoleInput implements NextMoveInputter {
 	}
 
 	@Override
-	public NextMove getNextMove(int stone) {
+	public NextMove select(int stone) {
 
-		return this.getNextMove(stone, "");
+		return this.select(stone, "");
 
 	}
 

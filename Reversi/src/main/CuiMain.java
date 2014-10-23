@@ -2,8 +2,8 @@ package main;
 
 import output.ConsoleViewer;
 import output.GameViewer;
-import input.ConsoleInput;
-import input.NextMoveInputter;
+import input.ConsoleSelector;
+import input.NextMoveSelector;
 import ai.GamePlayer;
 import ai.Human;
 import ai.RandomSelect;
@@ -36,7 +36,7 @@ public class CuiMain {
 		Board board = new Board();
 
 		GameViewer viewer = new ConsoleViewer();
-		NextMoveInputter inputter = new ConsoleInput();
+		NextMoveSelector inputter = new ConsoleSelector();
 
 		GamePlayer p1 = new Human(inputter);
 		GamePlayer p2 = new RandomSelect();

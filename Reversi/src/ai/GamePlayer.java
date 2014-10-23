@@ -18,6 +18,6 @@ public interface GamePlayer {
 	 * @param board リバーシの盤面
 	 * @return 次の手
 	 */
-	NextMove getNextMove(int stone, Board board);
+	NextMove think(int stone, Board board);
 
 }

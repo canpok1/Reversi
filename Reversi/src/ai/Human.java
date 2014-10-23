@@ -1,6 +1,6 @@
 package ai;
 
-import input.NextMoveInputter;
+import input.NextMoveSelector;
 
 import core.Board;
 import core.NextMove;
@@ -15,7 +15,7 @@ public class Human implements GamePlayer {
 	/**
 	 * 入力元です。
 	 */
-	private final NextMoveInputter inputter;
+	private final NextMoveSelector selector;
 
 
 	/**
@@ -23,21 +23,21 @@ public class Human implements GamePlayer {
 	 * @param inputter 入力元
 	 * @throws NullPointerException 引数が<code>null</code>の場合に発生
 	 */
-	public Human(NextMoveInputter inputter) {
+	public Human(NextMoveSelector inputter) {
 
 		// 引数チェック
 		if(inputter == null) {
 			throw new NullPointerException("引数をnullにはできません。");
 		}
 
-		this.inputter = inputter;
+		this.selector = inputter;
 
 	}
 
 
 
 	@Override
-	public NextMove getNextMove(int stone, Board board) {
+	public NextMove think(int stone, Board board) {
 
 		////////////////////////////////////
 		// 置く場所があるかをチェック
@@ -62,9 +62,9 @@ public class Human implements GamePlayer {
 		if(passFlag) {
 			// パスする
 			if(stone == Board.WHITE_STONE) {
-				this.inputter.dispImportantMessage("You cannot put the white stone.");
+				this.selector.dispImportantMessage("You cannot put the white stone.");
 			} else {
-				this.inputter.dispImportantMessage("You cannot put the black stone.");
+				this.selector.dispImportantMessage("You cannot put the black stone.");
 			}
 			return null;
 		}
@@ -88,7 +88,7 @@ public class Human implements GamePlayer {
 
 		while(!isCompleted) {
 
-			move = this.inputter.getNextMove(stone, message);
+			move = this.selector.select(stone, message);
 
 			try {
 				if(board.putStone(move.getX(), move.getY(), stone)) {

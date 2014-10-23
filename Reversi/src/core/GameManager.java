@@ -147,7 +147,7 @@ public class GameManager implements Runnable {
 		// 次の手を取得
 		int stone = this.stones[this.currentPlayerNo];
 		GamePlayer player = this.players[this.currentPlayerNo];
-		NextMove move = player.getNextMove(stone, this.board);
+		NextMove move = player.think(stone, this.board);
 
 		if(move == null) {
 

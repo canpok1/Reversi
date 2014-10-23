@@ -49,7 +49,7 @@ public class RandomSelect implements GamePlayer {
 	 * @throws IllegalArgumentException 対応する石がない場合に発生
 	 */
 	@Override
-	public NextMove getNextMove(int stone, Board board) {
+	public NextMove think(int stone, Board board) {
 
 		// 引数チェック
 		if((stone != Board.BLACK_STONE)

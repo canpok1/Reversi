@@ -48,7 +48,7 @@ public class MaximumReverse implements GamePlayer {
 	 * @throws IllegalArgumentException 対応する石がない場合に発生
 	 */
 	@Override
-	public NextMove getNextMove(int stone, Board board) {
+	public NextMove think(int stone, Board board) {
 
 
 		// 置ける場所

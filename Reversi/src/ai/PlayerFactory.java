@@ -1,6 +1,6 @@
 package ai;
 
-import input.NextMoveInputter;
+import input.NextMoveSelector;
 
 /**
  * プレイヤーを生成するクラスです。
@@ -32,7 +32,7 @@ public class PlayerFactory {
 	/**
 	 * 入力に使用するインスタンスです。
 	 */
-	private final NextMoveInputter input;
+	private final NextMoveSelector input;
 
 
 	/**
@@ -40,7 +40,7 @@ public class PlayerFactory {
 	 * @param input 入力に使用するインスタンス
 	 * @throws NullPointerException 引数が<code>null</code>の場合に発生
 	 */
-	public PlayerFactory(NextMoveInputter input) {
+	public PlayerFactory(NextMoveSelector input) {
 
 		// 引数チェック
 		if(input == null) {

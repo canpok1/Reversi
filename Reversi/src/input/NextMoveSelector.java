@@ -7,7 +7,7 @@ import core.NextMove;
  * @author tanabe
  *
  */
-public interface NextMoveInputter {
+public interface NextMoveSelector {
 
 	/**
 	 * リバーシの次の手を入力します。<br>
@@ -17,14 +17,14 @@ public interface NextMoveInputter {
 	 * @param message 入力時に表示するメッセージ
 	 * @return 次の手。パスの場合は<code>null</code>
 	 */
-	NextMove getNextMove(int stone, String message);
+	NextMove select(int stone, String message);
 
 	/**
 	 * リバーシの次の手を入力します。
 	 * @param stone 次に置く石
 	 * @return 次の手
 	 */
-	NextMove getNextMove(int stone);
+	NextMove select(int stone);
 
 
 	/**

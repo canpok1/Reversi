@@ -4,7 +4,7 @@ import ai.GamePlayer;
 
 import ai.PlayerFactory;
 import output.GameViewer;
-import input.NextMoveInputter;
+import input.NextMoveSelector;
 import core.Board;
 import core.GameManager;
 import core.NextMove;
@@ -16,7 +16,7 @@ import processing.core.PApplet;
  *
  */
 public class GameApplet extends PApplet
-	implements NextMoveInputter, GameViewer {
+	implements NextMoveSelector, GameViewer {
 
 	/**
 	 * シリアルバージョンです。
@@ -343,16 +343,16 @@ public class GameApplet extends PApplet
 
 
 	@Override
-	public NextMove getNextMove(int stone, String message) {
+	public NextMove select(int stone, String message) {
 
 		this.view(message);
 
-		return this.getNextMove(stone);
+		return this.select(stone);
 	}
 
 
 	@Override
-	public NextMove getNextMove(int stone) {
+	public NextMove select(int stone) {
 
 		this.nextStone = stone;
 
