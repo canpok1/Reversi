@@ -1,5 +1,15 @@
 *.class
 
+# Gradle Build Files #
+.gradle
+build
+
+# Eclipse Project Files #
+.settings
+.classpath
+.project
+bin
+
 # Package Files #
 *.jar
 *.war
