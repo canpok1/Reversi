@@ -16,7 +16,7 @@ public class NextMoveTest {
 	 * {@link NextMove#getX()}で取得できることをテストします。
 	 */
 	@Test
-	public void testGetX1() {
+	public void コンストラクタで与えた正のX座標を取得できるか() {
 
 		NextMove nextMove = new NextMove(1, 0, 0);
 
@@ -30,7 +30,7 @@ public class NextMoveTest {
 	 * {@link NextMove#getX()}で取得できることをテストします。
 	 */
 	@Test
-	public void testGetX2() {
+	public void コンストラクタで与えた負のX座標を取得できるか() {
 
 		NextMove nextMove = new NextMove(-1, 0, 0);
 
@@ -44,7 +44,7 @@ public class NextMoveTest {
 	 * {@link NextMove#getX()}で取得できることをテストします。
 	 */
 	@Test
-	public void testGetX3() {
+	public void コンストラクタで与えた0のX座標を取得できるか() {
 
 		NextMove nextMove = new NextMove(0, 0, 0);
 
@@ -58,7 +58,7 @@ public class NextMoveTest {
 	 * {@link NextMove#getY()}で取得できることをテストします。
 	 */
 	@Test
-	public void testGetY1() {
+	public void コンストラクタで与えた正のY座標を取得できるか() {
 
 		NextMove nextMove = new NextMove(0, 1, 0);
 
@@ -72,7 +72,7 @@ public class NextMoveTest {
 	 * {@link NextMove#getY()}で取得できることをテストします。
 	 */
 	@Test
-	public void testGetY2() {
+	public void コンストラクタで与えた負のY座標を取得できるか() {
 
 		NextMove nextMove = new NextMove(0, -1, 0);
 
@@ -86,7 +86,7 @@ public class NextMoveTest {
 	 * {@link NextMove#getY()}で取得できることをテストします。
 	 */
 	@Test
-	public void testGetY3() {
+	public void コンストラクタで与えた0のY座標を取得できるか() {
 
 		NextMove nextMove = new NextMove(0, 0, 0);
 
@@ -100,7 +100,7 @@ public class NextMoveTest {
 	 * {@link NextMove#getStone()}で取得できることをテストします。
 	 */
 	@Test
-	public void testGetStone() {
+	public void コンストラクタで与えた石の種類を取得できるか() {
 
 		NextMove nextMove = new NextMove(0, 0, 0);
 
