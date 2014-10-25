@@ -10,6 +10,9 @@ build
 .project
 bin
 
+# Checkstyle Files #
+.checkstyle
+
 # Package Files #
 *.jar
 *.war
