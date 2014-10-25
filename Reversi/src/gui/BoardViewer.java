@@ -34,12 +34,12 @@ public class BoardViewer {
     /**
      * 横に並ぶマス目の数です。
      */
-    public final int boardWidth;
+    private final int boardWidth;
 
     /**
      * 縦に並ぶマス目の数です。
      */
-    public final int boardHeight;
+    private final int boardHeight;
 
     /**
      * 石の配置情報です。

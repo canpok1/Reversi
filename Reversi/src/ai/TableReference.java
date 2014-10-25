@@ -15,60 +15,60 @@ import core.NextMove;
  */
 public class TableReference implements GamePlayer {
 
-	/**
-	 * 石を置くまでの待ち時間(ms)です。
-	 */
-	private final int delayTime;
+    /**
+     * 石を置くまでの待ち時間(ms)です。
+     */
+    private final int delayTime;
 
-	/**
-	 * プレイヤーを生成します。
-	 * @param delayTime 石を置くまでの待ち時間(ms)。
-	 */
-	public TableReference(int delayTime) {
+    /**
+     * プレイヤーを生成します。
+     * @param delayTime 石を置くまでの待ち時間(ms)。
+     */
+    public TableReference(int delayTime) {
 
-		// 引数チェック
-		if(delayTime < 0) {
-			throw new IllegalArgumentException("待ち時間は負の値にすることはできません。");
-		}
+        // 引数チェック
+        if(delayTime < 0) {
+            throw new IllegalArgumentException("待ち時間は負の値にすることはできません。");
+        }
 
-		this.delayTime = delayTime;
+        this.delayTime = delayTime;
 
-	}
+    }
 
-	/**
-	 * プレイヤーを生成します。
-	 * 石を置くまでの待ち時間は500msです。
-	 */
-	public TableReference() {
-		this(500);
-	}
+    /**
+     * プレイヤーを生成します。
+     * 石を置くまでの待ち時間は500msです。
+     */
+    public TableReference() {
+        this(500);
+    }
 
-	/**
-	 * {@inheritDoc}<br>
-	 * 石を置ける場所の中で、評価値が最も高くなる場所に石を置きます。
-	 * @return {@inheritDoc}
-	 * @throws NullPointerException 引数が<code>null</code>の場合に発生
-	 * @throws IllegalArgumentException 対応する石がない場合、または盤面サイズが対応していない場合に発生
-	 */
-	@Override
-	public NextMove think(int stone, Board board) {
+    /**
+     * {@inheritDoc}<br>
+     * 石を置ける場所の中で、評価値が最も高くなる場所に石を置きます。
+     * @return {@inheritDoc}
+     * @throws NullPointerException 引数が<code>null</code>の場合に発生
+     * @throws IllegalArgumentException 対応する石がない場合、または盤面サイズが対応していない場合に発生
+     */
+    @Override
+    public NextMove think(int stone, Board board) {
 
-		long start = System.currentTimeMillis();
+        long start = System.currentTimeMillis();
 
-		NextMove result = MiniMax.getNextMove(4, board, stone);
+        NextMove result = MiniMax.getNextMove(4, board, stone);
 
-		long waitTime = this.delayTime - (System.currentTimeMillis() - start);
+        long waitTime = this.delayTime - (System.currentTimeMillis() - start);
 
-		if(waitTime < 0) {
-			waitTime = 0;
-		}
+        if(waitTime < 0) {
+            waitTime = 0;
+        }
 
-		try {
-			Thread.sleep(waitTime);
-		} catch (InterruptedException e) {
-		}
+        try {
+            Thread.sleep(waitTime);
+        } catch (InterruptedException e) {
+        }
 
-		return result;
-	}
+        return result;
+    }
 
 }

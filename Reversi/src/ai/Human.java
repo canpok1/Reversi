@@ -12,115 +12,119 @@ import core.NextMove;
  */
 public class Human implements GamePlayer {
 
-	/**
-	 * 入力元です。
-	 */
-	private final NextMoveSelector selector;
+    /**
+     * 入力元です。
+     */
+    private final NextMoveSelector selector;
 
 
-	/**
-	 * リバーシプレイヤーを生成します。
-	 * @param inputter 入力元
-	 * @throws NullPointerException 引数が<code>null</code>の場合に発生
-	 */
-	public Human(NextMoveSelector inputter) {
+    /**
+     * リバーシプレイヤーを生成します。
+     * @param inputter 入力元
+     * @throws NullPointerException 引数が<code>null</code>の場合に発生
+     */
+    public Human(NextMoveSelector inputter) {
 
-		// 引数チェック
-		if(inputter == null) {
-			throw new NullPointerException("引数をnullにはできません。");
-		}
+        // 引数チェック
+        if(inputter == null) {
+            throw new NullPointerException("引数をnullにはできません。");
+        }
 
-		this.selector = inputter;
+        this.selector = inputter;
 
-	}
-
-
-
-	@Override
-	public NextMove think(int stone, Board board) {
-
-		////////////////////////////////////
-		// 置く場所があるかをチェック
-		////////////////////////////////////
-
-		// 置き場所チェック用の盤面
-		Board checkBoard = new Board(board);
-		// パスをするかの判定用
-		boolean passFlag = true;
-
-		// 置く場所があるかをチェック
-		for(int y = 0; y < board.getHeight(); y++) {
-			for(int x = 0; x < board.getWidth(); x++) {
-
-				if(checkBoard.putStone(x, y, stone)) {
-					passFlag = false;
-				}
-
-			}
-		}
-
-		if(passFlag) {
-			// パスする
-			if(stone == Board.WHITE_STONE) {
-				this.selector.dispImportantMessage("You cannot put the white stone.");
-			} else {
-				this.selector.dispImportantMessage("You cannot put the black stone.");
-			}
-			return null;
-		}
+    }
 
 
-		////////////////////////////////////
-		// 石を置く
-		////////////////////////////////////
 
-		NextMove move = null;
+    @Override
+    public NextMove think(int stone, Board board) {
 
-		boolean isCompleted = false;
+        ////////////////////////////////////
+        // 置く場所があるかをチェック
+        ////////////////////////////////////
 
-		String message = "";
+        // 置き場所チェック用の盤面
+        Board checkBoard = new Board(board);
+        // パスをするかの判定用
+        boolean passFlag = true;
 
-		if(stone == Board.BLACK_STONE) {
-			message = "Please input the place which put the black stone.";
-		} else if(stone == Board.WHITE_STONE) {
-			message = "Please input the place which put the white stone.";
-		}
+        // 置く場所があるかをチェック
+        for(int y = 0; y < board.getHeight(); y++) {
+            for(int x = 0; x < board.getWidth(); x++) {
 
-		while(!isCompleted) {
+                if(checkBoard.putStone(x, y, stone)) {
+                    passFlag = false;
+                }
 
-			move = this.selector.select(stone, message);
+            }
+        }
 
-			try {
-				if(board.putStone(move.getX(), move.getY(), stone)) {
-					isCompleted = true;
-				} else {
-					if(stone == Board.BLACK_STONE) {
-						message = "Cannot put the stone. Please input the place which put the black stone.";
-					} else if(stone == Board.WHITE_STONE) {
-						message = "Cannot put the stone. Please input the place which put the white stone.";
-					}
-				}
-			} catch(ArrayIndexOutOfBoundsException e) {
-				if((move.getX() < 0) || (move.getY() < 0)) {
-					// ゲーム中断
-					isCompleted = true;
-				} else {
-					if(stone == Board.BLACK_STONE) {
-						message = "A cell does not exist. Please input the place which put the black stone.";
-					} else if(stone == Board.WHITE_STONE) {
-						message = "A cell does not exist. Please input the place which put the white stone.";
-					} else {
-						// ゲーム中断
-						isCompleted = true;
-					}
-				}
-			}
+        if(passFlag) {
+            // パスする
+            if(stone == Board.WHITE_STONE) {
+                this.selector.dispImportantMessage("You cannot put the white stone.");
+            } else {
+                this.selector.dispImportantMessage("You cannot put the black stone.");
+            }
+            return null;
+        }
 
-		}
 
-		return move;
+        ////////////////////////////////////
+        // 石を置く
+        ////////////////////////////////////
 
-	}
+        NextMove move = null;
+
+        boolean isCompleted = false;
+
+        String message = "";
+
+        if(stone == Board.BLACK_STONE) {
+            message = "Please input the place which put the black stone.";
+        } else if(stone == Board.WHITE_STONE) {
+            message = "Please input the place which put the white stone.";
+        }
+
+        while(!isCompleted) {
+
+            move = this.selector.select(stone, message);
+
+            try {
+                if(board.putStone(move.getX(), move.getY(), stone)) {
+                    isCompleted = true;
+                } else {
+                    if(stone == Board.BLACK_STONE) {
+                        message = "Cannot put the stone."
+                                + " Please input the place which put the black stone.";
+                    } else if(stone == Board.WHITE_STONE) {
+                        message = "Cannot put the stone."
+                                + " Please input the place which put the white stone.";
+                    }
+                }
+            } catch(ArrayIndexOutOfBoundsException e) {
+                if((move.getX() < 0) || (move.getY() < 0)) {
+                    // ゲーム中断
+                    isCompleted = true;
+                } else {
+                    if(stone == Board.BLACK_STONE) {
+                        message = "A cell does not exist."
+                                + " Please input the place which put the black stone.";
+                    } else if(stone == Board.WHITE_STONE) {
+                        message = "A cell does not exist."
+                                + " Please input the place which put the white stone.";
+                    } else {
+                        // ゲーム中断
+                        isCompleted = true;
+                    }
+                }
+            }
+
+        }
+
+        return move;
+
+    }
 
 
 }

@@ -17,40 +17,40 @@ import core.GameManager;
  */
 public class CuiMain {
 
-	/**
-	 * プログラムのエントリポイントです。
-	 * @param args
-	 */
-	public static void main(String[] args) {
+    /**
+     * プログラムのエントリポイントです。
+     * @param args コマンドライン引数
+     */
+    public static void main(String[] args) {
 
-		new CuiMain();
+        new CuiMain();
 
-	}
+    }
 
 
-	/**
-	 * クラスを生成します。
-	 */
-	public CuiMain() {
+    /**
+     * クラスを生成します。
+    */
+    public CuiMain() {
 
-		Board board = new Board();
+        Board board = new Board();
 
-		GameViewer viewer = new ConsoleViewer();
-		NextMoveSelector inputter = new ConsoleSelector();
+        GameViewer viewer = new ConsoleViewer();
+        NextMoveSelector inputter = new ConsoleSelector();
 
-		GamePlayer p1 = new Human(inputter);
-		GamePlayer p2 = new RandomSelect();
+        GamePlayer p1 = new Human(inputter);
+        GamePlayer p2 = new RandomSelect();
 
-		GameManager manager = new GameManager(p1, p2, board, viewer);
+        GameManager manager = new GameManager(p1, p2, board, viewer);
 
-		manager.gameStart();
+        manager.gameStart();
 
-		while(!manager.isFinish()) {
-		}
+        while(!manager.isFinish()) {
+        }
 
-		manager.viewGameResult();
+        manager.viewGameResult();
 
-		viewer.view("Exit");
+        viewer.view("Exit");
 
-	}
+    }
 }
