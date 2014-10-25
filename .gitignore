@@ -13,6 +13,9 @@ bin
 # Checkstyle Files #
 .checkstyle
 
+# jMockit-coverage Files #
+coverage-report
+
 # Package Files #
 *.jar
 *.war
