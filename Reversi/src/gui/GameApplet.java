@@ -101,7 +101,7 @@ public class GameApplet extends PApplet
     @Override
     public void setup() {
 
-        this.buttons = new Button[7];
+        this.buttons = new Button[7];    // CHECKSTYLE IGNORE THIS LINE
         for(int no = 0; no < this.buttons.length; no++) {
             this.buttons[no] = new Button(170, 50);    // CHECKSTYLE IGNORE THIS LINE
             this.buttons[no].setPressed(false);
@@ -130,7 +130,7 @@ public class GameApplet extends PApplet
     @Override
     public void draw() {
 
-        this.background(255, 255, 255);
+        this.background(255, 255, 255);    // CHECKSTYLE IGNORE THIS LINE
 
         switch(this.state) {
 
@@ -187,6 +187,7 @@ public class GameApplet extends PApplet
     
                 // TODO プレイヤーを充実させる
     
+                // CHECKSTYLE:OFF
                 if(this.buttons[0].isContain(this.mouseX, this.mouseY)) {
                     // P1 VS P2
                     no1 = PlayerFactory.HUMAN;
@@ -222,7 +223,8 @@ public class GameApplet extends PApplet
                     no2 = PlayerFactory.HUMAN;
                     delayTime = 500;
                 }
-    
+                // CHECKSTYLE:ON
+
                 if(no2 >= 0) {
     
                     Board b = new Board();
@@ -377,7 +379,10 @@ public class GameApplet extends PApplet
 
         this.buttons[GameApplet.CANCEL_BUTTON].setText("GIVE UP");
 
-        while(this.nextMove == null) {
+        while(true) {
+            if(this.nextMove != null) {
+                break;
+            }
         }
 
         this.buttons[GameApplet.CANCEL_BUTTON].setText("");
@@ -415,16 +420,19 @@ public class GameApplet extends PApplet
         switch(state) {
 
             case GameApplet.MODE_SELECT :
-    
-                this.buttons[0].setPosition(100, 100);
-    
+
+                this.buttons[0].setPosition(100, 100);  // CHECKSTYLE IGNORE THIS LINE
+
                 for(int no = 1; no < this.buttons.length; no++) {
+                    // CHECKSTYLE:OFF
                     this.buttons[no].setPosition(100 + 210 * ((no + 1) % 2),
                                                  120 + 70 * ((no + 1) / 2));
+                    // CHECKSTYLE:ON
                     this.buttons[no].setText("not used");
                     this.buttons[no].setPressed(false);
                 }
-    
+
+                // CHECKSTYLE:OFF
                 this.buttons[0].setText("P1 VS P2");
                 this.buttons[1].setText("P1 VS CP(LV1)");
                 this.buttons[2].setText("CP(LV1) VS P1");
@@ -432,24 +440,26 @@ public class GameApplet extends PApplet
                 this.buttons[4].setText("CP(LV2) VS P1");
                 this.buttons[5].setText("P1 VS CP(LV3)");
                 this.buttons[6].setText("CP(LV3) VS P1");
-    
                 this.message.setPosition(10, 420);
                 this.message.setMessage("Please choose a player.");
-    
+                // CHECKSTYLE:ON
+                
                 break;
     
             case GameApplet.GAME_PLAYING :
     
-                this.message.setPosition(10, 420);
+                this.message.setPosition(10, 420);    // CHECKSTYLE IGNORE THIS LINE
     
                 // パスするとき以外はボタンの文字なし
                 this.buttons[GameApplet.OK_BUTTON].setText("");
-                this.buttons[GameApplet.OK_BUTTON].setPosition(420, 10);
+                this.buttons[GameApplet.OK_BUTTON]
+                        .setPosition(420, 10);    // CHECKSTYLE IGNORE THIS LINE
                 this.buttons[GameApplet.OK_BUTTON].setPressed(false);
     
                 // 自分の番以外はボタンの文字なし
                 this.buttons[GameApplet.CANCEL_BUTTON].setText(" ");
-                this.buttons[GameApplet.CANCEL_BUTTON].setPosition(420, 360);
+                this.buttons[GameApplet.CANCEL_BUTTON]
+                        .setPosition(420, 360);    // CHECKSTYLE IGNORE THIS LINE
                 this.buttons[GameApplet.CANCEL_BUTTON].setPressed(false);
     
                 break;
@@ -457,7 +467,8 @@ public class GameApplet extends PApplet
             case GameApplet.GAME_RESULT :
     
                 this.buttons[OK_BUTTON].setText("NEW GAME");
-                this.buttons[OK_BUTTON].setPosition(420, 10);
+                this.buttons[OK_BUTTON]
+                        .setPosition(420, 10);    // CHECKSTYLE IGNORE THIS LINE
                 this.buttons[OK_BUTTON].setPressed(false);
     
                 break;

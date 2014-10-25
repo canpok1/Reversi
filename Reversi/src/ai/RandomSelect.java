@@ -16,6 +16,11 @@ public class RandomSelect implements GamePlayer {
      * 石を置くまでの待ち時間(ms)です。
      */
     private final int delayTime;
+    
+    /**
+     * 待ち時間のデフォルト値。
+     */
+    private static final int DEFAULT_DELAY_TIME = 500;
 
     /**
      * プレイヤーを生成します。
@@ -37,7 +42,7 @@ public class RandomSelect implements GamePlayer {
      * 石を置くまでの待ち時間は500msです。
      */
     public RandomSelect() {
-        this(500);
+        this(DEFAULT_DELAY_TIME);
     }
 
     /**
@@ -89,7 +94,7 @@ public class RandomSelect implements GamePlayer {
 
         try {
             Thread.sleep(this.delayTime);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e) {  // CHECKSTYLE IGNORE THIS LINE
         }
 
         return move;

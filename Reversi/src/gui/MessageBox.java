@@ -84,11 +84,11 @@ public class MessageBox {
 
         parent.rectMode(PApplet.CORNER);
 
-        parent.fill(255, 255, 255);
+        parent.fill(255, 255, 255); // CHECKSTYLE IGNORE THIS LINE
         parent.rect(this.x, this.y, this.width, this.height);
 
         parent.fill(0, 0, 0);
-        parent.textSize(20);
+        parent.textSize(20);    // CHECKSTYLE IGNORE THIS LINE
         parent.textAlign(PApplet.LEFT, PApplet.CENTER);
         parent.text(this.message,
                 this.x + MessageBox.SPACE_WIDTH,

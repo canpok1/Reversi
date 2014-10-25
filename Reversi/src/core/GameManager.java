@@ -1,7 +1,6 @@
 package core;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 import output.GameViewer;
@@ -123,12 +122,14 @@ public class GameManager implements Runnable {
             }
         }
 
+        // CHECKSTYLE:OFF
         // 初期配置
         this.board.initStone(3, 3, Board.WHITE_STONE);
         this.board.initStone(4, 4, Board.WHITE_STONE);
         this.board.initStone(3, 4, Board.BLACK_STONE);
         this.board.initStone(4, 3, Board.BLACK_STONE);
-
+        // CHECKSTYLE:ON
+        
         this.currentPlayerNo = 0;
         this.passCount = 0;
         this.gameoverFlag = false;

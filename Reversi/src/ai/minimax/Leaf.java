@@ -194,14 +194,15 @@ public class Leaf extends GameTree {
 
         // 現在の手数
         int moveCount = BOARD_WIDTH * BOARD_HEIGHT
-            - this.getBoard().getStoneCount(Board.NOTHING) - 3;
+            - this.getBoard().getStoneCount(Board.NOTHING)
+            - 3; // CHECKSTYLE IGNORE THIS LINE
 
-        if(moveCount >= 45) {
+        if(moveCount >= 45) {   // CHECKSTYLE IGNORE THIS LINE
             // 45手目以降は終盤2
             return END_GAME_2;
         }
 
-        if((moveCount >= 30) && (this.isEndGame1())) {
+        if((moveCount >= 30) && (this.isEndGame1())) {  // CHECKSTYLE IGNORE THIS LINE
             // 30手以降で、条件を満たしていれば終盤1
             return END_GAME_1;
         }
@@ -223,7 +224,7 @@ public class Leaf extends GameTree {
 
         // 1c～1fをチェック
         // 8c～8fをチェック
-        for(int x = 2; x <= Leaf.BOARD_WIDTH - 3; x++) {
+        for(int x = 2; x <= Leaf.BOARD_WIDTH - 3; x++) {    // CHECKSTYLE IGNORE THIS LINE
             int y1 = 0;
             int y2 = Leaf.BOARD_HEIGHT - 1;
 
@@ -240,7 +241,7 @@ public class Leaf extends GameTree {
 
         // 2a～5aをチェック
         // 2h～5hをチェック
-        for(int y = 2; y <= Leaf.BOARD_WIDTH - 3; y++) {
+        for(int y = 2; y <= Leaf.BOARD_WIDTH - 3; y++) {    // CHECKSTYLE IGNORE THIS LINE
             int x1 = 0;
             int x2 = Leaf.BOARD_WIDTH - 1;
 
@@ -269,11 +270,13 @@ public class Leaf extends GameTree {
         int white = 0;
         int black = 0;
 
+        // CHECKSTYLE:OFF
         int[] stones = new int[4];
         stones[0] = this.getBoard().getStone(0, 0);
         stones[1] = this.getBoard().getStone(0, BOARD_HEIGHT - 1);
         stones[2] = this.getBoard().getStone(BOARD_WIDTH - 1, 0);
         stones[3] = this.getBoard().getStone(BOARD_WIDTH - 1, BOARD_HEIGHT - 1);
+        // CHECKSTYLE:ON
 
         for(int stone : stones) {
             if(stone == Board.BLACK_STONE) {

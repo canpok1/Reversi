@@ -241,9 +241,9 @@ public class BoardViewer {
 
                 if (this.cursorVisible && (this.cursorX == indexX)
                         && (this.cursorY == indexY)) {
-                    parent.fill(255, 0, 0);
+                    parent.fill(255, 0, 0); // CHECKSTYLE IGNORE THIS LINE
                 } else {
-                    parent.fill(0, 255, 0);
+                    parent.fill(0, 255, 0); // CHECKSTYLE IGNORE THIS LINE
                 }
 
                 parent.strokeWeight(BoardViewer.CELL_EDGE_WIDTH);
@@ -260,7 +260,7 @@ public class BoardViewer {
 
                 } else if (this.stones[indexY][indexX] == Board.WHITE_STONE) {
 
-                    parent.fill(255, 255, 255);
+                    parent.fill(255, 255, 255); // CHECKSTYLE IGNORE THIS LINE
                     parent.ellipse(drawX, drawY, BoardViewer.CELL_SIZE_X,
                             BoardViewer.CELL_SIZE_Y);
 

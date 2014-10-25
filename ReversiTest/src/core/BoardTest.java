@@ -56,6 +56,11 @@ public class BoardTest {
             Assert.assertFalse(instance == copy);
     
         }
+        
+        @Test(expected=IllegalArgumentException.class)
+        public void コピーコンストラクタにnullを渡したら例外発生() {
+            new Board(null);
+        }
     }
     
     public static class 石の配置テスト {
@@ -206,67 +211,120 @@ public class BoardTest {
     
         }
     
-    
         /**
-         * {@link Board#equals(Object)}に石の配置が等しいインスタンスを与えた場合、
-         * 戻り値が<code>true</code>となることをテストします。
+         * {@link Board#getStoneCount(int)}で石がないマス目の数を
+         * 正しく取得できることをテストします。
          */
         @Test
-        public void equalsで石の配置が同じだとTrue() {
+        public void getStoneCountで石がないマス目の数を取得できるか() {
     
-            // 比較用のインスタンス
-            Board b = new Board();
-    
-            // 石を配置
+            // 白石を3個置く
             this.board.initStone(0, 0, Board.WHITE_STONE);
-            b.initStone(0, 0, Board.WHITE_STONE);
+            this.board.initStone(3, 3, Board.WHITE_STONE);
+            this.board.initStone(5, 5, Board.WHITE_STONE);
     
-            this.board.initStone(1, 0, Board.BLACK_STONE);
-            b.initStone(1, 0, Board.BLACK_STONE);
+            // 黒石を3個置く
+            this.board.initStone(1, 1, Board.BLACK_STONE);
+            this.board.initStone(3, 4, Board.BLACK_STONE);
+            this.board.initStone(4, 3, Board.BLACK_STONE);
     
-            this.board.initStone(6, 6, Board.WHITE_STONE);
-            b.initStone(6, 6, Board.WHITE_STONE);
+            // 石がないマス目の数
+            int count = this.board.getWidth() * this.board.getHeight() - 3 - 3;
     
-            this.board.initStone(4, 2, Board.BLACK_STONE);
-            b.initStone(4, 2, Board.BLACK_STONE);
-    
-            // 比較
-            Assert.assertTrue(this.board.equals(b));
+            Assert.assertEquals(count, this.board.getStoneCount(Board.NOTHING));
     
         }
     
     
         /**
-         * {@link Board#equals(Object)}に石の配置が異なるインスタンスを与えた場合、
-         * 戻り値が<code>false</code>となることをテストします。
+         * {@link Board#getStoneCount(int)}で白石の数を
+         * 正しく取得できることをテストします。
          */
         @Test
-        public void equalsで石のは位置が異なるとFalse() {
+        public void getStoneCountで白石の数を取得できるか() {
     
-            // 比較用のインスタンス
-            Board b = new Board();
-    
-            // 石を配置
+            // 白石を3個置く
             this.board.initStone(0, 0, Board.WHITE_STONE);
-            b.initStone(0, 0, Board.WHITE_STONE);
+            this.board.initStone(3, 3, Board.WHITE_STONE);
+            this.board.initStone(5, 5, Board.WHITE_STONE);
     
-            this.board.initStone(1, 0, Board.BLACK_STONE);
-            b.initStone(1, 0, Board.BLACK_STONE);
+            // 黒石を3個置く
+            this.board.initStone(1, 1, Board.BLACK_STONE);
+            this.board.initStone(3, 4, Board.BLACK_STONE);
+            this.board.initStone(4, 3, Board.BLACK_STONE);
     
-            this.board.initStone(6, 6, Board.WHITE_STONE);
-            b.initStone(6, 6, Board.WHITE_STONE);
+            // 白石の数
+            int count = 3;
     
-            this.board.initStone(4, 2, Board.BLACK_STONE);
-    
-            // 比較
-            Assert.assertFalse(this.board.equals(b));
+            Assert.assertEquals(count, this.board.getStoneCount(Board.WHITE_STONE));
     
         }
     
     
+        /**
+         * {@link Board#getStoneCount(int)}で黒石の数を
+         * 正しく取得できることをテストします。
+         */
+        @Test
+        public void getStoneCountで黒石の数を取得できるか() {
+    
+            // 白石を3個置く
+            this.board.initStone(0, 0, Board.WHITE_STONE);
+            this.board.initStone(3, 3, Board.WHITE_STONE);
+            this.board.initStone(5, 5, Board.WHITE_STONE);
+    
+            // 黒石を3個置く
+            this.board.initStone(1, 1, Board.BLACK_STONE);
+            this.board.initStone(3, 4, Board.BLACK_STONE);
+            this.board.initStone(4, 3, Board.BLACK_STONE);
+    
+            // 黒石の数
+            int count = 3;
+    
+            Assert.assertEquals(count, this.board.getStoneCount(Board.BLACK_STONE));
+    
+        }
+        
+        @Test(expected=ArrayIndexOutOfBoundsException.class)
+        public void initStoneでX座標としてマイナス1を渡すと例外発生() {
+            this.board.initStone(-1, 0, Board.BLACK_STONE);
+        }
+        
+        @Test(expected=ArrayIndexOutOfBoundsException.class)
+        public void initStoneでY座標としてマイナス1を渡すと例外発生() {
+            this.board.initStone(0, -1, Board.BLACK_STONE);
+        }
+        
+        @Test(expected=IllegalArgumentException.class)
+        public void initStoneで石として3を渡すと例外発生() {
+            this.board.initStone(0, 0, 3);
+        }
+        
+        @Test(expected=IllegalArgumentException.class)
+        public void putStoneで石として3を渡すと例外発生() {
+            this.board.putStone(0, 0, 3);
+        }
+        
+        @Test(expected=IllegalArgumentException.class)
+        public void canPutで石として3を渡すと例外発生() {
+            this.board.canPut(0, 0, 3);
+        }
+    }
+    
+    public static class 石の反転テスト {
+        /**
+         * テスト用のインスタンス。
+         */
+        private Board board;
 
-    
-    
+        /**
+         * インスタンスを新たに作成します。
+         */
+        @Before
+        public void setup() {
+            board = new Board();
+        }
+
         /**
          * {@link Board#putStone(int, int, int)}で白石を置いた場合、
          * 上方向の石をひっくり返すことができ、戻り値が
@@ -1301,81 +1359,96 @@ public class BoardTest {
             Assert.assertTrue(this.board.equals(ans));
     
         }
+        
+        @Test
+        public void putStoneで石が置いてある場所を指定するとFalse() {
+            this.board.initStone(0, 0, Board.BLACK_STONE);
+            Assert.assertFalse(this.board.putStone(0, 0, Board.BLACK_STONE));
+        }
+    }
     
-    
+    public static class インスタンスの比較テスト {
+        
         /**
-         * {@link Board#getStoneCount(int)}で石がないマス目の数を
-         * 正しく取得できることをテストします。
+         * テスト用のインスタンス。
+         */
+        private Board board;
+
+        /**
+         * インスタンスを新たに作成します。
+         */
+        @Before
+        public void setup() {
+            board = new Board();
+        }
+
+        /**
+         * {@link Board#equals(Object)}に石の配置が等しいインスタンスを与えた場合、
+         * 戻り値が<code>true</code>となることをテストします。
          */
         @Test
-        public void getStoneCountで石がないマス目の数を取得できるか() {
+        public void equalsで石の配置が同じだとTrue() {
     
-            // 白石を3個置く
+            // 比較用のインスタンス
+            Board b = new Board();
+    
+            // 石を配置
             this.board.initStone(0, 0, Board.WHITE_STONE);
-            this.board.initStone(3, 3, Board.WHITE_STONE);
-            this.board.initStone(5, 5, Board.WHITE_STONE);
+            b.initStone(0, 0, Board.WHITE_STONE);
     
-            // 黒石を3個置く
-            this.board.initStone(1, 1, Board.BLACK_STONE);
-            this.board.initStone(3, 4, Board.BLACK_STONE);
-            this.board.initStone(4, 3, Board.BLACK_STONE);
+            this.board.initStone(1, 0, Board.BLACK_STONE);
+            b.initStone(1, 0, Board.BLACK_STONE);
     
-            // 石がないマス目の数
-            int count = this.board.getWidth() * this.board.getHeight() - 3 - 3;
+            this.board.initStone(6, 6, Board.WHITE_STONE);
+            b.initStone(6, 6, Board.WHITE_STONE);
     
-            Assert.assertEquals(count, this.board.getStoneCount(Board.NOTHING));
+            this.board.initStone(4, 2, Board.BLACK_STONE);
+            b.initStone(4, 2, Board.BLACK_STONE);
+    
+            // 比較
+            Assert.assertTrue(this.board.equals(b));
     
         }
     
     
         /**
-         * {@link Board#getStoneCount(int)}で白石の数を
-         * 正しく取得できることをテストします。
+         * {@link Board#equals(Object)}に石の配置が異なるインスタンスを与えた場合、
+         * 戻り値が<code>false</code>となることをテストします。
          */
         @Test
-        public void getStoneCountで白石の数を取得できるか() {
+        public void equalsで石のは位置が異なるとFalse() {
     
-            // 白石を3個置く
+            // 比較用のインスタンス
+            Board b = new Board();
+    
+            // 石を配置
             this.board.initStone(0, 0, Board.WHITE_STONE);
-            this.board.initStone(3, 3, Board.WHITE_STONE);
-            this.board.initStone(5, 5, Board.WHITE_STONE);
+            b.initStone(0, 0, Board.WHITE_STONE);
     
-            // 黒石を3個置く
-            this.board.initStone(1, 1, Board.BLACK_STONE);
-            this.board.initStone(3, 4, Board.BLACK_STONE);
-            this.board.initStone(4, 3, Board.BLACK_STONE);
+            this.board.initStone(1, 0, Board.BLACK_STONE);
+            b.initStone(1, 0, Board.BLACK_STONE);
     
-            // 白石の数
-            int count = 3;
+            this.board.initStone(6, 6, Board.WHITE_STONE);
+            b.initStone(6, 6, Board.WHITE_STONE);
     
-            Assert.assertEquals(count, this.board.getStoneCount(Board.WHITE_STONE));
+            this.board.initStone(4, 2, Board.BLACK_STONE);
+    
+            // 比較
+            Assert.assertFalse(this.board.equals(b));
     
         }
-    
-    
-        /**
-         * {@link Board#getStoneCount(int)}で黒石の数を
-         * 正しく取得できることをテストします。
-         */
+        
         @Test
-        public void getStoneCountで黒石の数を取得できるか() {
-    
-            // 白石を3個置く
-            this.board.initStone(0, 0, Board.WHITE_STONE);
-            this.board.initStone(3, 3, Board.WHITE_STONE);
-            this.board.initStone(5, 5, Board.WHITE_STONE);
-    
-            // 黒石を3個置く
-            this.board.initStone(1, 1, Board.BLACK_STONE);
-            this.board.initStone(3, 4, Board.BLACK_STONE);
-            this.board.initStone(4, 3, Board.BLACK_STONE);
-    
-            // 黒石の数
-            int count = 3;
-    
-            Assert.assertEquals(count, this.board.getStoneCount(Board.BLACK_STONE));
-    
+        public void 同じインスタンスの比較結果はTrue() {
+            Assert.assertTrue(board.equals(board));
         }
+        
+        @Test
+        public void 型が違うインスタンスの比較結果はFalse() {
+            Object other = new Object();
+            Assert.assertFalse(board.equals(other));
+        }
+        
     }
 }
 

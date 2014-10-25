@@ -80,14 +80,15 @@ public class Button {
         parent.rectMode(PApplet.CORNER);
 
         if(this.isContain(parent.mouseX, parent.mouseY)) {
-            parent.fill(150, 150, 150);
+            parent.fill(150, 150, 150); // CHECKSTYLE IGNORE THIS LINE
         } else {
-            parent.fill(255, 255, 255);
+            parent.fill(255, 255, 255); // CHECKSTYLE IGNORE THIS LINE
+
         }
         parent.rect(this.x, this.y, this.width, this.height);
 
         parent.fill(0, 0, 0);
-        parent.textSize(20);
+        parent.textSize(20);    // CHECKSTYLE IGNORE THIS LINE
         parent.textAlign(PApplet.CENTER, PApplet.CENTER);
         parent.text(this.text, this.x, this.y, this.width, this.height);
 

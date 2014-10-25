@@ -1,7 +1,6 @@
 package ai;
 
 import ai.minimax.MiniMax;
-
 import core.Board;
 import core.NextMove;
 
@@ -19,6 +18,11 @@ public class TableReference implements GamePlayer {
      * 石を置くまでの待ち時間(ms)です。
      */
     private final int delayTime;
+    
+    /**
+     * 石を置くまでの待ち時間の規定値。
+     */
+    private static final int DEFAULT_DELAY_TIME = 500;
 
     /**
      * プレイヤーを生成します。
@@ -40,7 +44,7 @@ public class TableReference implements GamePlayer {
      * 石を置くまでの待ち時間は500msです。
      */
     public TableReference() {
-        this(500);
+        this(DEFAULT_DELAY_TIME);
     }
 
     /**
@@ -55,7 +59,8 @@ public class TableReference implements GamePlayer {
 
         long start = System.currentTimeMillis();
 
-        NextMove result = MiniMax.getNextMove(4, board, stone);
+        int level = 4;  // CHECKSTYLE IGNORE THIS LINE
+        NextMove result = MiniMax.getNextMove(level, board, stone);
 
         long waitTime = this.delayTime - (System.currentTimeMillis() - start);
 
@@ -65,7 +70,7 @@ public class TableReference implements GamePlayer {
 
         try {
             Thread.sleep(waitTime);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e) {  // CHECKSTYLE IGNORE THIS LINE
         }
 
         return result;

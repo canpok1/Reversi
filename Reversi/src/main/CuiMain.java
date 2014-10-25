@@ -1,9 +1,9 @@
 package main;
 
-import output.ConsoleViewer;
-import output.GameViewer;
 import input.ConsoleSelector;
 import input.NextMoveSelector;
+import output.ConsoleViewer;
+import output.GameViewer;
 import ai.GamePlayer;
 import ai.Human;
 import ai.RandomSelect;
@@ -27,7 +27,6 @@ public class CuiMain {
 
     }
 
-
     /**
      * クラスを生成します。
     */
@@ -45,7 +44,10 @@ public class CuiMain {
 
         manager.gameStart();
 
-        while(!manager.isFinish()) {
+        while(true) {
+            if(manager.isFinish()) {
+                break;
+            }
         }
 
         manager.viewGameResult();

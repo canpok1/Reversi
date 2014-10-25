@@ -1,4 +1,5 @@
 // CHECKSTYLE:OFF
+
 package core;
 
 import junit.framework.Assert;
@@ -105,10 +106,16 @@ public class NextMoveTest {
 
         NextMove nextMove = new NextMove(0, 0, 0);
 
-        Assert.assertEquals(0, nextMove.getY());
+        Assert.assertEquals(0, nextMove.getStone());
 
     }
 
+    @Test
+    public void コンストラクタで与えた座標を表示できること() {
+        NextMove nextMove = new NextMove(0, 0, 0);
+        String expected = "(0, 0)";
+        Assert.assertEquals(expected, nextMove.toString());
+    }
 
 }
 //CHECKSTYLE:ON

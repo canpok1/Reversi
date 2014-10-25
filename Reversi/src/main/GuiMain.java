@@ -1,8 +1,8 @@
 package main;
 
-import java.awt.Dimension;
-
 import gui.GameApplet;
+
+import java.awt.Dimension;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -32,7 +32,7 @@ public class GuiMain extends JFrame {
         Dimension size = frame.getSize();
         frame.setMinimumSize(size);
 
-        frame.setLocation(100, 100);
+        frame.setLocation(100, 100);    // CHECKSTYLE IGNORE THIS LINE
         frame.setVisible(true);
 
     }

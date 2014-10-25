@@ -61,13 +61,13 @@ public class Board {
     /**
      * コピーコンストラクタです。
      * @param board コピー元のオブジェクト
-     * @throws NullPointerException 引数が<code>null</code>の場合に発生
+     * @throws IllegalArgumentException 引数が<code>null</code>の場合に発生
      */
     public Board(Board board) {
 
         // 引数チェック
         if(board == null) {
-            throw new NullPointerException("コピー元をnullにはできません。");
+            throw new IllegalArgumentException("コピー元をnullにはできません。");
         }
 
         this.stones = new int[Board.HEIGHT][Board.WIDTH];
@@ -179,6 +179,7 @@ public class Board {
         // ひっくり返す石の座標の集合
         HashSet<int[]> points = new HashSet<int[]>();
 
+        // CHECKSTYLE:OFF
         // 上方向のチェック
         points.addAll(this.getReversedStones(x, y, stone, 0));
         // 右上方向のチェック
@@ -195,7 +196,7 @@ public class Board {
         points.addAll(this.getReversedStones(x, y, stone, 6));
         // 左上方向のチェック
         points.addAll(this.getReversedStones(x, y, stone, 7));
-
+        // CHECKSTYLE:ON
 
         if(points.size() != 0) {
 
@@ -240,6 +241,7 @@ public class Board {
             throw new IllegalArgumentException("石を表す値が不正です。");
         }
 
+        // CHECKSTYLE:OFF
         // 上方向のチェック
         if(this.getReversedStones(x, y, stone, 0).size() != 0) {
             return true;
@@ -272,6 +274,7 @@ public class Board {
         if(this.getReversedStones(x, y, stone, 7).size() != 0) {
             return true;
         }
+        // CHECKSTYLE:ON
 
         return false;
 
