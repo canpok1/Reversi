@@ -12,13 +12,13 @@ import javax.swing.JPanel;
  * @author tanabe
  *
  */
-public class GuiMain extends JFrame {
+public final class GuiMain {
 
     /**
-     * シリアルバージョンです。
+     * コンストラクタ。
+     * ユーティリティクラスのため使用付加。
      */
-    private static final long serialVersionUID = -6925755286458664752L;
-
+    private GuiMain() { }
 
     /**
      * プログラムのエントリポイントです。
@@ -26,7 +26,7 @@ public class GuiMain extends JFrame {
      */
     public static void main(String[] args) {
 
-        JFrame frame = new GuiMain();
+        JFrame frame = new MainFrame();
 
         frame.pack();
         Dimension size = frame.getSize();
@@ -37,29 +37,41 @@ public class GuiMain extends JFrame {
 
     }
 
-
     /**
-     * ゲームのフレームを生成します。
+     * ゲームのフレーム。
+     * @author tanabe
+     *
      */
-    public GuiMain() {
+    private static class MainFrame extends JFrame {
 
-        GameApplet a = new GameApplet();
-        a.init();
-
-        JPanel panel = new JPanel();
-        panel.add(a);
-        a.setLocation(0, 0);
-
-        Dimension size = new Dimension(GameApplet.WIDTH, GameApplet.HEIGHT);
-        panel.setPreferredSize(size);
-        panel.setMinimumSize(size);
-        this.add(panel);
-        panel.setLocation(0, 0);
-
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Reversi");
+        /**
+         * シリアルバージョンです。
+         */
+        private static final long serialVersionUID = -6925755286458664752L;
+        
+        /**
+         * ゲームのフレームを生成します。
+         */
+        public MainFrame() {
+    
+            GameApplet a = new GameApplet();
+            a.init();
+    
+            JPanel panel = new JPanel();
+            panel.add(a);
+            a.setLocation(0, 0);
+    
+            Dimension size = new Dimension(GameApplet.WIDTH, GameApplet.HEIGHT);
+            panel.setPreferredSize(size);
+            panel.setMinimumSize(size);
+            this.add(panel);
+            panel.setLocation(0, 0);
+    
+            this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            this.setTitle("Reversi");
+    
+        }
 
     }
-
 
 }

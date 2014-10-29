@@ -15,22 +15,19 @@ import core.GameManager;
  * @author tanabe
  *
  */
-public class CuiMain {
+public final class CuiMain {
 
+    /**
+     * コンストラクタ。
+     * ユーティリティクラスのため、使用付加。
+     */
+    private CuiMain() { }
+    
     /**
      * プログラムのエントリポイントです。
      * @param args コマンドライン引数
      */
     public static void main(String[] args) {
-
-        new CuiMain();
-
-    }
-
-    /**
-     * クラスを生成します。
-    */
-    public CuiMain() {
 
         Board board = new Board();
 
@@ -55,4 +52,5 @@ public class CuiMain {
         viewer.view("Exit");
 
     }
+
 }
