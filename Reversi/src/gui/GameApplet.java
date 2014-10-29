@@ -383,6 +383,14 @@ public class GameApplet extends PApplet
             if(this.nextMove != null) {
                 break;
             }
+            
+            // CHECKSTYLE:OFF
+            try {
+                Thread.sleep(100);
+            } catch(Exception e) {
+                // 待機するだけなので例外は気にしない。
+            }
+            // CHECKSTYLE:ON
         }
 
         this.buttons[GameApplet.CANCEL_BUTTON].setText("");
