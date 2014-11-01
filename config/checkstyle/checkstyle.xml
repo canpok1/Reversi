@@ -6,8 +6,7 @@
 -->
 <!--
     Checkstyle-Configuration: MyCodingRule
-    Description: 
-自分用のCheckstyle 構成です。
+    Description: none
 -->
 <module name="Checker">
   <property name="severity" value="warning"/>
@@ -21,7 +20,6 @@
     <module name="JavadocVariable"/>
     <module name="JavadocStyle">
       <property name="checkEmptyJavadoc" value="true"/>
-      <property name="endOfSentenceFormat" value="([.?!][ \t\n\r\f&lt;])|([.?!。]$)"/>
     </module>
     <module name="ConstantName"/>
     <module name="LocalFinalVariableName"/>
