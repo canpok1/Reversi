@@ -44,29 +44,19 @@ test {
     exclude '**/*$*'
 }
 
-
-findbugsMain {
-    effort = "max"
-    reportLevel = "high"
-    ignoreFailures = true
-    reports {
-        xml.enabled = true
-        html.enabled = false
-    }
+// Findbugsの設定
+[findbugsMain, findbugsTest]*.effort = "max"
+[findbugsMain, findbugsTest]*.reportLevel = "high"
+[findbugsMain, findbugsTest]*.ignoreFailures = true
+[findbugsMain, findbugsTest]*.reports {
+    xml.enabled = true
+    html.enabled = false
 }
 
-findbugsTest {
-    effort = "max"
-    reportLevel = "high"
-    ignoreFailures = true
-    reports {
-        xml.enabled = true
-        html.enabled = false
-    }
-}
-
+// Checkstyle警告が出ても続行
 [checkstyleMain, checkstyleTest]*.ignoreFailures = true
 
+// 生成するEclipseプロジェクトにフォーマッターの設定追加
 eclipse.jdt.file {
     withProperties { properties ->
         def formatter = new XmlSlurper().parse('config/EclipseFormatter.xml')
