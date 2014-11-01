@@ -9,6 +9,7 @@
     Description: none
 -->
 <module name="Checker">
+  <property name="charset" value="UTF-8"/>
   <property name="severity" value="warning"/>
   <module name="TreeWalker">
     <module name="FileContentsHolder"/>
@@ -20,6 +21,7 @@
     <module name="JavadocVariable"/>
     <module name="JavadocStyle">
       <property name="checkEmptyJavadoc" value="true"/>
+      <property name="checkFirstSentence" value="true"/>
     </module>
     <module name="ConstantName"/>
     <module name="LocalFinalVariableName"/>
