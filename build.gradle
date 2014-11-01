@@ -67,6 +67,15 @@ findbugsTest {
 
 [checkstyleMain, checkstyleTest]*.ignoreFailures = true
 
+eclipse.jdt.file {
+    withProperties { properties ->
+        def formatter = new XmlSlurper().parse('config/EclipseFormatter.xml')
+        formatter.profile.setting.each {
+            properties.put(it.@id as String, it.@value as String)
+        }
+    }
+}
+
 // MainƒNƒ‰ƒXİ’è
 mainClassName = "main.GuiMain"
 
