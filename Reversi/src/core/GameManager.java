@@ -7,70 +7,70 @@ import output.GameViewer;
 import ai.GamePlayer;
 
 /**
- * ゲームを管理するクラスです。<br>
- * 盤面の初期化やゲームの勝敗判定等を行います。
+ * ゲームを管理するクラスです.<br>
+ * 盤面の初期化やゲームの勝敗判定等を行います.
  * @author tanabe
  *
  */
 public class GameManager implements Runnable {
 
     /**
-     * ゲームを行うのに必要なプレイヤーの人数です。
+     * ゲームを行うのに必要なプレイヤーの人数です.
      */
     private static final int PLAYER_COUNT = 2;
 
     /**
-     * ゲームを行うプレイヤーです。
+     * ゲームを行うプレイヤーです.
      */
     private final GamePlayer[] players;
 
     /**
-     * プレイヤーが使用する石です。
+     * プレイヤーが使用する石です.
      */
     private final int[] stones;
 
     /**
-     * ゲームの盤面です。
+     * ゲームの盤面です.
      */
     private final Board board;
 
     /**
-     * ゲーム情報を表示するビューワーです。
+     * ゲーム情報を表示するビューワーです.
      */
     private final GameViewer viewer;
 
     /**
-     * 現在の手番プレイヤーを表す番号です。
+     * 現在の手番プレイヤーを表す番号です.
      */
     private int currentPlayerNo;
 
     /**
-     * 連続でパスを行った回数です。
+     * 連続でパスを行った回数です.
      */
     private int passCount;
 
     /**
-     * ゲームの記録です。
+     * ゲームの記録です.
      */
     private final List<NextMove> gameRecord;
 
     /**
-     * ゲームループ用のスレッドです。
+     * ゲームループ用のスレッドです.
      */
     private Thread gameThread;
 
     /**
-     * ゲームの終了を示すフラグです。
+     * ゲームの終了を示すフラグです.
      */
     private boolean gameoverFlag;
 
     /**
-     * ゲームの中断を示すフラグです。
+     * ゲームの中断を示すフラグです.
      */
     private boolean quitFlag;
 
     /**
-     * ゲームを生成します。
+     * ゲームを生成します.
      * @param p1 プレイヤー1(先行)
      * @param p2 プレイヤー2(後攻)
      * @param board ゲームの盤面
@@ -80,16 +80,16 @@ public class GameManager implements Runnable {
 
         // 引数チェック
         if(p1 == null) {
-            throw new NullPointerException("プレイヤー1をnullにすることはできません。");
+            throw new NullPointerException("プレイヤー1をnullにすることはできません.");
         }
         if(p2 == null) {
-            throw new NullPointerException("プレイヤー2をnullにすることはできません。");
+            throw new NullPointerException("プレイヤー2をnullにすることはできません.");
         }
         if(board == null) {
-            throw new NullPointerException("ゲームの盤面をnullにすることはできません。");
+            throw new NullPointerException("ゲームの盤面をnullにすることはできません.");
         }
         if(viewer == null) {
-            throw new NullPointerException("ゲームのビューワーをnullにすることはできません。");
+            throw new NullPointerException("ゲームのビューワーをnullにすることはできません.");
         }
 
         this.players = new GamePlayer[PLAYER_COUNT];
@@ -109,7 +109,7 @@ public class GameManager implements Runnable {
 
 
     /**
-     * ゲームの初期化を行います。
+     * ゲームの初期化を行います.
      */
     private void initialize() {
 
@@ -139,7 +139,7 @@ public class GameManager implements Runnable {
 
 
     /**
-     * ゲームを更新します。
+     * ゲームを更新します.
      */
     private void update() {
 
@@ -214,7 +214,7 @@ public class GameManager implements Runnable {
 
 
     /**
-     * ゲームが終了かをチェックします。
+     * ゲームが終了かをチェックします.
      * @return ゲーム終了ならば<code>true</code>、それ以外は<code>false</code>
      */
     public boolean isFinish() {
@@ -223,7 +223,7 @@ public class GameManager implements Runnable {
 
 
     /**
-     * ゲームの結果を表示します。
+     * ゲームの結果を表示します.
      */
     public void viewGameResult() {
 
@@ -249,7 +249,7 @@ public class GameManager implements Runnable {
 
 
     /**
-     * 現在の手番プレイヤーの石を取得します。
+     * 現在の手番プレイヤーの石を取得します.
      * @return 手番プレイヤーの石
      */
     public int getCurrentStone() {
@@ -258,7 +258,7 @@ public class GameManager implements Runnable {
 
 
     /**
-     * ゲームを開始します。
+     * ゲームを開始します.
      */
     public void gameStart() {
 
@@ -269,8 +269,8 @@ public class GameManager implements Runnable {
 
 
     /**
-     * ゲームループの処理です。
-     * この処理は独立したスレッドで行われます。
+     * ゲームループの処理です.
+     * この処理は独立したスレッドで行われます.
      */
     @Override
     public void run() {

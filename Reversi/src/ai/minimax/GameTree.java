@@ -3,30 +3,30 @@ package ai.minimax;
 import core.Board;
 
 /**
- * ゲームツリーを表す抽象クラスです。
+ * ゲームツリーを表す抽象クラスです.
  * @author tanabe
  *
  */
 public abstract class GameTree {
 
     /**
-     * 現在の盤面が何手先読みを行った結果かを表す値です。
+     * 現在の盤面が何手先読みを行った結果かを表す値です.
      */
     private final int level;
 
     /**
-     * 盤面の評価値です。
+     * 盤面の評価値です.
      */
     private int value;
 
     /**
-     * 評価対象の盤面です。
+     * 評価対象の盤面です.
      */
     private final Board board;
 
 
     /**
-     * ゲームツリーを生成します。
+     * ゲームツリーを生成します.
      * @param level 何手先読みをしたかを表す値
      * @param board 評価対象の盤面
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
@@ -36,10 +36,10 @@ public abstract class GameTree {
 
         // 引数チェック
         if(level < 0) {
-            throw new IllegalArgumentException("負の値を設定することはできません。");
+            throw new IllegalArgumentException("負の値を設定することはできません.");
         }
         if(board == null) {
-            throw new NullPointerException("引数をnullにすることはできません。");
+            throw new NullPointerException("引数をnullにすることはできません.");
         }
 
         this.level = level;
@@ -50,7 +50,7 @@ public abstract class GameTree {
 
 
     /**
-     * 現在の盤面が何手先読みをした結果なのかを取得します。
+     * 現在の盤面が何手先読みをした結果なのかを取得します.
      * @return 何手先読みをしたかを表す値
      */
     public int getLevel() {
@@ -59,7 +59,7 @@ public abstract class GameTree {
 
 
     /**
-     * 先読みの結果、最も良い評価値です。
+     * 先読みの結果、最も良い評価値です.
      * @return 評価値
      */
     public int getValue() {
@@ -68,7 +68,7 @@ public abstract class GameTree {
 
 
     /**
-     * 評価値を設定します。
+     * 評価値を設定します.
      * @param value 評価値
      */
     protected void setValue(int value) {
@@ -77,7 +77,7 @@ public abstract class GameTree {
 
 
     /**
-     * 評価対象の盤面を取得します。
+     * 評価対象の盤面を取得します.
      * @return 盤面
      */
     public Board getBoard() {

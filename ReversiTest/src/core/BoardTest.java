@@ -10,7 +10,7 @@ import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
 
 /**
- * {@link Board}の単体テストです。
+ * {@link Board}の単体テストです.
  * @author tanabe
  *
  */
@@ -31,7 +31,7 @@ public class BoardTest {
         
         /**
          * {@link Board#Board(Board)}で、石の配置が等しい別のインスタンスが
-         * 生成されることをテストします。
+         * 生成されることをテストします.
          */
         @Test
         public void コピーコンストラクタで生成したときの石の配置() {    
@@ -66,12 +66,12 @@ public class BoardTest {
     public static class 石の配置テスト {
         
         /**
-         * テスト用のインスタンス。
+         * テスト用のインスタンス.
          */
         private Board board;
 
         /**
-         * インスタンスを新たに作成します。
+         * インスタンスを新たに作成します.
          */
         @Before
         public void setup() {
@@ -80,7 +80,7 @@ public class BoardTest {
 
         /**
          * {@link Board#initStone(int, int, int)}で正しく白石を
-         * 配置することができることをテストします。
+         * 配置することができることをテストします.
          */
         @Test
         public void initStoneで指定した場所に白石を配置できるか() {
@@ -118,7 +118,7 @@ public class BoardTest {
 
         /**
          * {@link Board#initStone(int, int, int)}で正しく黒石を
-         * 配置することができることをテストします。
+         * 配置することができることをテストします.
          */
         @Test
         public void initStoneで指定した場所に黒石を配置できるか() {
@@ -156,7 +156,7 @@ public class BoardTest {
     
         /**
          * {@link Board#initStone(int, int, int)}で
-         * 石がないことを設定できることをテストします。
+         * 石がないことを設定できることをテストします.
          */
         @Test
         public void initStoneで指定した場所を石なしにできるか() {
@@ -194,7 +194,7 @@ public class BoardTest {
     
         /**
          * {@link Board#initStone(int, int, int)}で盤面外の座標を設定した場合、
-         * {@link IndexOutOfBoundsException}が発生することをテストします。
+         * {@link IndexOutOfBoundsException}が発生することをテストします.
          */
         @Test(expected = IndexOutOfBoundsException.class)
         public void initStoneで盤面外を指定すると例外発生() {
@@ -213,7 +213,7 @@ public class BoardTest {
     
         /**
          * {@link Board#getStoneCount(int)}で石がないマス目の数を
-         * 正しく取得できることをテストします。
+         * 正しく取得できることをテストします.
          */
         @Test
         public void getStoneCountで石がないマス目の数を取得できるか() {
@@ -238,7 +238,7 @@ public class BoardTest {
     
         /**
          * {@link Board#getStoneCount(int)}で白石の数を
-         * 正しく取得できることをテストします。
+         * 正しく取得できることをテストします.
          */
         @Test
         public void getStoneCountで白石の数を取得できるか() {
@@ -263,7 +263,7 @@ public class BoardTest {
     
         /**
          * {@link Board#getStoneCount(int)}で黒石の数を
-         * 正しく取得できることをテストします。
+         * 正しく取得できることをテストします.
          */
         @Test
         public void getStoneCountで黒石の数を取得できるか() {
@@ -313,12 +313,12 @@ public class BoardTest {
     
     public static class 石の反転テスト {
         /**
-         * テスト用のインスタンス。
+         * テスト用のインスタンス.
          */
         private Board board;
 
         /**
-         * インスタンスを新たに作成します。
+         * インスタンスを新たに作成します.
          */
         @Before
         public void setup() {
@@ -328,9 +328,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で白石を置いた場合、
          * 上方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * w-------<br>
          * b-------<br>
          * b-------<br>
@@ -377,9 +377,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で白石を置いた場合、
          * 右上方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * -------w<br>
          * ------b-<br>
          * -----b--<br>
@@ -427,9 +427,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で白石を置いた場合、
          * 横方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * --------<br>
          * --------<br>
          * --------<br>
@@ -476,9 +476,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で白石を置いた場合、
          * 右下方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * x-------<br>
          * -b------<br>
          * --b-----<br>
@@ -525,9 +525,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で白石を置いた場合、
          * 下方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * x-------<br>
          * b-------<br>
          * b-------<br>
@@ -575,9 +575,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で白石を置いた場合、
          * 左下方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * -------x<br>
          * ------b-<br>
          * -----b--<br>
@@ -625,9 +625,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で白石を置いた場合、
          * 左方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * wbbbbbbx<br>
          * --------<br>
          * --------<br>
@@ -675,9 +675,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で白石を置いた場合、
          * 左上方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * w-------<br>
          * -b------<br>
          * --b-----<br>
@@ -724,9 +724,9 @@ public class BoardTest {
     
         /**
          * {@link Board#putStone(int, int, int)}で白石を置こうとする場合、
-         * 盤面は変化せず、戻り値が<code>false</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * 盤面は変化せず、戻り値が<code>false</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * w--w--w-<br>
          * --------<br>
          * --bbb---<br>
@@ -777,9 +777,9 @@ public class BoardTest {
     
         /**
          * {@link Board#putStone(int, int, int)}で白石を置こうとする場合、
-         * 盤面は変化せず、戻り値が<code>false</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * 盤面は変化せず、戻り値が<code>false</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * b--b--b-<br>
          * -b-b-b--<br>
          * --bbb---<br>
@@ -846,9 +846,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で黒石を置いた場合、
          * 上方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * b-------<br>
          * w-------<br>
          * w-------<br>
@@ -895,9 +895,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で黒石を置いた場合、
          * 右上方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * -------b<br>
          * ------w-<br>
          * -----w--<br>
@@ -944,9 +944,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で黒石を置いた場合、
          * 横方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * --------<br>
          * --------<br>
          * --------<br>
@@ -993,9 +993,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で黒石を置いた場合、
          * 右下方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * x-------<br>
          * -w------<br>
          * --w-----<br>
@@ -1042,9 +1042,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で黒石を置いた場合、
          * 下方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * x-------<br>
          * w-------<br>
          * w-------<br>
@@ -1092,9 +1092,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で黒石を置いた場合、
          * 左下方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * -------x<br>
          * ------w-<br>
          * -----w--<br>
@@ -1142,9 +1142,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で黒石を置いた場合、
          * 左方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * bwwwwwwx<br>
          * --------<br>
          * --------<br>
@@ -1192,9 +1192,9 @@ public class BoardTest {
         /**
          * {@link Board#putStone(int, int, int)}で黒石を置いた場合、
          * 左上方向の石をひっくり返すことができ、戻り値が
-         * <code>true</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * <code>true</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * b-------<br>
          * -w------<br>
          * --w-----<br>
@@ -1241,9 +1241,9 @@ public class BoardTest {
     
         /**
          * {@link Board#putStone(int, int, int)}で黒石を置こうとする場合、
-         * 盤面は変化せず、戻り値が<code>false</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * 盤面は変化せず、戻り値が<code>false</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * b--b--b-<br>
          * --------<br>
          * --www---<br>
@@ -1295,9 +1295,9 @@ public class BoardTest {
     
         /**
          * {@link Board#putStone(int, int, int)}で黒石を置こうとする場合、
-         * 盤面は変化せず、戻り値が<code>false</code>となることをテストします。<br>
-         * 石の配置は次の通りです。<br>
-         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します。<br>
+         * 盤面は変化せず、戻り値が<code>false</code>となることをテストします.<br>
+         * 石の配置は次の通りです.<br>
+         * -が石がないマス、wが白石、bが黒石、xが石を配置する場所を表します.<br>
          * w--w--w-<br>
          * -w-w-w--<br>
          * --www---<br>
@@ -1370,12 +1370,12 @@ public class BoardTest {
     public static class インスタンスの比較テスト {
         
         /**
-         * テスト用のインスタンス。
+         * テスト用のインスタンス.
          */
         private Board board;
 
         /**
-         * インスタンスを新たに作成します。
+         * インスタンスを新たに作成します.
          */
         @Before
         public void setup() {
@@ -1384,7 +1384,7 @@ public class BoardTest {
 
         /**
          * {@link Board#equals(Object)}に石の配置が等しいインスタンスを与えた場合、
-         * 戻り値が<code>true</code>となることをテストします。
+         * 戻り値が<code>true</code>となることをテストします.
          */
         @Test
         public void equalsで石の配置が同じだとTrue() {
@@ -1413,7 +1413,7 @@ public class BoardTest {
     
         /**
          * {@link Board#equals(Object)}に石の配置が異なるインスタンスを与えた場合、
-         * 戻り値が<code>false</code>となることをテストします。
+         * 戻り値が<code>false</code>となることをテストします.
          */
         @Test
         public void equalsで石のは位置が異なるとFalse() {

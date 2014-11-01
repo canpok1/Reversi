@@ -3,50 +3,50 @@ package gui;
 import processing.core.PApplet;
 
 /**
- * メッセージ表示領域です。
+ * メッセージ表示領域です.
  * @author tanabe
  *
  */
 public class MessageBox {
 
     /**
-     * メッセージボックス内の余白の横幅です。
+     * メッセージボックス内の余白の横幅です.
      */
     private static final int SPACE_WIDTH = 5;
 
     /**
-     * メッセージボックス内の余白の縦幅です。
+     * メッセージボックス内の余白の縦幅です.
      */
     private static final int SPACE_HEIGHT = 5;
 
     /**
-     * メッセージボックスの左上のX座標です。
+     * メッセージボックスの左上のX座標です.
      */
     private int x;
 
     /**
-     * メッセージボックスの左上のY座標です。
+     * メッセージボックスの左上のY座標です.
      */
     private int y;
 
     /**
-     * メッセージボックスの横幅です。
+     * メッセージボックスの横幅です.
      */
     private final int width;
 
     /**
-     * メッセージボックスの縦幅です。
+     * メッセージボックスの縦幅です.
      */
     private final int height;
 
     /**
-     * メッセージボックスに表示する文字列です。
+     * メッセージボックスに表示する文字列です.
      */
     private String message;
 
 
     /**
-     * メッセージボックスを生成します。
+     * メッセージボックスを生成します.
      * @param width メッセージボックスの横幅
      * @param height メッセージボックスの縦幅
      * @throws IllegalArgumentException 引数が0以下の値の場合に発生
@@ -55,10 +55,10 @@ public class MessageBox {
 
         // 引数チェック
         if(width <= 0) {
-            throw new IllegalArgumentException("横幅を0以下にすることはできません。");
+            throw new IllegalArgumentException("横幅を0以下にすることはできません.");
         }
         if(height <= 0) {
-            throw new IllegalArgumentException("縦幅を0以下にすることはできません。");
+            throw new IllegalArgumentException("縦幅を0以下にすることはできません.");
         }
 
         this.x = 0;
@@ -71,7 +71,7 @@ public class MessageBox {
 
 
     /**
-     * メッセージボックスを描画します。
+     * メッセージボックスを描画します.
      * @param parent 描画先のアプレット
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      */
@@ -79,7 +79,7 @@ public class MessageBox {
 
         // 引数チェック
         if(parent == null) {
-            throw new NullPointerException("描画先のアプレットをnullにはできません。");
+            throw new NullPointerException("描画先のアプレットをnullにはできません.");
         }
 
         parent.rectMode(PApplet.CORNER);
@@ -100,7 +100,7 @@ public class MessageBox {
 
 
     /**
-     * メッセージボックスの左上座標を変更します。
+     * メッセージボックスの左上座標を変更します.
      * @param x メッセージボックスの左上のX座標
      * @param y メッセージボックスの左上のY座標
      */
@@ -111,7 +111,7 @@ public class MessageBox {
 
 
     /**
-     * メッセージボックスに表示する文字列を設定します。
+     * メッセージボックスに表示する文字列を設定します.
      * @param message 文字列
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      */
@@ -119,7 +119,7 @@ public class MessageBox {
 
         // 引数チェック
         if(message == null) {
-            throw new NullPointerException("テキストをnullにはできません。");
+            throw new NullPointerException("テキストをnullにはできません.");
         }
 
         this.message = message;

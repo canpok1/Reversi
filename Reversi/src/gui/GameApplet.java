@@ -10,7 +10,7 @@ import core.GameManager;
 import core.NextMove;
 
 /**
- * ゲームを描画するクラスです。
+ * ゲームを描画するクラスです.
  * @author tanabe
  *
  */
@@ -18,82 +18,82 @@ public class GameApplet extends PApplet
     implements NextMoveSelector, GameViewer {
 
     /**
-     * シリアルバージョンです。
+     * シリアルバージョンです.
      */
     private static final long serialVersionUID = 6930504402437251055L;
 
     /**
-     * 「ゲームモード選択」を表す定数です。
+     * 「ゲームモード選択」を表す定数です.
      */
     private static final int MODE_SELECT = 0;
 
     /**
-     * 「ゲーム中」を表す定数です。
+     * 「ゲーム中」を表す定数です.
      */
     private static final int GAME_PLAYING = 1;
 
     /**
-     * 「ゲーム結果」を表す定数です。
+     * 「ゲーム結果」を表す定数です.
      */
     private static final int GAME_RESULT = 2;
 
     /**
-     * 描画領域の横幅です。
+     * 描画領域の横幅です.
      */
     public static final int WIDTH = 600;
 
     /**
-     * 描画領域の縦幅です。
+     * 描画領域の縦幅です.
      */
     public static final int HEIGHT = 500;
 
     /**
-     * 「PASS」や「NEW GAME」など、決定に使用するボタンの番号です。
+     * 「PASS」や「NEW GAME」など、決定に使用するボタンの番号です.
      */
     private static final int OK_BUTTON = 0;
 
     /**
-     * 「GIVE UP」など、キャンセルに使用するボタンの番号です。
+     * 「GIVE UP」など、キャンセルに使用するボタンの番号です.
      */
     private static final int CANCEL_BUTTON = 1;
 
     /**
-     * 現在の状態を表す変数です。
+     * 現在の状態を表す変数です.
      */
     private int state;
 
     /**
-     * リバーシの盤面ビューワーです。
+     * リバーシの盤面ビューワーです.
      */
     private BoardViewer board;
 
     /**
-     * ボタンです。
+     * ボタンです.
      */
     private Button[] buttons;
 
     /**
-     * ゲームメッセージです。
+     * ゲームメッセージです.
      */
     private MessageBox message;
 
     /**
-     * 次に置く石です。
+     * 次に置く石です.
      */
     private int nextStone;
 
     /**
-     * 次の手です。
+     * 次の手です.
      */
     private NextMove nextMove;
 
     /**
-     * ゲームを管理するマネージャーです。
+     * ゲームを管理するマネージャーです.
      */
     private GameManager manager;
 
     /**
-     * プレイヤーを生成するファクトリーです。
+     * プレイヤーを生成するファクトリーです.
      */
     private PlayerFactory factory;
 
@@ -306,7 +306,7 @@ public class GameApplet extends PApplet
 
 
     /**
-     * 盤面を表示します。
+     * 盤面を表示します.
      * @param board 表示する盤面
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      * @throws IllegalArgumentException ビューワーとサイズが異なる盤面が与えられたときに発生
@@ -316,11 +316,11 @@ public class GameApplet extends PApplet
 
         // 引数チェック
         if(board == null) {
-            throw new NullPointerException("盤面をnullにすることはできません。");
+            throw new NullPointerException("盤面をnullにすることはできません.");
         }
         if((this.board.getBoardWidth() != board.getWidth())
                 || (this.board.getBoardHeight() != board.getHeight())) {
-            throw new IllegalArgumentException("盤面サイズがビューワーと異なります。");
+            throw new IllegalArgumentException("盤面サイズがビューワーと異なります.");
         }
 
         for(int y = 0; y < this.board.getBoardHeight(); y++) {
@@ -335,7 +335,7 @@ public class GameApplet extends PApplet
 
 
     /**
-     * メッセージを表示します。
+     * メッセージを表示します.
      * @param message メッセージ
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      */
@@ -344,7 +344,7 @@ public class GameApplet extends PApplet
 
         // 引数チェック
         if(message == null) {
-            throw new NullPointerException("メッセージをnullにすることはできません。");
+            throw new NullPointerException("メッセージをnullにすることはできません.");
         }
 
         this.message.setMessage(message);
@@ -353,7 +353,7 @@ public class GameApplet extends PApplet
 
 
     /**
-     * 次の手を選びます。
+     * 次の手を選びます.
      * @param stone 置く石
      * @param message 表示するメッセージ
      * @return 次の手
@@ -368,7 +368,7 @@ public class GameApplet extends PApplet
 
 
     /**
-     * 次の手を選びます。
+     * 次の手を選びます.
      * @param stone 置く石
      * @return 次の手
      */
@@ -388,7 +388,7 @@ public class GameApplet extends PApplet
             try {
                 Thread.sleep(100);
             } catch(Exception e) {
-                // 待機するだけなので例外は気にしない。
+                // 待機するだけなので例外は気にしない.
             }
             // CHECKSTYLE:ON
         }
@@ -406,7 +406,7 @@ public class GameApplet extends PApplet
 
 
     /**
-     * ゲームの状態を変更し、ボタンを初期化します。
+     * ゲームの状態を変更し、ボタンを初期化します.
      * @param state 新しい状態
      * @throws IllegalArgumentException 定義されていない状態を指定した場合に発生
      */
@@ -419,7 +419,7 @@ public class GameApplet extends PApplet
 
 
     /**
-     * ゲームの状態に合わせてボタンを初期化します。
+     * ゲームの状態に合わせてボタンを初期化します.
      * @param state ゲームの状態
      * @throws IllegalArgumentException 定義されていない状態を指定した場合に発生
      */
@@ -482,7 +482,7 @@ public class GameApplet extends PApplet
                 break;
     
             default :
-                throw new IllegalArgumentException("定義されていない状態です。");
+                throw new IllegalArgumentException("定義されていない状態です.");
 
         }
 

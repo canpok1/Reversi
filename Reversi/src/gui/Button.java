@@ -3,44 +3,44 @@ package gui;
 import processing.core.PApplet;
 
 /**
- * ボタンです。
+ * ボタンです.
  * @author tanabe
  *
  */
 public class Button {
 
     /**
-     * ボタンの左上のX座標です。
+     * ボタンの左上のX座標です.
      */
     private int x;
 
     /**
-     * ボタンの左上のY座標です。
+     * ボタンの左上のY座標です.
      */
     private int y;
 
     /**
-     * ボタンの横幅です。
+     * ボタンの横幅です.
      */
     private final int width;
 
     /**
-     * ボタンの縦幅です。
+     * ボタンの縦幅です.
      */
     private final int height;
 
     /**
-     * ボタンに表示する文字列です。
+     * ボタンに表示する文字列です.
      */
     private String text;
 
     /**
-     * 押されたことを示すフラグです。
+     * 押されたことを示すフラグです.
      */
     private boolean isPressed;
 
     /**
-     * ボタンを生成します。
+     * ボタンを生成します.
      * @param width ボタンの横幅
      * @param height ボタンの縦幅
      * @throws IllegalArgumentException 引数が0以下の値の場合に発生
@@ -49,10 +49,10 @@ public class Button {
 
         // 引数チェック
         if(width <= 0) {
-            throw new IllegalArgumentException("横幅を0以下にすることはできません。");
+            throw new IllegalArgumentException("横幅を0以下にすることはできません.");
         }
         if(height <= 0) {
-            throw new IllegalArgumentException("縦幅を0以下にすることはできません。");
+            throw new IllegalArgumentException("縦幅を0以下にすることはできません.");
         }
 
         this.x = 0;
@@ -66,7 +66,7 @@ public class Button {
 
 
     /**
-     * ボタンを描画します。
+     * ボタンを描画します.
      * @param parent 描画先のアプレット
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      */
@@ -74,7 +74,7 @@ public class Button {
 
         // 引数チェック
         if(parent == null) {
-            throw new NullPointerException("描画先のアプレットをnullにはできません。");
+            throw new NullPointerException("描画先のアプレットをnullにはできません.");
         }
 
         parent.rectMode(PApplet.CORNER);
@@ -96,7 +96,7 @@ public class Button {
 
 
     /**
-     * ボタンの左上座標を変更します。
+     * ボタンの左上座標を変更します.
      * @param x ボタンの左上のX座標
      * @param y ボタンの左上のY座標
      */
@@ -107,7 +107,7 @@ public class Button {
 
 
     /**
-     * ボタンに表示する文字列を設定します。
+     * ボタンに表示する文字列を設定します.
      * @param text 文字列
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      */
@@ -115,7 +115,7 @@ public class Button {
 
         // 引数チェック
         if(text == null) {
-            throw new NullPointerException("テキストをnullにはできません。");
+            throw new NullPointerException("テキストをnullにはできません.");
         }
 
         this.text = text;
@@ -124,7 +124,7 @@ public class Button {
 
 
     /**
-     * 指定した座標がボタン上か判定します。
+     * 指定した座標がボタン上か判定します.
      * @param x X座標
      * @param y Y座標
      * @return ボタン上であれば<code>true</code>、そうでなければ<code>false</code>
@@ -136,7 +136,7 @@ public class Button {
 
 
     /**
-     * ボタンのON/OFF状態を設定します。
+     * ボタンのON/OFF状態を設定します.
      * @param f 押した場合は<code>true</code>、押していない場合は<code>false</code>
      */
     public void setPressed(boolean f) {
@@ -145,7 +145,7 @@ public class Button {
 
 
     /**
-     * ボタンのON/OFF状態を取得します。
+     * ボタンのON/OFF状態を取得します.
      * @return 押されている場合は<code>true</code>、押されていない場合は<code>false</code>
      */
     public boolean getPressed() {

@@ -7,7 +7,7 @@ import org.junit.Test;
 import core.Board;
 
 /**
- * {@link Leaf}の単体テストです。
+ * {@link Leaf}の単体テストです.
  * @author tanabe
  *
  */
@@ -15,7 +15,7 @@ public class LeafTest {
 
     /**
      * コンストラクタの第一引数に負の値を与えた場合、
-     * {@link IllegalArgumentException}が発生することをテストします。
+     * {@link IllegalArgumentException}が発生することをテストします.
      */
     @Test(expected = IllegalArgumentException.class)
     public void testLeaf1() {
@@ -30,7 +30,7 @@ public class LeafTest {
 
     /**
      * コンストラクタの第二引数に<code>null</code>を与えた場合、
-     * {@link NullPointerException}が発生することをテストします。
+     * {@link NullPointerException}が発生することをテストします.
      */
     @Test(expected = NullPointerException.class)
     public void testLeaf2() {
@@ -43,7 +43,7 @@ public class LeafTest {
 
     /**
      * コンストラクタの第三引数に{@link Board#NOTHING}を与えた場合、
-     * {@link IllegalArgumentException}が発生することをテストします。
+     * {@link IllegalArgumentException}が発生することをテストします.
      */
     @Test(expected = IllegalArgumentException.class)
     public void testLeaf3() {
@@ -58,7 +58,7 @@ public class LeafTest {
 
     /**
      * コンストラクタの第一引数に与えた値を{@link Leaf#getLevel()}で
-     * 取得できることをテストします。
+     * 取得できることをテストします.
      */
     @Test
     public void testGetLevel() {
@@ -75,7 +75,7 @@ public class LeafTest {
 
     /**
      * {@link Leaf#getBoard()}で取得できるインスタンスが、
-     * コンストラクタの第二引数で与えたインスタンスとは異なるインスタンスであることをテストします。
+     * コンストラクタの第二引数で与えたインスタンスとは異なるインスタンスであることをテストします.
      */
     @Test
     public void testGetBoard1() {
@@ -92,7 +92,7 @@ public class LeafTest {
 
     /**
      * {@link Leaf#getBoard()}で取得できるインスタンスが、
-     * コンストラクタの第二引数で与えたインスタンスと同じ内容であることをテストします。
+     * コンストラクタの第二引数で与えたインスタンスと同じ内容であることをテストします.
      */
     @Test
     public void testGetBoard2() {

@@ -5,34 +5,34 @@ import core.Board;
 import core.NextMove;
 
 /**
- * 石を置くことで全体の評価値が最も高くなる場所に石を置く戦略をとるプレイヤーです。<br>
- * 盤面の場所ごとの評価値をテーブルで管理しています。<br>
+ * 石を置くことで全体の評価値が最も高くなる場所に石を置く戦略をとるプレイヤーです.<br>
+ * 盤面の場所ごとの評価値をテーブルで管理しています.<br>
  * 自分の石が置いてある場合は評価値を加算、相手の石が置いていある場合は評価値を減算し、
- * 全体の評価値を計算します。
+ * 全体の評価値を計算します.
  * @author tanabe
  *
  */
 public class TableReference implements GamePlayer {
 
     /**
-     * 石を置くまでの待ち時間(ms)です。
+     * 石を置くまでの待ち時間(ms)です.
      */
     private final int delayTime;
     
     /**
-     * 石を置くまでの待ち時間の規定値。
+     * 石を置くまでの待ち時間の規定値.
      */
     private static final int DEFAULT_DELAY_TIME = 500;
 
     /**
-     * プレイヤーを生成します。
-     * @param delayTime 石を置くまでの待ち時間(ms)。
+     * プレイヤーを生成します.
+     * @param delayTime 石を置くまでの待ち時間(ms).
      */
     public TableReference(int delayTime) {
 
         // 引数チェック
         if(delayTime < 0) {
-            throw new IllegalArgumentException("待ち時間は負の値にすることはできません。");
+            throw new IllegalArgumentException("待ち時間は負の値にすることはできません.");
         }
 
         this.delayTime = delayTime;
@@ -40,8 +40,8 @@ public class TableReference implements GamePlayer {
     }
 
     /**
-     * プレイヤーを生成します。
-     * 石を置くまでの待ち時間は500msです。
+     * プレイヤーを生成します.
+     * 石を置くまでの待ち時間は500msです.
      */
     public TableReference() {
         this(DEFAULT_DELAY_TIME);
@@ -49,7 +49,7 @@ public class TableReference implements GamePlayer {
 
     /**
      * {@inheritDoc}<br>
-     * 石を置ける場所の中で、評価値が最も高くなる場所に石を置きます。
+     * 石を置ける場所の中で、評価値が最も高くなる場所に石を置きます.
      * @return {@inheritDoc}
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      * @throws IllegalArgumentException 対応する石がない場合、または盤面サイズが対応していない場合に発生

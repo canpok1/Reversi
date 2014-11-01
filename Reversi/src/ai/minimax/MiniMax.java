@@ -4,19 +4,19 @@ import core.Board;
 import core.NextMove;
 
 /**
- * ミニマックス法を利用して、次に手を取得するクラスです。
+ * ミニマックス法を利用して、次に手を取得するクラスです.
  * @author tanabe
  *
  */
 public final class MiniMax {
 
     /**
-     * コンストラクタは使用不可。
+     * コンストラクタは使用不可.
      */
     private MiniMax() { }
     
     /**
-     * 最善手を取得します。
+     * 最善手を取得します.
      * @param level 何手先まで先読みをするかを表す値
      * @param board 現在の盤面
      * @param stone 次に置く石

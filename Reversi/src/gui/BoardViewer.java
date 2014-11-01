@@ -4,7 +4,7 @@ import processing.core.PApplet;
 import core.Board;
 
 /**
- * リバーシの盤面を表示するクラスです。
+ * リバーシの盤面を表示するクラスです.
  * 
  * @author tanabe
  * 
@@ -12,67 +12,67 @@ import core.Board;
 public class BoardViewer {
 
     /**
-     * マス目一つ当たりの表示サイズ(横幅)です。
+     * マス目一つ当たりの表示サイズ(横幅)です.
      */
     public static final int CELL_SIZE_X = 50;
 
     /**
-     * マス目一つ当たりの表示サイズ(縦幅)です。
+     * マス目一つ当たりの表示サイズ(縦幅)です.
      */
     public static final int CELL_SIZE_Y = 50;
 
     /**
-     * 各マス目の縁の幅です。
+     * 各マス目の縁の幅です.
      */
     public static final int CELL_EDGE_WIDTH = 1;
 
     /**
-     * 石の縁の幅です。
+     * 石の縁の幅です.
      */
     private static final int STONE_EDGE_WIDTH = 1;
 
     /**
-     * 横に並ぶマス目の数です。
+     * 横に並ぶマス目の数です.
      */
     private final int boardWidth;
 
     /**
-     * 縦に並ぶマス目の数です。
+     * 縦に並ぶマス目の数です.
      */
     private final int boardHeight;
 
     /**
-     * 石の配置情報です。
+     * 石の配置情報です.
      */
     private final int[][] stones;
 
     /**
-     * 盤面を描画するときの基準点のX座標です。
+     * 盤面を描画するときの基準点のX座標です.
      */
     private int x;
 
     /**
-     * 盤面を描画するときの基準点のY座標です。
+     * 盤面を描画するときの基準点のY座標です.
      */
     private int y;
 
     /**
-     * カーソルを合わせるマス目を示す横方向のインデックスです。 描画のための座標ではありません。
+     * カーソルを合わせるマス目を示す横方向のインデックスです. 描画のための座標ではありません.
      */
     private int cursorX;
 
     /**
-     * カーソルを合わせるマス目を示す縦方向のインデックスです。 描画のための座標ではありません。
+     * カーソルを合わせるマス目を示す縦方向のインデックスです. 描画のための座標ではありません.
      */
     private int cursorY;
 
     /**
-     * カーソルの表示状態です。
+     * カーソルの表示状態です.
      */
     private boolean cursorVisible;
 
     /**
-     * ボードビューワーを生成します。
+     * ボードビューワーを生成します.
      * 
      * @param width
      *            横に並ぶマス目の数
@@ -85,10 +85,10 @@ public class BoardViewer {
 
         // 引数チェック
         if (width <= 0) {
-            throw new IllegalArgumentException("横に並ぶマス目の数を0以下にすることはできません。");
+            throw new IllegalArgumentException("横に並ぶマス目の数を0以下にすることはできません.");
         }
         if (height <= 0) {
-            throw new IllegalArgumentException("縦に並ぶマス目の数を0以下にすることはできません。");
+            throw new IllegalArgumentException("縦に並ぶマス目の数を0以下にすることはできません.");
         }
 
         this.boardWidth = width;
@@ -113,7 +113,7 @@ public class BoardViewer {
     }
 
     /**
-     * 描画するときの基準点を変更します。
+     * 描画するときの基準点を変更します.
      * 
      * @param x
      *            基準点のX座標
@@ -126,13 +126,13 @@ public class BoardViewer {
     }
 
     /**
-     * 指定座標のマス目にある石を取得します。
+     * 指定座標のマス目にある石を取得します.
      * 
      * @param cellX
      *            X座標
      * @param cellY
      *            Y座標
-     * @return マス目にある石。
+     * @return マス目にある石.
      * @throws IllegalArgumentException
      *             指定座標にマスがない場合に発生
      */
@@ -141,7 +141,7 @@ public class BoardViewer {
         // 座標が盤面上かをチェック
         if ((cellX < 0) || (cellX >= this.boardWidth) || (cellY < 0)
                 || (cellY >= this.boardHeight)) {
-            throw new IllegalArgumentException("マス目が存在しません。");
+            throw new IllegalArgumentException("マス目が存在しません.");
         }
 
         return this.stones[cellY][cellX];
@@ -149,7 +149,7 @@ public class BoardViewer {
     }
 
     /**
-     * 指定の描画座標のマス目に石を配置します。
+     * 指定の描画座標のマス目に石を配置します.
      * 
      * @param cellX
      *            X座標
@@ -165,13 +165,13 @@ public class BoardViewer {
         // 引数チェック
         if ((stone != Board.NOTHING) && (stone != Board.WHITE_STONE)
                 && (stone != Board.BLACK_STONE)) {
-            throw new IllegalArgumentException("石の値が不正です。");
+            throw new IllegalArgumentException("石の値が不正です.");
         }
 
         // 座標が盤面上かをチェック
         if ((cellX < 0) || (cellX >= this.boardWidth) || (cellY < 0)
                 || (cellY >= this.boardHeight)) {
-            throw new IllegalArgumentException("マス目が存在しません。");
+            throw new IllegalArgumentException("マス目が存在しません.");
         }
 
         this.stones[cellY][cellX] = stone;
@@ -179,7 +179,7 @@ public class BoardViewer {
     }
 
     /**
-     * 指定の描画座標のマス目にカーソルを合わせます。
+     * 指定の描画座標のマス目にカーソルを合わせます.
      * 
      * @param cellX
      *            マス目のX座標
@@ -193,7 +193,7 @@ public class BoardViewer {
         // 引数チェック
         if ((cellX < 0) || (cellX >= this.boardWidth) || (cellY < 0)
                 || (cellY >= this.boardHeight)) {
-            throw new IllegalArgumentException("マス目が存在しません。");
+            throw new IllegalArgumentException("マス目が存在しません.");
         }
 
         this.cursorX = cellX;
@@ -202,7 +202,7 @@ public class BoardViewer {
     }
 
     /**
-     * カーソルの表示状態を設定します。
+     * カーソルの表示状態を設定します.
      * 
      * @param visible
      *            カーソルを表示するなら<code>true</code>、表示しないなら<code>false</code>
@@ -214,7 +214,7 @@ public class BoardViewer {
     }
 
     /**
-     * 盤面を描画します。
+     * 盤面を描画します.
      * 
      * @param parent
      *            描画先のアプレット
@@ -225,7 +225,7 @@ public class BoardViewer {
 
         // 引数チェック
         if (parent == null) {
-            throw new NullPointerException("描画先のアプレットをnullにすることはできません。");
+            throw new NullPointerException("描画先のアプレットをnullにすることはできません.");
         }
 
         parent.rectMode(PApplet.CORNER);
@@ -272,7 +272,7 @@ public class BoardViewer {
     }
 
     /**
-     * 描画時の横幅を取得します。
+     * 描画時の横幅を取得します.
      * 
      * @return 描画時の横幅
      */
@@ -281,7 +281,7 @@ public class BoardViewer {
     }
 
     /**
-     * 描画時の縦幅を取得します。
+     * 描画時の縦幅を取得します.
      * 
      * @return 描画時の縦幅
      */
@@ -290,8 +290,8 @@ public class BoardViewer {
     }
 
     /**
-     * 描画座標に対応するマス目座標を取得します。<br>
-     * 対応するマス目がない場合は負の値を返します。
+     * 描画座標に対応するマス目座標を取得します.<br>
+     * 対応するマス目がない場合は負の値を返します.
      * 
      * @param drawX
      *            描画用のX座標
@@ -316,8 +316,8 @@ public class BoardViewer {
     }
 
     /**
-     * 描画座標に対応するマス目座標を取得します。<br>
-     * 対応するマス目がない場合は負の値を返します。
+     * 描画座標に対応するマス目座標を取得します.<br>
+     * 対応するマス目がない場合は負の値を返します.
      * 
      * @param drawY
      *            描画用のY座標
@@ -342,7 +342,7 @@ public class BoardViewer {
     }
 
     /**
-     * ビューワーの盤面サイズ(横幅)を取得します。
+     * ビューワーの盤面サイズ(横幅)を取得します.
      * 
      * @return 盤面サイズ(横幅)
      */
@@ -351,7 +351,7 @@ public class BoardViewer {
     }
 
     /**
-     * ビューワーの盤面サイズ(縦幅)を取得します。
+     * ビューワーの盤面サイズ(縦幅)を取得します.
      * 
      * @return 盤面サイズ(縦幅)
      */

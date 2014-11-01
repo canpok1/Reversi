@@ -11,20 +11,20 @@ import core.Board;
 import core.GameManager;
 
 /**
- * コンソールで実行するためのメインクラスです。
+ * コンソールで実行するためのメインクラスです.
  * @author tanabe
  *
  */
 public final class CuiMain {
 
     /**
-     * コンストラクタ。
-     * ユーティリティクラスのため、使用付加。
+     * コンストラクタ.
+     * ユーティリティクラスのため、使用付加.
      */
     private CuiMain() { }
     
     /**
-     * プログラムのエントリポイントです。
+     * プログラムのエントリポイントです.
      * @param args コマンドライン引数
      */
     public static void main(String[] args) {

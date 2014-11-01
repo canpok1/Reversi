@@ -4,44 +4,44 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * リバーシの盤面を表すクラスです。
+ * リバーシの盤面を表すクラスです.
  * @author tanabe
  *
  */
 public class Board {
 
     /**
-     * 石が置かれていないことを表す値です。
+     * 石が置かれていないことを表す値です.
      */
     public static final int NOTHING = 0;
 
     /**
-     * 白石を表す値です。
+     * 白石を表す値です.
      */
     public static final int WHITE_STONE = 1;
 
     /**
-     * 黒石を表す値です。
+     * 黒石を表す値です.
      */
     public static final int BLACK_STONE = 2;
 
     /**
-     * 盤面の横のマス目の数です。
+     * 盤面の横のマス目の数です.
      */
     private static final int WIDTH = 8;
 
     /**
-     * 盤面の縦のマス目の数です。
+     * 盤面の縦のマス目の数です.
      */
     private static final int HEIGHT = 8;
 
     /**
-     * 石を置く場所です。
+     * 石を置く場所です.
      */
     private final int[][] stones;
 
     /**
-     * 盤面を生成します。
+     * 盤面を生成します.
      */
     public Board() {
 
@@ -59,7 +59,7 @@ public class Board {
 
 
     /**
-     * コピーコンストラクタです。
+     * コピーコンストラクタです.
      * @param board コピー元のオブジェクト
      * @throws IllegalArgumentException 引数が<code>null</code>の場合に発生
      */
@@ -67,7 +67,7 @@ public class Board {
 
         // 引数チェック
         if(board == null) {
-            throw new IllegalArgumentException("コピー元をnullにはできません。");
+            throw new IllegalArgumentException("コピー元をnullにはできません.");
         }
 
         this.stones = new int[Board.HEIGHT][Board.WIDTH];
@@ -84,7 +84,7 @@ public class Board {
 
 
     /**
-     * 指定のマス目に石を配置します。ゲームの初期化で使用して下さい。
+     * 指定のマス目に石を配置します.ゲームの初期化で使用して下さい.
      * @param x マス目のX座標
      * @param y マス目のY座標
      * @param stone 配置する石を表す値
@@ -97,7 +97,7 @@ public class Board {
         if((stone != Board.NOTHING)
                 && (stone != Board.WHITE_STONE)
                 && (stone != Board.BLACK_STONE)) {
-            throw new IllegalArgumentException("石を表す値が正しくありません。");
+            throw new IllegalArgumentException("石を表す値が正しくありません.");
         }
 
         this.stones[y][x] = stone;
@@ -106,7 +106,7 @@ public class Board {
 
 
     /**
-     * 指定のマス目の石を取得します。
+     * 指定のマス目の石を取得します.
      * @param x マス目のX座標
      * @param y マス目のY座標
      * @return 石を表す値
@@ -118,7 +118,7 @@ public class Board {
 
 
     /**
-     * 指定した石の数を取得します。
+     * 指定した石の数を取得します.
      * @param stone 数える石
      * @return 石の数
      * @throws IllegalArgumentException 石を表す値が不正な場合に発生
@@ -129,7 +129,7 @@ public class Board {
         if((stone != Board.WHITE_STONE)
                 && (stone != Board.BLACK_STONE)
                 && (stone != Board.NOTHING)) {
-            throw new IllegalArgumentException("石を表す値が不正です。");
+            throw new IllegalArgumentException("石を表す値が不正です.");
         }
 
         int count = 0;
@@ -150,9 +150,9 @@ public class Board {
 
 
     /**
-     * 指定のマス目に石を配置し、石をひっくり返します。<br>
-     * 石をひっくり返すことができるマス目であれば石を配置し、ひっくり返します。
-     * 石をひっくり返すことができないマス目であれば石を配置しません。
+     * 指定のマス目に石を配置し、石をひっくり返します.<br>
+     * 石をひっくり返すことができるマス目であれば石を配置し、ひっくり返します.
+     * 石をひっくり返すことができないマス目であれば石を配置しません.
      * @param x マス目のX座標
      * @param y マス目のY座標
      * @param stone 配置する石を表す値
@@ -167,7 +167,7 @@ public class Board {
         // 引数チェック
         if((stone != Board.WHITE_STONE)
                 && (stone != Board.BLACK_STONE)) {
-            throw new IllegalArgumentException("石を表す値が不正です。");
+            throw new IllegalArgumentException("石を表す値が不正です.");
         }
 
         // 指定のマス目に石が置かれていないことをチェック
@@ -223,8 +223,8 @@ public class Board {
 
 
     /**
-     * 指定の場所に石を置くことができるかを判定します。<br>
-     * 石をひっくり返すことができない場合は石を置くことができません。
+     * 指定の場所に石を置くことができるかを判定します.<br>
+     * 石をひっくり返すことができない場合は石を置くことができません.
      * @param x 石を置くマスのX座標
      * @param y 石を置くマスのY座標
      * @param stone 置く石
@@ -238,7 +238,7 @@ public class Board {
         // 引数チェック
         if((stone != Board.WHITE_STONE)
                 && (stone != Board.BLACK_STONE)) {
-            throw new IllegalArgumentException("石を表す値が不正です。");
+            throw new IllegalArgumentException("石を表す値が不正です.");
         }
 
         // CHECKSTYLE:OFF
@@ -282,14 +282,14 @@ public class Board {
 
 
     /**
-     * 指定座標に石を置いたとき、ひっくり返される石の集合を取得します。
-     * 引数で指定した一方向のみをチェックします。
+     * 指定座標に石を置いたとき、ひっくり返される石の集合を取得します.
+     * 引数で指定した一方向のみをチェックします.
      * @param x 石を置くX座標
      * @param y 石を置くY座標
      * @param stone 石を表す値
-     * @param direction 方向を表す値。上(0)、右上(1)、右(2)、右下(3)、下(4)、左下(5)、左(6)、左上(7)
-     * @return ひっくり返す石の座標を保持した{@link Set}。
-     * 中身はint[2]で、0番がX座標、1番がY座標です。
+     * @param direction 方向を表す値.上(0)、右上(1)、右(2)、右下(3)、下(4)、左下(5)、左(6)、左上(7)
+     * @return ひっくり返す石の座標を保持した{@link Set}.
+     * 中身はint[2]で、0番がX座標、1番がY座標です.
      * @throws IllegalArgumentException 石と方向を表す値が不正な場合に発生
      */
     private Set<int[]> getReversedStones(int x, int y, int stone, int direction) {
@@ -309,19 +309,19 @@ public class Board {
         // 引数チェック
         if((stone != Board.WHITE_STONE)
                 && (stone != Board.BLACK_STONE)) {
-            throw new IllegalArgumentException("石を表す値が不正です。");
+            throw new IllegalArgumentException("石を表す値が不正です.");
         }
 
         if((direction < 0)
                 || (direction >= dir.length)) {
-            throw new IllegalArgumentException("方向を表す値が不正です。");
+            throw new IllegalArgumentException("方向を表す値が不正です.");
         }
 
-        // 方向を表す変数です。
+        // 方向を表す変数です.
         int dirX = dir[direction][0];
         int dirY = dir[direction][1];
 
-        // 石の種類をチェックするマス目の座標です。
+        // 石の種類をチェックするマス目の座標です.
         int checkX = x + dirX;
         int checkY = y + dirY;
 
@@ -331,7 +331,7 @@ public class Board {
         // ひっくり返す石が配置されている座標の集合
         HashSet<int[]> result = new HashSet<int[]>();
 
-        // 指定の方向を走査します。
+        // 指定の方向を走査します.
         while(this.isContain(checkX, checkY)) {
 
             if(this.getStone(checkX, checkY) == Board.NOTHING) {
@@ -361,7 +361,7 @@ public class Board {
 
 
     /**
-     * 指定の座標が盤面上かを判定します。
+     * 指定の座標が盤面上かを判定します.
      * @param x X座標
      * @param y Y座標
      * @return 盤面上であれば<code>true</code>、そうでないなら<code>false</code>
@@ -372,7 +372,7 @@ public class Board {
     }
 
     /**
-     * 内容が等しいかを判定します。
+     * 内容が等しいかを判定します.
      * @param obj 比較対象のオブジェクト
      * @return 盤面サイズと石の配置が同じであれば<code>true</code>、それ以外は<code>false</code>
      */
@@ -414,12 +414,12 @@ public class Board {
 
 
     /**
-     * ハッシュ値を取得します。<br>
+     * ハッシュ値を取得します.<br>
      * {@link Board#equals(Object)}で比較すると等価になるインスタンス同士の
-     * ハッシュ値は同じとならなければなりません。<br>
+     * ハッシュ値は同じとならなければなりません.<br>
      * 等価とならないインスタンス同士のハッシュ値は異なっていなくても
-     * 構いません。<br>
-     * このクラスでは盤面のマス目の数をハッシュ値として返すことにします。
+     * 構いません.<br>
+     * このクラスでは盤面のマス目の数をハッシュ値として返すことにします.
      *
      * @return ハッシュ値
      */
@@ -429,7 +429,7 @@ public class Board {
     }
 
     /**
-     * 横に並ぶマス目の数を取得します。
+     * 横に並ぶマス目の数を取得します.
      * @return 横に並ぶマス目の数
      */
     public int getWidth() {
@@ -438,7 +438,7 @@ public class Board {
 
 
     /**
-     * 縦に並ぶマス目の数を取得します。
+     * 縦に並ぶマス目の数を取得します.
      * @return 縦に並ぶマス目の数
      */
     public int getHeight() {

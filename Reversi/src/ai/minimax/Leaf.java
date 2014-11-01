@@ -3,47 +3,47 @@ package ai.minimax;
 import core.Board;
 
 /**
- * ゲーム木の葉を表すクラスです。
- * 盤面の評価はこのクラスでのみ行います。
+ * ゲーム木の葉を表すクラスです.
+ * 盤面の評価はこのクラスでのみ行います.
  * @author tanabe
  *
  */
 public class Leaf extends GameTree {
 
     /**
-     * 対応する盤面の横幅です。
+     * 対応する盤面の横幅です.
      */
     private static final int BOARD_WIDTH = 8;
 
     /**
-     * 対応する盤面の縦幅です。
+     * 対応する盤面の縦幅です.
      */
     private static final int BOARD_HEIGHT = 8;
 
     /**
-     * 序盤を表す値です。
+     * 序盤を表す値です.
      */
     private static final int OP_GAME = 0;
 
     /**
-     * 中盤を表す値です。
+     * 中盤を表す値です.
      */
     private static final int MIDDLE_GAME = 1;
 
     /**
-     * 終盤１を表す値です。
-     * 早い段階でどちらかのプレイヤーが隅を二か所とった場合です。
+     * 終盤１を表す値です.
+     * 早い段階でどちらかのプレイヤーが隅を二か所とった場合です.
      */
     private static final int END_GAME_1 = 2;
 
     /**
-     * 終盤２を表す値です。
+     * 終盤２を表す値です.
      */
     private static final int END_GAME_2 = 3;
 
 
     /**
-     * 黒から見た序盤用の評価値テーブルです。
+     * 黒から見た序盤用の評価値テーブルです.
      */
     private static final int[][] OP_GAME_TABLE = {
         {30, -12, 0, -1, -1, 0, -12, 30},
@@ -57,7 +57,7 @@ public class Leaf extends GameTree {
     };
 
     /**
-     * 黒から見た中盤用の評価値テーブルです。
+     * 黒から見た中盤用の評価値テーブルです.
      */
     private static final int[][] MIDDLE_GAME_TABLE = {
         {30, -12, 0, -1, -1, 0, -12, 30},
@@ -72,7 +72,7 @@ public class Leaf extends GameTree {
 
 
     /**
-     * 黒から見た終盤用の評価値テーブルです。
+     * 黒から見た終盤用の評価値テーブルです.
      */
     private static final int[][] END_GAME_TABLE = {
         {30, -12, 0, -1, -1, 0, -12, 30},
@@ -87,8 +87,8 @@ public class Leaf extends GameTree {
 
 
     /**
-     * ゲーム木の葉を生成します。<br>
-     * このクラスでは盤面の評価を行います。
+     * ゲーム木の葉を生成します.<br>
+     * このクラスでは盤面の評価を行います.
      * @param level 先読み予定の何手前の盤面かを表す値
      * @param board 評価対象の盤面
      * @param stone 盤面を評価する側の石
@@ -101,7 +101,7 @@ public class Leaf extends GameTree {
         // 対応するサイズの盤面かをチェック
         if((board.getWidth() != BOARD_WIDTH)
                 || (board.getHeight() != BOARD_HEIGHT)) {
-            throw new IllegalArgumentException("盤面サイズが対応していません。");
+            throw new IllegalArgumentException("盤面サイズが対応していません.");
         }
 
         this.evalValue(stone);
@@ -110,9 +110,9 @@ public class Leaf extends GameTree {
 
 
     /**
-     * 盤面の評価値を計算します。<br>
-     * 盤面上の各場所の評価値は、ゲームの進行状況に応じたテーブルから取得します。<br>
-     * 自分の石が置いてあれば加算、相手の石が置いてあれば減算し、全体の評価値を計算します。
+     * 盤面の評価値を計算します.<br>
+     * 盤面上の各場所の評価値は、ゲームの進行状況に応じたテーブルから取得します.<br>
+     * 自分の石が置いてあれば加算、相手の石が置いてあれば減算し、全体の評価値を計算します.
      * @param stone どちらの側で評価値を計算するかを表す値
      * @throws IllegalArgumentException 黒石と白石以外の石が与えらえた場合に発生
      */
@@ -121,7 +121,7 @@ public class Leaf extends GameTree {
         // 引数チェック
         if((stone != Board.BLACK_STONE)
                 && (stone != Board.WHITE_STONE)) {
-            throw new IllegalArgumentException("石は黒石か白石でなければなりません。");
+            throw new IllegalArgumentException("石は黒石か白石でなければなりません.");
         }
 
 
@@ -187,7 +187,7 @@ public class Leaf extends GameTree {
 
 
     /**
-     * 現在のゲームの進行状況を判断します。
+     * 現在のゲームの進行状況を判断します.
      * @return ゲームの進行状況
      */
     private int stateJudgment() {
@@ -216,8 +216,8 @@ public class Leaf extends GameTree {
     }
 
     /**
-     * 現在が中盤かどうかをチェックします。<br>
-     * 石が盤面の一番外側に一つでもあれば中盤と判断します。
+     * 現在が中盤かどうかをチェックします.<br>
+     * 石が盤面の一番外側に一つでもあれば中盤と判断します.
      * @return ゲームの中盤であれば<code>true</code>、それ以外は<code>false</code>
      */
     private boolean isMiddleGame() {
@@ -261,8 +261,8 @@ public class Leaf extends GameTree {
 
 
     /**
-     * 現在が終盤1の条件を満たしているかどうかをチェックします。<br>
-     * 2つ以上の隅に同じ石が置かれていることが条件です。
+     * 現在が終盤1の条件を満たしているかどうかをチェックします.<br>
+     * 2つ以上の隅に同じ石が置かれていることが条件です.
      * @return 条件を満たしいている場合は<code>true</code>、それ以外は<code>false</code>
      */
     private boolean isEndGame1() {
@@ -291,7 +291,7 @@ public class Leaf extends GameTree {
 
 
     /**
-     * 黒から見た評価値をテーブルを参照して導出します。
+     * 黒から見た評価値をテーブルを参照して導出します.
      * @param state 現在のゲームの進行状況
      * @return 評価値
      */
@@ -330,7 +330,7 @@ public class Leaf extends GameTree {
 
 
     /**
-     * 石を置ける場所の数を取得します。
+     * 石を置ける場所の数を取得します.
      * @param stone 置く石
      * @return 石を置ける場所の数
      * @throws IllegalArgumentException 引数が白石でも黒石でもない場合に発生

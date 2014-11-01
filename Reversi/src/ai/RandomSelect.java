@@ -6,31 +6,31 @@ import core.Board;
 import core.NextMove;
 
 /**
- * 置ける場所にランダムに置いていくプレイヤーです。
+ * 置ける場所にランダムに置いていくプレイヤーです.
  * @author tanabe
  *
  */
 public class RandomSelect implements GamePlayer {
 
     /**
-     * 石を置くまでの待ち時間(ms)です。
+     * 石を置くまでの待ち時間(ms)です.
      */
     private final int delayTime;
     
     /**
-     * 待ち時間のデフォルト値。
+     * 待ち時間のデフォルト値.
      */
     private static final int DEFAULT_DELAY_TIME = 500;
 
     /**
-     * プレイヤーを生成します。
-     * @param delayTime 石を置くまでの待ち時間(ms)。
+     * プレイヤーを生成します.
+     * @param delayTime 石を置くまでの待ち時間(ms).
      */
     public RandomSelect(int delayTime) {
 
         // 引数チェック
         if(delayTime < 0) {
-            throw new IllegalArgumentException("待ち時間は負の値にすることはできません。");
+            throw new IllegalArgumentException("待ち時間は負の値にすることはできません.");
         }
 
         this.delayTime = delayTime;
@@ -38,8 +38,8 @@ public class RandomSelect implements GamePlayer {
     }
 
     /**
-     * プレイヤーを生成します。
-     * 石を置くまでの待ち時間は500msです。
+     * プレイヤーを生成します.
+     * 石を置くまでの待ち時間は500msです.
      */
     public RandomSelect() {
         this(DEFAULT_DELAY_TIME);
@@ -59,10 +59,10 @@ public class RandomSelect implements GamePlayer {
         // 引数チェック
         if((stone != Board.BLACK_STONE)
                 && (stone != Board.WHITE_STONE)) {
-            throw new IllegalArgumentException("対応する石がありません。");
+            throw new IllegalArgumentException("対応する石がありません.");
         }
         if(board == null) {
-            throw new NullPointerException("ボードをnullにすることはできません。");
+            throw new NullPointerException("ボードをnullにすることはできません.");
         }
 
         // 置ける場所

@@ -6,22 +6,22 @@ import core.Board;
 import core.NextMove;
 
 /**
- * ゲーム木の内部ノードを表すクラスです。<br>
- * このクラスでは盤面の評価は行いません。
+ * ゲーム木の内部ノードを表すクラスです.<br>
+ * このクラスでは盤面の評価は行いません.
  * 自分にとって最も有利になる手を最善手として保存し、
- * その手を選んだ場合の盤面の評価値をこのノードの評価値とします。
+ * その手を選んだ場合の盤面の評価値をこのノードの評価値とします.
  * @author tanabe
  *
  */
 public class Inner extends GameTree {
 
     /**
-     * 最善手です。
+     * 最善手です.
      */
     private NextMove nextMove;
 
     /**
-     * 内部ノードを生成します。
+     * 内部ノードを生成します.
      * @param level 何手先を読むかを表す値
      * @param board 評価対象の盤面
      * @param stone 次に置く石
@@ -34,7 +34,7 @@ public class Inner extends GameTree {
 
         // 引数チェック
         if((stone != Board.BLACK_STONE) && (stone != Board.WHITE_STONE)) {
-            throw new IllegalArgumentException("黒石でも白石でもない値を指定することはできません。");
+            throw new IllegalArgumentException("黒石でも白石でもない値を指定することはできません.");
         }
 
         // 置ける場所のリスト
@@ -107,7 +107,7 @@ public class Inner extends GameTree {
 
 
     /**
-     * 最善手を取得します。
+     * 最善手を取得します.
      * @return 最善手
      */
     public NextMove getNextMove() {

@@ -8,20 +8,20 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * リバーシをウィンドウでプレイするためのクラスです。
+ * リバーシをウィンドウでプレイするためのクラスです.
  * @author tanabe
  *
  */
 public final class GuiMain {
 
     /**
-     * コンストラクタ。
-     * ユーティリティクラスのため使用付加。
+     * コンストラクタ.
+     * ユーティリティクラスのため使用付加.
      */
     private GuiMain() { }
 
     /**
-     * プログラムのエントリポイントです。
+     * プログラムのエントリポイントです.
      * @param args コマンドライン引数
      */
     public static void main(String[] args) {
@@ -38,19 +38,19 @@ public final class GuiMain {
     }
 
     /**
-     * ゲームのフレーム。
+     * ゲームのフレーム.
      * @author tanabe
      *
      */
     private static class MainFrame extends JFrame {
 
         /**
-         * シリアルバージョンです。
+         * シリアルバージョンです.
          */
         private static final long serialVersionUID = -6925755286458664752L;
         
         /**
-         * ゲームのフレームを生成します。
+         * ゲームのフレームを生成します.
          */
         public MainFrame() {
     

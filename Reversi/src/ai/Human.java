@@ -6,20 +6,20 @@ import core.Board;
 import core.NextMove;
 
 /**
- * 次の手を入力して決定するリバーシプレイヤーです。
+ * 次の手を入力して決定するリバーシプレイヤーです.
  * @author tanabe
  *
  */
 public class Human implements GamePlayer {
 
     /**
-     * 入力元です。
+     * 入力元です.
      */
     private final NextMoveSelector selector;
 
 
     /**
-     * リバーシプレイヤーを生成します。
+     * リバーシプレイヤーを生成します.
      * @param inputter 入力元
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      */
@@ -27,7 +27,7 @@ public class Human implements GamePlayer {
 
         // 引数チェック
         if(inputter == null) {
-            throw new NullPointerException("引数をnullにはできません。");
+            throw new NullPointerException("引数をnullにはできません.");
         }
 
         this.selector = inputter;

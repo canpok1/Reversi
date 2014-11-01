@@ -3,7 +3,7 @@ package output;
 import core.Board;
 
 /**
- * ゲームの情報をコンソールに出力するクラスです。
+ * ゲームの情報をコンソールに出力するクラスです.
  * 
  * @author tanabe
  *
@@ -11,7 +11,7 @@ import core.Board;
 public class ConsoleViewer implements GameViewer {
 
     /**
-     * {@inheritDoc} 出力先はコンソールです。
+     * {@inheritDoc} 出力先はコンソールです.
      * @param board {@inheritDoc}
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      */
@@ -20,7 +20,7 @@ public class ConsoleViewer implements GameViewer {
 
         // 引数チェック
         if(board == null) {
-            throw new NullPointerException("引数をnullにはできません。");
+            throw new NullPointerException("引数をnullにはできません.");
         }
 
         // 行番号を表示
@@ -75,7 +75,7 @@ public class ConsoleViewer implements GameViewer {
 
         // 引数チェック
         if(message == null) {
-            throw new NullPointerException("引数をnullにはできません。");
+            throw new NullPointerException("引数をnullにはできません.");
         }
 
         System.out.println(message);

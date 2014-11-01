@@ -8,7 +8,7 @@ import core.Board;
 import core.NextMove;
 
 /**
- * リバーシの次の手をコンソールから入力するクラスです。
+ * リバーシの次の手をコンソールから入力するクラスです.
  * @author tanabe
  *
  */
@@ -16,7 +16,7 @@ public class ConsoleSelector implements NextMoveSelector {
 
     /**
      * {@inheritDoc}
-     * 入出力エラーが発生した場合は負の座標の手を返します。
+     * 入出力エラーが発生した場合は負の座標の手を返します.
      */
     @Override
     public NextMove select(int stone, String message) {
@@ -26,7 +26,7 @@ public class ConsoleSelector implements NextMoveSelector {
                 && (stone != Board.BLACK_STONE)) {
             throw new IllegalArgumentException(
                     "白石(" + Board.WHITE_STONE + ")か"
-                    + "黒石(" + Board.BLACK_STONE + "でなければなりません。");
+                    + "黒石(" + Board.BLACK_STONE + "でなければなりません.");
         }
 
         BufferedReader reader = new BufferedReader(
@@ -98,8 +98,8 @@ public class ConsoleSelector implements NextMoveSelector {
 
 
     /**
-     * 文字列を表示します。
-     * 引数が<code>null</code>、または空文字の場合は表示しません。
+     * 文字列を表示します.
+     * 引数が<code>null</code>、または空文字の場合は表示しません.
      * @param str 表示する文字列
      */
     private void dispMessage(String str) {
@@ -121,7 +121,7 @@ public class ConsoleSelector implements NextMoveSelector {
 
         // 引数チェック
         if(message == null) {
-            throw new NullPointerException("メッセージをnullにすることはできません。");
+            throw new NullPointerException("メッセージをnullにすることはできません.");
         }
 
         this.dispMessage(message);

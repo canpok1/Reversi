@@ -7,7 +7,7 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 /**
- * {@link NextMove}のテストクラスです。
+ * {@link NextMove}のテストクラスです.
  * @author tanabe
  *
  */
@@ -15,7 +15,7 @@ public class NextMoveTest {
 
     /**
      * コンストラクタの第一引数で与えた正の値を
-     * {@link NextMove#getX()}で取得できることをテストします。
+     * {@link NextMove#getX()}で取得できることをテストします.
      */
     @Test
     public void コンストラクタで与えた正のX座標を取得できるか() {
@@ -29,7 +29,7 @@ public class NextMoveTest {
 
     /**
      * コンストラクタの第一引数で与えた負の値を
-     * {@link NextMove#getX()}で取得できることをテストします。
+     * {@link NextMove#getX()}で取得できることをテストします.
      */
     @Test
     public void コンストラクタで与えた負のX座標を取得できるか() {
@@ -43,7 +43,7 @@ public class NextMoveTest {
 
     /**
      * コンストラクタの第一引数で与えた0を
-     * {@link NextMove#getX()}で取得できることをテストします。
+     * {@link NextMove#getX()}で取得できることをテストします.
      */
     @Test
     public void コンストラクタで与えた0のX座標を取得できるか() {
@@ -57,7 +57,7 @@ public class NextMoveTest {
 
     /**
      * コンストラクタの第二引数で与えた正の値を
-     * {@link NextMove#getY()}で取得できることをテストします。
+     * {@link NextMove#getY()}で取得できることをテストします.
      */
     @Test
     public void コンストラクタで与えた正のY座標を取得できるか() {
@@ -71,7 +71,7 @@ public class NextMoveTest {
 
     /**
      * コンストラクタの第二引数で与えた負の値を
-     * {@link NextMove#getY()}で取得できることをテストします。
+     * {@link NextMove#getY()}で取得できることをテストします.
      */
     @Test
     public void コンストラクタで与えた負のY座標を取得できるか() {
@@ -85,7 +85,7 @@ public class NextMoveTest {
 
     /**
      * コンストラクタの第二引数で与えた0を
-     * {@link NextMove#getY()}で取得できることをテストします。
+     * {@link NextMove#getY()}で取得できることをテストします.
      */
     @Test
     public void コンストラクタで与えた0のY座標を取得できるか() {
@@ -99,7 +99,7 @@ public class NextMoveTest {
 
     /**
      * コンストラクタの第三引数で与えた値を
-     * {@link NextMove#getStone()}で取得できることをテストします。
+     * {@link NextMove#getStone()}で取得できることをテストします.
      */
     @Test
     public void コンストラクタで与えた石の種類を取得できるか() {
