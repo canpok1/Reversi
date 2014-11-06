@@ -42,6 +42,9 @@ task wrapper(type: Wrapper) {
 test {
     // テストが二重実行される問題の対策
     exclude '**/*$*'
+    // カバレッジレポートの出力先
+    jvmArgs "-Djmockit-coverage-outputDir=" + reporting.baseDir + "/coverage",
+            "-Djmockit-coverage-output=html-nocp,serial"
 }
 
 // Findbugsの設定
