@@ -8,6 +8,15 @@ repositories {
     mavenCentral()
 }
 
+// アプリケーション設定
+def appName = 'Reversi'
+startScripts {
+    applicationName = appName
+    mainClassName = "main.GuiMain"
+}
+distZip.baseName = appName
+jar.baseName = appName
+
 // 文字コード設定
 def defaultEncoding = 'UTF-8'
 [compileJava, compileTestJava, javadoc]*.options*.encoding = defaultEncoding
@@ -69,8 +78,5 @@ eclipse.jdt.file {
         }
     }
 }
-
-// Mainクラス設定
-mainClassName = "main.GuiMain"
 
 defaultTasks 'clean', 'javadoc', 'build', 'distZip'
