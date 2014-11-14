@@ -79,4 +79,11 @@ eclipse.jdt.file {
     }
 }
 
+// 生成するEclipseプロジェクトの文字コードを設定
+eclipseJdt << {
+    File f = file('.settings/org.eclipse.core.resources.prefs')
+    f.write('eclipse.preferences.version=1\n')
+    f.append('encoding/<project>=' + defaultEncoding)
+}
+
 defaultTasks 'clean', 'javadoc', 'build', 'distZip'
