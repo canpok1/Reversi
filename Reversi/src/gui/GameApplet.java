@@ -495,8 +495,15 @@ public class GameApplet extends PApplet
 
         this.view(message);
 
+        this.buttons[GameApplet.OK_BUTTON].setText("PASS");
         while(!this.buttons[GameApplet.OK_BUTTON].getPressed()) {
-            this.buttons[GameApplet.OK_BUTTON].setText("PASS");
+            // CHECKSTYLE:OFF
+            try {
+                Thread.sleep(100);
+            } catch(Exception e) {
+                // 待機するだけなので例外は気にしない.
+            }
+            // CHECKSTYLE:ON
         }
 
         this.buttons[GameApplet.OK_BUTTON].setPressed(false);
