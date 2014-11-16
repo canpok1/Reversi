@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import core.Board;
 import core.NextMove;
+import core.Stone;
 
 /**
  * 置ける場所にランダムに置いていくプレイヤーです.
@@ -54,11 +55,11 @@ public class RandomSelect implements GamePlayer {
      * @throws IllegalArgumentException 対応する石がない場合に発生
      */
     @Override
-    public NextMove think(int stone, Board board) {
+    public NextMove think(Stone stone, Board board) {
 
         // 引数チェック
-        if((stone != Board.BLACK_STONE)
-                && (stone != Board.WHITE_STONE)) {
+        if((stone != Stone.BLACK)
+                && (stone != Stone.WHITE)) {
             throw new IllegalArgumentException("対応する石がありません.");
         }
         if(board == null) {

@@ -39,15 +39,15 @@ public class ConsoleViewer implements GameViewer {
             for(int x = 0; x < board.getWidth(); x++) {
 
                 switch(board.getStone(x, y)) {
-                    case Board.WHITE_STONE:
+                    case WHITE:
                         System.out.print("o");
                         break;
     
-                    case Board.BLACK_STONE:
+                    case BLACK:
                         System.out.print("x");
                         break;
     
-                    case Board.NOTHING:
+                    case NOTHING:
                         System.out.print("-");
                         break;
     

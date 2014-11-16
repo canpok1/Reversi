@@ -27,7 +27,7 @@ public class GameManager implements Runnable {
     /**
      * プレイヤーが使用する石です.
      */
-    private final int[] stones;
+    private final Stone[] stones;
 
     /**
      * ゲームの盤面です.
@@ -97,9 +97,9 @@ public class GameManager implements Runnable {
         this.players[1] = p2;
 
         // 先行・後攻の色設定
-        this.stones = new int[PLAYER_COUNT];
-        this.stones[0] = Board.BLACK_STONE;
-        this.stones[1] = Board.WHITE_STONE;
+        this.stones = new Stone[PLAYER_COUNT];
+        this.stones[0] = Stone.BLACK;
+        this.stones[1] = Stone.WHITE;
 
         this.gameRecord = new ArrayList<NextMove>();
         this.board = board;
@@ -117,17 +117,17 @@ public class GameManager implements Runnable {
         for(int y = 0; y < this.board.getHeight(); y++) {
             for(int x = 0; x < this.board.getWidth(); x++) {
 
-                this.board.initStone(x, y, Board.NOTHING);
+                this.board.initStone(x, y, Stone.NOTHING);
 
             }
         }
 
         // CHECKSTYLE:OFF
         // 初期配置
-        this.board.initStone(3, 3, Board.WHITE_STONE);
-        this.board.initStone(4, 4, Board.WHITE_STONE);
-        this.board.initStone(3, 4, Board.BLACK_STONE);
-        this.board.initStone(4, 3, Board.BLACK_STONE);
+        this.board.initStone(3, 3, Stone.WHITE);
+        this.board.initStone(4, 4, Stone.WHITE);
+        this.board.initStone(3, 4, Stone.BLACK);
+        this.board.initStone(4, 3, Stone.BLACK);
         // CHECKSTYLE:ON
         
         this.currentPlayerNo = 0;
@@ -146,7 +146,7 @@ public class GameManager implements Runnable {
         this.viewer.view(this.board);
 
         // 次の手を取得
-        int stone = this.stones[this.currentPlayerNo];
+        Stone stone = this.stones[this.currentPlayerNo];
         GamePlayer player = this.players[this.currentPlayerNo];
         NextMove move = player.think(stone, this.board);
 
@@ -194,7 +194,7 @@ public class GameManager implements Runnable {
             this.gameRecord.add(move);
             this.passCount = 0;
 
-            if(this.stones[this.currentPlayerNo] == Board.WHITE_STONE) {
+            if(this.stones[this.currentPlayerNo] == Stone.WHITE) {
                 this.viewer.view("White player put " + move);
             } else {
                 this.viewer.view("Black player put " + move);
@@ -202,7 +202,7 @@ public class GameManager implements Runnable {
 
         }
 
-        if(this.board.getStoneCount(Board.NOTHING) <= 0) {
+        if(this.board.getStoneCount(Stone.NOTHING) <= 0) {
             // すべてのマスに石がある
             this.gameoverFlag = true;
         } else {
@@ -227,8 +227,8 @@ public class GameManager implements Runnable {
      */
     public void viewGameResult() {
 
-        int whiteCount = this.board.getStoneCount(Board.WHITE_STONE);
-        int blackCount = this.board.getStoneCount(Board.BLACK_STONE);
+        int whiteCount = this.board.getStoneCount(Stone.WHITE);
+        int blackCount = this.board.getStoneCount(Stone.BLACK);
 
 
         if(!this.isFinish()) {
@@ -252,7 +252,7 @@ public class GameManager implements Runnable {
      * 現在の手番プレイヤーの石を取得します.
      * @return 手番プレイヤーの石
      */
-    public int getCurrentStone() {
+    public Stone getCurrentStone() {
         return this.stones[this.currentPlayerNo];
     }
 

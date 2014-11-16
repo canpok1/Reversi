@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import core.Board;
 import core.NextMove;
+import core.Stone;
 
 /**
  * リバーシの次の手をコンソールから入力するクラスです.
@@ -19,14 +19,14 @@ public class ConsoleSelector implements NextMoveSelector {
      * 入出力エラーが発生した場合は負の座標の手を返します.
      */
     @Override
-    public NextMove select(int stone, String message) {
+    public NextMove select(Stone stone, String message) {
 
         // 引数チェック
-        if((stone != Board.WHITE_STONE)
-                && (stone != Board.BLACK_STONE)) {
+        if((stone != Stone.WHITE)
+                && (stone != Stone.BLACK)) {
             throw new IllegalArgumentException(
-                    "白石(" + Board.WHITE_STONE + ")か"
-                    + "黒石(" + Board.BLACK_STONE + "でなければなりません.");
+                    "白石(" + Stone.WHITE + ")か"
+                    + "黒石(" + Stone.BLACK + "でなければなりません.");
         }
 
         BufferedReader reader = new BufferedReader(
@@ -90,7 +90,7 @@ public class ConsoleSelector implements NextMoveSelector {
     }
 
     @Override
-    public NextMove select(int stone) {
+    public NextMove select(Stone stone) {
 
         return this.select(stone, "");
 

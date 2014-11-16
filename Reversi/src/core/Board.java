@@ -11,21 +11,6 @@ import java.util.Set;
 public class Board {
 
     /**
-     * 石が置かれていないことを表す値です.
-     */
-    public static final int NOTHING = 0;
-
-    /**
-     * 白石を表す値です.
-     */
-    public static final int WHITE_STONE = 1;
-
-    /**
-     * 黒石を表す値です.
-     */
-    public static final int BLACK_STONE = 2;
-
-    /**
      * 盤面の横のマス目の数です.
      */
     private static final int WIDTH = 8;
@@ -38,19 +23,19 @@ public class Board {
     /**
      * 石を置く場所です.
      */
-    private final int[][] stones;
+    private final Stone[][] stones;
 
     /**
      * 盤面を生成します.
      */
     public Board() {
 
-        this.stones = new int[Board.HEIGHT][Board.WIDTH];
+        this.stones = new Stone[Board.HEIGHT][Board.WIDTH];
 
         for(int y = 0; y < Board.HEIGHT; y++) {
             for(int x = 0; x < Board.WIDTH; x++) {
 
-                this.stones[y][x] = Board.NOTHING;
+                this.stones[y][x] = Stone.NOTHING;
 
             }
         }
@@ -70,7 +55,7 @@ public class Board {
             throw new IllegalArgumentException("コピー元をnullにはできません.");
         }
 
-        this.stones = new int[Board.HEIGHT][Board.WIDTH];
+        this.stones = new Stone[Board.HEIGHT][Board.WIDTH];
 
         for(int y = 0; y < Board.HEIGHT; y++) {
             for(int x = 0; x < Board.WIDTH; x++) {
@@ -88,20 +73,10 @@ public class Board {
      * @param x マス目のX座標
      * @param y マス目のY座標
      * @param stone 配置する石を表す値
-     * @throws IllegalArgumentException 配置する石の色を表す値が不正な場合に発生
      * @throws ArrayIndexOutOfBoundsException 盤面の範囲外を指定した場合に発生
      */
-    public void initStone(int x, int y, int stone) {
-
-        // 引数チェック
-        if((stone != Board.NOTHING)
-                && (stone != Board.WHITE_STONE)
-                && (stone != Board.BLACK_STONE)) {
-            throw new IllegalArgumentException("石を表す値が正しくありません.");
-        }
-
+    public void initStone(int x, int y, Stone stone) {
         this.stones[y][x] = stone;
-
     }
 
 
@@ -112,7 +87,7 @@ public class Board {
      * @return 石を表す値
      * @throws ArrayIndexOutOfBoundsException 盤面の範囲外を指定した場合に発生
      */
-    public int getStone(int x, int y) {
+    public Stone getStone(int x, int y) {
         return this.stones[y][x];
     }
 
@@ -121,16 +96,8 @@ public class Board {
      * 指定した石の数を取得します.
      * @param stone 数える石
      * @return 石の数
-     * @throws IllegalArgumentException 石を表す値が不正な場合に発生
      */
-    public int getStoneCount(int stone) {
-
-        // 引数チェック
-        if((stone != Board.WHITE_STONE)
-                && (stone != Board.BLACK_STONE)
-                && (stone != Board.NOTHING)) {
-            throw new IllegalArgumentException("石を表す値が不正です.");
-        }
+    public int getStoneCount(Stone stone) {
 
         int count = 0;
 
@@ -162,16 +129,16 @@ public class Board {
      * @throws IllegalArgumentException
      *  第三引数が{@link Board#WHITE_STONE}でも{@link Board#BLACK_STONE}でもない場合に発生
      */
-    public boolean putStone(int x, int y, int stone) {
+    public boolean putStone(int x, int y, Stone stone) {
 
         // 引数チェック
-        if((stone != Board.WHITE_STONE)
-                && (stone != Board.BLACK_STONE)) {
+        if((stone != Stone.WHITE)
+                && (stone != Stone.BLACK)) {
             throw new IllegalArgumentException("石を表す値が不正です.");
         }
 
         // 指定のマス目に石が置かれていないことをチェック
-        if(this.getStone(x, y) != Board.NOTHING) {
+        if(this.getStone(x, y) != Stone.NOTHING) {
             return false;
         }
 
@@ -233,11 +200,11 @@ public class Board {
      * @throws IllegalArgumentException
      *     第三引数が{@link Board#WHITE_STONE}でも{@link Board#BLACK_STONE}でもない場合に発生
      */
-    public boolean canPut(int x, int y, int stone) {
+    public boolean canPut(int x, int y, Stone stone) {
 
         // 引数チェック
-        if((stone != Board.WHITE_STONE)
-                && (stone != Board.BLACK_STONE)) {
+        if((stone != Stone.WHITE)
+                && (stone != Stone.BLACK)) {
             throw new IllegalArgumentException("石を表す値が不正です.");
         }
 
@@ -292,7 +259,7 @@ public class Board {
      * 中身はint[2]で、0番がX座標、1番がY座標です.
      * @throws IllegalArgumentException 石と方向を表す値が不正な場合に発生
      */
-    private Set<int[]> getReversedStones(int x, int y, int stone, int direction) {
+    private Set<int[]> getReversedStones(int x, int y, Stone stone, int direction) {
 
         // チェックしていく方向
         int[][] dir = {
@@ -307,8 +274,8 @@ public class Board {
         };
 
         // 引数チェック
-        if((stone != Board.WHITE_STONE)
-                && (stone != Board.BLACK_STONE)) {
+        if((stone != Stone.WHITE)
+                && (stone != Stone.BLACK)) {
             throw new IllegalArgumentException("石を表す値が不正です.");
         }
 
@@ -334,7 +301,7 @@ public class Board {
         // 指定の方向を走査します.
         while(this.isContain(checkX, checkY)) {
 
-            if(this.getStone(checkX, checkY) == Board.NOTHING) {
+            if(this.getStone(checkX, checkY) == Stone.NOTHING) {
 
                 // 石がないマス目なので、何もひっくり返せない
                 break;

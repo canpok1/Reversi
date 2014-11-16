@@ -1,6 +1,7 @@
 package input;
 
 import core.NextMove;
+import core.Stone;
 
 /**
  * リバーシの次の手を入力するインターフェースです.
@@ -17,14 +18,14 @@ public interface NextMoveSelector {
      * @param message 入力時に表示するメッセージ
      * @return 次の手.パスの場合は<code>null</code>
      */
-    NextMove select(int stone, String message);
+    NextMove select(Stone stone, String message);
 
     /**
      * リバーシの次の手を入力します.
      * @param stone 次に置く石
      * @return 次の手
      */
-    NextMove select(int stone);
+    NextMove select(Stone stone);
 
 
     /**

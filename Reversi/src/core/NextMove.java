@@ -21,7 +21,7 @@ public class NextMove {
     /**
      * 置く石の色です.どの値が何色を表すかは{@link Board}を参照してください.
      */
-    private final int stone;
+    private final Stone stone;
 
 
     /**
@@ -30,7 +30,7 @@ public class NextMove {
      * @param y 石を置くマス目のY座標
      * @param stone 石の色
      */
-    public NextMove(int x, int y, int stone) {
+    public NextMove(int x, int y, Stone stone) {
 
         this.x = x;
         this.y = y;
@@ -59,7 +59,7 @@ public class NextMove {
      * 石の色を取得します.
      * @return 石の色
      */
-    public int getStone() {
+    public Stone getStone() {
         return this.stone;
     }
 

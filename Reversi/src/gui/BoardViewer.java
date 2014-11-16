@@ -1,7 +1,7 @@
 package gui;
 
 import processing.core.PApplet;
-import core.Board;
+import core.Stone;
 
 /**
  * リバーシの盤面を表示するクラスです.
@@ -44,7 +44,7 @@ public class BoardViewer {
     /**
      * 石の配置情報です.
      */
-    private final int[][] stones;
+    private final Stone[][] stones;
 
     /**
      * 盤面を描画するときの基準点のX座標です.
@@ -94,11 +94,11 @@ public class BoardViewer {
         this.boardWidth = width;
         this.boardHeight = height;
 
-        this.stones = new int[height][width];
+        this.stones = new Stone[height][width];
 
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                this.stones[y][x] = Board.NOTHING;
+                this.stones[y][x] = Stone.NOTHING;
             }
         }
 
@@ -136,7 +136,7 @@ public class BoardViewer {
      * @throws IllegalArgumentException
      *             指定座標にマスがない場合に発生
      */
-    public int getStone(int cellX, int cellY) {
+    public Stone getStone(int cellX, int cellY) {
 
         // 座標が盤面上かをチェック
         if ((cellX < 0) || (cellX >= this.boardWidth) || (cellY < 0)
@@ -160,13 +160,7 @@ public class BoardViewer {
      * @throws IllegalArgumentException
      *             対応するマスや石がない場合に発生
      */
-    public void setStone(int cellX, int cellY, int stone) {
-
-        // 引数チェック
-        if ((stone != Board.NOTHING) && (stone != Board.WHITE_STONE)
-                && (stone != Board.BLACK_STONE)) {
-            throw new IllegalArgumentException("石の値が不正です.");
-        }
+    public void setStone(int cellX, int cellY, Stone stone) {
 
         // 座標が盤面上かをチェック
         if ((cellX < 0) || (cellX >= this.boardWidth) || (cellY < 0)
@@ -252,13 +246,13 @@ public class BoardViewer {
 
                 // 石を描画
                 parent.strokeWeight(BoardViewer.STONE_EDGE_WIDTH);
-                if (this.stones[indexY][indexX] == Board.BLACK_STONE) {
+                if (this.stones[indexY][indexX] == Stone.BLACK) {
 
                     parent.fill(0, 0, 0);
                     parent.ellipse(drawX, drawY, BoardViewer.CELL_SIZE_X,
                             BoardViewer.CELL_SIZE_Y);
 
-                } else if (this.stones[indexY][indexX] == Board.WHITE_STONE) {
+                } else if (this.stones[indexY][indexX] == Stone.WHITE) {
 
                     parent.fill(255, 255, 255); // CHECKSTYLE IGNORE THIS LINE
                     parent.ellipse(drawX, drawY, BoardViewer.CELL_SIZE_X,

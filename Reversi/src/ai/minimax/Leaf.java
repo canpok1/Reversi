@@ -1,6 +1,7 @@
 package ai.minimax;
 
 import core.Board;
+import core.Stone;
 
 /**
  * ゲーム木の葉を表すクラスです.
@@ -95,7 +96,7 @@ public class Leaf extends GameTree {
      * @throws IllegalArgumentException 第一引数が負の値、盤面サイズが対応していない場合、または第三引数が黒石と白石以外の場合に発生
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      */
-    public Leaf(int level, Board board, int stone) {
+    public Leaf(int level, Board board, Stone stone) {
         super(level, board);
 
         // 対応するサイズの盤面かをチェック
@@ -116,11 +117,11 @@ public class Leaf extends GameTree {
      * @param stone どちらの側で評価値を計算するかを表す値
      * @throws IllegalArgumentException 黒石と白石以外の石が与えらえた場合に発生
      */
-    public void evalValue(int stone) {
+    public void evalValue(Stone stone) {
 
         // 引数チェック
-        if((stone != Board.BLACK_STONE)
-                && (stone != Board.WHITE_STONE)) {
+        if((stone != Stone.BLACK)
+                && (stone != Stone.WHITE)) {
             throw new IllegalArgumentException("石は黒石か白石でなければなりません.");
         }
 
@@ -133,7 +134,7 @@ public class Leaf extends GameTree {
             case OP_GAME :
                 result = this.reference(OP_GAME);
     
-                if(stone == Board.BLACK_STONE) {
+                if(stone == Stone.BLACK) {
                     result += this.getPuttablePlaceCount(stone);
                 } else {
                     result -= this.getPuttablePlaceCount(stone);
@@ -144,7 +145,7 @@ public class Leaf extends GameTree {
             case MIDDLE_GAME :
                 result = this.reference(MIDDLE_GAME);
     
-                if(stone == Board.BLACK_STONE) {
+                if(stone == Stone.BLACK) {
                     result += this.getPuttablePlaceCount(stone);
                 } else {
                     result -= this.getPuttablePlaceCount(stone);
@@ -155,7 +156,7 @@ public class Leaf extends GameTree {
             case END_GAME_1 :
                 result = this.reference(END_GAME_1);
     
-                if(stone == Board.BLACK_STONE) {
+                if(stone == Stone.BLACK) {
                     result += this.getPuttablePlaceCount(stone);
                 } else {
                     result -= this.getPuttablePlaceCount(stone);
@@ -167,10 +168,10 @@ public class Leaf extends GameTree {
                 result = this.reference(END_GAME_2);
     
                 result += (
-                        this.getBoard().getStoneCount(Board.BLACK_STONE)
-                        - this.getBoard().getStoneCount(Board.WHITE_STONE));
+                        this.getBoard().getStoneCount(Stone.BLACK)
+                        - this.getBoard().getStoneCount(Stone.WHITE));
     
-                if(stone == Board.BLACK_STONE) {
+                if(stone == Stone.BLACK) {
                     result += this.getPuttablePlaceCount(stone);
                 } else {
                     result -= this.getPuttablePlaceCount(stone);
@@ -194,7 +195,7 @@ public class Leaf extends GameTree {
 
         // 現在の手数
         int moveCount = BOARD_WIDTH * BOARD_HEIGHT
-            - this.getBoard().getStoneCount(Board.NOTHING)
+            - this.getBoard().getStoneCount(Stone.NOTHING)
             - 3; // CHECKSTYLE IGNORE THIS LINE
 
         if(moveCount >= 45) {   // CHECKSTYLE IGNORE THIS LINE
@@ -228,11 +229,11 @@ public class Leaf extends GameTree {
             int y1 = 0;
             int y2 = Leaf.BOARD_HEIGHT - 1;
 
-            if(this.getBoard().getStone(x, y1) != Board.NOTHING) {
+            if(this.getBoard().getStone(x, y1) != Stone.NOTHING) {
                 return true;
             }
 
-            if(this.getBoard().getStone(x, y2) != Board.NOTHING) {
+            if(this.getBoard().getStone(x, y2) != Stone.NOTHING) {
                 return true;
             }
 
@@ -245,11 +246,11 @@ public class Leaf extends GameTree {
             int x1 = 0;
             int x2 = Leaf.BOARD_WIDTH - 1;
 
-            if(this.getBoard().getStone(x1, y) != Board.NOTHING) {
+            if(this.getBoard().getStone(x1, y) != Stone.NOTHING) {
                 return true;
             }
 
-            if(this.getBoard().getStone(x2, y) != Board.NOTHING) {
+            if(this.getBoard().getStone(x2, y) != Stone.NOTHING) {
                 return true;
             }
 
@@ -271,17 +272,17 @@ public class Leaf extends GameTree {
         int black = 0;
 
         // CHECKSTYLE:OFF
-        int[] stones = new int[4];
+        Stone[] stones = new Stone[4];
         stones[0] = this.getBoard().getStone(0, 0);
         stones[1] = this.getBoard().getStone(0, BOARD_HEIGHT - 1);
         stones[2] = this.getBoard().getStone(BOARD_WIDTH - 1, 0);
         stones[3] = this.getBoard().getStone(BOARD_WIDTH - 1, BOARD_HEIGHT - 1);
         // CHECKSTYLE:ON
 
-        for(int stone : stones) {
-            if(stone == Board.BLACK_STONE) {
+        for(Stone stone : stones) {
+            if(stone == Stone.BLACK) {
                 black++;
-            } else if(stone == Board.WHITE_STONE) {
+            } else if(stone == Stone.WHITE) {
                 white++;
             }
         }
@@ -315,9 +316,9 @@ public class Leaf extends GameTree {
         for(int y = 0; y < Leaf.BOARD_HEIGHT; y++) {
             for(int x = 0; x < Leaf.BOARD_WIDTH; x++) {
 
-                if(this.getBoard().getStone(x, y) == Board.BLACK_STONE) {
+                if(this.getBoard().getStone(x, y) == Stone.BLACK) {
                     result += table[y][x];
-                } else if(this.getBoard().getStone(x, y) == Board.WHITE_STONE) {
+                } else if(this.getBoard().getStone(x, y) == Stone.WHITE) {
                     result -= table[y][x];
                 }
 
@@ -335,7 +336,7 @@ public class Leaf extends GameTree {
      * @return 石を置ける場所の数
      * @throws IllegalArgumentException 引数が白石でも黒石でもない場合に発生
      */
-    private int getPuttablePlaceCount(int stone) {
+    private int getPuttablePlaceCount(Stone stone) {
 
         int result = 0;
 

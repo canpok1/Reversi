@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import core.Board;
 import core.NextMove;
+import core.Stone;
 
 /**
  * 最も多く石をひっくり返せる場所に置く戦略をとるプレイヤーです.
@@ -53,7 +54,7 @@ public class MaximumReverse implements GamePlayer {
      * @throws IllegalArgumentException 対応する石がない場合に発生
      */
     @Override
-    public NextMove think(int stone, Board board) {
+    public NextMove think(Stone stone, Board board) {
 
 
         // 置ける場所
@@ -130,11 +131,11 @@ public class MaximumReverse implements GamePlayer {
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      * @throws IllegalArgumentException 対応する石がない場合に発生
      */
-    private int getEvaluationValue(int stone, Board board) {
+    private int getEvaluationValue(Stone stone, Board board) {
 
         // 引数チェック
-        if((stone != Board.BLACK_STONE)
-                && (stone != Board.WHITE_STONE)) {
+        if((stone != Stone.BLACK)
+                && (stone != Stone.WHITE)) {
             throw new IllegalArgumentException("対応する石がありません.");
         }
         if(board == null) {

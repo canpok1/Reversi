@@ -2,6 +2,7 @@ package ai;
 
 import core.Board;
 import core.NextMove;
+import core.Stone;
 
 /**
  * ゲームを行うプレイヤーを表すインターフェースです.
@@ -18,6 +19,6 @@ public interface GamePlayer {
      * @param board リバーシの盤面
      * @return 次の手
      */
-    NextMove think(int stone, Board board);
+    NextMove think(Stone stone, Board board);
 
 }

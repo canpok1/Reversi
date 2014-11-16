@@ -8,6 +8,7 @@ import ai.PlayerFactory;
 import core.Board;
 import core.GameManager;
 import core.NextMove;
+import core.Stone;
 
 /**
  * ゲームを描画するクラスです.
@@ -80,7 +81,7 @@ public class GameApplet extends PApplet
     /**
      * 次に置く石です.
      */
-    private int nextStone;
+    private Stone nextStone;
 
     /**
      * 次の手です.
@@ -118,7 +119,7 @@ public class GameApplet extends PApplet
 
         this.changeState(GameApplet.MODE_SELECT);
 
-        this.nextStone = -1;
+        this.nextStone = Stone.NOTHING;
         this.nextMove = null;
 
         this.manager = null;
@@ -248,8 +249,8 @@ public class GameApplet extends PApplet
                 if((cellX >= 0) && (cellY >= 0)) {
     
                     // マウスカーソルが盤面上
-                    if((this.nextStone == Board.BLACK_STONE)
-                            || (this.nextStone == Board.WHITE_STONE)) {
+                    if((this.nextStone == Stone.BLACK)
+                            || (this.nextStone == Stone.WHITE)) {
                         this.nextMove = new NextMove(cellX, cellY, this.nextStone);
                     }
     
@@ -359,7 +360,7 @@ public class GameApplet extends PApplet
      * @return 次の手
      */
     @Override
-    public NextMove select(int stone, String message) {
+    public NextMove select(Stone stone, String message) {
 
         this.view(message);
 
@@ -373,7 +374,7 @@ public class GameApplet extends PApplet
      * @return 次の手
      */
     @Override
-    public NextMove select(int stone) {
+    public NextMove select(Stone stone) {
 
         this.nextStone = stone;
 
@@ -397,7 +398,7 @@ public class GameApplet extends PApplet
 
         NextMove result = this.nextMove;
 
-        this.nextStone = -1;
+        this.nextStone = Stone.NOTHING;
         this.nextMove = null;
 
         return result;

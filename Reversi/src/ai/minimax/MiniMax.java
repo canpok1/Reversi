@@ -2,6 +2,7 @@ package ai.minimax;
 
 import core.Board;
 import core.NextMove;
+import core.Stone;
 
 /**
  * ミニマックス法を利用して、次に手を取得するクラスです.
@@ -24,7 +25,7 @@ public final class MiniMax {
      * @throws IllegalArgumentException 第一引数が負の値、または第三引数が黒石でも白石でもない場合に発生
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      */
-    public static NextMove getNextMove(int level, Board board, int stone) {
+    public static NextMove getNextMove(int level, Board board, Stone stone) {
 
         Inner root = new Inner(level, board, stone);
 

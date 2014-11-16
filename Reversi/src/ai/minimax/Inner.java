@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import core.Board;
 import core.NextMove;
+import core.Stone;
 
 /**
  * ゲーム木の内部ノードを表すクラスです.<br>
@@ -28,12 +29,12 @@ public class Inner extends GameTree {
      * @throws IllegalArgumentException 第一引数が負の場合、または第三引数が黒石でも白石でもない場合に発生
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      */
-    public Inner(int level, Board board, int stone) {
+    public Inner(int level, Board board, Stone stone) {
 
         super(level, board);
 
         // 引数チェック
-        if((stone != Board.BLACK_STONE) && (stone != Board.WHITE_STONE)) {
+        if((stone != Stone.BLACK) && (stone != Stone.WHITE)) {
             throw new IllegalArgumentException("黒石でも白石でもない値を指定することはできません.");
         }
 
@@ -50,12 +51,12 @@ public class Inner extends GameTree {
                 if(nextBoard.putStone(x, y, stone)) {
 
                     // 次に置く石
-                    int nextStone;
+                    Stone nextStone;
 
-                    if(stone == Board.BLACK_STONE) {
-                        nextStone = Board.WHITE_STONE;
+                    if(stone == Stone.BLACK) {
+                        nextStone = Stone.WHITE;
                     } else {
-                        nextStone = Board.BLACK_STONE;
+                        nextStone = Stone.BLACK;
                     }
 
                     // 一手先のレベル
@@ -87,11 +88,11 @@ public class Inner extends GameTree {
 
             for(int index = 1; index < moves.size(); index++) {
 
-                if(stone == Board.BLACK_STONE) {
+                if(stone == Stone.BLACK) {
                     if(nodes.get(bestIndex).getValue() < nodes.get(index).getValue()) {
                         bestIndex = index;
                     }
-                } else if(stone == Board.WHITE_STONE) {
+                } else if(stone == Stone.WHITE) {
                     if(nodes.get(bestIndex).getValue() > nodes.get(index).getValue()) {
                         bestIndex = index;
                     }

@@ -20,7 +20,7 @@ public class NextMoveTest {
     @Test
     public void コンストラクタで与えた正のX座標を取得できるか() {
 
-        NextMove nextMove = new NextMove(1, 0, 0);
+        NextMove nextMove = new NextMove(1, 0, Stone.NOTHING);
 
         Assert.assertEquals(1, nextMove.getX());
 
@@ -34,7 +34,7 @@ public class NextMoveTest {
     @Test
     public void コンストラクタで与えた負のX座標を取得できるか() {
 
-        NextMove nextMove = new NextMove(-1, 0, 0);
+        NextMove nextMove = new NextMove(-1, 0, Stone.NOTHING);
 
         Assert.assertEquals(-1, nextMove.getX());
 
@@ -48,7 +48,7 @@ public class NextMoveTest {
     @Test
     public void コンストラクタで与えた0のX座標を取得できるか() {
 
-        NextMove nextMove = new NextMove(0, 0, 0);
+        NextMove nextMove = new NextMove(0, 0, Stone.NOTHING);
 
         Assert.assertEquals(0, nextMove.getX());
 
@@ -62,7 +62,7 @@ public class NextMoveTest {
     @Test
     public void コンストラクタで与えた正のY座標を取得できるか() {
 
-        NextMove nextMove = new NextMove(0, 1, 0);
+        NextMove nextMove = new NextMove(0, 1, Stone.NOTHING);
 
         Assert.assertEquals(1, nextMove.getY());
 
@@ -76,7 +76,7 @@ public class NextMoveTest {
     @Test
     public void コンストラクタで与えた負のY座標を取得できるか() {
 
-        NextMove nextMove = new NextMove(0, -1, 0);
+        NextMove nextMove = new NextMove(0, -1, Stone.NOTHING);
 
         Assert.assertEquals(-1, nextMove.getY());
 
@@ -90,7 +90,7 @@ public class NextMoveTest {
     @Test
     public void コンストラクタで与えた0のY座標を取得できるか() {
 
-        NextMove nextMove = new NextMove(0, 0, 0);
+        NextMove nextMove = new NextMove(0, 0, Stone.NOTHING);
 
         Assert.assertEquals(0, nextMove.getY());
 
@@ -104,15 +104,15 @@ public class NextMoveTest {
     @Test
     public void コンストラクタで与えた石の種類を取得できるか() {
 
-        NextMove nextMove = new NextMove(0, 0, 0);
+        NextMove nextMove = new NextMove(0, 0, Stone.NOTHING);
 
-        Assert.assertEquals(0, nextMove.getStone());
+        Assert.assertEquals(Stone.NOTHING, nextMove.getStone());
 
     }
 
     @Test
     public void コンストラクタで与えた座標を表示できること() {
-        NextMove nextMove = new NextMove(0, 0, 0);
+        NextMove nextMove = new NextMove(0, 0, Stone.NOTHING);
         String expected = "(0, 0)";
         Assert.assertEquals(expected, nextMove.toString());
     }

@@ -1,9 +1,9 @@
 package ai;
 
 import input.NextMoveSelector;
-
 import core.Board;
 import core.NextMove;
+import core.Stone;
 
 /**
  * 次の手を入力して決定するリバーシプレイヤーです.
@@ -37,7 +37,7 @@ public class Human implements GamePlayer {
 
 
     @Override
-    public NextMove think(int stone, Board board) {
+    public NextMove think(Stone stone, Board board) {
 
         ////////////////////////////////////
         // 置く場所があるかをチェック
@@ -61,7 +61,7 @@ public class Human implements GamePlayer {
 
         if(passFlag) {
             // パスする
-            if(stone == Board.WHITE_STONE) {
+            if(stone == Stone.WHITE) {
                 this.selector.dispImportantMessage("You cannot put the white stone.");
             } else {
                 this.selector.dispImportantMessage("You cannot put the black stone.");
@@ -80,9 +80,9 @@ public class Human implements GamePlayer {
 
         String message = "";
 
-        if(stone == Board.BLACK_STONE) {
+        if(stone == Stone.BLACK) {
             message = "Please input the place which put the black stone.";
-        } else if(stone == Board.WHITE_STONE) {
+        } else if(stone == Stone.WHITE) {
             message = "Please input the place which put the white stone.";
         }
 
@@ -94,10 +94,10 @@ public class Human implements GamePlayer {
                 if(board.putStone(move.getX(), move.getY(), stone)) {
                     isCompleted = true;
                 } else {
-                    if(stone == Board.BLACK_STONE) {
+                    if(stone == Stone.BLACK) {
                         message = "Cannot put the stone."
                                 + " Please input the place which put the black stone.";
-                    } else if(stone == Board.WHITE_STONE) {
+                    } else if(stone == Stone.WHITE) {
                         message = "Cannot put the stone."
                                 + " Please input the place which put the white stone.";
                     }
@@ -107,10 +107,10 @@ public class Human implements GamePlayer {
                     // ゲーム中断
                     isCompleted = true;
                 } else {
-                    if(stone == Board.BLACK_STONE) {
+                    if(stone == Stone.BLACK) {
                         message = "A cell does not exist."
                                 + " Please input the place which put the black stone.";
-                    } else if(stone == Board.WHITE_STONE) {
+                    } else if(stone == Stone.WHITE) {
                         message = "A cell does not exist."
                                 + " Please input the place which put the white stone.";
                     } else {
