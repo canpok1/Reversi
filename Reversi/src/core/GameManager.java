@@ -1,5 +1,7 @@
 package core;
 
+import static core.GameConstants.RuleConstants.PLAYER_COUNT;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,11 +15,6 @@ import ai.GamePlayer;
  *
  */
 public class GameManager implements Runnable {
-
-    /**
-     * ゲームを行うのに必要なプレイヤーの人数です.
-     */
-    private static final int PLAYER_COUNT = 2;
 
     /**
      * ゲームを行うプレイヤーです.
@@ -176,7 +173,7 @@ public class GameManager implements Runnable {
 
             this.passCount++;
 
-            if(this.passCount >= GameManager.PLAYER_COUNT) {
+            if(this.passCount >= PLAYER_COUNT) {
                 // 全プレイヤーがパスをした
                 this.gameoverFlag = true;
             }
@@ -207,7 +204,7 @@ public class GameManager implements Runnable {
             this.gameoverFlag = true;
         } else {
             // プレイヤー切り替え
-            this.currentPlayerNo = (this.currentPlayerNo + 1) % GameManager.PLAYER_COUNT;
+            this.currentPlayerNo = (this.currentPlayerNo + 1) % PLAYER_COUNT;
         }
 
     }

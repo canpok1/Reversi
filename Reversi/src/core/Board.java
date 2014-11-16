@@ -1,5 +1,8 @@
 package core;
 
+import static core.GameConstants.RuleConstants.BOARD_HEIGHT;
+import static core.GameConstants.RuleConstants.BOARD_WIDTH;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,16 +14,6 @@ import java.util.Set;
 public class Board {
 
     /**
-     * 盤面の横のマス目の数です.
-     */
-    private static final int WIDTH = 8;
-
-    /**
-     * 盤面の縦のマス目の数です.
-     */
-    private static final int HEIGHT = 8;
-
-    /**
      * 石を置く場所です.
      */
     private final Stone[][] stones;
@@ -30,10 +23,10 @@ public class Board {
      */
     public Board() {
 
-        this.stones = new Stone[Board.HEIGHT][Board.WIDTH];
+        this.stones = new Stone[BOARD_HEIGHT][BOARD_WIDTH];
 
-        for(int y = 0; y < Board.HEIGHT; y++) {
-            for(int x = 0; x < Board.WIDTH; x++) {
+        for(int y = 0; y < BOARD_HEIGHT; y++) {
+            for(int x = 0; x < BOARD_WIDTH; x++) {
 
                 this.stones[y][x] = Stone.NOTHING;
 
@@ -55,10 +48,10 @@ public class Board {
             throw new IllegalArgumentException("コピー元をnullにはできません.");
         }
 
-        this.stones = new Stone[Board.HEIGHT][Board.WIDTH];
+        this.stones = new Stone[BOARD_HEIGHT][BOARD_WIDTH];
 
-        for(int y = 0; y < Board.HEIGHT; y++) {
-            for(int x = 0; x < Board.WIDTH; x++) {
+        for(int y = 0; y < BOARD_HEIGHT; y++) {
+            for(int x = 0; x < BOARD_WIDTH; x++) {
 
                 this.stones[y][x] = board.getStone(x, y);
 
@@ -101,8 +94,8 @@ public class Board {
 
         int count = 0;
 
-        for(int y = 0; y < Board.HEIGHT; y++) {
-            for(int x = 0; x < Board.WIDTH; x++) {
+        for(int y = 0; y < BOARD_HEIGHT; y++) {
+            for(int x = 0; x < BOARD_WIDTH; x++) {
 
                 if(this.stones[y][x] == stone) {
                     count++;
@@ -400,7 +393,7 @@ public class Board {
      * @return 横に並ぶマス目の数
      */
     public int getWidth() {
-        return Board.WIDTH;
+        return BOARD_WIDTH;
     }
 
 
@@ -409,6 +402,6 @@ public class Board {
      * @return 縦に並ぶマス目の数
      */
     public int getHeight() {
-        return Board.HEIGHT;
+        return BOARD_HEIGHT;
     }
 }

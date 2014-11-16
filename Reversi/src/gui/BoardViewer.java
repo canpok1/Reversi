@@ -1,5 +1,9 @@
 package gui;
 
+import static gui.GuiConstants.LayoutConstraints.CELL_SIZE_X;
+import static gui.GuiConstants.LayoutConstraints.CELL_SIZE_Y;
+import static gui.GuiConstants.LayoutConstraints.CELL_EDGE_WIDTH;
+import static gui.GuiConstants.LayoutConstraints.STONE_EDGE_WIDTH;
 import processing.core.PApplet;
 import core.Stone;
 
@@ -10,26 +14,6 @@ import core.Stone;
  * 
  */
 public class BoardViewer {
-
-    /**
-     * マス目一つ当たりの表示サイズ(横幅)です.
-     */
-    public static final int CELL_SIZE_X = 50;
-
-    /**
-     * マス目一つ当たりの表示サイズ(縦幅)です.
-     */
-    public static final int CELL_SIZE_Y = 50;
-
-    /**
-     * 各マス目の縁の幅です.
-     */
-    public static final int CELL_EDGE_WIDTH = 1;
-
-    /**
-     * 石の縁の幅です.
-     */
-    private static final int STONE_EDGE_WIDTH = 1;
 
     /**
      * 横に並ぶマス目の数です.
@@ -230,8 +214,8 @@ public class BoardViewer {
             for (int indexX = 0; indexX < this.boardWidth; indexX++) {
 
                 // 描画の基準点（各マス目の左上）
-                int drawX = this.x + indexX * BoardViewer.CELL_SIZE_X;
-                int drawY = this.y + indexY * BoardViewer.CELL_SIZE_Y;
+                int drawX = this.x + indexX * CELL_SIZE_X;
+                int drawY = this.y + indexY * CELL_SIZE_Y;
 
                 if (this.cursorVisible && (this.cursorX == indexX)
                         && (this.cursorY == indexY)) {
@@ -240,23 +224,21 @@ public class BoardViewer {
                     parent.fill(0, 255, 0); // CHECKSTYLE IGNORE THIS LINE
                 }
 
-                parent.strokeWeight(BoardViewer.CELL_EDGE_WIDTH);
-                parent.rect(drawX, drawY, BoardViewer.CELL_SIZE_X,
-                        BoardViewer.CELL_SIZE_Y);
+                parent.strokeWeight(CELL_EDGE_WIDTH);
+                parent.rect(drawX, drawY, CELL_SIZE_X,
+                        CELL_SIZE_Y);
 
                 // 石を描画
-                parent.strokeWeight(BoardViewer.STONE_EDGE_WIDTH);
+                parent.strokeWeight(STONE_EDGE_WIDTH);
                 if (this.stones[indexY][indexX] == Stone.BLACK) {
 
                     parent.fill(0, 0, 0);
-                    parent.ellipse(drawX, drawY, BoardViewer.CELL_SIZE_X,
-                            BoardViewer.CELL_SIZE_Y);
+                    parent.ellipse(drawX, drawY, CELL_SIZE_X, CELL_SIZE_Y);
 
                 } else if (this.stones[indexY][indexX] == Stone.WHITE) {
 
                     parent.fill(255, 255, 255); // CHECKSTYLE IGNORE THIS LINE
-                    parent.ellipse(drawX, drawY, BoardViewer.CELL_SIZE_X,
-                            BoardViewer.CELL_SIZE_Y);
+                    parent.ellipse(drawX, drawY, CELL_SIZE_X, CELL_SIZE_Y);
 
                 }
 
@@ -271,7 +253,7 @@ public class BoardViewer {
      * @return 描画時の横幅
      */
     public int getDrawWidth() {
-        return BoardViewer.CELL_SIZE_X * this.boardWidth;
+        return CELL_SIZE_X * this.boardWidth;
     }
 
     /**
@@ -280,7 +262,7 @@ public class BoardViewer {
      * @return 描画時の縦幅
      */
     public int getDrawHeight() {
-        return BoardViewer.CELL_SIZE_Y * this.boardHeight;
+        return CELL_SIZE_Y * this.boardHeight;
     }
 
     /**
@@ -296,8 +278,8 @@ public class BoardViewer {
         // 横方向のチェック
         for (int cellX = 0; cellX < this.boardWidth; cellX++) {
 
-            int left = this.x + cellX * BoardViewer.CELL_SIZE_X;
-            int right = left + BoardViewer.CELL_SIZE_X - 1;
+            int left = this.x + cellX * CELL_SIZE_X;
+            int right = left + CELL_SIZE_X - 1;
 
             if ((drawX >= left) && (drawX < right)) {
                 return cellX;
@@ -322,8 +304,8 @@ public class BoardViewer {
         // 横方向のチェック
         for (int cellY = 0; cellY < this.boardWidth; cellY++) {
 
-            int left = this.x + cellY * BoardViewer.CELL_SIZE_X;
-            int right = left + BoardViewer.CELL_SIZE_X - 1;
+            int left = this.x + cellY * CELL_SIZE_X;
+            int right = left + CELL_SIZE_X - 1;
 
             if ((drawY >= left) && (drawY < right)) {
                 return cellY;

@@ -1,5 +1,13 @@
 package gui;
 
+import static gui.GuiConstants.INPUT_INTERVAL_MS;
+import static gui.GuiConstants.LayoutConstraints.GAME_AREA_HEIGHT;
+import static gui.GuiConstants.LayoutConstraints.GAME_AREA_WIDTH;
+import static gui.GuiConstants.LayoutConstraints.BACKGROUND_COLOR_R;
+import static gui.GuiConstants.LayoutConstraints.BACKGROUND_COLOR_G;
+import static gui.GuiConstants.LayoutConstraints.BACKGROUND_COLOR_B;
+import static core.GameConstants.RuleConstants.BOARD_HEIGHT;
+import static core.GameConstants.RuleConstants.BOARD_WIDTH;
 import input.NextMoveSelector;
 import output.GameViewer;
 import processing.core.PApplet;
@@ -24,30 +32,29 @@ public class GameApplet extends PApplet
     private static final long serialVersionUID = 6930504402437251055L;
 
     /**
-     * 「ゲームモード選択」を表す定数です.
+     * ゲームの場面の種類を表す列挙です.
+     * @author tanabe
+     *
      */
-    private static final int MODE_SELECT = 0;
-
-    /**
-     * 「ゲーム中」を表す定数です.
-     */
-    private static final int GAME_PLAYING = 1;
-
-    /**
-     * 「ゲーム結果」を表す定数です.
-     */
-    private static final int GAME_RESULT = 2;
+    private enum SCENE {
+        /** ゲームモード選択. */
+        MODE_SELECT,
+        /** ゲーム中. */
+        GAME_PLAYING,
+        /** ゲーム結果. */
+        GAME_RESULT,
+    }
 
     /**
      * 描画領域の横幅です.
      */
-    public static final int WIDTH = 600;
+    public static final int WIDTH = GAME_AREA_WIDTH;
 
     /**
      * 描画領域の縦幅です.
      */
-    public static final int HEIGHT = 500;
-
+    public static final int HEIGHT = GAME_AREA_HEIGHT;
+    
     /**
      * 「PASS」や「NEW GAME」など、決定に使用するボタンの番号です.
      */
@@ -61,7 +68,7 @@ public class GameApplet extends PApplet
     /**
      * 現在の状態を表す変数です.
      */
-    private int state;
+    private SCENE scene;
 
     /**
      * リバーシの盤面ビューワーです.
@@ -108,16 +115,14 @@ public class GameApplet extends PApplet
             this.buttons[no].setPressed(false);
         }
 
-        // CHECKSTYLE:OFF
-        this.board = new BoardViewer(8, 8);
-        this.board.setPosition(10, 10);
-        this.message = new MessageBox(580, 70);
-        // CHECKSTYLE:ON
+        this.board = new BoardViewer(BOARD_WIDTH, BOARD_HEIGHT);
+        this.board.setPosition(10, 10);         // CHECKSTYLE IGNORE THIS LINE
+        this.message = new MessageBox(580, 70); // CHECKSTYLE IGNORE THIS LINE
 
-        this.size(GameApplet.WIDTH, GameApplet.HEIGHT);
+        this.size(GAME_AREA_WIDTH, GAME_AREA_HEIGHT);
         this.smooth();
 
-        this.changeState(GameApplet.MODE_SELECT);
+        this.changeScene(SCENE.MODE_SELECT);
 
         this.nextStone = Stone.NOTHING;
         this.nextMove = null;
@@ -131,11 +136,13 @@ public class GameApplet extends PApplet
     @Override
     public void draw() {
 
-        this.background(255, 255, 255);    // CHECKSTYLE IGNORE THIS LINE
+        this.background(BACKGROUND_COLOR_R,
+                        BACKGROUND_COLOR_G,
+                        BACKGROUND_COLOR_B);
+        
+        switch(this.scene) {
 
-        switch(this.state) {
-
-            case GameApplet.MODE_SELECT :
+            case MODE_SELECT :
     
                 for(Button button : this.buttons) {
                     button.draw(this);
@@ -145,7 +152,7 @@ public class GameApplet extends PApplet
     
                 break;
     
-            case GameApplet.GAME_PLAYING :
+            case GAME_PLAYING :
     
                 this.buttons[GameApplet.OK_BUTTON].draw(this);
                 this.buttons[GameApplet.CANCEL_BUTTON].draw(this);
@@ -153,12 +160,12 @@ public class GameApplet extends PApplet
                 this.message.draw(this);
     
                 if(this.manager.isFinish()) {
-                    this.changeState(GameApplet.GAME_RESULT);
+                    this.changeScene(SCENE.GAME_RESULT);
                 }
     
                 break;
     
-            case GameApplet.GAME_RESULT :
+            case GAME_RESULT :
     
                 this.manager.viewGameResult();
     
@@ -178,9 +185,9 @@ public class GameApplet extends PApplet
     @Override
     public void mousePressed() {
 
-        switch(this.state) {
+        switch(this.scene) {
 
-            case GameApplet.MODE_SELECT :
+            case MODE_SELECT :
     
                 int no1 = -1;
                 int no2 = -1;
@@ -235,13 +242,13 @@ public class GameApplet extends PApplet
     
                     this.manager.gameStart();
     
-                    this.changeState(GameApplet.GAME_PLAYING);
+                    this.changeScene(SCENE.GAME_PLAYING);
     
                 }
     
                 break;
     
-            case GameApplet.GAME_PLAYING :
+            case GAME_PLAYING :
     
                 int cellX = this.board.getCellX(this.mouseX);
                 int cellY = this.board.getCellY(this.mouseY);
@@ -272,11 +279,11 @@ public class GameApplet extends PApplet
     
                 break;
     
-            case GameApplet.GAME_RESULT :
+            case GAME_RESULT :
     
                 if(this.buttons[0].isContain(this.mouseX, this.mouseY)) {
                     // 「NEW GAME」を選択
-                    this.changeState(GameApplet.MODE_SELECT);
+                    this.changeScene(SCENE.MODE_SELECT);
                 }
     
                 break;
@@ -291,7 +298,7 @@ public class GameApplet extends PApplet
     @Override
     public void mouseMoved() {
 
-        if(this.state == GameApplet.GAME_PLAYING) {
+        if(this.scene == SCENE.GAME_PLAYING) {
             int cellX = this.board.getCellX(this.mouseX);
             int cellY = this.board.getCellY(this.mouseY);
 
@@ -385,13 +392,11 @@ public class GameApplet extends PApplet
                 break;
             }
             
-            // CHECKSTYLE:OFF
             try {
-                Thread.sleep(100);
-            } catch(Exception e) {
+                Thread.sleep(INPUT_INTERVAL_MS);
+            } catch(Exception e) {  // CHECKSTYLE IGNORE THIS LINE
                 // 待機するだけなので例外は気にしない.
             }
-            // CHECKSTYLE:ON
         }
 
         this.buttons[GameApplet.CANCEL_BUTTON].setText("");
@@ -407,28 +412,27 @@ public class GameApplet extends PApplet
 
 
     /**
-     * ゲームの状態を変更し、ボタンを初期化します.
-     * @param state 新しい状態
-     * @throws IllegalArgumentException 定義されていない状態を指定した場合に発生
+     * ゲームの場面を変更し、ボタンを初期化します.
+     * @param scene 新しい場面
      */
-    private void changeState(int state) {
+    private void changeScene(SCENE scene) {
 
-        this.buttonSetup(state);
-        this.state = state;
+        this.buttonSetup(scene);
+        this.scene = scene;
 
     }
 
 
     /**
      * ゲームの状態に合わせてボタンを初期化します.
-     * @param state ゲームの状態
+     * @param scene ゲームの状態
      * @throws IllegalArgumentException 定義されていない状態を指定した場合に発生
      */
-    private void buttonSetup(int state) {
+    private void buttonSetup(SCENE scene) {
 
-        switch(state) {
+        switch(scene) {
 
-            case GameApplet.MODE_SELECT :
+            case MODE_SELECT :
 
                 this.buttons[0].setPosition(100, 100);  // CHECKSTYLE IGNORE THIS LINE
 
@@ -455,7 +459,7 @@ public class GameApplet extends PApplet
                 
                 break;
     
-            case GameApplet.GAME_PLAYING :
+            case GAME_PLAYING :
     
                 this.message.setPosition(10, 420);    // CHECKSTYLE IGNORE THIS LINE
     
@@ -473,7 +477,7 @@ public class GameApplet extends PApplet
     
                 break;
     
-            case GameApplet.GAME_RESULT :
+            case GAME_RESULT :
     
                 this.buttons[OK_BUTTON].setText("NEW GAME");
                 this.buttons[OK_BUTTON]
@@ -497,13 +501,11 @@ public class GameApplet extends PApplet
 
         this.buttons[GameApplet.OK_BUTTON].setText("PASS");
         while(!this.buttons[GameApplet.OK_BUTTON].getPressed()) {
-            // CHECKSTYLE:OFF
             try {
-                Thread.sleep(100);
-            } catch(Exception e) {
+                Thread.sleep(INPUT_INTERVAL_MS);
+            } catch(Exception e) {  // CHECKSTYLE IGNORE THIS LINE
                 // 待機するだけなので例外は気にしない.
             }
-            // CHECKSTYLE:ON
         }
 
         this.buttons[GameApplet.OK_BUTTON].setPressed(false);
