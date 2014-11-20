@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Reversi: ai.TableReference クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Reversi
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="pages.html"><span>諸情報</span></a></li>
+      <li><a href="namespaces.html"><span>パッケージ</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>ページ</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceai.html">ai</a></li><li class="navelem"><a class="el" href="classai_1_1_table_reference.html">TableReference</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classai_1_1_table_reference-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">ai.TableReference クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>石を置くことで全体の評価値が最も高くなる場所に石を置く戦略をとるプレイヤーです.  
+ <a href="classai_1_1_table_reference.html#details">[詳解]</a></p>
+<div class="dynheader">
+ai.TableReference の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classai_1_1_table_reference__inherit__graph.png" border="0" usemap="#ai_8_table_reference_inherit__map" alt="Inheritance graph"/></div>
+<map name="ai_8_table_reference_inherit__map" id="ai_8_table_reference_inherit__map">
+<area shape="rect" id="node2" href="interfaceai_1_1_game_player.html" title="ゲームを行うプレイヤーを表すインターフェースです. " alt="" coords="14,5,122,32"/></map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+ai.TableReference 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classai_1_1_table_reference__coll__graph.png" border="0" usemap="#ai_8_table_reference_coll__map" alt="Collaboration graph"/></div>
+<map name="ai_8_table_reference_coll__map" id="ai_8_table_reference_coll__map">
+<area shape="rect" id="node2" href="interfaceai_1_1_game_player.html" title="ゲームを行うプレイヤーを表すインターフェースです. " alt="" coords="14,5,122,32"/></map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:af7469b24d9d5ad8a73b202cba6591283"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_table_reference.html#af7469b24d9d5ad8a73b202cba6591283">TableReference</a> (int delayTime)</td></tr>
+<tr class="memdesc:af7469b24d9d5ad8a73b202cba6591283"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤーを生成します.  <a href="#af7469b24d9d5ad8a73b202cba6591283">[詳解]</a><br /></td></tr>
+<tr class="separator:af7469b24d9d5ad8a73b202cba6591283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea5b052aff4ad0513973106b1d43387b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_table_reference.html#aea5b052aff4ad0513973106b1d43387b">TableReference</a> ()</td></tr>
+<tr class="memdesc:aea5b052aff4ad0513973106b1d43387b"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤーを生成します.  <a href="#aea5b052aff4ad0513973106b1d43387b">[詳解]</a><br /></td></tr>
+<tr class="separator:aea5b052aff4ad0513973106b1d43387b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3d537a4350455a82c8ab1508b7ac41d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcore_1_1_next_move.html">NextMove</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_table_reference.html#ac3d537a4350455a82c8ab1508b7ac41d">think</a> (<a class="el" href="enumcore_1_1_stone.html">Stone</a> stone, <a class="el" href="classcore_1_1_board.html">Board</a> board)</td></tr>
+<tr class="memdesc:ac3d537a4350455a82c8ab1508b7ac41d"><td class="mdescLeft">&#160;</td><td class="mdescRight">次の手を取得します.パスの場合は<code>null</code>を返します. 座標が負の場合はゲームを中断します. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stone</td><td>置く石 </td></tr>
+    <tr><td class="paramname">board</td><td>リバーシの盤面 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>次の手</dd></dl>
+<br />
+ 石を置ける場所の中で、評価値が最も高くなる場所に石を置きます.  <a href="#ac3d537a4350455a82c8ab1508b7ac41d">[詳解]</a><br /></td></tr>
+<tr class="separator:ac3d537a4350455a82c8ab1508b7ac41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>石を置くことで全体の評価値が最も高くなる場所に石を置く戦略をとるプレイヤーです. </p>
+<p><br />
+ 盤面の場所ごとの評価値をテーブルで管理しています.<br />
+ 自分の石が置いてある場合は評価値を加算、相手の石が置いていある場合は評価値を減算し、 全体の評価値を計算します. </p><dl class="section author"><dt>著者</dt><dd>tanabe </dd></dl>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a class="anchor" id="af7469b24d9d5ad8a73b202cba6591283"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ai.TableReference.TableReference </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>delayTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>プレイヤーを生成します. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">delayTime</td><td>石を置くまでの待ち時間(ms). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aea5b052aff4ad0513973106b1d43387b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ai.TableReference.TableReference </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>プレイヤーを生成します. </p>
+<p>石を置くまでの待ち時間は500msです. </p>
+
+</div>
+</div>
+<h2 class="groupheader">メソッド詳解</h2>
+<a class="anchor" id="ac3d537a4350455a82c8ab1508b7ac41d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcore_1_1_next_move.html">NextMove</a> ai.TableReference.think </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcore_1_1_stone.html">Stone</a>&#160;</td>
+          <td class="paramname"><em>stone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcore_1_1_board.html">Board</a>&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>次の手を取得します.パスの場合は<code>null</code>を返します. 座標が負の場合はゲームを中断します. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stone</td><td>置く石 </td></tr>
+    <tr><td class="paramname">board</td><td>リバーシの盤面 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>次の手</dd></dl>
+<br />
+ 石を置ける場所の中で、評価値が最も高くなる場所に石を置きます. </p>
+<dl class="section return"><dt>戻り値</dt><dd>次の手を取得します.パスの場合は<code>null</code>を返します. 座標が負の場合はゲームを中断します.  </dd></dl>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>引数が<code>null</code>の場合に発生 </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>対応する石がない場合、または盤面サイズが対応していない場合に発生 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="interfaceai_1_1_game_player.html#af512dbc8d4fb066a48e6a805ff0190a7">ai.GamePlayer</a>を実装しています。</p>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classai_1_1_table_reference_ac3d537a4350455a82c8ab1508b7ac41d_cgraph.png" border="0" usemap="#classai_1_1_table_reference_ac3d537a4350455a82c8ab1508b7ac41d_cgraph" alt=""/></div>
+<map name="classai_1_1_table_reference_ac3d537a4350455a82c8ab1508b7ac41d_cgraph" id="classai_1_1_table_reference_ac3d537a4350455a82c8ab1508b7ac41d_cgraph">
+<area shape="rect" id="node2" href="classai_1_1minimax_1_1_mini_max.html#a1fd3d3db7369f6f11bedf66186ed8176" title="最善手を取得します. " alt="" coords="211,5,428,32"/><area shape="rect" id="node3" href="classai_1_1minimax_1_1_inner.html#a8df19405f2f625dea9bf4c22605d85e4" title="最善手を取得します. " alt="" coords="476,5,672,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Reversi/src/ai/TableReference.java</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年11月20日(木) 21時16分53秒作成 - Reversi / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

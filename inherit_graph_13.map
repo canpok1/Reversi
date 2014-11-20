@@ -1,0 +1,7 @@
+<map id="クラス階層図" name="クラス階層図">
+<area shape="rect" id="node2" href="$classgui_1_1_game_applet.html" title="ゲームを描画するクラスです. " alt="" coords="229,56,344,83"/>
+<area shape="rect" id="node3" href="$interfaceoutput_1_1_game_viewer.html" title="ゲームの情報を表示するためのインターフェースです. " alt="" coords="17,5,153,32"/>
+<area shape="rect" id="node4" href="$classoutput_1_1_console_viewer.html" title="ゲームの情報をコンソールに出力するクラスです. " alt="" coords="213,5,361,32"/>
+<area shape="rect" id="node5" href="$interfaceinput_1_1_next_move_selector.html" title="リバーシの次の手を入力するインターフェースです. " alt="" coords="5,107,164,133"/>
+<area shape="rect" id="node6" href="$classinput_1_1_console_selector.html" title="リバーシの次の手をコンソールから入力するクラスです. " alt="" coords="212,107,361,133"/>
+</map>

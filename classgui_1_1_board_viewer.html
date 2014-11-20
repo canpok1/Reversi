@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Reversi: gui.BoardViewer クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Reversi
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="pages.html"><span>諸情報</span></a></li>
+      <li><a href="namespaces.html"><span>パッケージ</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>ページ</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="classgui_1_1_board_viewer.html">BoardViewer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classgui_1_1_board_viewer-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">gui.BoardViewer クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>リバーシの盤面を表示するクラスです.  
+ <a href="classgui_1_1_board_viewer.html#details">[詳解]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a43dd78b7fac79cad98784e0d3ad3a467"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_board_viewer.html#a43dd78b7fac79cad98784e0d3ad3a467">BoardViewer</a> (int width, int height)</td></tr>
+<tr class="memdesc:a43dd78b7fac79cad98784e0d3ad3a467"><td class="mdescLeft">&#160;</td><td class="mdescRight">ボードビューワーを生成します.  <a href="#a43dd78b7fac79cad98784e0d3ad3a467">[詳解]</a><br /></td></tr>
+<tr class="separator:a43dd78b7fac79cad98784e0d3ad3a467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addc9f2baca5e655d618b745b0eba309f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_board_viewer.html#addc9f2baca5e655d618b745b0eba309f">setPosition</a> (int x, int y)</td></tr>
+<tr class="memdesc:addc9f2baca5e655d618b745b0eba309f"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画するときの基準点を変更します.  <a href="#addc9f2baca5e655d618b745b0eba309f">[詳解]</a><br /></td></tr>
+<tr class="separator:addc9f2baca5e655d618b745b0eba309f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad12005174ffe8d59a790c567929f08ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcore_1_1_stone.html">Stone</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_board_viewer.html#ad12005174ffe8d59a790c567929f08ac">getStone</a> (int cellX, int cellY)</td></tr>
+<tr class="memdesc:ad12005174ffe8d59a790c567929f08ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定座標のマス目にある石を取得します.  <a href="#ad12005174ffe8d59a790c567929f08ac">[詳解]</a><br /></td></tr>
+<tr class="separator:ad12005174ffe8d59a790c567929f08ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88e703d635627490620d7ba88daae83f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_board_viewer.html#a88e703d635627490620d7ba88daae83f">setStone</a> (int cellX, int cellY, <a class="el" href="enumcore_1_1_stone.html">Stone</a> stone)</td></tr>
+<tr class="memdesc:a88e703d635627490620d7ba88daae83f"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定の描画座標のマス目に石を配置します.  <a href="#a88e703d635627490620d7ba88daae83f">[詳解]</a><br /></td></tr>
+<tr class="separator:a88e703d635627490620d7ba88daae83f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75f072bc9396e669538c2bde67792960"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_board_viewer.html#a75f072bc9396e669538c2bde67792960">setCursorPosition</a> (int cellX, int cellY)</td></tr>
+<tr class="memdesc:a75f072bc9396e669538c2bde67792960"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定の描画座標のマス目にカーソルを合わせます.  <a href="#a75f072bc9396e669538c2bde67792960">[詳解]</a><br /></td></tr>
+<tr class="separator:a75f072bc9396e669538c2bde67792960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d9f947bd5fa5778d14a1b36328a76cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_board_viewer.html#a6d9f947bd5fa5778d14a1b36328a76cf">setCursorVisible</a> (boolean visible)</td></tr>
+<tr class="memdesc:a6d9f947bd5fa5778d14a1b36328a76cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">カーソルの表示状態を設定します.  <a href="#a6d9f947bd5fa5778d14a1b36328a76cf">[詳解]</a><br /></td></tr>
+<tr class="separator:a6d9f947bd5fa5778d14a1b36328a76cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8765d0ddda77c563c1400c963d004717"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_board_viewer.html#a8765d0ddda77c563c1400c963d004717">draw</a> (PApplet parent)</td></tr>
+<tr class="memdesc:a8765d0ddda77c563c1400c963d004717"><td class="mdescLeft">&#160;</td><td class="mdescRight">盤面を描画します.  <a href="#a8765d0ddda77c563c1400c963d004717">[詳解]</a><br /></td></tr>
+<tr class="separator:a8765d0ddda77c563c1400c963d004717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a68bd0f27474befcf6d8d68b7f3c2ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_board_viewer.html#a3a68bd0f27474befcf6d8d68b7f3c2ef">getDrawWidth</a> ()</td></tr>
+<tr class="memdesc:a3a68bd0f27474befcf6d8d68b7f3c2ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画時の横幅を取得します.  <a href="#a3a68bd0f27474befcf6d8d68b7f3c2ef">[詳解]</a><br /></td></tr>
+<tr class="separator:a3a68bd0f27474befcf6d8d68b7f3c2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc5f319a39573d01b5b62811824a7857"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_board_viewer.html#abc5f319a39573d01b5b62811824a7857">getDrawHeight</a> ()</td></tr>
+<tr class="memdesc:abc5f319a39573d01b5b62811824a7857"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画時の縦幅を取得します.  <a href="#abc5f319a39573d01b5b62811824a7857">[詳解]</a><br /></td></tr>
+<tr class="separator:abc5f319a39573d01b5b62811824a7857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840c98dd304fca0d46830ce59a17c761"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_board_viewer.html#a840c98dd304fca0d46830ce59a17c761">getCellX</a> (int drawX)</td></tr>
+<tr class="memdesc:a840c98dd304fca0d46830ce59a17c761"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画座標に対応するマス目座標を取得します.  <a href="#a840c98dd304fca0d46830ce59a17c761">[詳解]</a><br /></td></tr>
+<tr class="separator:a840c98dd304fca0d46830ce59a17c761"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5463bdc595e72ea9acd5b311a2d9ef1d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_board_viewer.html#a5463bdc595e72ea9acd5b311a2d9ef1d">getCellY</a> (int drawY)</td></tr>
+<tr class="memdesc:a5463bdc595e72ea9acd5b311a2d9ef1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画座標に対応するマス目座標を取得します.  <a href="#a5463bdc595e72ea9acd5b311a2d9ef1d">[詳解]</a><br /></td></tr>
+<tr class="separator:a5463bdc595e72ea9acd5b311a2d9ef1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9bf0e7aaedab5e84e6373d3b541754"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_board_viewer.html#afd9bf0e7aaedab5e84e6373d3b541754">getBoardWidth</a> ()</td></tr>
+<tr class="memdesc:afd9bf0e7aaedab5e84e6373d3b541754"><td class="mdescLeft">&#160;</td><td class="mdescRight">ビューワーの盤面サイズ(横幅)を取得します.  <a href="#afd9bf0e7aaedab5e84e6373d3b541754">[詳解]</a><br /></td></tr>
+<tr class="separator:afd9bf0e7aaedab5e84e6373d3b541754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae70dff7ac7c41368157488de7f2b2f9b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_board_viewer.html#ae70dff7ac7c41368157488de7f2b2f9b">getBoardHeight</a> ()</td></tr>
+<tr class="memdesc:ae70dff7ac7c41368157488de7f2b2f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ビューワーの盤面サイズ(縦幅)を取得します.  <a href="#ae70dff7ac7c41368157488de7f2b2f9b">[詳解]</a><br /></td></tr>
+<tr class="separator:ae70dff7ac7c41368157488de7f2b2f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>リバーシの盤面を表示するクラスです. </p>
+<dl class="section author"><dt>著者</dt><dd>tanabe </dd></dl>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a class="anchor" id="a43dd78b7fac79cad98784e0d3ad3a467"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.BoardViewer.BoardViewer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ボードビューワーを生成します. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>横に並ぶマス目の数 </td></tr>
+    <tr><td class="paramname">height</td><td>縦に並ぶマス目の数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>引数が0以下の値の場合に発生 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">メソッド詳解</h2>
+<a class="anchor" id="a8765d0ddda77c563c1400c963d004717"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui.BoardViewer.draw </td>
+          <td>(</td>
+          <td class="paramtype">PApplet&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>盤面を描画します. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>描画先のアプレット </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>引数が<code>null</code>の場合に発生 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae70dff7ac7c41368157488de7f2b2f9b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int gui.BoardViewer.getBoardHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ビューワーの盤面サイズ(縦幅)を取得します. </p>
+<dl class="section return"><dt>戻り値</dt><dd>盤面サイズ(縦幅) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afd9bf0e7aaedab5e84e6373d3b541754"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int gui.BoardViewer.getBoardWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ビューワーの盤面サイズ(横幅)を取得します. </p>
+<dl class="section return"><dt>戻り値</dt><dd>盤面サイズ(横幅) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a840c98dd304fca0d46830ce59a17c761"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int gui.BoardViewer.getCellX </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>drawX</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>描画座標に対応するマス目座標を取得します. </p>
+<p><br />
+ 対応するマス目がない場合は負の値を返します.</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">drawX</td><td>描画用のX座標 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>マス目のX座標 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5463bdc595e72ea9acd5b311a2d9ef1d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int gui.BoardViewer.getCellY </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>drawY</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>描画座標に対応するマス目座標を取得します. </p>
+<p><br />
+ 対応するマス目がない場合は負の値を返します.</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">drawY</td><td>描画用のY座標 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>マス目のY座標 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abc5f319a39573d01b5b62811824a7857"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int gui.BoardViewer.getDrawHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>描画時の縦幅を取得します. </p>
+<dl class="section return"><dt>戻り値</dt><dd>描画時の縦幅 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3a68bd0f27474befcf6d8d68b7f3c2ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int gui.BoardViewer.getDrawWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>描画時の横幅を取得します. </p>
+<dl class="section return"><dt>戻り値</dt><dd>描画時の横幅 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad12005174ffe8d59a790c567929f08ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcore_1_1_stone.html">Stone</a> gui.BoardViewer.getStone </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cellX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cellY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定座標のマス目にある石を取得します. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cellX</td><td>X座標 </td></tr>
+    <tr><td class="paramname">cellY</td><td>Y座標 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>マス目にある石. </dd></dl>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>指定座標にマスがない場合に発生 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a75f072bc9396e669538c2bde67792960"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui.BoardViewer.setCursorPosition </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cellX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cellY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定の描画座標のマス目にカーソルを合わせます. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cellX</td><td>マス目のX座標 </td></tr>
+    <tr><td class="paramname">cellY</td><td>マス目のY座標 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>存在しないマス目の座標を与えた時に発生 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6d9f947bd5fa5778d14a1b36328a76cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui.BoardViewer.setCursorVisible </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>visible</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>カーソルの表示状態を設定します. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visible</td><td>カーソルを表示するなら<code>true</code>、表示しないなら<code>false</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="addc9f2baca5e655d618b745b0eba309f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui.BoardViewer.setPosition </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>描画するときの基準点を変更します. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>基準点のX座標 </td></tr>
+    <tr><td class="paramname">y</td><td>基準点のY座標 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a88e703d635627490620d7ba88daae83f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui.BoardViewer.setStone </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cellX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cellY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcore_1_1_stone.html">Stone</a>&#160;</td>
+          <td class="paramname"><em>stone</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定の描画座標のマス目に石を配置します. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cellX</td><td>X座標 </td></tr>
+    <tr><td class="paramname">cellY</td><td>Y座標 </td></tr>
+    <tr><td class="paramname">stone</td><td>配置する石 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>対応するマスや石がない場合に発生 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Reversi/src/gui/BoardViewer.java</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年11月20日(木) 21時16分53秒作成 - Reversi / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

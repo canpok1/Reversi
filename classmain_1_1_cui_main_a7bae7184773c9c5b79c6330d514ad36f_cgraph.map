@@ -1,0 +1,7 @@
+<map id="main.CuiMain.main" name="main.CuiMain.main">
+<area shape="rect" id="node2" href="$classcore_1_1_game_manager.html#a7e69f891a746acda214bde53cb557359" title="ゲームを開始します. " alt="" coords="187,5,387,32"/>
+<area shape="rect" id="node3" href="$classcore_1_1_game_manager.html#a70945897aadd6e77cb312fd65608adbc" title="ゲームが終了かをチェックします. " alt="" coords="435,60,620,87"/>
+<area shape="rect" id="node4" href="$classcore_1_1_game_manager.html#aaa4917c8066f4f28f7c48b637cb91bbe" title="ゲームの結果を表示します. " alt="" coords="187,107,386,149"/>
+<area shape="rect" id="node6" href="$interfaceoutput_1_1_game_viewer.html#a5afb0e46559a9db1dc31c6baa4366d01" title="盤面情報を表示します. " alt="" coords="445,169,609,196"/>
+<area shape="rect" id="node5" href="$classcore_1_1_board.html#a0bae8e758bd28bfa5e00c7ff8aadb948" title="指定した石の数を取得します. " alt="" coords="440,115,615,141"/>
+</map>

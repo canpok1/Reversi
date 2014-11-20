@@ -1,0 +1,6 @@
+<map id="core.Board.equals" name="core.Board.equals">
+<area shape="rect" id="node2" href="$classcore_1_1_board.html#a6476efa8b7546013bab20a1dae20178b" title="盤面を生成します. " alt="" coords="191,5,313,32"/>
+<area shape="rect" id="node3" href="$classcore_1_1_board.html#a0fda4acd63e7841d4d4e2ef073ff72ea" title="横に並ぶマス目の数を取得します. " alt="" coords="181,56,323,83"/>
+<area shape="rect" id="node4" href="$classcore_1_1_board.html#a6590fa5e7197a61777cc0ab917819c47" title="縦に並ぶマス目の数を取得します. " alt="" coords="180,107,324,133"/>
+<area shape="rect" id="node5" href="$classcore_1_1_board.html#a5f29d5952abec6ed276aa1772b924119" title="指定のマス目の石を取得します. " alt="" coords="181,157,323,184"/>
+</map>

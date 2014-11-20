@@ -1,0 +1,4 @@
+<map id="ai.MaximumReverse.think" name="ai.MaximumReverse.think">
+<area shape="rect" id="node2" href="$classcore_1_1_board.html#a6590fa5e7197a61777cc0ab917819c47" title="縦に並ぶマス目の数を取得します. " alt="" coords="224,5,368,32"/>
+<area shape="rect" id="node3" href="$classcore_1_1_board.html#a0fda4acd63e7841d4d4e2ef073ff72ea" title="横に並ぶマス目の数を取得します. " alt="" coords="225,56,367,83"/>
+</map>

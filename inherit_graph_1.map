@@ -1,0 +1,5 @@
+<map id="クラス階層図" name="クラス階層図">
+<area shape="rect" id="node1" href="$classai_1_1minimax_1_1_game_tree.html" title="ゲームツリーを表す抽象クラスです. " alt="" coords="5,31,155,57"/>
+<area shape="rect" id="node2" href="$classai_1_1minimax_1_1_inner.html" title="ゲーム木の内部ノードを表すクラスです. " alt="" coords="203,5,320,32"/>
+<area shape="rect" id="node3" href="$classai_1_1minimax_1_1_leaf.html" title="ゲーム木の葉を表すクラスです. " alt="" coords="205,56,318,83"/>
+</map>

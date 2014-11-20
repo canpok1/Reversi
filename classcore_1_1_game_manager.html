@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Reversi: core.GameManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Reversi
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="pages.html"><span>諸情報</span></a></li>
+      <li><a href="namespaces.html"><span>パッケージ</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>ページ</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacecore.html">core</a></li><li class="navelem"><a class="el" href="classcore_1_1_game_manager.html">GameManager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classcore_1_1_game_manager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">core.GameManager クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>ゲームを管理するクラスです.  
+ <a href="classcore_1_1_game_manager.html#details">[詳解]</a></p>
+<div class="dynheader">
+core.GameManager の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classcore_1_1_game_manager__inherit__graph.png" border="0" usemap="#core_8_game_manager_inherit__map" alt="Inheritance graph"/></div>
+<map name="core_8_game_manager_inherit__map" id="core_8_game_manager_inherit__map">
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+core.GameManager 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classcore_1_1_game_manager__coll__graph.png" border="0" usemap="#core_8_game_manager_coll__map" alt="Collaboration graph"/></div>
+<map name="core_8_game_manager_coll__map" id="core_8_game_manager_coll__map">
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:acc3bba0292bd0b8cb2eab3ead468e30a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_game_manager.html#acc3bba0292bd0b8cb2eab3ead468e30a">GameManager</a> (<a class="el" href="interfaceai_1_1_game_player.html">GamePlayer</a> p1, <a class="el" href="interfaceai_1_1_game_player.html">GamePlayer</a> p2, <a class="el" href="classcore_1_1_board.html">Board</a> board, <a class="el" href="interfaceoutput_1_1_game_viewer.html">GameViewer</a> viewer)</td></tr>
+<tr class="memdesc:acc3bba0292bd0b8cb2eab3ead468e30a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームを生成します.  <a href="#acc3bba0292bd0b8cb2eab3ead468e30a">[詳解]</a><br /></td></tr>
+<tr class="separator:acc3bba0292bd0b8cb2eab3ead468e30a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70945897aadd6e77cb312fd65608adbc"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_game_manager.html#a70945897aadd6e77cb312fd65608adbc">isFinish</a> ()</td></tr>
+<tr class="memdesc:a70945897aadd6e77cb312fd65608adbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームが終了かをチェックします.  <a href="#a70945897aadd6e77cb312fd65608adbc">[詳解]</a><br /></td></tr>
+<tr class="separator:a70945897aadd6e77cb312fd65608adbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa4917c8066f4f28f7c48b637cb91bbe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa4917c8066f4f28f7c48b637cb91bbe"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_game_manager.html#aaa4917c8066f4f28f7c48b637cb91bbe">viewGameResult</a> ()</td></tr>
+<tr class="memdesc:aaa4917c8066f4f28f7c48b637cb91bbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームの結果を表示します. <br /></td></tr>
+<tr class="separator:aaa4917c8066f4f28f7c48b637cb91bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c558bba691ffa46d8b532dcb21ec52a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcore_1_1_stone.html">Stone</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_game_manager.html#a3c558bba691ffa46d8b532dcb21ec52a">getCurrentStone</a> ()</td></tr>
+<tr class="memdesc:a3c558bba691ffa46d8b532dcb21ec52a"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在の手番プレイヤーの石を取得します.  <a href="#a3c558bba691ffa46d8b532dcb21ec52a">[詳解]</a><br /></td></tr>
+<tr class="separator:a3c558bba691ffa46d8b532dcb21ec52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e69f891a746acda214bde53cb557359"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e69f891a746acda214bde53cb557359"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_game_manager.html#a7e69f891a746acda214bde53cb557359">gameStart</a> ()</td></tr>
+<tr class="memdesc:a7e69f891a746acda214bde53cb557359"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームを開始します. <br /></td></tr>
+<tr class="separator:a7e69f891a746acda214bde53cb557359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed438a258a1d8cb07f401cd7359fc8d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_game_manager.html#aed438a258a1d8cb07f401cd7359fc8d7">run</a> ()</td></tr>
+<tr class="memdesc:aed438a258a1d8cb07f401cd7359fc8d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームループの処理です.  <a href="#aed438a258a1d8cb07f401cd7359fc8d7">[詳解]</a><br /></td></tr>
+<tr class="separator:aed438a258a1d8cb07f401cd7359fc8d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>ゲームを管理するクラスです. </p>
+<p><br />
+ 盤面の初期化やゲームの勝敗判定等を行います. </p><dl class="section author"><dt>著者</dt><dd>tanabe </dd></dl>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a class="anchor" id="acc3bba0292bd0b8cb2eab3ead468e30a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">core.GameManager.GameManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interfaceai_1_1_game_player.html">GamePlayer</a>&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfaceai_1_1_game_player.html">GamePlayer</a>&#160;</td>
+          <td class="paramname"><em>p2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcore_1_1_board.html">Board</a>&#160;</td>
+          <td class="paramname"><em>board</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfaceoutput_1_1_game_viewer.html">GameViewer</a>&#160;</td>
+          <td class="paramname"><em>viewer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ゲームを生成します. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p1</td><td>プレイヤー1(先行) </td></tr>
+    <tr><td class="paramname">p2</td><td>プレイヤー2(後攻) </td></tr>
+    <tr><td class="paramname">board</td><td>ゲームの盤面 </td></tr>
+    <tr><td class="paramname">viewer</td><td>ゲーム情報を表示するビューワー </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">メソッド詳解</h2>
+<a class="anchor" id="a3c558bba691ffa46d8b532dcb21ec52a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcore_1_1_stone.html">Stone</a> core.GameManager.getCurrentStone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>現在の手番プレイヤーの石を取得します. </p>
+<dl class="section return"><dt>戻り値</dt><dd>手番プレイヤーの石 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a70945897aadd6e77cb312fd65608adbc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean core.GameManager.isFinish </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ゲームが終了かをチェックします. </p>
+<dl class="section return"><dt>戻り値</dt><dd>ゲーム終了ならば<code>true</code>、それ以外は<code>false</code> </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcore_1_1_game_manager_a70945897aadd6e77cb312fd65608adbc_icgraph.png" border="0" usemap="#classcore_1_1_game_manager_a70945897aadd6e77cb312fd65608adbc_icgraph" alt=""/></div>
+<map name="classcore_1_1_game_manager_a70945897aadd6e77cb312fd65608adbc_icgraph" id="classcore_1_1_game_manager_a70945897aadd6e77cb312fd65608adbc_icgraph">
+<area shape="rect" id="node2" href="classcore_1_1_game_manager.html#aaa4917c8066f4f28f7c48b637cb91bbe" title="ゲームの結果を表示します. " alt="" coords="239,5,437,47"/><area shape="rect" id="node3" href="classmain_1_1_cui_main.html#a7bae7184773c9c5b79c6330d514ad36f" title="プログラムのエントリポイントです. " alt="" coords="485,42,619,69"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aed438a258a1d8cb07f401cd7359fc8d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void core.GameManager.run </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ゲームループの処理です. </p>
+<p>この処理は独立したスレッドで行われます. </p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Reversi/src/core/GameManager.java</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年11月20日(木) 21時16分53秒作成 - Reversi / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,4 @@
+<map id="ai.minimax.GameTree.getBoard" name="ai.minimax.GameTree.getBoard">
+<area shape="rect" id="node2" href="$classai_1_1minimax_1_1_leaf.html#a57f4eb6c796f3b19f99695b17e433dab" title="盤面の評価値を計算します. " alt="" coords="259,5,431,32"/>
+<area shape="rect" id="node3" href="$classai_1_1minimax_1_1_leaf.html#a241444a2891b8deec6cf9695a7fdfd06" title="ゲーム木の葉を生成します. " alt="" coords="479,5,620,32"/>
+</map>

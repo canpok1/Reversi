@@ -1,0 +1,9 @@
+<map id="ai.minimax.Inner.Inner" name="ai.minimax.Inner.Inner">
+<area shape="rect" id="node2" href="$classcore_1_1_board.html#a6590fa5e7197a61777cc0ab917819c47" title="縦に並ぶマス目の数を取得します. " alt="" coords="233,5,377,32"/>
+<area shape="rect" id="node3" href="$classcore_1_1_board.html#a0fda4acd63e7841d4d4e2ef073ff72ea" title="横に並ぶマス目の数を取得します. " alt="" coords="234,56,375,83"/>
+<area shape="rect" id="node4" href="$classcore_1_1_board.html#af815ed7c13e5392033960c5cefe23d48" title="指定のマス目に石を配置し、石をひっくり返します. " alt="" coords="234,107,375,133"/>
+<area shape="rect" id="node7" href="$classai_1_1minimax_1_1_game_tree.html#a7070a4b279f53b33566e7a19a5fdc9ea" title="評価値を設定します. " alt="" coords="203,157,407,184"/>
+<area shape="rect" id="node8" href="$classai_1_1minimax_1_1_game_tree.html#a1fdedaf3c218b941b16f34721397aaa1" title="先読みの結果、最も良い評価値です. " alt="" coords="203,208,407,235"/>
+<area shape="rect" id="node5" href="$classcore_1_1_board.html#a5f29d5952abec6ed276aa1772b924119" title="指定のマス目の石を取得します. " alt="" coords="455,81,596,108"/>
+<area shape="rect" id="node6" href="$classcore_1_1_board.html#a45207e1cedbcd38173b0327fe0e6eb71" title="指定のマス目に石を配置します. " alt="" coords="455,132,595,159"/>
+</map>

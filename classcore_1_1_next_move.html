@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Reversi: core.NextMove クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Reversi
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="pages.html"><span>諸情報</span></a></li>
+      <li><a href="namespaces.html"><span>パッケージ</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>ページ</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacecore.html">core</a></li><li class="navelem"><a class="el" href="classcore_1_1_next_move.html">NextMove</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classcore_1_1_next_move-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">core.NextMove クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>リバーシの手を表すクラスです.  
+ <a href="classcore_1_1_next_move.html#details">[詳解]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a1c35cc0ee86ddb69b48aa0ebf8fa6552"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_next_move.html#a1c35cc0ee86ddb69b48aa0ebf8fa6552">NextMove</a> (int x, int y, <a class="el" href="enumcore_1_1_stone.html">Stone</a> stone)</td></tr>
+<tr class="memdesc:a1c35cc0ee86ddb69b48aa0ebf8fa6552"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤーが指す手を作成します.  <a href="#a1c35cc0ee86ddb69b48aa0ebf8fa6552">[詳解]</a><br /></td></tr>
+<tr class="separator:a1c35cc0ee86ddb69b48aa0ebf8fa6552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53f9e4b482ddc61db5fcfc22bef6f65c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_next_move.html#a53f9e4b482ddc61db5fcfc22bef6f65c">getX</a> ()</td></tr>
+<tr class="memdesc:a53f9e4b482ddc61db5fcfc22bef6f65c"><td class="mdescLeft">&#160;</td><td class="mdescRight">石を置くマス目のX座標を取得します.  <a href="#a53f9e4b482ddc61db5fcfc22bef6f65c">[詳解]</a><br /></td></tr>
+<tr class="separator:a53f9e4b482ddc61db5fcfc22bef6f65c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b484586ab15f59a736d51160f9f3de4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_next_move.html#a5b484586ab15f59a736d51160f9f3de4">getY</a> ()</td></tr>
+<tr class="memdesc:a5b484586ab15f59a736d51160f9f3de4"><td class="mdescLeft">&#160;</td><td class="mdescRight">石を置くマス目のY座標を取得します.  <a href="#a5b484586ab15f59a736d51160f9f3de4">[詳解]</a><br /></td></tr>
+<tr class="separator:a5b484586ab15f59a736d51160f9f3de4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af20a5ecd070479d197def8f5a7a34d5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcore_1_1_stone.html">Stone</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_next_move.html#af20a5ecd070479d197def8f5a7a34d5f">getStone</a> ()</td></tr>
+<tr class="memdesc:af20a5ecd070479d197def8f5a7a34d5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">石の色を取得します.  <a href="#af20a5ecd070479d197def8f5a7a34d5f">[詳解]</a><br /></td></tr>
+<tr class="separator:af20a5ecd070479d197def8f5a7a34d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae538ee264c62eeeab28c6667401a1c24"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae538ee264c62eeeab28c6667401a1c24"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> ()</td></tr>
+<tr class="separator:ae538ee264c62eeeab28c6667401a1c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>リバーシの手を表すクラスです. </p>
+<p><br />
+ プレイヤーが何色の石をどこに置くかを表します. </p><dl class="section author"><dt>著者</dt><dd>tanabe </dd></dl>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a class="anchor" id="a1c35cc0ee86ddb69b48aa0ebf8fa6552"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">core.NextMove.NextMove </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcore_1_1_stone.html">Stone</a>&#160;</td>
+          <td class="paramname"><em>stone</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>プレイヤーが指す手を作成します. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>石を置くマス目のX座標 </td></tr>
+    <tr><td class="paramname">y</td><td>石を置くマス目のY座標 </td></tr>
+    <tr><td class="paramname">stone</td><td>石の色 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">メソッド詳解</h2>
+<a class="anchor" id="af20a5ecd070479d197def8f5a7a34d5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcore_1_1_stone.html">Stone</a> core.NextMove.getStone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>石の色を取得します. </p>
+<dl class="section return"><dt>戻り値</dt><dd>石の色 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a53f9e4b482ddc61db5fcfc22bef6f65c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int core.NextMove.getX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>石を置くマス目のX座標を取得します. </p>
+<dl class="section return"><dt>戻り値</dt><dd>X座標 </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcore_1_1_next_move_a53f9e4b482ddc61db5fcfc22bef6f65c_icgraph.png" border="0" usemap="#classcore_1_1_next_move_a53f9e4b482ddc61db5fcfc22bef6f65c_icgraph" alt=""/></div>
+<map name="classcore_1_1_next_move_a53f9e4b482ddc61db5fcfc22bef6f65c_icgraph" id="classcore_1_1_next_move_a53f9e4b482ddc61db5fcfc22bef6f65c_icgraph">
+<area shape="rect" id="node2" href="classai_1_1_human.html#ac9719618ddd4140cb6dc7cc26352fefe" title="次の手を取得します. " alt="" coords="191,5,300,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5b484586ab15f59a736d51160f9f3de4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int core.NextMove.getY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>石を置くマス目のY座標を取得します. </p>
+<dl class="section return"><dt>戻り値</dt><dd>Y座標 </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcore_1_1_next_move_a5b484586ab15f59a736d51160f9f3de4_icgraph.png" border="0" usemap="#classcore_1_1_next_move_a5b484586ab15f59a736d51160f9f3de4_icgraph" alt=""/></div>
+<map name="classcore_1_1_next_move_a5b484586ab15f59a736d51160f9f3de4_icgraph" id="classcore_1_1_next_move_a5b484586ab15f59a736d51160f9f3de4_icgraph">
+<area shape="rect" id="node2" href="classai_1_1_human.html#ac9719618ddd4140cb6dc7cc26352fefe" title="次の手を取得します. " alt="" coords="192,5,301,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Reversi/src/core/NextMove.java</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年11月20日(木) 21時16分53秒作成 - Reversi / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

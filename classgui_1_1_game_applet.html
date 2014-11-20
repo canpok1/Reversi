@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Reversi: gui.GameApplet クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Reversi
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="pages.html"><span>諸情報</span></a></li>
+      <li><a href="namespaces.html"><span>パッケージ</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>ページ</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="classgui_1_1_game_applet.html">GameApplet</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-attribs">静的公開変数類</a> &#124;
+<a href="classgui_1_1_game_applet-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">gui.GameApplet クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>ゲームを描画するクラスです.  
+ <a href="classgui_1_1_game_applet.html#details">[詳解]</a></p>
+<div class="dynheader">
+gui.GameApplet の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classgui_1_1_game_applet__inherit__graph.png" border="0" usemap="#gui_8_game_applet_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8_game_applet_inherit__map" id="gui_8_game_applet_inherit__map">
+<area shape="rect" id="node3" href="interfaceinput_1_1_next_move_selector.html" title="リバーシの次の手を入力するインターフェースです. " alt="" coords="97,5,256,32"/><area shape="rect" id="node4" href="interfaceoutput_1_1_game_viewer.html" title="ゲームの情報を表示するためのインターフェースです. " alt="" coords="281,5,417,32"/></map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+gui.GameApplet 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classgui_1_1_game_applet__coll__graph.png" border="0" usemap="#gui_8_game_applet_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8_game_applet_coll__map" id="gui_8_game_applet_coll__map">
+<area shape="rect" id="node3" href="interfaceinput_1_1_next_move_selector.html" title="リバーシの次の手を入力するインターフェースです. " alt="" coords="97,5,256,32"/><area shape="rect" id="node4" href="interfaceoutput_1_1_game_viewer.html" title="ゲームの情報を表示するためのインターフェースです. " alt="" coords="281,5,417,32"/></map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a301234104d4a8addea927da1a2e3023d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a301234104d4a8addea927da1a2e3023d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setup</b> ()</td></tr>
+<tr class="separator:a301234104d4a8addea927da1a2e3023d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada292de54d5300e45c3a480f3c0cca2d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada292de54d5300e45c3a480f3c0cca2d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> ()</td></tr>
+<tr class="separator:ada292de54d5300e45c3a480f3c0cca2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6adff7950e9096d4287f6f298e153f46"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6adff7950e9096d4287f6f298e153f46"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>mousePressed</b> ()</td></tr>
+<tr class="separator:a6adff7950e9096d4287f6f298e153f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab994043b9ce9c98f313c68aa21ecfee0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab994043b9ce9c98f313c68aa21ecfee0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>mouseMoved</b> ()</td></tr>
+<tr class="separator:ab994043b9ce9c98f313c68aa21ecfee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43eb6d7ffd93dfdde685d000dd21b1b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_game_applet.html#a43eb6d7ffd93dfdde685d000dd21b1b8">view</a> (<a class="el" href="classcore_1_1_board.html">Board</a> board)</td></tr>
+<tr class="memdesc:a43eb6d7ffd93dfdde685d000dd21b1b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">盤面を表示します.  <a href="#a43eb6d7ffd93dfdde685d000dd21b1b8">[詳解]</a><br /></td></tr>
+<tr class="separator:a43eb6d7ffd93dfdde685d000dd21b1b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd64559c6c85abfdf1ad8f0d3f33ecb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_game_applet.html#a9bd64559c6c85abfdf1ad8f0d3f33ecb">view</a> (String message)</td></tr>
+<tr class="memdesc:a9bd64559c6c85abfdf1ad8f0d3f33ecb"><td class="mdescLeft">&#160;</td><td class="mdescRight">メッセージを表示します.  <a href="#a9bd64559c6c85abfdf1ad8f0d3f33ecb">[詳解]</a><br /></td></tr>
+<tr class="separator:a9bd64559c6c85abfdf1ad8f0d3f33ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace055353a19b357e300e83c261340b81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcore_1_1_next_move.html">NextMove</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_game_applet.html#ace055353a19b357e300e83c261340b81">select</a> (<a class="el" href="enumcore_1_1_stone.html">Stone</a> stone, String message)</td></tr>
+<tr class="memdesc:ace055353a19b357e300e83c261340b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">次の手を選びます.  <a href="#ace055353a19b357e300e83c261340b81">[詳解]</a><br /></td></tr>
+<tr class="separator:ace055353a19b357e300e83c261340b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addd1a5d47eefc7ace8a10f74cdca87bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcore_1_1_next_move.html">NextMove</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_game_applet.html#addd1a5d47eefc7ace8a10f74cdca87bb">select</a> (<a class="el" href="enumcore_1_1_stone.html">Stone</a> stone)</td></tr>
+<tr class="memdesc:addd1a5d47eefc7ace8a10f74cdca87bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">次の手を選びます.  <a href="#addd1a5d47eefc7ace8a10f74cdca87bb">[詳解]</a><br /></td></tr>
+<tr class="separator:addd1a5d47eefc7ace8a10f74cdca87bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a275a633ead497de401eed788711832a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_game_applet.html#a275a633ead497de401eed788711832a7">dispImportantMessage</a> (String message)</td></tr>
+<tr class="memdesc:a275a633ead497de401eed788711832a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">重要なメッセージを表示します.  <a href="#a275a633ead497de401eed788711832a7">[詳解]</a><br /></td></tr>
+<tr class="separator:a275a633ead497de401eed788711832a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+静的公開変数類</h2></td></tr>
+<tr class="memitem:a092bf2bfa99fcd273fc981ad93fbc0f4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a092bf2bfa99fcd273fc981ad93fbc0f4"></a>
+static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_game_applet.html#a092bf2bfa99fcd273fc981ad93fbc0f4">WIDTH</a> = GAME_AREA_WIDTH</td></tr>
+<tr class="memdesc:a092bf2bfa99fcd273fc981ad93fbc0f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画領域の横幅です. <br /></td></tr>
+<tr class="separator:a092bf2bfa99fcd273fc981ad93fbc0f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a201cee60a98b89aec52dde74251afc6b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a201cee60a98b89aec52dde74251afc6b"></a>
+static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgui_1_1_game_applet.html#a201cee60a98b89aec52dde74251afc6b">HEIGHT</a> = GAME_AREA_HEIGHT</td></tr>
+<tr class="memdesc:a201cee60a98b89aec52dde74251afc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画領域の縦幅です. <br /></td></tr>
+<tr class="separator:a201cee60a98b89aec52dde74251afc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>ゲームを描画するクラスです. </p>
+<dl class="section author"><dt>著者</dt><dd>tanabe </dd></dl>
+</div><h2 class="groupheader">メソッド詳解</h2>
+<a class="anchor" id="a275a633ead497de401eed788711832a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui.GameApplet.dispImportantMessage </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重要なメッセージを表示します. </p>
+<p><br />
+ このメッセージの後にユーザーに確認の入力を求めます. 入力があるまで待機します. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>メッセージ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="interfaceinput_1_1_next_move_selector.html#aafe2863498d071722d016f67a2440728">input.NextMoveSelector</a>を実装しています。</p>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classgui_1_1_game_applet_a275a633ead497de401eed788711832a7_cgraph.png" border="0" usemap="#classgui_1_1_game_applet_a275a633ead497de401eed788711832a7_cgraph" alt=""/></div>
+<map name="classgui_1_1_game_applet_a275a633ead497de401eed788711832a7_cgraph" id="classgui_1_1_game_applet_a275a633ead497de401eed788711832a7_cgraph">
+<area shape="rect" id="node2" href="classgui_1_1_game_applet.html#a43eb6d7ffd93dfdde685d000dd21b1b8" title="盤面を表示します. " alt="" coords="251,56,393,83"/><area shape="rect" id="node3" href="classcore_1_1_board.html#a0fda4acd63e7841d4d4e2ef073ff72ea" title="横に並ぶマス目の数を取得します. " alt="" coords="443,5,584,32"/><area shape="rect" id="node4" href="classcore_1_1_board.html#a6590fa5e7197a61777cc0ab917819c47" title="縦に並ぶマス目の数を取得します. " alt="" coords="441,56,585,83"/><area shape="rect" id="node5" href="classcore_1_1_board.html#a5f29d5952abec6ed276aa1772b924119" title="指定のマス目の石を取得します. " alt="" coords="443,107,584,133"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ace055353a19b357e300e83c261340b81"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcore_1_1_next_move.html">NextMove</a> gui.GameApplet.select </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcore_1_1_stone.html">Stone</a>&#160;</td>
+          <td class="paramname"><em>stone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>次の手を選びます. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stone</td><td>置く石 </td></tr>
+    <tr><td class="paramname">message</td><td>表示するメッセージ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>次の手 </dd></dl>
+
+<p><a class="el" href="interfaceinput_1_1_next_move_selector.html#acc95e81e17150082c07dce5b000e7dd9">input.NextMoveSelector</a>を実装しています。</p>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classgui_1_1_game_applet_ace055353a19b357e300e83c261340b81_cgraph.png" border="0" usemap="#classgui_1_1_game_applet_ace055353a19b357e300e83c261340b81_cgraph" alt=""/></div>
+<map name="classgui_1_1_game_applet_ace055353a19b357e300e83c261340b81_cgraph" id="classgui_1_1_game_applet_ace055353a19b357e300e83c261340b81_cgraph">
+<area shape="rect" id="node2" href="classgui_1_1_game_applet.html#a43eb6d7ffd93dfdde685d000dd21b1b8" title="盤面を表示します. " alt="" coords="208,56,351,83"/><area shape="rect" id="node3" href="classcore_1_1_board.html#a0fda4acd63e7841d4d4e2ef073ff72ea" title="横に並ぶマス目の数を取得します. " alt="" coords="400,5,541,32"/><area shape="rect" id="node4" href="classcore_1_1_board.html#a6590fa5e7197a61777cc0ab917819c47" title="縦に並ぶマス目の数を取得します. " alt="" coords="399,56,543,83"/><area shape="rect" id="node5" href="classcore_1_1_board.html#a5f29d5952abec6ed276aa1772b924119" title="指定のマス目の石を取得します. " alt="" coords="400,107,541,133"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="addd1a5d47eefc7ace8a10f74cdca87bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcore_1_1_next_move.html">NextMove</a> gui.GameApplet.select </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcore_1_1_stone.html">Stone</a>&#160;</td>
+          <td class="paramname"><em>stone</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>次の手を選びます. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stone</td><td>置く石 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>次の手 </dd></dl>
+
+<p><a class="el" href="interfaceinput_1_1_next_move_selector.html#a43663d15793298acb0e173d9912d37df">input.NextMoveSelector</a>を実装しています。</p>
+
+</div>
+</div>
+<a class="anchor" id="a43eb6d7ffd93dfdde685d000dd21b1b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui.GameApplet.view </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcore_1_1_board.html">Board</a>&#160;</td>
+          <td class="paramname"><em>board</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>盤面を表示します. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>表示する盤面 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>引数が<code>null</code>の場合に発生 </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>ビューワーとサイズが異なる盤面が与えられたときに発生 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="interfaceoutput_1_1_game_viewer.html#a5afb0e46559a9db1dc31c6baa4366d01">output.GameViewer</a>を実装しています。</p>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classgui_1_1_game_applet_a43eb6d7ffd93dfdde685d000dd21b1b8_cgraph.png" border="0" usemap="#classgui_1_1_game_applet_a43eb6d7ffd93dfdde685d000dd21b1b8_cgraph" alt=""/></div>
+<map name="classgui_1_1_game_applet_a43eb6d7ffd93dfdde685d000dd21b1b8_cgraph" id="classgui_1_1_game_applet_a43eb6d7ffd93dfdde685d000dd21b1b8_cgraph">
+<area shape="rect" id="node2" href="classcore_1_1_board.html#a0fda4acd63e7841d4d4e2ef073ff72ea" title="横に並ぶマス目の数を取得します. " alt="" coords="197,5,339,32"/><area shape="rect" id="node3" href="classcore_1_1_board.html#a6590fa5e7197a61777cc0ab917819c47" title="縦に並ぶマス目の数を取得します. " alt="" coords="196,56,340,83"/><area shape="rect" id="node4" href="classcore_1_1_board.html#a5f29d5952abec6ed276aa1772b924119" title="指定のマス目の石を取得します. " alt="" coords="197,107,339,133"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classgui_1_1_game_applet_a43eb6d7ffd93dfdde685d000dd21b1b8_icgraph.png" border="0" usemap="#classgui_1_1_game_applet_a43eb6d7ffd93dfdde685d000dd21b1b8_icgraph" alt=""/></div>
+<map name="classgui_1_1_game_applet_a43eb6d7ffd93dfdde685d000dd21b1b8_icgraph" id="classgui_1_1_game_applet_a43eb6d7ffd93dfdde685d000dd21b1b8_icgraph">
+<area shape="rect" id="node2" href="classgui_1_1_game_applet.html#ace055353a19b357e300e83c261340b81" title="次の手を選びます. " alt="" coords="217,5,372,32"/><area shape="rect" id="node3" href="classgui_1_1_game_applet.html#a275a633ead497de401eed788711832a7" title="重要なメッセージを表示します. " alt="" coords="196,57,393,98"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9bd64559c6c85abfdf1ad8f0d3f33ecb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gui.GameApplet.view </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>メッセージを表示します. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>メッセージ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>引数が<code>null</code>の場合に発生 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="interfaceoutput_1_1_game_viewer.html#ac9da7dbe5e058c1e482a92efa9d95563">output.GameViewer</a>を実装しています。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Reversi/src/gui/GameApplet.java</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年11月20日(木) 21時16分54秒作成 - Reversi / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

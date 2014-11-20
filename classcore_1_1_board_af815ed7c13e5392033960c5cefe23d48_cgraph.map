@@ -1,0 +1,4 @@
+<map id="core.Board.putStone" name="core.Board.putStone">
+<area shape="rect" id="node2" href="$classcore_1_1_board.html#a5f29d5952abec6ed276aa1772b924119" title="指定のマス目の石を取得します. " alt="" coords="195,5,336,32"/>
+<area shape="rect" id="node3" href="$classcore_1_1_board.html#a45207e1cedbcd38173b0327fe0e6eb71" title="指定のマス目に石を配置します. " alt="" coords="195,56,335,83"/>
+</map>

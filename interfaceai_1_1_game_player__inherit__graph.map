@@ -1,0 +1,6 @@
+<map id="ai.GamePlayer" name="ai.GamePlayer">
+<area shape="rect" id="node2" href="$classai_1_1_human.html" title="次の手を入力して決定するリバーシプレイヤーです. " alt="" coords="5,80,83,107"/>
+<area shape="rect" id="node3" href="$classai_1_1_maximum_reverse.html" title="最も多く石をひっくり返せる場所に置く戦略をとるプレイヤーです. " alt="" coords="107,80,245,107"/>
+<area shape="rect" id="node4" href="$classai_1_1_random_select.html" title="置ける場所にランダムに置いていくプレイヤーです. " alt="" coords="270,80,391,107"/>
+<area shape="rect" id="node5" href="$classai_1_1_table_reference.html" title="石を置くことで全体の評価値が最も高くなる場所に石を置く戦略をとるプレイヤーです. " alt="" coords="416,80,541,107"/>
+</map>

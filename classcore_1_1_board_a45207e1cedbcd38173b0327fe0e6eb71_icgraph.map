@@ -1,0 +1,5 @@
+<map id="core.Board.initStone" name="core.Board.initStone">
+<area shape="rect" id="node2" href="$classcore_1_1_board.html#af815ed7c13e5392033960c5cefe23d48" title="指定のマス目に石を配置し、石をひっくり返します. " alt="" coords="193,31,335,57"/>
+<area shape="rect" id="node3" href="$classai_1_1_human.html#ac9719618ddd4140cb6dc7cc26352fefe" title="次の手を取得します. " alt="" coords="403,5,512,32"/>
+<area shape="rect" id="node4" href="$classai_1_1minimax_1_1_inner.html#af743b0546c309527fce3cb39c265e491" title="内部ノードを生成します. " alt="" coords="383,56,532,83"/>
+</map>

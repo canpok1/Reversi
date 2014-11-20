@@ -1,0 +1,5 @@
+<map id="ai.minimax.Leaf.evalValue" name="ai.minimax.Leaf.evalValue">
+<area shape="rect" id="node2" href="$classai_1_1minimax_1_1_game_tree.html#afb0ff18370e6cfc66239f7d08ca97666" title="評価対象の盤面を取得します. " alt="" coords="225,5,431,32"/>
+<area shape="rect" id="node3" href="$classcore_1_1_board.html#a0bae8e758bd28bfa5e00c7ff8aadb948" title="指定した石の数を取得します. " alt="" coords="241,56,415,83"/>
+<area shape="rect" id="node4" href="$classai_1_1minimax_1_1_game_tree.html#a7070a4b279f53b33566e7a19a5fdc9ea" title="評価値を設定します. " alt="" coords="226,107,430,133"/>
+</map>

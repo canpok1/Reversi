@@ -1,0 +1,8 @@
+<map id="ai.minimax.Leaf.Leaf" name="ai.minimax.Leaf.Leaf">
+<area shape="rect" id="node2" href="$classcore_1_1_board.html#a0fda4acd63e7841d4d4e2ef073ff72ea" title="横に並ぶマス目の数を取得します. " alt="" coords="210,5,351,32"/>
+<area shape="rect" id="node3" href="$classcore_1_1_board.html#a6590fa5e7197a61777cc0ab917819c47" title="縦に並ぶマス目の数を取得します. " alt="" coords="209,56,353,83"/>
+<area shape="rect" id="node4" href="$classai_1_1minimax_1_1_leaf.html#a57f4eb6c796f3b19f99695b17e433dab" title="盤面の評価値を計算します. " alt="" coords="195,107,367,133"/>
+<area shape="rect" id="node5" href="$classai_1_1minimax_1_1_game_tree.html#afb0ff18370e6cfc66239f7d08ca97666" title="評価対象の盤面を取得します. " alt="" coords="415,56,620,83"/>
+<area shape="rect" id="node6" href="$classcore_1_1_board.html#a0bae8e758bd28bfa5e00c7ff8aadb948" title="指定した石の数を取得します. " alt="" coords="430,107,605,133"/>
+<area shape="rect" id="node7" href="$classai_1_1minimax_1_1_game_tree.html#a7070a4b279f53b33566e7a19a5fdc9ea" title="評価値を設定します. " alt="" coords="415,157,619,184"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="core.Board.getStone" name="core.Board.getStone">
+<area shape="rect" id="node2" href="$classcore_1_1_board.html#afa344f5b1bdeb463f0091b96327312b2" title="コピーコンストラクタです. " alt="" coords="221,5,344,32"/>
+<area shape="rect" id="node3" href="$classcore_1_1_board.html#af815ed7c13e5392033960c5cefe23d48" title="指定のマス目に石を配置し、石をひっくり返します. " alt="" coords="212,56,353,83"/>
+<area shape="rect" id="node6" href="$classcore_1_1_board.html#ac53ee954f775f4e5520065c08d24000b" title="内容が等しいかを判定します. " alt="" coords="219,107,346,133"/>
+<area shape="rect" id="node7" href="$classgui_1_1_game_applet.html#a43eb6d7ffd93dfdde685d000dd21b1b8" title="盤面を表示します. " alt="" coords="211,157,354,184"/>
+<area shape="rect" id="node10" href="$classoutput_1_1_console_viewer.html#ae75d35ec55f9c793e04af671bea57209" title="盤面情報を表示します.ゲームの盤面 出力先はコンソールです. " alt="" coords="195,208,371,235"/>
+<area shape="rect" id="node4" href="$classai_1_1_human.html#ac9719618ddd4140cb6dc7cc26352fefe" title="次の手を取得します. " alt="" coords="463,31,572,57"/>
+<area shape="rect" id="node5" href="$classai_1_1minimax_1_1_inner.html#af743b0546c309527fce3cb39c265e491" title="内部ノードを生成します. " alt="" coords="443,81,592,108"/>
+<area shape="rect" id="node8" href="$classgui_1_1_game_applet.html#ace055353a19b357e300e83c261340b81" title="次の手を選びます. " alt="" coords="440,144,595,171"/>
+<area shape="rect" id="node9" href="$classgui_1_1_game_applet.html#a275a633ead497de401eed788711832a7" title="重要なメッセージを表示します. " alt="" coords="419,195,616,237"/>
+</map>

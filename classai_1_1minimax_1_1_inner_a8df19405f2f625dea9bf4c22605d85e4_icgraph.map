@@ -1,0 +1,4 @@
+<map id="ai.minimax.Inner.getNextMove" name="ai.minimax.Inner.getNextMove">
+<area shape="rect" id="node2" href="$classai_1_1minimax_1_1_mini_max.html#a1fd3d3db7369f6f11bedf66186ed8176" title="最善手を取得します. " alt="" coords="249,5,467,32"/>
+<area shape="rect" id="node3" href="$classai_1_1_table_reference.html#ac3d537a4350455a82c8ab1508b7ac41d" title="次の手を取得します.パスの場合はnullを返します. 座標が負の場合はゲームを中断します. 置く石 リバーシの盤面 次の手 &#160;石を置ける場所の中で、評価値が最も高くなる場所に石を置きます. " alt="" coords="515,5,672,32"/>
+</map>

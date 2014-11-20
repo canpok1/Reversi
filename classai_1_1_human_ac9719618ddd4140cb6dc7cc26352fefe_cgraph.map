@@ -1,0 +1,11 @@
+<map id="ai.Human.think" name="ai.Human.think">
+<area shape="rect" id="node2" href="$classcore_1_1_board.html#a6590fa5e7197a61777cc0ab917819c47" title="縦に並ぶマス目の数を取得します. " alt="" coords="190,5,334,32"/>
+<area shape="rect" id="node3" href="$classcore_1_1_board.html#a0fda4acd63e7841d4d4e2ef073ff72ea" title="横に並ぶマス目の数を取得します. " alt="" coords="191,56,333,83"/>
+<area shape="rect" id="node4" href="$classcore_1_1_board.html#af815ed7c13e5392033960c5cefe23d48" title="指定のマス目に石を配置し、石をひっくり返します. " alt="" coords="191,107,333,133"/>
+<area shape="rect" id="node7" href="$interfaceinput_1_1_next_move_selector.html#aafe2863498d071722d016f67a2440728" title="重要なメッセージを表示します. " alt="" coords="169,158,355,199"/>
+<area shape="rect" id="node8" href="$interfaceinput_1_1_next_move_selector.html#acc95e81e17150082c07dce5b000e7dd9" title="リバーシの次の手を入力します. " alt="" coords="163,224,361,251"/>
+<area shape="rect" id="node9" href="$classcore_1_1_next_move.html#a53f9e4b482ddc61db5fcfc22bef6f65c" title="石を置くマス目のX座標を取得します. " alt="" coords="193,275,331,301"/>
+<area shape="rect" id="node10" href="$classcore_1_1_next_move.html#a5b484586ab15f59a736d51160f9f3de4" title="石を置くマス目のY座標を取得します. " alt="" coords="193,325,331,352"/>
+<area shape="rect" id="node5" href="$classcore_1_1_board.html#a5f29d5952abec6ed276aa1772b924119" title="指定のマス目の石を取得します. " alt="" coords="409,81,551,108"/>
+<area shape="rect" id="node6" href="$classcore_1_1_board.html#a45207e1cedbcd38173b0327fe0e6eb71" title="指定のマス目に石を配置します. " alt="" coords="410,132,550,159"/>
+</map>

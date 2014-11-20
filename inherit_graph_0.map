@@ -1,0 +1,7 @@
+<map id="クラス階層図" name="クラス階層図">
+<area shape="rect" id="node1" href="$interfaceai_1_1_game_player.html" title="ゲームを行うプレイヤーを表すインターフェースです. " alt="" coords="5,81,113,108"/>
+<area shape="rect" id="node2" href="$classai_1_1_human.html" title="次の手を入力して決定するリバーシプレイヤーです. " alt="" coords="192,5,269,32"/>
+<area shape="rect" id="node3" href="$classai_1_1_maximum_reverse.html" title="最も多く石をひっくり返せる場所に置く戦略をとるプレイヤーです. " alt="" coords="161,56,300,83"/>
+<area shape="rect" id="node4" href="$classai_1_1_random_select.html" title="置ける場所にランダムに置いていくプレイヤーです. " alt="" coords="170,107,291,133"/>
+<area shape="rect" id="node5" href="$classai_1_1_table_reference.html" title="石を置くことで全体の評価値が最も高くなる場所に石を置く戦略をとるプレイヤーです. " alt="" coords="168,157,293,184"/>
+</map>

@@ -1,0 +1,573 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Reversi: core.Board クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Reversi
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="pages.html"><span>諸情報</span></a></li>
+      <li><a href="namespaces.html"><span>パッケージ</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>クラス一覧</span></a></li>
+      <li><a href="classes.html"><span>クラス索引</span></a></li>
+      <li><a href="inherits.html"><span>クラス階層</span></a></li>
+      <li><a href="functions.html"><span>クラスメンバ</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>名前空間</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>ページ</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacecore.html">core</a></li><li class="navelem"><a class="el" href="classcore_1_1_board.html">Board</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classcore_1_1_board-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">core.Board クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>リバーシの盤面を表すクラスです.  
+ <a href="classcore_1_1_board.html#details">[詳解]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a6476efa8b7546013bab20a1dae20178b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6476efa8b7546013bab20a1dae20178b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_board.html#a6476efa8b7546013bab20a1dae20178b">Board</a> ()</td></tr>
+<tr class="memdesc:a6476efa8b7546013bab20a1dae20178b"><td class="mdescLeft">&#160;</td><td class="mdescRight">盤面を生成します. <br /></td></tr>
+<tr class="separator:a6476efa8b7546013bab20a1dae20178b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa344f5b1bdeb463f0091b96327312b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_board.html#afa344f5b1bdeb463f0091b96327312b2">Board</a> (<a class="el" href="classcore_1_1_board.html">Board</a> board)</td></tr>
+<tr class="memdesc:afa344f5b1bdeb463f0091b96327312b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">コピーコンストラクタです.  <a href="#afa344f5b1bdeb463f0091b96327312b2">[詳解]</a><br /></td></tr>
+<tr class="separator:afa344f5b1bdeb463f0091b96327312b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45207e1cedbcd38173b0327fe0e6eb71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_board.html#a45207e1cedbcd38173b0327fe0e6eb71">initStone</a> (int x, int y, <a class="el" href="enumcore_1_1_stone.html">Stone</a> stone)</td></tr>
+<tr class="memdesc:a45207e1cedbcd38173b0327fe0e6eb71"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定のマス目に石を配置します.  <a href="#a45207e1cedbcd38173b0327fe0e6eb71">[詳解]</a><br /></td></tr>
+<tr class="separator:a45207e1cedbcd38173b0327fe0e6eb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f29d5952abec6ed276aa1772b924119"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumcore_1_1_stone.html">Stone</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_board.html#a5f29d5952abec6ed276aa1772b924119">getStone</a> (int x, int y)</td></tr>
+<tr class="memdesc:a5f29d5952abec6ed276aa1772b924119"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定のマス目の石を取得します.  <a href="#a5f29d5952abec6ed276aa1772b924119">[詳解]</a><br /></td></tr>
+<tr class="separator:a5f29d5952abec6ed276aa1772b924119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bae8e758bd28bfa5e00c7ff8aadb948"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_board.html#a0bae8e758bd28bfa5e00c7ff8aadb948">getStoneCount</a> (<a class="el" href="enumcore_1_1_stone.html">Stone</a> stone)</td></tr>
+<tr class="memdesc:a0bae8e758bd28bfa5e00c7ff8aadb948"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定した石の数を取得します.  <a href="#a0bae8e758bd28bfa5e00c7ff8aadb948">[詳解]</a><br /></td></tr>
+<tr class="separator:a0bae8e758bd28bfa5e00c7ff8aadb948"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af815ed7c13e5392033960c5cefe23d48"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_board.html#af815ed7c13e5392033960c5cefe23d48">putStone</a> (int x, int y, <a class="el" href="enumcore_1_1_stone.html">Stone</a> stone)</td></tr>
+<tr class="memdesc:af815ed7c13e5392033960c5cefe23d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定のマス目に石を配置し、石をひっくり返します.  <a href="#af815ed7c13e5392033960c5cefe23d48">[詳解]</a><br /></td></tr>
+<tr class="separator:af815ed7c13e5392033960c5cefe23d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8610c0be41a7bac4364c5903f9de4f8"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_board.html#ab8610c0be41a7bac4364c5903f9de4f8">canPut</a> (int x, int y, <a class="el" href="enumcore_1_1_stone.html">Stone</a> stone)</td></tr>
+<tr class="memdesc:ab8610c0be41a7bac4364c5903f9de4f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定の場所に石を置くことができるかを判定します.  <a href="#ab8610c0be41a7bac4364c5903f9de4f8">[詳解]</a><br /></td></tr>
+<tr class="separator:ab8610c0be41a7bac4364c5903f9de4f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac53ee954f775f4e5520065c08d24000b"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_board.html#ac53ee954f775f4e5520065c08d24000b">equals</a> (Object obj)</td></tr>
+<tr class="memdesc:ac53ee954f775f4e5520065c08d24000b"><td class="mdescLeft">&#160;</td><td class="mdescRight">内容が等しいかを判定します.  <a href="#ac53ee954f775f4e5520065c08d24000b">[詳解]</a><br /></td></tr>
+<tr class="separator:ac53ee954f775f4e5520065c08d24000b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aada39087e2c4cf98366651b9df4df4f0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_board.html#aada39087e2c4cf98366651b9df4df4f0">hashCode</a> ()</td></tr>
+<tr class="memdesc:aada39087e2c4cf98366651b9df4df4f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">ハッシュ値を取得します.  <a href="#aada39087e2c4cf98366651b9df4df4f0">[詳解]</a><br /></td></tr>
+<tr class="separator:aada39087e2c4cf98366651b9df4df4f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fda4acd63e7841d4d4e2ef073ff72ea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_board.html#a0fda4acd63e7841d4d4e2ef073ff72ea">getWidth</a> ()</td></tr>
+<tr class="memdesc:a0fda4acd63e7841d4d4e2ef073ff72ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">横に並ぶマス目の数を取得します.  <a href="#a0fda4acd63e7841d4d4e2ef073ff72ea">[詳解]</a><br /></td></tr>
+<tr class="separator:a0fda4acd63e7841d4d4e2ef073ff72ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6590fa5e7197a61777cc0ab917819c47"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcore_1_1_board.html#a6590fa5e7197a61777cc0ab917819c47">getHeight</a> ()</td></tr>
+<tr class="memdesc:a6590fa5e7197a61777cc0ab917819c47"><td class="mdescLeft">&#160;</td><td class="mdescRight">縦に並ぶマス目の数を取得します.  <a href="#a6590fa5e7197a61777cc0ab917819c47">[詳解]</a><br /></td></tr>
+<tr class="separator:a6590fa5e7197a61777cc0ab917819c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>リバーシの盤面を表すクラスです. </p>
+<dl class="section author"><dt>著者</dt><dd>tanabe </dd></dl>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a class="anchor" id="afa344f5b1bdeb463f0091b96327312b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">core.Board.Board </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcore_1_1_board.html">Board</a>&#160;</td>
+          <td class="paramname"><em>board</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コピーコンストラクタです. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>コピー元のオブジェクト </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>引数が<code>null</code>の場合に発生 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcore_1_1_board_afa344f5b1bdeb463f0091b96327312b2_cgraph.png" border="0" usemap="#classcore_1_1_board_afa344f5b1bdeb463f0091b96327312b2_cgraph" alt=""/></div>
+<map name="classcore_1_1_board_afa344f5b1bdeb463f0091b96327312b2_cgraph" id="classcore_1_1_board_afa344f5b1bdeb463f0091b96327312b2_cgraph">
+<area shape="rect" id="node2" href="classcore_1_1_board.html#a5f29d5952abec6ed276aa1772b924119" title="指定のマス目の石を取得します. " alt="" coords="176,5,317,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">メソッド詳解</h2>
+<a class="anchor" id="ab8610c0be41a7bac4364c5903f9de4f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean core.Board.canPut </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcore_1_1_stone.html">Stone</a>&#160;</td>
+          <td class="paramname"><em>stone</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定の場所に石を置くことができるかを判定します. </p>
+<p><br />
+ 石をひっくり返すことができない場合は石を置くことができません. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>石を置くマスのX座標 </td></tr>
+    <tr><td class="paramname">y</td><td>石を置くマスのY座標 </td></tr>
+    <tr><td class="paramname">stone</td><td>置く石 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>石を置くことができる場合は<code>true</code>、置けない場合は<code>false</code> </dd></dl>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArrayIndexOutOfBoundsException</td><td>盤面の範囲外を指定した場合に発生 </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>第三引数が<a class="el" href="">Board#WHITE_STONE</a>でも<a class="el" href="">Board#BLACK_STONE</a>でもない場合に発生 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac53ee954f775f4e5520065c08d24000b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean core.Board.equals </td>
+          <td>(</td>
+          <td class="paramtype">Object&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>内容が等しいかを判定します. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>比較対象のオブジェクト </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>盤面サイズと石の配置が同じであれば<code>true</code>、それ以外は<code>false</code> </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcore_1_1_board_ac53ee954f775f4e5520065c08d24000b_cgraph.png" border="0" usemap="#classcore_1_1_board_ac53ee954f775f4e5520065c08d24000b_cgraph" alt=""/></div>
+<map name="classcore_1_1_board_ac53ee954f775f4e5520065c08d24000b_cgraph" id="classcore_1_1_board_ac53ee954f775f4e5520065c08d24000b_cgraph">
+<area shape="rect" id="node2" href="classcore_1_1_board.html#a6476efa8b7546013bab20a1dae20178b" title="盤面を生成します. " alt="" coords="191,5,313,32"/><area shape="rect" id="node3" href="classcore_1_1_board.html#a0fda4acd63e7841d4d4e2ef073ff72ea" title="横に並ぶマス目の数を取得します. " alt="" coords="181,56,323,83"/><area shape="rect" id="node4" href="classcore_1_1_board.html#a6590fa5e7197a61777cc0ab917819c47" title="縦に並ぶマス目の数を取得します. " alt="" coords="180,107,324,133"/><area shape="rect" id="node5" href="classcore_1_1_board.html#a5f29d5952abec6ed276aa1772b924119" title="指定のマス目の石を取得します. " alt="" coords="181,157,323,184"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6590fa5e7197a61777cc0ab917819c47"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int core.Board.getHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>縦に並ぶマス目の数を取得します. </p>
+<dl class="section return"><dt>戻り値</dt><dd>縦に並ぶマス目の数 </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcore_1_1_board_a6590fa5e7197a61777cc0ab917819c47_icgraph.png" border="0" usemap="#classcore_1_1_board_a6590fa5e7197a61777cc0ab917819c47_icgraph" alt=""/></div>
+<map name="classcore_1_1_board_a6590fa5e7197a61777cc0ab917819c47_icgraph" id="classcore_1_1_board_a6590fa5e7197a61777cc0ab917819c47_icgraph">
+<area shape="rect" id="node2" href="classai_1_1_human.html#ac9719618ddd4140cb6dc7cc26352fefe" title="次の手を取得します. " alt="" coords="231,5,340,32"/><area shape="rect" id="node3" href="classai_1_1_maximum_reverse.html#a1911768218ec5129a8e8d16037bdeaa7" title="次の手を取得します.パスの場合はnullを返します. 座標が負の場合はゲームを中断します. 置く石 リバーシの盤面 次の手 &#160;石を置ける場所の中で、評価値が最も高くなる場所に石を置きます. " alt="" coords="200,56,371,83"/><area shape="rect" id="node4" href="classai_1_1minimax_1_1_inner.html#af743b0546c309527fce3cb39c265e491" title="内部ノードを生成します. " alt="" coords="211,107,360,133"/><area shape="rect" id="node5" href="classai_1_1minimax_1_1_leaf.html#a241444a2891b8deec6cf9695a7fdfd06" title="ゲーム木の葉を生成します. " alt="" coords="215,157,356,184"/><area shape="rect" id="node6" href="classai_1_1_random_select.html#a9070d704d6d4e19418acc363e1d986c5" title="次の手を取得します.パスの場合はnullを返します. 座標が負の場合はゲームを中断します. 置く石 リバーシの盤面 次の手 " alt="" coords="209,208,362,235"/><area shape="rect" id="node7" href="classcore_1_1_board.html#ac53ee954f775f4e5520065c08d24000b" title="内容が等しいかを判定します. " alt="" coords="222,259,349,285"/><area shape="rect" id="node8" href="classcore_1_1_board.html#aada39087e2c4cf98366651b9df4df4f0" title="ハッシュ値を取得します. " alt="" coords="212,309,359,336"/><area shape="rect" id="node9" href="classgui_1_1_game_applet.html#a43eb6d7ffd93dfdde685d000dd21b1b8" title="盤面を表示します. " alt="" coords="214,360,357,387"/><area shape="rect" id="node12" href="classoutput_1_1_console_viewer.html#ae75d35ec55f9c793e04af671bea57209" title="盤面情報を表示します.ゲームの盤面 出力先はコンソールです. " alt="" coords="197,411,373,437"/><area shape="rect" id="node10" href="classgui_1_1_game_applet.html#ace055353a19b357e300e83c261340b81" title="次の手を選びます. " alt="" coords="443,331,597,357"/><area shape="rect" id="node11" href="classgui_1_1_game_applet.html#a275a633ead497de401eed788711832a7" title="重要なメッセージを表示します. " alt="" coords="421,382,619,423"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5f29d5952abec6ed276aa1772b924119"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enumcore_1_1_stone.html">Stone</a> core.Board.getStone </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定のマス目の石を取得します. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>マス目のX座標 </td></tr>
+    <tr><td class="paramname">y</td><td>マス目のY座標 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>石を表す値 </dd></dl>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArrayIndexOutOfBoundsException</td><td>盤面の範囲外を指定した場合に発生 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcore_1_1_board_a5f29d5952abec6ed276aa1772b924119_icgraph.png" border="0" usemap="#classcore_1_1_board_a5f29d5952abec6ed276aa1772b924119_icgraph" alt=""/></div>
+<map name="classcore_1_1_board_a5f29d5952abec6ed276aa1772b924119_icgraph" id="classcore_1_1_board_a5f29d5952abec6ed276aa1772b924119_icgraph">
+<area shape="rect" id="node2" href="classcore_1_1_board.html#afa344f5b1bdeb463f0091b96327312b2" title="コピーコンストラクタです. " alt="" coords="221,5,344,32"/><area shape="rect" id="node3" href="classcore_1_1_board.html#af815ed7c13e5392033960c5cefe23d48" title="指定のマス目に石を配置し、石をひっくり返します. " alt="" coords="212,56,353,83"/><area shape="rect" id="node6" href="classcore_1_1_board.html#ac53ee954f775f4e5520065c08d24000b" title="内容が等しいかを判定します. " alt="" coords="219,107,346,133"/><area shape="rect" id="node7" href="classgui_1_1_game_applet.html#a43eb6d7ffd93dfdde685d000dd21b1b8" title="盤面を表示します. " alt="" coords="211,157,354,184"/><area shape="rect" id="node10" href="classoutput_1_1_console_viewer.html#ae75d35ec55f9c793e04af671bea57209" title="盤面情報を表示します.ゲームの盤面 出力先はコンソールです. " alt="" coords="195,208,371,235"/><area shape="rect" id="node4" href="classai_1_1_human.html#ac9719618ddd4140cb6dc7cc26352fefe" title="次の手を取得します. " alt="" coords="463,31,572,57"/><area shape="rect" id="node5" href="classai_1_1minimax_1_1_inner.html#af743b0546c309527fce3cb39c265e491" title="内部ノードを生成します. " alt="" coords="443,81,592,108"/><area shape="rect" id="node8" href="classgui_1_1_game_applet.html#ace055353a19b357e300e83c261340b81" title="次の手を選びます. " alt="" coords="440,144,595,171"/><area shape="rect" id="node9" href="classgui_1_1_game_applet.html#a275a633ead497de401eed788711832a7" title="重要なメッセージを表示します. " alt="" coords="419,195,616,237"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0bae8e758bd28bfa5e00c7ff8aadb948"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int core.Board.getStoneCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumcore_1_1_stone.html">Stone</a>&#160;</td>
+          <td class="paramname"><em>stone</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定した石の数を取得します. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stone</td><td>数える石 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>石の数 </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcore_1_1_board_a0bae8e758bd28bfa5e00c7ff8aadb948_icgraph.png" border="0" usemap="#classcore_1_1_board_a0bae8e758bd28bfa5e00c7ff8aadb948_icgraph" alt=""/></div>
+<map name="classcore_1_1_board_a0bae8e758bd28bfa5e00c7ff8aadb948_icgraph" id="classcore_1_1_board_a0bae8e758bd28bfa5e00c7ff8aadb948_icgraph">
+<area shape="rect" id="node2" href="classai_1_1minimax_1_1_leaf.html#a57f4eb6c796f3b19f99695b17e433dab" title="盤面の評価値を計算します. " alt="" coords="241,5,413,32"/><area shape="rect" id="node4" href="classcore_1_1_game_manager.html#aaa4917c8066f4f28f7c48b637cb91bbe" title="ゲームの結果を表示します. " alt="" coords="228,57,427,98"/><area shape="rect" id="node3" href="classai_1_1minimax_1_1_leaf.html#a241444a2891b8deec6cf9695a7fdfd06" title="ゲーム木の葉を生成します. " alt="" coords="475,5,616,32"/><area shape="rect" id="node5" href="classmain_1_1_cui_main.html#a7bae7184773c9c5b79c6330d514ad36f" title="プログラムのエントリポイントです. " alt="" coords="479,64,612,91"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0fda4acd63e7841d4d4e2ef073ff72ea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int core.Board.getWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>横に並ぶマス目の数を取得します. </p>
+<dl class="section return"><dt>戻り値</dt><dd>横に並ぶマス目の数 </dd></dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcore_1_1_board_a0fda4acd63e7841d4d4e2ef073ff72ea_icgraph.png" border="0" usemap="#classcore_1_1_board_a0fda4acd63e7841d4d4e2ef073ff72ea_icgraph" alt=""/></div>
+<map name="classcore_1_1_board_a0fda4acd63e7841d4d4e2ef073ff72ea_icgraph" id="classcore_1_1_board_a0fda4acd63e7841d4d4e2ef073ff72ea_icgraph">
+<area shape="rect" id="node2" href="classai_1_1_human.html#ac9719618ddd4140cb6dc7cc26352fefe" title="次の手を取得します. " alt="" coords="228,5,337,32"/><area shape="rect" id="node3" href="classai_1_1_maximum_reverse.html#a1911768218ec5129a8e8d16037bdeaa7" title="次の手を取得します.パスの場合はnullを返します. 座標が負の場合はゲームを中断します. 置く石 リバーシの盤面 次の手 &#160;石を置ける場所の中で、評価値が最も高くなる場所に石を置きます. " alt="" coords="197,56,368,83"/><area shape="rect" id="node4" href="classai_1_1minimax_1_1_inner.html#af743b0546c309527fce3cb39c265e491" title="内部ノードを生成します. " alt="" coords="208,107,357,133"/><area shape="rect" id="node5" href="classai_1_1minimax_1_1_leaf.html#a241444a2891b8deec6cf9695a7fdfd06" title="ゲーム木の葉を生成します. " alt="" coords="212,157,353,184"/><area shape="rect" id="node6" href="classai_1_1_random_select.html#a9070d704d6d4e19418acc363e1d986c5" title="次の手を取得します.パスの場合はnullを返します. 座標が負の場合はゲームを中断します. 置く石 リバーシの盤面 次の手 " alt="" coords="206,208,359,235"/><area shape="rect" id="node7" href="classcore_1_1_board.html#ac53ee954f775f4e5520065c08d24000b" title="内容が等しいかを判定します. " alt="" coords="219,259,346,285"/><area shape="rect" id="node8" href="classcore_1_1_board.html#aada39087e2c4cf98366651b9df4df4f0" title="ハッシュ値を取得します. " alt="" coords="209,309,356,336"/><area shape="rect" id="node9" href="classgui_1_1_game_applet.html#a43eb6d7ffd93dfdde685d000dd21b1b8" title="盤面を表示します. " alt="" coords="211,360,354,387"/><area shape="rect" id="node12" href="classoutput_1_1_console_viewer.html#ae75d35ec55f9c793e04af671bea57209" title="盤面情報を表示します.ゲームの盤面 出力先はコンソールです. " alt="" coords="195,411,371,437"/><area shape="rect" id="node10" href="classgui_1_1_game_applet.html#ace055353a19b357e300e83c261340b81" title="次の手を選びます. " alt="" coords="440,331,595,357"/><area shape="rect" id="node11" href="classgui_1_1_game_applet.html#a275a633ead497de401eed788711832a7" title="重要なメッセージを表示します. " alt="" coords="419,382,616,423"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aada39087e2c4cf98366651b9df4df4f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int core.Board.hashCode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ハッシュ値を取得します. </p>
+<p><br />
+ <a class="el" href="classcore_1_1_board.html#ac53ee954f775f4e5520065c08d24000b">Board#equals(Object)</a>で比較すると等価になるインスタンス同士の ハッシュ値は同じとならなければなりません.<br />
+ 等価とならないインスタンス同士のハッシュ値は異なっていなくても 構いません.<br />
+ このクラスでは盤面のマス目の数をハッシュ値として返すことにします.</p>
+<dl class="section return"><dt>戻り値</dt><dd>ハッシュ値 </dd></dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcore_1_1_board_aada39087e2c4cf98366651b9df4df4f0_cgraph.png" border="0" usemap="#classcore_1_1_board_aada39087e2c4cf98366651b9df4df4f0_cgraph" alt=""/></div>
+<map name="classcore_1_1_board_aada39087e2c4cf98366651b9df4df4f0_cgraph" id="classcore_1_1_board_aada39087e2c4cf98366651b9df4df4f0_cgraph">
+<area shape="rect" id="node2" href="classcore_1_1_board.html#a0fda4acd63e7841d4d4e2ef073ff72ea" title="横に並ぶマス目の数を取得します. " alt="" coords="201,5,343,32"/><area shape="rect" id="node3" href="classcore_1_1_board.html#a6590fa5e7197a61777cc0ab917819c47" title="縦に並ぶマス目の数を取得します. " alt="" coords="200,56,344,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a45207e1cedbcd38173b0327fe0e6eb71"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void core.Board.initStone </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcore_1_1_stone.html">Stone</a>&#160;</td>
+          <td class="paramname"><em>stone</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定のマス目に石を配置します. </p>
+<p>ゲームの初期化で使用して下さい. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>マス目のX座標 </td></tr>
+    <tr><td class="paramname">y</td><td>マス目のY座標 </td></tr>
+    <tr><td class="paramname">stone</td><td>配置する石を表す値 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArrayIndexOutOfBoundsException</td><td>盤面の範囲外を指定した場合に発生 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcore_1_1_board_a45207e1cedbcd38173b0327fe0e6eb71_icgraph.png" border="0" usemap="#classcore_1_1_board_a45207e1cedbcd38173b0327fe0e6eb71_icgraph" alt=""/></div>
+<map name="classcore_1_1_board_a45207e1cedbcd38173b0327fe0e6eb71_icgraph" id="classcore_1_1_board_a45207e1cedbcd38173b0327fe0e6eb71_icgraph">
+<area shape="rect" id="node2" href="classcore_1_1_board.html#af815ed7c13e5392033960c5cefe23d48" title="指定のマス目に石を配置し、石をひっくり返します. " alt="" coords="193,31,335,57"/><area shape="rect" id="node3" href="classai_1_1_human.html#ac9719618ddd4140cb6dc7cc26352fefe" title="次の手を取得します. " alt="" coords="403,5,512,32"/><area shape="rect" id="node4" href="classai_1_1minimax_1_1_inner.html#af743b0546c309527fce3cb39c265e491" title="内部ノードを生成します. " alt="" coords="383,56,532,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af815ed7c13e5392033960c5cefe23d48"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean core.Board.putStone </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumcore_1_1_stone.html">Stone</a>&#160;</td>
+          <td class="paramname"><em>stone</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定のマス目に石を配置し、石をひっくり返します. </p>
+<p><br />
+ 石をひっくり返すことができるマス目であれば石を配置し、ひっくり返します. 石をひっくり返すことができないマス目であれば石を配置しません. </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>マス目のX座標 </td></tr>
+    <tr><td class="paramname">y</td><td>マス目のY座標 </td></tr>
+    <tr><td class="paramname">stone</td><td>配置する石を表す値 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>石を置くことができれば<code>true</code>、置けなければ<code>false</code> </dd></dl>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArrayIndexOutOfBoundsException</td><td>盤面の範囲外を指定した場合に発生 </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>第三引数が<a class="el" href="">Board#WHITE_STONE</a>でも<a class="el" href="">Board#BLACK_STONE</a>でもない場合に発生 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcore_1_1_board_af815ed7c13e5392033960c5cefe23d48_cgraph.png" border="0" usemap="#classcore_1_1_board_af815ed7c13e5392033960c5cefe23d48_cgraph" alt=""/></div>
+<map name="classcore_1_1_board_af815ed7c13e5392033960c5cefe23d48_cgraph" id="classcore_1_1_board_af815ed7c13e5392033960c5cefe23d48_cgraph">
+<area shape="rect" id="node2" href="classcore_1_1_board.html#a5f29d5952abec6ed276aa1772b924119" title="指定のマス目の石を取得します. " alt="" coords="195,5,336,32"/><area shape="rect" id="node3" href="classcore_1_1_board.html#a45207e1cedbcd38173b0327fe0e6eb71" title="指定のマス目に石を配置します. " alt="" coords="195,56,335,83"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcore_1_1_board_af815ed7c13e5392033960c5cefe23d48_icgraph.png" border="0" usemap="#classcore_1_1_board_af815ed7c13e5392033960c5cefe23d48_icgraph" alt=""/></div>
+<map name="classcore_1_1_board_af815ed7c13e5392033960c5cefe23d48_icgraph" id="classcore_1_1_board_af815ed7c13e5392033960c5cefe23d48_icgraph">
+<area shape="rect" id="node2" href="classai_1_1_human.html#ac9719618ddd4140cb6dc7cc26352fefe" title="次の手を取得します. " alt="" coords="215,5,324,32"/><area shape="rect" id="node3" href="classai_1_1minimax_1_1_inner.html#af743b0546c309527fce3cb39c265e491" title="内部ノードを生成します. " alt="" coords="195,56,344,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Reversi/src/core/Board.java</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+2014年11月20日(木) 21時16分53秒作成 - Reversi / 構成:  &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

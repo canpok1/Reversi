@@ -1,0 +1,6 @@
+<map id="core.Board.getStoneCount" name="core.Board.getStoneCount">
+<area shape="rect" id="node2" href="$classai_1_1minimax_1_1_leaf.html#a57f4eb6c796f3b19f99695b17e433dab" title="盤面の評価値を計算します. " alt="" coords="241,5,413,32"/>
+<area shape="rect" id="node4" href="$classcore_1_1_game_manager.html#aaa4917c8066f4f28f7c48b637cb91bbe" title="ゲームの結果を表示します. " alt="" coords="228,57,427,98"/>
+<area shape="rect" id="node3" href="$classai_1_1minimax_1_1_leaf.html#a241444a2891b8deec6cf9695a7fdfd06" title="ゲーム木の葉を生成します. " alt="" coords="475,5,616,32"/>
+<area shape="rect" id="node5" href="$classmain_1_1_cui_main.html#a7bae7184773c9c5b79c6330d514ad36f" title="プログラムのエントリポイントです. " alt="" coords="479,64,612,91"/>
+</map>

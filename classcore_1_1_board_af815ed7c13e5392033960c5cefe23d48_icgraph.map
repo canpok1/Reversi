@@ -1,0 +1,4 @@
+<map id="core.Board.putStone" name="core.Board.putStone">
+<area shape="rect" id="node2" href="$classai_1_1_human.html#ac9719618ddd4140cb6dc7cc26352fefe" title="次の手を取得します. " alt="" coords="215,5,324,32"/>
+<area shape="rect" id="node3" href="$classai_1_1minimax_1_1_inner.html#af743b0546c309527fce3cb39c265e491" title="内部ノードを生成します. " alt="" coords="195,56,344,83"/>
+</map>

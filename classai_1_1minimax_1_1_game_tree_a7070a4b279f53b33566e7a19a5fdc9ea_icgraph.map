@@ -1,0 +1,5 @@
+<map id="ai.minimax.GameTree.setValue" name="ai.minimax.GameTree.setValue">
+<area shape="rect" id="node2" href="$classai_1_1minimax_1_1_inner.html#af743b0546c309527fce3cb39c265e491" title="内部ノードを生成します. " alt="" coords="269,5,418,32"/>
+<area shape="rect" id="node3" href="$classai_1_1minimax_1_1_leaf.html#a57f4eb6c796f3b19f99695b17e433dab" title="盤面の評価値を計算します. " alt="" coords="257,56,429,83"/>
+<area shape="rect" id="node4" href="$classai_1_1minimax_1_1_leaf.html#a241444a2891b8deec6cf9695a7fdfd06" title="ゲーム木の葉を生成します. " alt="" coords="477,56,619,83"/>
+</map>

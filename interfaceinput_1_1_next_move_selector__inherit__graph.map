@@ -1,0 +1,4 @@
+<map id="input.NextMoveSelector" name="input.NextMoveSelector">
+<area shape="rect" id="node2" href="$classgui_1_1_game_applet.html" title="ゲームを描画するクラスです. " alt="" coords="5,80,120,107"/>
+<area shape="rect" id="node3" href="$classinput_1_1_console_selector.html" title="リバーシの次の手をコンソールから入力するクラスです. " alt="" coords="144,80,293,107"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="gui.GameApplet.select" name="gui.GameApplet.select">
+<area shape="rect" id="node2" href="$classgui_1_1_game_applet.html#a43eb6d7ffd93dfdde685d000dd21b1b8" title="盤面を表示します. " alt="" coords="208,56,351,83"/>
+<area shape="rect" id="node3" href="$classcore_1_1_board.html#a0fda4acd63e7841d4d4e2ef073ff72ea" title="横に並ぶマス目の数を取得します. " alt="" coords="400,5,541,32"/>
+<area shape="rect" id="node4" href="$classcore_1_1_board.html#a6590fa5e7197a61777cc0ab917819c47" title="縦に並ぶマス目の数を取得します. " alt="" coords="399,56,543,83"/>
+<area shape="rect" id="node5" href="$classcore_1_1_board.html#a5f29d5952abec6ed276aa1772b924119" title="指定のマス目の石を取得します. " alt="" coords="400,107,541,133"/>
+</map>

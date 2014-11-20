@@ -1,0 +1,4 @@
+<map id="ai.minimax.GameTree" name="ai.minimax.GameTree">
+<area shape="rect" id="node2" href="$classai_1_1minimax_1_1_inner.html" title="ゲーム木の内部ノードを表すクラスです. " alt="" coords="5,80,123,107"/>
+<area shape="rect" id="node3" href="$classai_1_1minimax_1_1_leaf.html" title="ゲーム木の葉を表すクラスです. " alt="" coords="147,80,261,107"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="gui.GameApplet.view" name="gui.GameApplet.view">
+<area shape="rect" id="node2" href="$classcore_1_1_board.html#a0fda4acd63e7841d4d4e2ef073ff72ea" title="横に並ぶマス目の数を取得します. " alt="" coords="197,5,339,32"/>
+<area shape="rect" id="node3" href="$classcore_1_1_board.html#a6590fa5e7197a61777cc0ab917819c47" title="縦に並ぶマス目の数を取得します. " alt="" coords="196,56,340,83"/>
+<area shape="rect" id="node4" href="$classcore_1_1_board.html#a5f29d5952abec6ed276aa1772b924119" title="指定のマス目の石を取得します. " alt="" coords="197,107,339,133"/>
+</map>

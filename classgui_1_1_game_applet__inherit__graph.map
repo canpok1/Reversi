@@ -1,0 +1,4 @@
+<map id="gui.GameApplet" name="gui.GameApplet">
+<area shape="rect" id="node3" href="$interfaceinput_1_1_next_move_selector.html" title="リバーシの次の手を入力するインターフェースです. " alt="" coords="97,5,256,32"/>
+<area shape="rect" id="node4" href="$interfaceoutput_1_1_game_viewer.html" title="ゲームの情報を表示するためのインターフェースです. " alt="" coords="281,5,417,32"/>
+</map>
