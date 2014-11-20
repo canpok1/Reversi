@@ -1,0 +1,4 @@
+[submodule "doxygen/html"]
+	path = doxygen/html
+	url = http://www.github.com/canpok1/Reversi.git
+	branch = gh-pages

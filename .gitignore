@@ -21,8 +21,5 @@ coverage-report
 *.war
 *.ear
 
-# Doxygen Files#
-doxygen
-
 !/Reversi/lib/*
 !/ReversiTest/lib/*
