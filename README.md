@@ -37,9 +37,9 @@ gradlew
 gradlew eclipse
 ```
 
-### コード
+### ドキュメント
 
-doxygenにより生成したドキュメントはgh-pagesブランチにて管理しています。
+doxygenにより生成したドキュメントをgh-pagesブランチにて管理しています。
 下記URLで参照可能です。
 
 http://canpok1.github.io/Reversi/
