@@ -12,8 +12,8 @@ repositories {
 def appName = 'Reversi'
 startScripts {
     applicationName = appName
-    mainClassName = "main.GuiMain"
 }
+mainClassName = "main.GuiMain"
 distZip.baseName = appName
 jar.baseName = appName
 
