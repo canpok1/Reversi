@@ -1,5 +1,6 @@
 package ai;
 
+import util.ArgumentCheckUtil;
 import input.NextMoveSelector;
 import core.Board;
 import core.NextMove;
@@ -26,9 +27,7 @@ public class Human implements GamePlayer {
     public Human(NextMoveSelector inputter) {
 
         // 引数チェック
-        if(inputter == null) {
-            throw new NullPointerException("引数をnullにはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNull(inputter);
 
         this.selector = inputter;
 

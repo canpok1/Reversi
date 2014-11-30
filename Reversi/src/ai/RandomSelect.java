@@ -2,6 +2,7 @@ package ai;
 
 import java.util.ArrayList;
 
+import util.ArgumentCheckUtil;
 import core.Board;
 import core.NextMove;
 import core.Cell;
@@ -30,9 +31,7 @@ public class RandomSelect implements GamePlayer {
     public RandomSelect(int delayTime) {
 
         // 引数チェック
-        if(delayTime < 0) {
-            throw new IllegalArgumentException("待ち時間は負の値にすることはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNegativeValue(delayTime);
 
         this.delayTime = delayTime;
 
@@ -58,13 +57,8 @@ public class RandomSelect implements GamePlayer {
     public NextMove think(Cell cell, Board board) {
 
         // 引数チェック
-        if((cell != Cell.BLACK)
-                && (cell != Cell.WHITE)) {
-            throw new IllegalArgumentException("対応する石がありません.");
-        }
-        if(board == null) {
-            throw new NullPointerException("ボードをnullにすることはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNothing(cell);
+        ArgumentCheckUtil.CheckNotNull(board);
 
         // 置ける場所
         ArrayList<int[]> points = new ArrayList<int[]>();

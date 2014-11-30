@@ -1,5 +1,6 @@
 package ai.minimax;
 
+import util.ArgumentCheckUtil;
 import core.Board;
 
 /**
@@ -29,18 +30,13 @@ public abstract class GameTree {
      * ゲームツリーを生成します.
      * @param level 何手先読みをしたかを表す値
      * @param board 評価対象の盤面
-     * @throws NullPointerException 引数が<code>null</code>の場合に発生
-     * @throws IllegalArgumentException 第一引数が負の値の場合に発生
+     * @throws IllegalArgumentException 第一引数が負、もしくは第二引数がnullの値の場合に発生
      */
     public GameTree(int level, Board board) {
 
         // 引数チェック
-        if(level < 0) {
-            throw new IllegalArgumentException("負の値を設定することはできません.");
-        }
-        if(board == null) {
-            throw new NullPointerException("引数をnullにすることはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNegativeValue(level);
+        ArgumentCheckUtil.CheckNotNull(board);
 
         this.level = level;
         this.board = new Board(board);

@@ -1,5 +1,6 @@
 package ai;
 
+import util.ArgumentCheckUtil;
 import input.NextMoveSelector;
 
 /**
@@ -38,14 +39,12 @@ public class PlayerFactory {
     /**
      * プレイヤーを生成するインスタンスを生成します.
      * @param input 入力に使用するインスタンス
-     * @throws NullPointerException 引数が<code>null</code>の場合に発生
+     * @throws IllegalArgumentException 引数が<code>null</code>の場合に発生
      */
     public PlayerFactory(NextMoveSelector input) {
 
         // 引数チェック
-        if(input == null) {
-            throw new NullPointerException("入力をnullにすることはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNull(input);
 
         this.input = input;
 

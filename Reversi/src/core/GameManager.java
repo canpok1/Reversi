@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import output.GameViewer;
+import util.ArgumentCheckUtil;
 import ai.GamePlayer;
 
 /**
@@ -76,18 +77,10 @@ public class GameManager implements Runnable {
     public GameManager(GamePlayer p1, GamePlayer p2, Board board, GameViewer viewer) {
 
         // 引数チェック
-        if(p1 == null) {
-            throw new NullPointerException("プレイヤー1をnullにすることはできません.");
-        }
-        if(p2 == null) {
-            throw new NullPointerException("プレイヤー2をnullにすることはできません.");
-        }
-        if(board == null) {
-            throw new NullPointerException("ゲームの盤面をnullにすることはできません.");
-        }
-        if(viewer == null) {
-            throw new NullPointerException("ゲームのビューワーをnullにすることはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNull(p1);
+        ArgumentCheckUtil.CheckNotNull(p2);
+        ArgumentCheckUtil.CheckNotNull(board);
+        ArgumentCheckUtil.CheckNotNull(viewer);
 
         this.players = new GamePlayer[PLAYER_COUNT];
         this.players[0] = p1;

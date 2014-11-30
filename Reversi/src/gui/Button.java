@@ -1,6 +1,7 @@
 package gui;
 
 import processing.core.PApplet;
+import util.ArgumentCheckUtil;
 
 /**
  * ボタンです.
@@ -48,12 +49,8 @@ public class Button {
     public Button(int width, int height) {
 
         // 引数チェック
-        if(width <= 0) {
-            throw new IllegalArgumentException("横幅を0以下にすることはできません.");
-        }
-        if(height <= 0) {
-            throw new IllegalArgumentException("縦幅を0以下にすることはできません.");
-        }
+        ArgumentCheckUtil.CheckNotZeroAndNegativeValue(width);
+        ArgumentCheckUtil.CheckNotZeroAndNegativeValue(height);
 
         this.x = 0;
         this.y = 0;
@@ -73,9 +70,7 @@ public class Button {
     public void draw(PApplet parent) {
 
         // 引数チェック
-        if(parent == null) {
-            throw new NullPointerException("描画先のアプレットをnullにはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNull(parent);
 
         parent.rectMode(PApplet.CORNER);
 
@@ -114,9 +109,7 @@ public class Button {
     public void setText(String text) {
 
         // 引数チェック
-        if(text == null) {
-            throw new NullPointerException("テキストをnullにはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNull(text);
 
         this.text = text;
 

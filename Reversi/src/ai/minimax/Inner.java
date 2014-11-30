@@ -2,6 +2,7 @@ package ai.minimax;
 
 import java.util.ArrayList;
 
+import util.ArgumentCheckUtil;
 import core.Board;
 import core.NextMove;
 import core.Cell;
@@ -34,9 +35,7 @@ public class Inner extends GameTree {
         super(level, board);
 
         // 引数チェック
-        if((cell != Cell.BLACK) && (cell != Cell.WHITE)) {
-            throw new IllegalArgumentException("黒石でも白石でもない値を指定することはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNothing(cell);
 
         // 置ける場所のリスト
         ArrayList<int[]> moves = new ArrayList<int[]>();

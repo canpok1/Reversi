@@ -16,7 +16,7 @@ public final class GuiMain {
 
     /**
      * コンストラクタ.
-     * ユーティリティクラスのため使用付加.
+     * ユーティリティクラスのため使用不可.
      */
     private GuiMain() { }
 

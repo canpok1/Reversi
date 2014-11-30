@@ -1,5 +1,6 @@
 package ai;
 
+import util.ArgumentCheckUtil;
 import ai.minimax.MiniMax;
 import core.Board;
 import core.NextMove;
@@ -32,9 +33,7 @@ public class TableReference implements GamePlayer {
     public TableReference(int delayTime) {
 
         // 引数チェック
-        if(delayTime < 0) {
-            throw new IllegalArgumentException("待ち時間は負の値にすることはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNegativeValue(delayTime);
 
         this.delayTime = delayTime;
 

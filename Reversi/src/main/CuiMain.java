@@ -19,7 +19,7 @@ public final class CuiMain {
 
     /**
      * コンストラクタ.
-     * ユーティリティクラスのため、使用付加.
+     * ユーティリティクラスのため、使用不可.
      */
     private CuiMain() { }
     

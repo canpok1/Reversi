@@ -1,6 +1,7 @@
 package gui;
 
 import processing.core.PApplet;
+import util.ArgumentCheckUtil;
 
 /**
  * メッセージ表示領域です.
@@ -54,12 +55,8 @@ public class MessageBox {
     public MessageBox(int width, int height) {
 
         // 引数チェック
-        if(width <= 0) {
-            throw new IllegalArgumentException("横幅を0以下にすることはできません.");
-        }
-        if(height <= 0) {
-            throw new IllegalArgumentException("縦幅を0以下にすることはできません.");
-        }
+        ArgumentCheckUtil.CheckNotZeroAndNegativeValue(width);
+        ArgumentCheckUtil.CheckNotZeroAndNegativeValue(height);
 
         this.x = 0;
         this.y = 0;
@@ -73,14 +70,12 @@ public class MessageBox {
     /**
      * メッセージボックスを描画します.
      * @param parent 描画先のアプレット
-     * @throws NullPointerException 引数が<code>null</code>の場合に発生
+     * @throws IllegalArgumentException 引数が<code>null</code>の場合に発生
      */
     public void draw(PApplet parent) {
 
         // 引数チェック
-        if(parent == null) {
-            throw new NullPointerException("描画先のアプレットをnullにはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNull(parent);
 
         parent.rectMode(PApplet.CORNER);
 
@@ -113,14 +108,12 @@ public class MessageBox {
     /**
      * メッセージボックスに表示する文字列を設定します.
      * @param message 文字列
-     * @throws NullPointerException 引数が<code>null</code>の場合に発生
+     * @throws IllegalArgumentException 引数が<code>null</code>の場合に発生
      */
     public void setMessage(String message) {
 
         // 引数チェック
-        if(message == null) {
-            throw new NullPointerException("テキストをnullにはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNull(message);
 
         this.message = message;
 

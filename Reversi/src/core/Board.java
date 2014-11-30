@@ -6,6 +6,8 @@ import static core.GameConstants.RuleConstants.BOARD_WIDTH;
 import java.util.HashSet;
 import java.util.Set;
 
+import util.ArgumentCheckUtil;
+
 /**
  * リバーシの盤面を表すクラスです.
  * @author tanabe
@@ -44,9 +46,7 @@ public class Board {
     public Board(Board board) {
 
         // 引数チェック
-        if(board == null) {
-            throw new IllegalArgumentException("コピー元をnullにはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNull(board);
 
         this.cells = new Cell[BOARD_HEIGHT][BOARD_WIDTH];
 
@@ -125,10 +125,7 @@ public class Board {
     public boolean putStone(int x, int y, Cell cell) {
 
         // 引数チェック
-        if((cell != Cell.WHITE)
-                && (cell != Cell.BLACK)) {
-            throw new IllegalArgumentException("石を表す値が不正です.");
-        }
+        ArgumentCheckUtil.CheckNotNothing(cell);
 
         // 指定のマス目に石が置かれていないことをチェック
         if(this.getStone(x, y) != Cell.NOTHING) {
@@ -196,10 +193,7 @@ public class Board {
     public boolean canPut(int x, int y, Cell cell) {
 
         // 引数チェック
-        if((cell != Cell.WHITE)
-                && (cell != Cell.BLACK)) {
-            throw new IllegalArgumentException("石を表す値が不正です.");
-        }
+        ArgumentCheckUtil.CheckNotNothing(cell);
 
         // CHECKSTYLE:OFF
         // 上方向のチェック
@@ -267,11 +261,7 @@ public class Board {
         };
 
         // 引数チェック
-        if((cell != Cell.WHITE)
-                && (cell != Cell.BLACK)) {
-            throw new IllegalArgumentException("石を表す値が不正です.");
-        }
-
+        ArgumentCheckUtil.CheckNotNothing(cell);
         if((direction < 0)
                 || (direction >= dir.length)) {
             throw new IllegalArgumentException("方向を表す値が不正です.");

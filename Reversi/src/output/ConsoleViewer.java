@@ -1,5 +1,6 @@
 package output;
 
+import util.ArgumentCheckUtil;
 import core.Board;
 
 /**
@@ -13,15 +14,13 @@ public class ConsoleViewer implements GameViewer {
     /**
      * {@inheritDoc} 出力先はコンソールです.
      * @param board {@inheritDoc}
-     * @throws NullPointerException 引数が<code>null</code>の場合に発生
+     * @throws IllegalArgumentException 引数が<code>null</code>の場合に発生
      */
     @Override
     public void view(Board board) {
 
         // 引数チェック
-        if(board == null) {
-            throw new NullPointerException("引数をnullにはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNull(board);
 
         // 行番号を表示
         System.out.print(" ");
@@ -68,15 +67,13 @@ public class ConsoleViewer implements GameViewer {
     /**
      * {@inheritDoc}
      * @param message {@inheritDoc}
-     * @throws NullPointerException 引数が<code>null</code>の場合に発生
+     * @throws IllegalArgumentException 引数が<code>null</code>の場合に発生
      */
     @Override
     public void view(String message) {
 
         // 引数チェック
-        if(message == null) {
-            throw new NullPointerException("引数をnullにはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNull(message);
 
         System.out.println(message);
 

@@ -11,6 +11,7 @@ import static core.GameConstants.RuleConstants.BOARD_WIDTH;
 import input.NextMoveSelector;
 import output.GameViewer;
 import processing.core.PApplet;
+import util.ArgumentCheckUtil;
 import ai.GamePlayer;
 import ai.PlayerFactory;
 import core.Board;
@@ -316,16 +317,14 @@ public class GameApplet extends PApplet
     /**
      * 盤面を表示します.
      * @param board 表示する盤面
-     * @throws NullPointerException 引数が<code>null</code>の場合に発生
-     * @throws IllegalArgumentException ビューワーとサイズが異なる盤面が与えられたときに発生
+     * @throws IllegalArgumentException
+     *      引数がnull、もしくはビューワーとサイズが異なる盤面が与えられたときに発生
      */
     @Override
     public void view(Board board) {
 
         // 引数チェック
-        if(board == null) {
-            throw new NullPointerException("盤面をnullにすることはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNull(board);
         if((this.board.getBoardWidth() != board.getWidth())
                 || (this.board.getBoardHeight() != board.getHeight())) {
             throw new IllegalArgumentException("盤面サイズがビューワーと異なります.");
@@ -345,15 +344,13 @@ public class GameApplet extends PApplet
     /**
      * メッセージを表示します.
      * @param message メッセージ
-     * @throws NullPointerException 引数が<code>null</code>の場合に発生
+     * @throws IllegalArgumentException 引数が<code>null</code>の場合に発生
      */
     @Override
     public void view(String message) {
 
         // 引数チェック
-        if(message == null) {
-            throw new NullPointerException("メッセージをnullにすることはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNull(message);
 
         this.message.setMessage(message);
 

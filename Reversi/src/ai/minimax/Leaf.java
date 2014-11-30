@@ -1,5 +1,6 @@
 package ai.minimax;
 
+import util.ArgumentCheckUtil;
 import core.Board;
 import core.Cell;
 
@@ -115,16 +116,12 @@ public class Leaf extends GameTree {
      * 盤面上の各場所の評価値は、ゲームの進行状況に応じたテーブルから取得します.<br>
      * 自分の石が置いてあれば加算、相手の石が置いてあれば減算し、全体の評価値を計算します.
      * @param cell どちらの側で評価値を計算するかを表す値
-     * @throws IllegalArgumentException 黒石と白石以外の石が与えらえた場合に発生
+     * @throws IllegalArgumentException 黒石と白石以外の石が与えられた場合に発生
      */
     public void evalValue(Cell cell) {
 
         // 引数チェック
-        if((cell != Cell.BLACK)
-                && (cell != Cell.WHITE)) {
-            throw new IllegalArgumentException("石は黒石か白石でなければなりません.");
-        }
-
+        ArgumentCheckUtil.CheckNotNothing(cell);
 
         // 評価値
         int result = 0;

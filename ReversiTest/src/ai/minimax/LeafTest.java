@@ -31,9 +31,9 @@ public class LeafTest {
 
     /**
      * コンストラクタの第二引数に<code>null</code>を与えた場合、
-     * {@link NullPointerException}が発生することをテストします.
+     * {@link IllegalArgumentException}が発生することをテストします.
      */
-    @Test(expected = NullPointerException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testLeaf2() {
 
         // ここで例外発生

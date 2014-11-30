@@ -5,6 +5,7 @@ import static gui.GuiConstants.LayoutConstraints.CELL_SIZE_Y;
 import static gui.GuiConstants.LayoutConstraints.CELL_EDGE_WIDTH;
 import static gui.GuiConstants.LayoutConstraints.STONE_EDGE_WIDTH;
 import processing.core.PApplet;
+import util.ArgumentCheckUtil;
 import core.Cell;
 
 /**
@@ -68,12 +69,8 @@ public class BoardViewer {
     public BoardViewer(int width, int height) {
 
         // 引数チェック
-        if (width <= 0) {
-            throw new IllegalArgumentException("横に並ぶマス目の数を0以下にすることはできません.");
-        }
-        if (height <= 0) {
-            throw new IllegalArgumentException("縦に並ぶマス目の数を0以下にすることはできません.");
-        }
+        ArgumentCheckUtil.CheckNotZeroAndNegativeValue(width);
+        ArgumentCheckUtil.CheckNotZeroAndNegativeValue(height);
 
         this.boardWidth = width;
         this.boardHeight = height;
@@ -202,9 +199,7 @@ public class BoardViewer {
     public void draw(PApplet parent) {
 
         // 引数チェック
-        if (parent == null) {
-            throw new NullPointerException("描画先のアプレットをnullにすることはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNull(parent);
 
         parent.rectMode(PApplet.CORNER);
         parent.ellipseMode(PApplet.CORNER);

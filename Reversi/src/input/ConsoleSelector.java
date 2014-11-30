@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import util.ArgumentCheckUtil;
 import core.NextMove;
 import core.Cell;
 
@@ -22,12 +23,7 @@ public class ConsoleSelector implements NextMoveSelector {
     public NextMove select(Cell cell, String message) {
 
         // 引数チェック
-        if((cell != Cell.WHITE)
-                && (cell != Cell.BLACK)) {
-            throw new IllegalArgumentException(
-                    "白石(" + Cell.WHITE + ")か"
-                    + "黒石(" + Cell.BLACK + "でなければなりません.");
-        }
+        ArgumentCheckUtil.CheckNotNothing(cell);
 
         BufferedReader reader = new BufferedReader(
                 new InputStreamReader(System.in), 1);
@@ -120,9 +116,7 @@ public class ConsoleSelector implements NextMoveSelector {
     public void dispImportantMessage(String message) {
 
         // 引数チェック
-        if(message == null) {
-            throw new NullPointerException("メッセージをnullにすることはできません.");
-        }
+        ArgumentCheckUtil.CheckNotNull(message);
 
         this.dispMessage(message);
         System.out.print("Please input something. >> ");
