@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import core.NextMove;
-import core.Stone;
+import core.Cell;
 
 /**
  * リバーシの次の手をコンソールから入力するクラスです.
@@ -19,14 +19,14 @@ public class ConsoleSelector implements NextMoveSelector {
      * 入出力エラーが発生した場合は負の座標の手を返します.
      */
     @Override
-    public NextMove select(Stone stone, String message) {
+    public NextMove select(Cell cell, String message) {
 
         // 引数チェック
-        if((stone != Stone.WHITE)
-                && (stone != Stone.BLACK)) {
+        if((cell != Cell.WHITE)
+                && (cell != Cell.BLACK)) {
             throw new IllegalArgumentException(
-                    "白石(" + Stone.WHITE + ")か"
-                    + "黒石(" + Stone.BLACK + "でなければなりません.");
+                    "白石(" + Cell.WHITE + ")か"
+                    + "黒石(" + Cell.BLACK + "でなければなりません.");
         }
 
         BufferedReader reader = new BufferedReader(
@@ -82,17 +82,17 @@ public class ConsoleSelector implements NextMoveSelector {
             }
         } catch(IOException e) {
             System.err.println("IO Error!!!");
-            return new NextMove(-1, -1, stone);
+            return new NextMove(-1, -1, cell);
         }
 
-        return new NextMove(x, y, stone);
+        return new NextMove(x, y, cell);
 
     }
 
     @Override
-    public NextMove select(Stone stone) {
+    public NextMove select(Cell cell) {
 
-        return this.select(stone, "");
+        return this.select(cell, "");
 
     }
 

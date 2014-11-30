@@ -24,7 +24,7 @@ public class GameManager implements Runnable {
     /**
      * プレイヤーが使用する石です.
      */
-    private final Stone[] stones;
+    private final Cell[] cells;
 
     /**
      * ゲームの盤面です.
@@ -94,9 +94,9 @@ public class GameManager implements Runnable {
         this.players[1] = p2;
 
         // 先行・後攻の色設定
-        this.stones = new Stone[PLAYER_COUNT];
-        this.stones[0] = Stone.BLACK;
-        this.stones[1] = Stone.WHITE;
+        this.cells = new Cell[PLAYER_COUNT];
+        this.cells[0] = Cell.BLACK;
+        this.cells[1] = Cell.WHITE;
 
         this.gameRecord = new ArrayList<NextMove>();
         this.board = board;
@@ -114,17 +114,17 @@ public class GameManager implements Runnable {
         for(int y = 0; y < this.board.getHeight(); y++) {
             for(int x = 0; x < this.board.getWidth(); x++) {
 
-                this.board.initStone(x, y, Stone.NOTHING);
+                this.board.initStone(x, y, Cell.NOTHING);
 
             }
         }
 
         // CHECKSTYLE:OFF
         // 初期配置
-        this.board.initStone(3, 3, Stone.WHITE);
-        this.board.initStone(4, 4, Stone.WHITE);
-        this.board.initStone(3, 4, Stone.BLACK);
-        this.board.initStone(4, 3, Stone.BLACK);
+        this.board.initStone(3, 3, Cell.WHITE);
+        this.board.initStone(4, 4, Cell.WHITE);
+        this.board.initStone(3, 4, Cell.BLACK);
+        this.board.initStone(4, 3, Cell.BLACK);
         // CHECKSTYLE:ON
         
         this.currentPlayerNo = 0;
@@ -143,9 +143,9 @@ public class GameManager implements Runnable {
         this.viewer.view(this.board);
 
         // 次の手を取得
-        Stone stone = this.stones[this.currentPlayerNo];
+        Cell cell = this.cells[this.currentPlayerNo];
         GamePlayer player = this.players[this.currentPlayerNo];
-        NextMove move = player.think(stone, this.board);
+        NextMove move = player.think(cell, this.board);
 
         if(move == null) {
 
@@ -158,7 +158,7 @@ public class GameManager implements Runnable {
             for(int y = 0; y < this.board.getHeight(); y++) {
                 for(int x = 0; x < this.board.getWidth(); x++) {
 
-                    if(checkBoard.putStone(x, y, stone)) {
+                    if(checkBoard.putStone(x, y, cell)) {
                         // 石を置けるのにパスをした場合はルール違反
                         this.viewer.view("You cannot pass.");
 
@@ -191,7 +191,7 @@ public class GameManager implements Runnable {
             this.gameRecord.add(move);
             this.passCount = 0;
 
-            if(this.stones[this.currentPlayerNo] == Stone.WHITE) {
+            if(this.cells[this.currentPlayerNo] == Cell.WHITE) {
                 this.viewer.view("White player put " + move);
             } else {
                 this.viewer.view("Black player put " + move);
@@ -199,7 +199,7 @@ public class GameManager implements Runnable {
 
         }
 
-        if(this.board.getStoneCount(Stone.NOTHING) <= 0) {
+        if(this.board.getStoneCount(Cell.NOTHING) <= 0) {
             // すべてのマスに石がある
             this.gameoverFlag = true;
         } else {
@@ -224,8 +224,8 @@ public class GameManager implements Runnable {
      */
     public void viewGameResult() {
 
-        int whiteCount = this.board.getStoneCount(Stone.WHITE);
-        int blackCount = this.board.getStoneCount(Stone.BLACK);
+        int whiteCount = this.board.getStoneCount(Cell.WHITE);
+        int blackCount = this.board.getStoneCount(Cell.BLACK);
 
 
         if(!this.isFinish()) {
@@ -249,8 +249,8 @@ public class GameManager implements Runnable {
      * 現在の手番プレイヤーの石を取得します.
      * @return 手番プレイヤーの石
      */
-    public Stone getCurrentStone() {
-        return this.stones[this.currentPlayerNo];
+    public Cell getCurrentStone() {
+        return this.cells[this.currentPlayerNo];
     }
 
 

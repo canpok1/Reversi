@@ -21,20 +21,20 @@ public class NextMove {
     /**
      * 置く石の色です.どの値が何色を表すかは{@link Board}を参照してください.
      */
-    private final Stone stone;
+    private final Cell cell;
 
 
     /**
      * プレイヤーが指す手を作成します.
      * @param x 石を置くマス目のX座標
      * @param y 石を置くマス目のY座標
-     * @param stone 石の色
+     * @param cell 石の色
      */
-    public NextMove(int x, int y, Stone stone) {
+    public NextMove(int x, int y, Cell cell) {
 
         this.x = x;
         this.y = y;
-        this.stone = stone;
+        this.cell = cell;
 
     }
 
@@ -59,8 +59,8 @@ public class NextMove {
      * 石の色を取得します.
      * @return 石の色
      */
-    public Stone getStone() {
-        return this.stone;
+    public Cell getStone() {
+        return this.cell;
     }
 
 

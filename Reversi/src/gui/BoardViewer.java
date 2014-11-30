@@ -5,7 +5,7 @@ import static gui.GuiConstants.LayoutConstraints.CELL_SIZE_Y;
 import static gui.GuiConstants.LayoutConstraints.CELL_EDGE_WIDTH;
 import static gui.GuiConstants.LayoutConstraints.STONE_EDGE_WIDTH;
 import processing.core.PApplet;
-import core.Stone;
+import core.Cell;
 
 /**
  * リバーシの盤面を表示するクラスです.
@@ -28,7 +28,7 @@ public class BoardViewer {
     /**
      * 石の配置情報です.
      */
-    private final Stone[][] stones;
+    private final Cell[][] cells;
 
     /**
      * 盤面を描画するときの基準点のX座標です.
@@ -78,11 +78,11 @@ public class BoardViewer {
         this.boardWidth = width;
         this.boardHeight = height;
 
-        this.stones = new Stone[height][width];
+        this.cells = new Cell[height][width];
 
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                this.stones[y][x] = Stone.NOTHING;
+                this.cells[y][x] = Cell.NOTHING;
             }
         }
 
@@ -120,7 +120,7 @@ public class BoardViewer {
      * @throws IllegalArgumentException
      *             指定座標にマスがない場合に発生
      */
-    public Stone getStone(int cellX, int cellY) {
+    public Cell getStone(int cellX, int cellY) {
 
         // 座標が盤面上かをチェック
         if ((cellX < 0) || (cellX >= this.boardWidth) || (cellY < 0)
@@ -128,7 +128,7 @@ public class BoardViewer {
             throw new IllegalArgumentException("マス目が存在しません.");
         }
 
-        return this.stones[cellY][cellX];
+        return this.cells[cellY][cellX];
 
     }
 
@@ -139,12 +139,12 @@ public class BoardViewer {
      *            X座標
      * @param cellY
      *            Y座標
-     * @param stone
+     * @param cell
      *            配置する石
      * @throws IllegalArgumentException
      *             対応するマスや石がない場合に発生
      */
-    public void setStone(int cellX, int cellY, Stone stone) {
+    public void setStone(int cellX, int cellY, Cell cell) {
 
         // 座標が盤面上かをチェック
         if ((cellX < 0) || (cellX >= this.boardWidth) || (cellY < 0)
@@ -152,7 +152,7 @@ public class BoardViewer {
             throw new IllegalArgumentException("マス目が存在しません.");
         }
 
-        this.stones[cellY][cellX] = stone;
+        this.cells[cellY][cellX] = cell;
 
     }
 
@@ -230,12 +230,12 @@ public class BoardViewer {
 
                 // 石を描画
                 parent.strokeWeight(STONE_EDGE_WIDTH);
-                if (this.stones[indexY][indexX] == Stone.BLACK) {
+                if (this.cells[indexY][indexX] == Cell.BLACK) {
 
                     parent.fill(0, 0, 0);
                     parent.ellipse(drawX, drawY, CELL_SIZE_X, CELL_SIZE_Y);
 
-                } else if (this.stones[indexY][indexX] == Stone.WHITE) {
+                } else if (this.cells[indexY][indexX] == Cell.WHITE) {
 
                     parent.fill(255, 255, 255); // CHECKSTYLE IGNORE THIS LINE
                     parent.ellipse(drawX, drawY, CELL_SIZE_X, CELL_SIZE_Y);

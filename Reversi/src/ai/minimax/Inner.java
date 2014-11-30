@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import core.Board;
 import core.NextMove;
-import core.Stone;
+import core.Cell;
 
 /**
  * ゲーム木の内部ノードを表すクラスです.<br>
@@ -25,16 +25,16 @@ public class Inner extends GameTree {
      * 内部ノードを生成します.
      * @param level 何手先を読むかを表す値
      * @param board 評価対象の盤面
-     * @param stone 次に置く石
+     * @param cell 次に置く石
      * @throws IllegalArgumentException 第一引数が負の場合、または第三引数が黒石でも白石でもない場合に発生
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      */
-    public Inner(int level, Board board, Stone stone) {
+    public Inner(int level, Board board, Cell cell) {
 
         super(level, board);
 
         // 引数チェック
-        if((stone != Stone.BLACK) && (stone != Stone.WHITE)) {
+        if((cell != Cell.BLACK) && (cell != Cell.WHITE)) {
             throw new IllegalArgumentException("黒石でも白石でもない値を指定することはできません.");
         }
 
@@ -48,15 +48,15 @@ public class Inner extends GameTree {
                 // 一手先の盤面
                 Board nextBoard = new Board(board);
 
-                if(nextBoard.putStone(x, y, stone)) {
+                if(nextBoard.putStone(x, y, cell)) {
 
                     // 次に置く石
-                    Stone nextStone;
+                    Cell nextStone;
 
-                    if(stone == Stone.BLACK) {
-                        nextStone = Stone.WHITE;
+                    if(cell == Cell.BLACK) {
+                        nextStone = Cell.WHITE;
                     } else {
-                        nextStone = Stone.BLACK;
+                        nextStone = Cell.BLACK;
                     }
 
                     // 一手先のレベル
@@ -77,7 +77,7 @@ public class Inner extends GameTree {
 
         if(nodes.size() <= 0) {
             // 置ける場所がなかった
-            Leaf leaf = new Leaf(level, board, stone);
+            Leaf leaf = new Leaf(level, board, cell);
 
             this.setValue(leaf.getValue());
             this.nextMove = null;
@@ -88,11 +88,11 @@ public class Inner extends GameTree {
 
             for(int index = 1; index < moves.size(); index++) {
 
-                if(stone == Stone.BLACK) {
+                if(cell == Cell.BLACK) {
                     if(nodes.get(bestIndex).getValue() < nodes.get(index).getValue()) {
                         bestIndex = index;
                     }
-                } else if(stone == Stone.WHITE) {
+                } else if(cell == Cell.WHITE) {
                     if(nodes.get(bestIndex).getValue() > nodes.get(index).getValue()) {
                         bestIndex = index;
                     }
@@ -101,7 +101,7 @@ public class Inner extends GameTree {
 
             this.setValue(nodes.get(bestIndex).getValue());
             int[] bestMove = moves.get(bestIndex);
-            this.nextMove = new NextMove(bestMove[0], bestMove[1], stone);
+            this.nextMove = new NextMove(bestMove[0], bestMove[1], cell);
 
         }
     }

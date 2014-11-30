@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import core.Board;
 import core.NextMove;
-import core.Stone;
+import core.Cell;
 
 /**
  * 最も多く石をひっくり返せる場所に置く戦略をとるプレイヤーです.
@@ -54,7 +54,7 @@ public class MaximumReverse implements GamePlayer {
      * @throws IllegalArgumentException 対応する石がない場合に発生
      */
     @Override
-    public NextMove think(Stone stone, Board board) {
+    public NextMove think(Cell cell, Board board) {
 
 
         // 置ける場所
@@ -65,7 +65,7 @@ public class MaximumReverse implements GamePlayer {
         for(int y = 0; y < board.getHeight(); y++) {
             for(int x = 0; x < board.getWidth(); x++) {
 
-                if(copyBoard.putStone(x, y, stone)) {
+                if(copyBoard.putStone(x, y, cell)) {
                     points.add(new int[]{x, y});
                     copyBoard = new Board(board);
                 }
@@ -86,18 +86,18 @@ public class MaximumReverse implements GamePlayer {
         results.add(p);
 
         // 試しに置く
-        copyBoard.putStone(p[0], p[1], stone);
+        copyBoard.putStone(p[0], p[1], cell);
 
         // 評価値の最大値
-        int max = this.getEvaluationValue(stone, copyBoard);
+        int max = this.getEvaluationValue(cell, copyBoard);
 
         copyBoard = new Board(board);
 
         for(int index = 1; index < points.size(); index++) {
 
             int[] point = points.get(index);
-            copyBoard.putStone(point[0], point[1], stone);
-            int val = this.getEvaluationValue(stone, copyBoard);
+            copyBoard.putStone(point[0], point[1], cell);
+            int val = this.getEvaluationValue(cell, copyBoard);
 
             if(val > max) {
                 results.clear();
@@ -117,7 +117,7 @@ public class MaximumReverse implements GamePlayer {
 
         int select = (int)Math.floor(Math.random() * results.size());
         int[] result = results.get(select);
-        return new NextMove(result[0], result[1], stone);
+        return new NextMove(result[0], result[1], cell);
 
     }
 
@@ -125,24 +125,24 @@ public class MaximumReverse implements GamePlayer {
     /**
      * 現在の盤面の評価値を取得します.<br>
      * 評価値は、盤面上の自分の石の数です.
-     * @param stone 評価する側の石
+     * @param cell 評価する側の石
      * @param board 盤面
      * @return 評価値
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      * @throws IllegalArgumentException 対応する石がない場合に発生
      */
-    private int getEvaluationValue(Stone stone, Board board) {
+    private int getEvaluationValue(Cell cell, Board board) {
 
         // 引数チェック
-        if((stone != Stone.BLACK)
-                && (stone != Stone.WHITE)) {
+        if((cell != Cell.BLACK)
+                && (cell != Cell.WHITE)) {
             throw new IllegalArgumentException("対応する石がありません.");
         }
         if(board == null) {
             throw new NullPointerException("ボードをnullにすることはできません.");
         }
 
-        return board.getStoneCount(stone);
+        return board.getStoneCount(cell);
 
     }
 }

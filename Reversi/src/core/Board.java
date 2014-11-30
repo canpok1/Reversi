@@ -16,19 +16,19 @@ public class Board {
     /**
      * 石を置く場所です.
      */
-    private final Stone[][] stones;
+    private final Cell[][] cells;
 
     /**
      * 盤面を生成します.
      */
     public Board() {
 
-        this.stones = new Stone[BOARD_HEIGHT][BOARD_WIDTH];
+        this.cells = new Cell[BOARD_HEIGHT][BOARD_WIDTH];
 
         for(int y = 0; y < BOARD_HEIGHT; y++) {
             for(int x = 0; x < BOARD_WIDTH; x++) {
 
-                this.stones[y][x] = Stone.NOTHING;
+                this.cells[y][x] = Cell.NOTHING;
 
             }
         }
@@ -48,12 +48,12 @@ public class Board {
             throw new IllegalArgumentException("コピー元をnullにはできません.");
         }
 
-        this.stones = new Stone[BOARD_HEIGHT][BOARD_WIDTH];
+        this.cells = new Cell[BOARD_HEIGHT][BOARD_WIDTH];
 
         for(int y = 0; y < BOARD_HEIGHT; y++) {
             for(int x = 0; x < BOARD_WIDTH; x++) {
 
-                this.stones[y][x] = board.getStone(x, y);
+                this.cells[y][x] = board.getStone(x, y);
 
             }
         }
@@ -65,11 +65,11 @@ public class Board {
      * 指定のマス目に石を配置します.ゲームの初期化で使用して下さい.
      * @param x マス目のX座標
      * @param y マス目のY座標
-     * @param stone 配置する石を表す値
+     * @param cell 配置する石を表す値
      * @throws ArrayIndexOutOfBoundsException 盤面の範囲外を指定した場合に発生
      */
-    public void initStone(int x, int y, Stone stone) {
-        this.stones[y][x] = stone;
+    public void initStone(int x, int y, Cell cell) {
+        this.cells[y][x] = cell;
     }
 
 
@@ -80,24 +80,24 @@ public class Board {
      * @return 石を表す値
      * @throws ArrayIndexOutOfBoundsException 盤面の範囲外を指定した場合に発生
      */
-    public Stone getStone(int x, int y) {
-        return this.stones[y][x];
+    public Cell getStone(int x, int y) {
+        return this.cells[y][x];
     }
 
 
     /**
      * 指定した石の数を取得します.
-     * @param stone 数える石
+     * @param cell 数える石
      * @return 石の数
      */
-    public int getStoneCount(Stone stone) {
+    public int getStoneCount(Cell cell) {
 
         int count = 0;
 
         for(int y = 0; y < BOARD_HEIGHT; y++) {
             for(int x = 0; x < BOARD_WIDTH; x++) {
 
-                if(this.stones[y][x] == stone) {
+                if(this.cells[y][x] == cell) {
                     count++;
                 }
 
@@ -115,23 +115,23 @@ public class Board {
      * 石をひっくり返すことができないマス目であれば石を配置しません.
      * @param x マス目のX座標
      * @param y マス目のY座標
-     * @param stone 配置する石を表す値
+     * @param cell 配置する石を表す値
      * @return 石を置くことができれば<code>true</code>、置けなければ<code>false</code>
      * @throws ArrayIndexOutOfBoundsException
      *  盤面の範囲外を指定した場合に発生
      * @throws IllegalArgumentException
      *  第三引数が{@link Board#WHITE_STONE}でも{@link Board#BLACK_STONE}でもない場合に発生
      */
-    public boolean putStone(int x, int y, Stone stone) {
+    public boolean putStone(int x, int y, Cell cell) {
 
         // 引数チェック
-        if((stone != Stone.WHITE)
-                && (stone != Stone.BLACK)) {
+        if((cell != Cell.WHITE)
+                && (cell != Cell.BLACK)) {
             throw new IllegalArgumentException("石を表す値が不正です.");
         }
 
         // 指定のマス目に石が置かれていないことをチェック
-        if(this.getStone(x, y) != Stone.NOTHING) {
+        if(this.getStone(x, y) != Cell.NOTHING) {
             return false;
         }
 
@@ -141,33 +141,33 @@ public class Board {
 
         // CHECKSTYLE:OFF
         // 上方向のチェック
-        points.addAll(this.getReversedStones(x, y, stone, 0));
+        points.addAll(this.getReversedStones(x, y, cell, 0));
         // 右上方向のチェック
-        points.addAll(this.getReversedStones(x, y, stone, 1));
+        points.addAll(this.getReversedStones(x, y, cell, 1));
         // 右方向のチェック
-        points.addAll(this.getReversedStones(x, y, stone, 2));
+        points.addAll(this.getReversedStones(x, y, cell, 2));
         // 右下方向のチェック
-        points.addAll(this.getReversedStones(x, y, stone, 3));
+        points.addAll(this.getReversedStones(x, y, cell, 3));
         // 下方向のチェック
-        points.addAll(this.getReversedStones(x, y, stone, 4));
+        points.addAll(this.getReversedStones(x, y, cell, 4));
         // 左下方向のチェック
-        points.addAll(this.getReversedStones(x, y, stone, 5));
+        points.addAll(this.getReversedStones(x, y, cell, 5));
         // 左方向のチェック
-        points.addAll(this.getReversedStones(x, y, stone, 6));
+        points.addAll(this.getReversedStones(x, y, cell, 6));
         // 左上方向のチェック
-        points.addAll(this.getReversedStones(x, y, stone, 7));
+        points.addAll(this.getReversedStones(x, y, cell, 7));
         // CHECKSTYLE:ON
 
         if(points.size() != 0) {
 
-            this.initStone(x, y, stone);
+            this.initStone(x, y, cell);
 
             for(Object obj : points.toArray()) {
 
                 if(obj instanceof int[]) {
 
                     int[] point = (int[])obj;
-                    this.initStone(point[0], point[1], stone);
+                    this.initStone(point[0], point[1], cell);
 
                 }
 
@@ -187,51 +187,51 @@ public class Board {
      * 石をひっくり返すことができない場合は石を置くことができません.
      * @param x 石を置くマスのX座標
      * @param y 石を置くマスのY座標
-     * @param stone 置く石
+     * @param cell 置く石
      * @return 石を置くことができる場合は<code>true</code>、置けない場合は<code>false</code>
      * @throws ArrayIndexOutOfBoundsException 盤面の範囲外を指定した場合に発生
      * @throws IllegalArgumentException
      *     第三引数が{@link Board#WHITE_STONE}でも{@link Board#BLACK_STONE}でもない場合に発生
      */
-    public boolean canPut(int x, int y, Stone stone) {
+    public boolean canPut(int x, int y, Cell cell) {
 
         // 引数チェック
-        if((stone != Stone.WHITE)
-                && (stone != Stone.BLACK)) {
+        if((cell != Cell.WHITE)
+                && (cell != Cell.BLACK)) {
             throw new IllegalArgumentException("石を表す値が不正です.");
         }
 
         // CHECKSTYLE:OFF
         // 上方向のチェック
-        if(this.getReversedStones(x, y, stone, 0).size() != 0) {
+        if(this.getReversedStones(x, y, cell, 0).size() != 0) {
             return true;
         }
         // 右上方向のチェック
-        if(this.getReversedStones(x, y, stone, 1).size() != 0) {
+        if(this.getReversedStones(x, y, cell, 1).size() != 0) {
             return true;
         }
         // 右方向のチェック
-        if(this.getReversedStones(x, y, stone, 2).size() != 0) {
+        if(this.getReversedStones(x, y, cell, 2).size() != 0) {
             return true;
         }
         // 右下方向のチェック
-        if(this.getReversedStones(x, y, stone, 3).size() != 0) {
+        if(this.getReversedStones(x, y, cell, 3).size() != 0) {
             return true;
         }
         // 下方向のチェック
-        if(this.getReversedStones(x, y, stone, 4).size() != 0) {
+        if(this.getReversedStones(x, y, cell, 4).size() != 0) {
             return true;
         }
         // 左下方向のチェック
-        if(this.getReversedStones(x, y, stone, 5).size() != 0) {
+        if(this.getReversedStones(x, y, cell, 5).size() != 0) {
             return true;
         }
         // 左方向のチェック
-        if(this.getReversedStones(x, y, stone, 6).size() != 0) {
+        if(this.getReversedStones(x, y, cell, 6).size() != 0) {
             return true;
         }
         // 左上方向のチェック
-        if(this.getReversedStones(x, y, stone, 7).size() != 0) {
+        if(this.getReversedStones(x, y, cell, 7).size() != 0) {
             return true;
         }
         // CHECKSTYLE:ON
@@ -246,13 +246,13 @@ public class Board {
      * 引数で指定した一方向のみをチェックします.
      * @param x 石を置くX座標
      * @param y 石を置くY座標
-     * @param stone 石を表す値
+     * @param cell 石を表す値
      * @param direction 方向を表す値.上(0)、右上(1)、右(2)、右下(3)、下(4)、左下(5)、左(6)、左上(7)
      * @return ひっくり返す石の座標を保持した{@link Set}.
      * 中身はint[2]で、0番がX座標、1番がY座標です.
      * @throws IllegalArgumentException 石と方向を表す値が不正な場合に発生
      */
-    private Set<int[]> getReversedStones(int x, int y, Stone stone, int direction) {
+    private Set<int[]> getReversedStones(int x, int y, Cell cell, int direction) {
 
         // チェックしていく方向
         int[][] dir = {
@@ -267,8 +267,8 @@ public class Board {
         };
 
         // 引数チェック
-        if((stone != Stone.WHITE)
-                && (stone != Stone.BLACK)) {
+        if((cell != Cell.WHITE)
+                && (cell != Cell.BLACK)) {
             throw new IllegalArgumentException("石を表す値が不正です.");
         }
 
@@ -294,12 +294,12 @@ public class Board {
         // 指定の方向を走査します.
         while(this.isContain(checkX, checkY)) {
 
-            if(this.getStone(checkX, checkY) == Stone.NOTHING) {
+            if(this.getStone(checkX, checkY) == Cell.NOTHING) {
 
                 // 石がないマス目なので、何もひっくり返せない
                 break;
 
-            } else if(this.getStone(checkX, checkY) == stone) {
+            } else if(this.getStone(checkX, checkY) == cell) {
 
                 // 同じ石があれば、それまでの見つけた石をひっくり返せる
                 result.addAll(stones);

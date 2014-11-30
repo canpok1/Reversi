@@ -16,7 +16,7 @@ import ai.PlayerFactory;
 import core.Board;
 import core.GameManager;
 import core.NextMove;
-import core.Stone;
+import core.Cell;
 
 /**
  * ゲームを描画するクラスです.
@@ -88,7 +88,7 @@ public class GameApplet extends PApplet
     /**
      * 次に置く石です.
      */
-    private Stone nextStone;
+    private Cell nextStone;
 
     /**
      * 次の手です.
@@ -124,7 +124,7 @@ public class GameApplet extends PApplet
 
         this.changeScene(SCENE.MODE_SELECT);
 
-        this.nextStone = Stone.NOTHING;
+        this.nextStone = Cell.NOTHING;
         this.nextMove = null;
 
         this.manager = null;
@@ -256,8 +256,8 @@ public class GameApplet extends PApplet
                 if((cellX >= 0) && (cellY >= 0)) {
     
                     // マウスカーソルが盤面上
-                    if((this.nextStone == Stone.BLACK)
-                            || (this.nextStone == Stone.WHITE)) {
+                    if((this.nextStone == Cell.BLACK)
+                            || (this.nextStone == Cell.WHITE)) {
                         this.nextMove = new NextMove(cellX, cellY, this.nextStone);
                     }
     
@@ -362,28 +362,28 @@ public class GameApplet extends PApplet
 
     /**
      * 次の手を選びます.
-     * @param stone 置く石
+     * @param cell 置く石
      * @param message 表示するメッセージ
      * @return 次の手
      */
     @Override
-    public NextMove select(Stone stone, String message) {
+    public NextMove select(Cell cell, String message) {
 
         this.view(message);
 
-        return this.select(stone);
+        return this.select(cell);
     }
 
 
     /**
      * 次の手を選びます.
-     * @param stone 置く石
+     * @param cell 置く石
      * @return 次の手
      */
     @Override
-    public NextMove select(Stone stone) {
+    public NextMove select(Cell cell) {
 
-        this.nextStone = stone;
+        this.nextStone = cell;
 
         this.buttons[GameApplet.CANCEL_BUTTON].setText("GIVE UP");
 
@@ -403,7 +403,7 @@ public class GameApplet extends PApplet
 
         NextMove result = this.nextMove;
 
-        this.nextStone = Stone.NOTHING;
+        this.nextStone = Cell.NOTHING;
         this.nextMove = null;
 
         return result;

@@ -3,7 +3,7 @@ package ai;
 import ai.minimax.MiniMax;
 import core.Board;
 import core.NextMove;
-import core.Stone;
+import core.Cell;
 
 /**
  * 石を置くことで全体の評価値が最も高くなる場所に石を置く戦略をとるプレイヤーです.<br>
@@ -56,12 +56,12 @@ public class TableReference implements GamePlayer {
      * @throws IllegalArgumentException 対応する石がない場合、または盤面サイズが対応していない場合に発生
      */
     @Override
-    public NextMove think(Stone stone, Board board) {
+    public NextMove think(Cell cell, Board board) {
 
         long start = System.currentTimeMillis();
 
         int level = 4;  // CHECKSTYLE IGNORE THIS LINE
-        NextMove result = MiniMax.getNextMove(level, board, stone);
+        NextMove result = MiniMax.getNextMove(level, board, cell);
 
         long waitTime = this.delayTime - (System.currentTimeMillis() - start);
 

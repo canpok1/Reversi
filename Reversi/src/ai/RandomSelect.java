@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import core.Board;
 import core.NextMove;
-import core.Stone;
+import core.Cell;
 
 /**
  * 置ける場所にランダムに置いていくプレイヤーです.
@@ -48,18 +48,18 @@ public class RandomSelect implements GamePlayer {
 
     /**
      * {@inheritDoc}
-     * @param stone {@inheritDoc}
+     * @param cell {@inheritDoc}
      * @param board {@inheritDoc}
      * @return {@inheritDoc}
      * @throws NullPointerException 引数が<code>null</code>の場合に発生
      * @throws IllegalArgumentException 対応する石がない場合に発生
      */
     @Override
-    public NextMove think(Stone stone, Board board) {
+    public NextMove think(Cell cell, Board board) {
 
         // 引数チェック
-        if((stone != Stone.BLACK)
-                && (stone != Stone.WHITE)) {
+        if((cell != Cell.BLACK)
+                && (cell != Cell.WHITE)) {
             throw new IllegalArgumentException("対応する石がありません.");
         }
         if(board == null) {
@@ -74,7 +74,7 @@ public class RandomSelect implements GamePlayer {
         for(int y = 0; y < board.getHeight(); y++) {
             for(int x = 0; x < board.getWidth(); x++) {
 
-                if(copyBoard.putStone(x, y, stone)) {
+                if(copyBoard.putStone(x, y, cell)) {
                     points.add(new int[]{x, y});
                     copyBoard = new Board(board);
                 }
@@ -91,7 +91,7 @@ public class RandomSelect implements GamePlayer {
         int select = (int)Math.floor(Math.random() * points.size());
         int[] point = points.get(select);
 
-        NextMove move = new NextMove(point[0], point[1], stone);
+        NextMove move = new NextMove(point[0], point[1], cell);
 
         try {
             Thread.sleep(this.delayTime);

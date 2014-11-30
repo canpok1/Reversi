@@ -5,7 +5,7 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 import core.Board;
-import core.Stone;
+import core.Cell;
 
 /**
  * {@link Leaf}の単体テストです.
@@ -24,7 +24,7 @@ public class LeafTest {
         Board board = new Board();
 
         // ここで例外発生
-        new Leaf(-1, board, Stone.BLACK);
+        new Leaf(-1, board, Cell.BLACK);
 
     }
 
@@ -37,7 +37,7 @@ public class LeafTest {
     public void testLeaf2() {
 
         // ここで例外発生
-        new Leaf(1, null, Stone.BLACK);
+        new Leaf(1, null, Cell.BLACK);
 
     }
 
@@ -52,7 +52,7 @@ public class LeafTest {
         Board board = new Board();
 
         // ここで例外発生
-        new Leaf(1, board, Stone.NOTHING);
+        new Leaf(1, board, Cell.NOTHING);
 
     }
 
@@ -67,7 +67,7 @@ public class LeafTest {
         int level = 2;
         Board board = new Board();
 
-        Leaf leaf = new Leaf(level, board, Stone.BLACK);
+        Leaf leaf = new Leaf(level, board, Cell.BLACK);
 
         Assert.assertEquals(level, leaf.getLevel());
 
@@ -84,7 +84,7 @@ public class LeafTest {
         int level = 2;
         Board board = new Board();
 
-        Leaf leaf = new Leaf(level, board, Stone.BLACK);
+        Leaf leaf = new Leaf(level, board, Cell.BLACK);
 
         Assert.assertFalse(board == leaf.getBoard());
 
@@ -101,7 +101,7 @@ public class LeafTest {
         int level = 2;
         Board board = new Board();
 
-        Leaf leaf = new Leaf(level, board, Stone.BLACK);
+        Leaf leaf = new Leaf(level, board, Cell.BLACK);
 
         Assert.assertTrue(board.equals(leaf.getBoard()));
 

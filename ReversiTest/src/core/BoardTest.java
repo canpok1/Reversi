@@ -24,7 +24,7 @@ public class BoardTest {
             
             for(int y = 0; y < instance.getHeight(); y++) {
                 for(int x = 0; x < instance.getWidth(); x++) {
-                    Assert.assertEquals(Stone.NOTHING, instance.getStone(x, y));
+                    Assert.assertEquals(Cell.NOTHING, instance.getStone(x, y));
                 }
             }
         }
@@ -36,15 +36,15 @@ public class BoardTest {
         @Test
         public void コピーコンストラクタで生成したときの石の配置() {    
             Board instance = new Board();
-            instance.initStone(0, 0, Stone.WHITE);
-            instance.initStone(1, 1, Stone.WHITE);
-            instance.initStone(2, 2, Stone.WHITE);
-            instance.initStone(3, 3, Stone.WHITE);
+            instance.initStone(0, 0, Cell.WHITE);
+            instance.initStone(1, 1, Cell.WHITE);
+            instance.initStone(2, 2, Cell.WHITE);
+            instance.initStone(3, 3, Cell.WHITE);
     
-            instance.initStone(1, 0, Stone.BLACK);
-            instance.initStone(2, 0, Stone.BLACK);
-            instance.initStone(3, 0, Stone.BLACK);
-            instance.initStone(4, 0, Stone.BLACK);
+            instance.initStone(1, 0, Cell.BLACK);
+            instance.initStone(2, 0, Cell.BLACK);
+            instance.initStone(3, 0, Cell.BLACK);
+            instance.initStone(4, 0, Cell.BLACK);
     
             // コピー
             Board copy = new Board(instance);
@@ -95,23 +95,23 @@ public class BoardTest {
             int under = this.board.getHeight() - 1;
     
             // 置く石
-            Stone stone = Stone.WHITE;
+            Cell cell = Cell.WHITE;
     
             // 左上に配置
-            this.board.initStone(left, top, stone);
-            Assert.assertEquals(stone, this.board.getStone(left, top));
+            this.board.initStone(left, top, cell);
+            Assert.assertEquals(cell, this.board.getStone(left, top));
     
             // 右上に配置
-            this.board.initStone(right, top, stone);
-            Assert.assertEquals(stone, this.board.getStone(right, top));
+            this.board.initStone(right, top, cell);
+            Assert.assertEquals(cell, this.board.getStone(right, top));
     
             // 左下に配置
-            this.board.initStone(left, under, stone);
-            Assert.assertEquals(stone, this.board.getStone(left, under));
+            this.board.initStone(left, under, cell);
+            Assert.assertEquals(cell, this.board.getStone(left, under));
     
             // 右下に配置
-            this.board.initStone(right, under, stone);
-            Assert.assertEquals(stone, this.board.getStone(right, under));
+            this.board.initStone(right, under, cell);
+            Assert.assertEquals(cell, this.board.getStone(right, under));
     
         }
 
@@ -133,23 +133,23 @@ public class BoardTest {
             int under = this.board.getHeight() - 1;
     
             // 置く石
-            Stone stone = Stone.BLACK;
+            Cell cell = Cell.BLACK;
     
             // 左上に配置
-            this.board.initStone(left, top, stone);
-            Assert.assertEquals(stone, this.board.getStone(left, top));
+            this.board.initStone(left, top, cell);
+            Assert.assertEquals(cell, this.board.getStone(left, top));
     
             // 右上に配置
-            this.board.initStone(right, top, stone);
-            Assert.assertEquals(stone, this.board.getStone(right, top));
+            this.board.initStone(right, top, cell);
+            Assert.assertEquals(cell, this.board.getStone(right, top));
     
             // 左下に配置
-            this.board.initStone(left, under, stone);
-            Assert.assertEquals(stone, this.board.getStone(left, under));
+            this.board.initStone(left, under, cell);
+            Assert.assertEquals(cell, this.board.getStone(left, under));
     
             // 右下に配置
-            this.board.initStone(right, under, stone);
-            Assert.assertEquals(stone, this.board.getStone(right, under));
+            this.board.initStone(right, under, cell);
+            Assert.assertEquals(cell, this.board.getStone(right, under));
     
         }
     
@@ -171,23 +171,23 @@ public class BoardTest {
             int under = this.board.getHeight() - 1;
     
             // 置く石
-            Stone stone = Stone.NOTHING;
+            Cell cell = Cell.NOTHING;
     
             // 左上に配置
-            this.board.initStone(left, top, stone);
-            Assert.assertEquals(stone, this.board.getStone(left, top));
+            this.board.initStone(left, top, cell);
+            Assert.assertEquals(cell, this.board.getStone(left, top));
     
             // 右上に配置
-            this.board.initStone(right, top, stone);
-            Assert.assertEquals(stone, this.board.getStone(right, top));
+            this.board.initStone(right, top, cell);
+            Assert.assertEquals(cell, this.board.getStone(right, top));
     
             // 左下に配置
-            this.board.initStone(left, under, stone);
-            Assert.assertEquals(stone, this.board.getStone(left, under));
+            this.board.initStone(left, under, cell);
+            Assert.assertEquals(cell, this.board.getStone(left, under));
     
             // 右下に配置
-            this.board.initStone(right, under, stone);
-            Assert.assertEquals(stone, this.board.getStone(right, under));
+            this.board.initStone(right, under, cell);
+            Assert.assertEquals(cell, this.board.getStone(right, under));
     
         }
     
@@ -204,10 +204,10 @@ public class BoardTest {
             // 設定するマス目のY座標
             int y = this.board.getHeight() + 1;
             // 設定値
-            Stone stone = Stone.NOTHING;
+            Cell cell = Cell.NOTHING;
     
             // ここで例外発生
-            this.board.initStone(x, y, stone);
+            this.board.initStone(x, y, cell);
     
         }
     
@@ -219,19 +219,19 @@ public class BoardTest {
         public void getStoneCountで石がないマス目の数を取得できるか() {
     
             // 白石を3個置く
-            this.board.initStone(0, 0, Stone.WHITE);
-            this.board.initStone(3, 3, Stone.WHITE);
-            this.board.initStone(5, 5, Stone.WHITE);
+            this.board.initStone(0, 0, Cell.WHITE);
+            this.board.initStone(3, 3, Cell.WHITE);
+            this.board.initStone(5, 5, Cell.WHITE);
     
             // 黒石を3個置く
-            this.board.initStone(1, 1, Stone.BLACK);
-            this.board.initStone(3, 4, Stone.BLACK);
-            this.board.initStone(4, 3, Stone.BLACK);
+            this.board.initStone(1, 1, Cell.BLACK);
+            this.board.initStone(3, 4, Cell.BLACK);
+            this.board.initStone(4, 3, Cell.BLACK);
     
             // 石がないマス目の数
             int count = this.board.getWidth() * this.board.getHeight() - 3 - 3;
     
-            Assert.assertEquals(count, this.board.getStoneCount(Stone.NOTHING));
+            Assert.assertEquals(count, this.board.getStoneCount(Cell.NOTHING));
     
         }
     
@@ -244,19 +244,19 @@ public class BoardTest {
         public void getStoneCountで白石の数を取得できるか() {
     
             // 白石を3個置く
-            this.board.initStone(0, 0, Stone.WHITE);
-            this.board.initStone(3, 3, Stone.WHITE);
-            this.board.initStone(5, 5, Stone.WHITE);
+            this.board.initStone(0, 0, Cell.WHITE);
+            this.board.initStone(3, 3, Cell.WHITE);
+            this.board.initStone(5, 5, Cell.WHITE);
     
             // 黒石を3個置く
-            this.board.initStone(1, 1, Stone.BLACK);
-            this.board.initStone(3, 4, Stone.BLACK);
-            this.board.initStone(4, 3, Stone.BLACK);
+            this.board.initStone(1, 1, Cell.BLACK);
+            this.board.initStone(3, 4, Cell.BLACK);
+            this.board.initStone(4, 3, Cell.BLACK);
     
             // 白石の数
             int count = 3;
     
-            Assert.assertEquals(count, this.board.getStoneCount(Stone.WHITE));
+            Assert.assertEquals(count, this.board.getStoneCount(Cell.WHITE));
     
         }
     
@@ -269,30 +269,30 @@ public class BoardTest {
         public void getStoneCountで黒石の数を取得できるか() {
     
             // 白石を3個置く
-            this.board.initStone(0, 0, Stone.WHITE);
-            this.board.initStone(3, 3, Stone.WHITE);
-            this.board.initStone(5, 5, Stone.WHITE);
+            this.board.initStone(0, 0, Cell.WHITE);
+            this.board.initStone(3, 3, Cell.WHITE);
+            this.board.initStone(5, 5, Cell.WHITE);
     
             // 黒石を3個置く
-            this.board.initStone(1, 1, Stone.BLACK);
-            this.board.initStone(3, 4, Stone.BLACK);
-            this.board.initStone(4, 3, Stone.BLACK);
+            this.board.initStone(1, 1, Cell.BLACK);
+            this.board.initStone(3, 4, Cell.BLACK);
+            this.board.initStone(4, 3, Cell.BLACK);
     
             // 黒石の数
             int count = 3;
     
-            Assert.assertEquals(count, this.board.getStoneCount(Stone.BLACK));
+            Assert.assertEquals(count, this.board.getStoneCount(Cell.BLACK));
     
         }
         
         @Test(expected=ArrayIndexOutOfBoundsException.class)
         public void initStoneでX座標としてマイナス1を渡すと例外発生() {
-            this.board.initStone(-1, 0, Stone.BLACK);
+            this.board.initStone(-1, 0, Cell.BLACK);
         }
         
         @Test(expected=ArrayIndexOutOfBoundsException.class)
         public void initStoneでY座標としてマイナス1を渡すと例外発生() {
-            this.board.initStone(0, -1, Stone.BLACK);
+            this.board.initStone(0, -1, Cell.BLACK);
         }
         
     }
@@ -331,26 +331,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(0, 0, Stone.WHITE);
-            ans.initStone(0, 1, Stone.WHITE);
-            ans.initStone(0, 2, Stone.WHITE);
-            ans.initStone(0, 3, Stone.WHITE);
-            ans.initStone(0, 4, Stone.WHITE);
-            ans.initStone(0, 5, Stone.WHITE);
-            ans.initStone(0, 6, Stone.WHITE);
-            ans.initStone(0, 7, Stone.WHITE);
+            ans.initStone(0, 0, Cell.WHITE);
+            ans.initStone(0, 1, Cell.WHITE);
+            ans.initStone(0, 2, Cell.WHITE);
+            ans.initStone(0, 3, Cell.WHITE);
+            ans.initStone(0, 4, Cell.WHITE);
+            ans.initStone(0, 5, Cell.WHITE);
+            ans.initStone(0, 6, Cell.WHITE);
+            ans.initStone(0, 7, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(0, 0, Stone.WHITE);
-            this.board.initStone(0, 1, Stone.BLACK);
-            this.board.initStone(0, 2, Stone.BLACK);
-            this.board.initStone(0, 3, Stone.BLACK);
-            this.board.initStone(0, 4, Stone.BLACK);
-            this.board.initStone(0, 5, Stone.BLACK);
-            this.board.initStone(0, 6, Stone.BLACK);
+            this.board.initStone(0, 0, Cell.WHITE);
+            this.board.initStone(0, 1, Cell.BLACK);
+            this.board.initStone(0, 2, Cell.BLACK);
+            this.board.initStone(0, 3, Cell.BLACK);
+            this.board.initStone(0, 4, Cell.BLACK);
+            this.board.initStone(0, 5, Cell.BLACK);
+            this.board.initStone(0, 6, Cell.BLACK);
     
             // 石を置く
-            boolean result = this.board.putStone(0, 7, Stone.WHITE);
+            boolean result = this.board.putStone(0, 7, Cell.WHITE);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -380,26 +380,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(7, 0, Stone.WHITE);
-            ans.initStone(6, 1, Stone.WHITE);
-            ans.initStone(5, 2, Stone.WHITE);
-            ans.initStone(4, 3, Stone.WHITE);
-            ans.initStone(3, 4, Stone.WHITE);
-            ans.initStone(2, 5, Stone.WHITE);
-            ans.initStone(1, 6, Stone.WHITE);
-            ans.initStone(0, 7, Stone.WHITE);
+            ans.initStone(7, 0, Cell.WHITE);
+            ans.initStone(6, 1, Cell.WHITE);
+            ans.initStone(5, 2, Cell.WHITE);
+            ans.initStone(4, 3, Cell.WHITE);
+            ans.initStone(3, 4, Cell.WHITE);
+            ans.initStone(2, 5, Cell.WHITE);
+            ans.initStone(1, 6, Cell.WHITE);
+            ans.initStone(0, 7, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(7, 0, Stone.WHITE);
-            this.board.initStone(6, 1, Stone.BLACK);
-            this.board.initStone(5, 2, Stone.BLACK);
-            this.board.initStone(4, 3, Stone.BLACK);
-            this.board.initStone(3, 4, Stone.BLACK);
-            this.board.initStone(2, 5, Stone.BLACK);
-            this.board.initStone(1, 6, Stone.BLACK);
+            this.board.initStone(7, 0, Cell.WHITE);
+            this.board.initStone(6, 1, Cell.BLACK);
+            this.board.initStone(5, 2, Cell.BLACK);
+            this.board.initStone(4, 3, Cell.BLACK);
+            this.board.initStone(3, 4, Cell.BLACK);
+            this.board.initStone(2, 5, Cell.BLACK);
+            this.board.initStone(1, 6, Cell.BLACK);
     
             // 石を置く
-            boolean result = this.board.putStone(0, 7, Stone.WHITE);
+            boolean result = this.board.putStone(0, 7, Cell.WHITE);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -430,26 +430,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(0, 7, Stone.WHITE);
-            ans.initStone(1, 7, Stone.WHITE);
-            ans.initStone(2, 7, Stone.WHITE);
-            ans.initStone(3, 7, Stone.WHITE);
-            ans.initStone(4, 7, Stone.WHITE);
-            ans.initStone(5, 7, Stone.WHITE);
-            ans.initStone(6, 7, Stone.WHITE);
-            ans.initStone(7, 7, Stone.WHITE);
+            ans.initStone(0, 7, Cell.WHITE);
+            ans.initStone(1, 7, Cell.WHITE);
+            ans.initStone(2, 7, Cell.WHITE);
+            ans.initStone(3, 7, Cell.WHITE);
+            ans.initStone(4, 7, Cell.WHITE);
+            ans.initStone(5, 7, Cell.WHITE);
+            ans.initStone(6, 7, Cell.WHITE);
+            ans.initStone(7, 7, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(1, 7, Stone.BLACK);
-            this.board.initStone(2, 7, Stone.BLACK);
-            this.board.initStone(3, 7, Stone.BLACK);
-            this.board.initStone(4, 7, Stone.BLACK);
-            this.board.initStone(5, 7, Stone.BLACK);
-            this.board.initStone(6, 7, Stone.BLACK);
-            this.board.initStone(7, 7, Stone.WHITE);
+            this.board.initStone(1, 7, Cell.BLACK);
+            this.board.initStone(2, 7, Cell.BLACK);
+            this.board.initStone(3, 7, Cell.BLACK);
+            this.board.initStone(4, 7, Cell.BLACK);
+            this.board.initStone(5, 7, Cell.BLACK);
+            this.board.initStone(6, 7, Cell.BLACK);
+            this.board.initStone(7, 7, Cell.WHITE);
     
             // 石を置く
-            boolean result = this.board.putStone(0, 7, Stone.WHITE);
+            boolean result = this.board.putStone(0, 7, Cell.WHITE);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -479,26 +479,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(0, 0, Stone.WHITE);
-            ans.initStone(1, 1, Stone.WHITE);
-            ans.initStone(2, 2, Stone.WHITE);
-            ans.initStone(3, 3, Stone.WHITE);
-            ans.initStone(4, 4, Stone.WHITE);
-            ans.initStone(5, 5, Stone.WHITE);
-            ans.initStone(6, 6, Stone.WHITE);
-            ans.initStone(7, 7, Stone.WHITE);
+            ans.initStone(0, 0, Cell.WHITE);
+            ans.initStone(1, 1, Cell.WHITE);
+            ans.initStone(2, 2, Cell.WHITE);
+            ans.initStone(3, 3, Cell.WHITE);
+            ans.initStone(4, 4, Cell.WHITE);
+            ans.initStone(5, 5, Cell.WHITE);
+            ans.initStone(6, 6, Cell.WHITE);
+            ans.initStone(7, 7, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(1, 1, Stone.BLACK);
-            this.board.initStone(2, 2, Stone.BLACK);
-            this.board.initStone(3, 3, Stone.BLACK);
-            this.board.initStone(4, 4, Stone.BLACK);
-            this.board.initStone(5, 5, Stone.BLACK);
-            this.board.initStone(6, 6, Stone.BLACK);
-            this.board.initStone(7, 7, Stone.WHITE);
+            this.board.initStone(1, 1, Cell.BLACK);
+            this.board.initStone(2, 2, Cell.BLACK);
+            this.board.initStone(3, 3, Cell.BLACK);
+            this.board.initStone(4, 4, Cell.BLACK);
+            this.board.initStone(5, 5, Cell.BLACK);
+            this.board.initStone(6, 6, Cell.BLACK);
+            this.board.initStone(7, 7, Cell.WHITE);
     
             // 石を置く
-            boolean result = this.board.putStone(0, 0, Stone.WHITE);
+            boolean result = this.board.putStone(0, 0, Cell.WHITE);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -528,26 +528,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(0, 0, Stone.WHITE);
-            ans.initStone(0, 1, Stone.WHITE);
-            ans.initStone(0, 2, Stone.WHITE);
-            ans.initStone(0, 3, Stone.WHITE);
-            ans.initStone(0, 4, Stone.WHITE);
-            ans.initStone(0, 5, Stone.WHITE);
-            ans.initStone(0, 6, Stone.WHITE);
-            ans.initStone(0, 7, Stone.WHITE);
+            ans.initStone(0, 0, Cell.WHITE);
+            ans.initStone(0, 1, Cell.WHITE);
+            ans.initStone(0, 2, Cell.WHITE);
+            ans.initStone(0, 3, Cell.WHITE);
+            ans.initStone(0, 4, Cell.WHITE);
+            ans.initStone(0, 5, Cell.WHITE);
+            ans.initStone(0, 6, Cell.WHITE);
+            ans.initStone(0, 7, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(0, 1, Stone.BLACK);
-            this.board.initStone(0, 2, Stone.BLACK);
-            this.board.initStone(0, 3, Stone.BLACK);
-            this.board.initStone(0, 4, Stone.BLACK);
-            this.board.initStone(0, 5, Stone.BLACK);
-            this.board.initStone(0, 6, Stone.BLACK);
-            this.board.initStone(0, 7, Stone.WHITE);
+            this.board.initStone(0, 1, Cell.BLACK);
+            this.board.initStone(0, 2, Cell.BLACK);
+            this.board.initStone(0, 3, Cell.BLACK);
+            this.board.initStone(0, 4, Cell.BLACK);
+            this.board.initStone(0, 5, Cell.BLACK);
+            this.board.initStone(0, 6, Cell.BLACK);
+            this.board.initStone(0, 7, Cell.WHITE);
     
             // 石を置く
-            boolean result = this.board.putStone(0, 0, Stone.WHITE);
+            boolean result = this.board.putStone(0, 0, Cell.WHITE);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -578,26 +578,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(0, 7, Stone.WHITE);
-            ans.initStone(1, 6, Stone.WHITE);
-            ans.initStone(2, 5, Stone.WHITE);
-            ans.initStone(3, 4, Stone.WHITE);
-            ans.initStone(4, 3, Stone.WHITE);
-            ans.initStone(5, 2, Stone.WHITE);
-            ans.initStone(6, 1, Stone.WHITE);
-            ans.initStone(7, 0, Stone.WHITE);
+            ans.initStone(0, 7, Cell.WHITE);
+            ans.initStone(1, 6, Cell.WHITE);
+            ans.initStone(2, 5, Cell.WHITE);
+            ans.initStone(3, 4, Cell.WHITE);
+            ans.initStone(4, 3, Cell.WHITE);
+            ans.initStone(5, 2, Cell.WHITE);
+            ans.initStone(6, 1, Cell.WHITE);
+            ans.initStone(7, 0, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(0, 7, Stone.WHITE);
-            this.board.initStone(1, 6, Stone.BLACK);
-            this.board.initStone(2, 5, Stone.BLACK);
-            this.board.initStone(3, 4, Stone.BLACK);
-            this.board.initStone(4, 3, Stone.BLACK);
-            this.board.initStone(5, 2, Stone.BLACK);
-            this.board.initStone(6, 1, Stone.BLACK);
+            this.board.initStone(0, 7, Cell.WHITE);
+            this.board.initStone(1, 6, Cell.BLACK);
+            this.board.initStone(2, 5, Cell.BLACK);
+            this.board.initStone(3, 4, Cell.BLACK);
+            this.board.initStone(4, 3, Cell.BLACK);
+            this.board.initStone(5, 2, Cell.BLACK);
+            this.board.initStone(6, 1, Cell.BLACK);
     
             // 石を置く
-            boolean result = this.board.putStone(7, 0, Stone.WHITE);
+            boolean result = this.board.putStone(7, 0, Cell.WHITE);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -628,26 +628,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(0, 0, Stone.WHITE);
-            ans.initStone(1, 0, Stone.WHITE);
-            ans.initStone(2, 0, Stone.WHITE);
-            ans.initStone(3, 0, Stone.WHITE);
-            ans.initStone(4, 0, Stone.WHITE);
-            ans.initStone(5, 0, Stone.WHITE);
-            ans.initStone(6, 0, Stone.WHITE);
-            ans.initStone(7, 0, Stone.WHITE);
+            ans.initStone(0, 0, Cell.WHITE);
+            ans.initStone(1, 0, Cell.WHITE);
+            ans.initStone(2, 0, Cell.WHITE);
+            ans.initStone(3, 0, Cell.WHITE);
+            ans.initStone(4, 0, Cell.WHITE);
+            ans.initStone(5, 0, Cell.WHITE);
+            ans.initStone(6, 0, Cell.WHITE);
+            ans.initStone(7, 0, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(0, 0, Stone.WHITE);
-            this.board.initStone(1, 0, Stone.BLACK);
-            this.board.initStone(2, 0, Stone.BLACK);
-            this.board.initStone(3, 0, Stone.BLACK);
-            this.board.initStone(4, 0, Stone.BLACK);
-            this.board.initStone(5, 0, Stone.BLACK);
-            this.board.initStone(6, 0, Stone.BLACK);
+            this.board.initStone(0, 0, Cell.WHITE);
+            this.board.initStone(1, 0, Cell.BLACK);
+            this.board.initStone(2, 0, Cell.BLACK);
+            this.board.initStone(3, 0, Cell.BLACK);
+            this.board.initStone(4, 0, Cell.BLACK);
+            this.board.initStone(5, 0, Cell.BLACK);
+            this.board.initStone(6, 0, Cell.BLACK);
     
             // 石を置く
-            boolean result = this.board.putStone(7, 0, Stone.WHITE);
+            boolean result = this.board.putStone(7, 0, Cell.WHITE);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -678,26 +678,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(0, 0, Stone.WHITE);
-            ans.initStone(1, 1, Stone.WHITE);
-            ans.initStone(2, 2, Stone.WHITE);
-            ans.initStone(3, 3, Stone.WHITE);
-            ans.initStone(4, 4, Stone.WHITE);
-            ans.initStone(5, 5, Stone.WHITE);
-            ans.initStone(6, 6, Stone.WHITE);
-            ans.initStone(7, 7, Stone.WHITE);
+            ans.initStone(0, 0, Cell.WHITE);
+            ans.initStone(1, 1, Cell.WHITE);
+            ans.initStone(2, 2, Cell.WHITE);
+            ans.initStone(3, 3, Cell.WHITE);
+            ans.initStone(4, 4, Cell.WHITE);
+            ans.initStone(5, 5, Cell.WHITE);
+            ans.initStone(6, 6, Cell.WHITE);
+            ans.initStone(7, 7, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(0, 0, Stone.WHITE);
-            this.board.initStone(1, 1, Stone.BLACK);
-            this.board.initStone(2, 2, Stone.BLACK);
-            this.board.initStone(3, 3, Stone.BLACK);
-            this.board.initStone(4, 4, Stone.BLACK);
-            this.board.initStone(5, 5, Stone.BLACK);
-            this.board.initStone(6, 6, Stone.BLACK);
+            this.board.initStone(0, 0, Cell.WHITE);
+            this.board.initStone(1, 1, Cell.BLACK);
+            this.board.initStone(2, 2, Cell.BLACK);
+            this.board.initStone(3, 3, Cell.BLACK);
+            this.board.initStone(4, 4, Cell.BLACK);
+            this.board.initStone(5, 5, Cell.BLACK);
+            this.board.initStone(6, 6, Cell.BLACK);
     
             // 石を置く
-            boolean result = this.board.putStone(7, 7, Stone.WHITE);
+            boolean result = this.board.putStone(7, 7, Cell.WHITE);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -726,32 +726,32 @@ public class BoardTest {
         public void putStoneでの白石配置で間に空白があってどこもひっくり返せないと戻り値False() {
     
             // 石を配置する
-            this.board.initStone(0, 0, Stone.WHITE);
-            this.board.initStone(3, 0, Stone.WHITE);
-            this.board.initStone(6, 0, Stone.WHITE);
-            this.board.initStone(0, 3, Stone.WHITE);
-            this.board.initStone(7, 3, Stone.WHITE);
-            this.board.initStone(0, 6, Stone.WHITE);
-            this.board.initStone(3, 7, Stone.WHITE);
-            this.board.initStone(7, 7, Stone.WHITE);
+            this.board.initStone(0, 0, Cell.WHITE);
+            this.board.initStone(3, 0, Cell.WHITE);
+            this.board.initStone(6, 0, Cell.WHITE);
+            this.board.initStone(0, 3, Cell.WHITE);
+            this.board.initStone(7, 3, Cell.WHITE);
+            this.board.initStone(0, 6, Cell.WHITE);
+            this.board.initStone(3, 7, Cell.WHITE);
+            this.board.initStone(7, 7, Cell.WHITE);
     
-            this.board.initStone(2, 2, Stone.BLACK);
-            this.board.initStone(3, 2, Stone.BLACK);
-            this.board.initStone(4, 2, Stone.BLACK);
-            this.board.initStone(2, 3, Stone.BLACK);
-            this.board.initStone(4, 3, Stone.BLACK);
-            this.board.initStone(5, 3, Stone.BLACK);
-            this.board.initStone(2, 4, Stone.BLACK);
-            this.board.initStone(3, 4, Stone.BLACK);
-            this.board.initStone(4, 4, Stone.BLACK);
-            this.board.initStone(3, 5, Stone.BLACK);
-            this.board.initStone(5, 5, Stone.BLACK);
+            this.board.initStone(2, 2, Cell.BLACK);
+            this.board.initStone(3, 2, Cell.BLACK);
+            this.board.initStone(4, 2, Cell.BLACK);
+            this.board.initStone(2, 3, Cell.BLACK);
+            this.board.initStone(4, 3, Cell.BLACK);
+            this.board.initStone(5, 3, Cell.BLACK);
+            this.board.initStone(2, 4, Cell.BLACK);
+            this.board.initStone(3, 4, Cell.BLACK);
+            this.board.initStone(4, 4, Cell.BLACK);
+            this.board.initStone(3, 5, Cell.BLACK);
+            this.board.initStone(5, 5, Cell.BLACK);
     
             // 石の位置が等しい異なるインスタンスを生成
             Board ans = new Board(this.board);
     
             // 石を置く
-            boolean result = this.board.putStone(3, 3, Stone.WHITE);
+            boolean result = this.board.putStone(3, 3, Cell.WHITE);
     
             // 戻り値チェック
             Assert.assertFalse(result);
@@ -779,46 +779,46 @@ public class BoardTest {
         public void putStoneでの白石配置で白石がなくてどこもひっくり返せないとき戻り値False() {
     
             // 石を配置する
-            this.board.initStone(0, 0, Stone.BLACK);
-            this.board.initStone(3, 0, Stone.BLACK);
-            this.board.initStone(6, 0, Stone.BLACK);
+            this.board.initStone(0, 0, Cell.BLACK);
+            this.board.initStone(3, 0, Cell.BLACK);
+            this.board.initStone(6, 0, Cell.BLACK);
     
-            this.board.initStone(1, 1, Stone.BLACK);
-            this.board.initStone(3, 1, Stone.BLACK);
-            this.board.initStone(5, 1, Stone.BLACK);
+            this.board.initStone(1, 1, Cell.BLACK);
+            this.board.initStone(3, 1, Cell.BLACK);
+            this.board.initStone(5, 1, Cell.BLACK);
     
-            this.board.initStone(2, 2, Stone.BLACK);
-            this.board.initStone(3, 2, Stone.BLACK);
-            this.board.initStone(4, 2, Stone.BLACK);
+            this.board.initStone(2, 2, Cell.BLACK);
+            this.board.initStone(3, 2, Cell.BLACK);
+            this.board.initStone(4, 2, Cell.BLACK);
     
-            this.board.initStone(0, 3, Stone.BLACK);
-            this.board.initStone(1, 3, Stone.BLACK);
-            this.board.initStone(2, 3, Stone.BLACK);
-            this.board.initStone(4, 3, Stone.BLACK);
-            this.board.initStone(5, 3, Stone.BLACK);
-            this.board.initStone(6, 3, Stone.BLACK);
-            this.board.initStone(7, 3, Stone.BLACK);
+            this.board.initStone(0, 3, Cell.BLACK);
+            this.board.initStone(1, 3, Cell.BLACK);
+            this.board.initStone(2, 3, Cell.BLACK);
+            this.board.initStone(4, 3, Cell.BLACK);
+            this.board.initStone(5, 3, Cell.BLACK);
+            this.board.initStone(6, 3, Cell.BLACK);
+            this.board.initStone(7, 3, Cell.BLACK);
     
-            this.board.initStone(2, 4, Stone.BLACK);
-            this.board.initStone(3, 4, Stone.BLACK);
-            this.board.initStone(4, 4, Stone.BLACK);
+            this.board.initStone(2, 4, Cell.BLACK);
+            this.board.initStone(3, 4, Cell.BLACK);
+            this.board.initStone(4, 4, Cell.BLACK);
     
-            this.board.initStone(1, 5, Stone.BLACK);
-            this.board.initStone(3, 5, Stone.BLACK);
-            this.board.initStone(5, 5, Stone.BLACK);
+            this.board.initStone(1, 5, Cell.BLACK);
+            this.board.initStone(3, 5, Cell.BLACK);
+            this.board.initStone(5, 5, Cell.BLACK);
     
-            this.board.initStone(0, 6, Stone.BLACK);
-            this.board.initStone(3, 6, Stone.BLACK);
-            this.board.initStone(6, 6, Stone.BLACK);
+            this.board.initStone(0, 6, Cell.BLACK);
+            this.board.initStone(3, 6, Cell.BLACK);
+            this.board.initStone(6, 6, Cell.BLACK);
     
-            this.board.initStone(3, 7, Stone.BLACK);
-            this.board.initStone(7, 7, Stone.BLACK);
+            this.board.initStone(3, 7, Cell.BLACK);
+            this.board.initStone(7, 7, Cell.BLACK);
     
             // 石の位置が等しい異なるインスタンスを生成
             Board ans = new Board(this.board);
     
             // 石を置く
-            boolean result = this.board.putStone(3, 3, Stone.WHITE);
+            boolean result = this.board.putStone(3, 3, Cell.WHITE);
     
             // 戻り値チェック
             Assert.assertFalse(result);
@@ -849,26 +849,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(0, 0, Stone.BLACK);
-            ans.initStone(0, 1, Stone.BLACK);
-            ans.initStone(0, 2, Stone.BLACK);
-            ans.initStone(0, 3, Stone.BLACK);
-            ans.initStone(0, 4, Stone.BLACK);
-            ans.initStone(0, 5, Stone.BLACK);
-            ans.initStone(0, 6, Stone.BLACK);
-            ans.initStone(0, 7, Stone.BLACK);
+            ans.initStone(0, 0, Cell.BLACK);
+            ans.initStone(0, 1, Cell.BLACK);
+            ans.initStone(0, 2, Cell.BLACK);
+            ans.initStone(0, 3, Cell.BLACK);
+            ans.initStone(0, 4, Cell.BLACK);
+            ans.initStone(0, 5, Cell.BLACK);
+            ans.initStone(0, 6, Cell.BLACK);
+            ans.initStone(0, 7, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(0, 0, Stone.BLACK);
-            this.board.initStone(0, 1, Stone.WHITE);
-            this.board.initStone(0, 2, Stone.WHITE);
-            this.board.initStone(0, 3, Stone.WHITE);
-            this.board.initStone(0, 4, Stone.WHITE);
-            this.board.initStone(0, 5, Stone.WHITE);
-            this.board.initStone(0, 6, Stone.WHITE);
+            this.board.initStone(0, 0, Cell.BLACK);
+            this.board.initStone(0, 1, Cell.WHITE);
+            this.board.initStone(0, 2, Cell.WHITE);
+            this.board.initStone(0, 3, Cell.WHITE);
+            this.board.initStone(0, 4, Cell.WHITE);
+            this.board.initStone(0, 5, Cell.WHITE);
+            this.board.initStone(0, 6, Cell.WHITE);
     
             // 石を置く
-            boolean result = this.board.putStone(0, 7, Stone.BLACK);
+            boolean result = this.board.putStone(0, 7, Cell.BLACK);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -898,26 +898,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(0, 7, Stone.BLACK);
-            ans.initStone(1, 6, Stone.BLACK);
-            ans.initStone(2, 5, Stone.BLACK);
-            ans.initStone(3, 4, Stone.BLACK);
-            ans.initStone(4, 3, Stone.BLACK);
-            ans.initStone(5, 2, Stone.BLACK);
-            ans.initStone(6, 1, Stone.BLACK);
-            ans.initStone(7, 0, Stone.BLACK);
+            ans.initStone(0, 7, Cell.BLACK);
+            ans.initStone(1, 6, Cell.BLACK);
+            ans.initStone(2, 5, Cell.BLACK);
+            ans.initStone(3, 4, Cell.BLACK);
+            ans.initStone(4, 3, Cell.BLACK);
+            ans.initStone(5, 2, Cell.BLACK);
+            ans.initStone(6, 1, Cell.BLACK);
+            ans.initStone(7, 0, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(1, 6, Stone.WHITE);
-            this.board.initStone(2, 5, Stone.WHITE);
-            this.board.initStone(3, 4, Stone.WHITE);
-            this.board.initStone(4, 3, Stone.WHITE);
-            this.board.initStone(5, 2, Stone.WHITE);
-            this.board.initStone(6, 1, Stone.WHITE);
-            this.board.initStone(7, 0, Stone.BLACK);
+            this.board.initStone(1, 6, Cell.WHITE);
+            this.board.initStone(2, 5, Cell.WHITE);
+            this.board.initStone(3, 4, Cell.WHITE);
+            this.board.initStone(4, 3, Cell.WHITE);
+            this.board.initStone(5, 2, Cell.WHITE);
+            this.board.initStone(6, 1, Cell.WHITE);
+            this.board.initStone(7, 0, Cell.BLACK);
     
             // 石を置く
-            boolean result = this.board.putStone(0, 7, Stone.BLACK);
+            boolean result = this.board.putStone(0, 7, Cell.BLACK);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -947,26 +947,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(0, 7, Stone.BLACK);
-            ans.initStone(1, 7, Stone.BLACK);
-            ans.initStone(2, 7, Stone.BLACK);
-            ans.initStone(3, 7, Stone.BLACK);
-            ans.initStone(4, 7, Stone.BLACK);
-            ans.initStone(5, 7, Stone.BLACK);
-            ans.initStone(6, 7, Stone.BLACK);
-            ans.initStone(7, 7, Stone.BLACK);
+            ans.initStone(0, 7, Cell.BLACK);
+            ans.initStone(1, 7, Cell.BLACK);
+            ans.initStone(2, 7, Cell.BLACK);
+            ans.initStone(3, 7, Cell.BLACK);
+            ans.initStone(4, 7, Cell.BLACK);
+            ans.initStone(5, 7, Cell.BLACK);
+            ans.initStone(6, 7, Cell.BLACK);
+            ans.initStone(7, 7, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(1, 7, Stone.WHITE);
-            this.board.initStone(2, 7, Stone.WHITE);
-            this.board.initStone(3, 7, Stone.WHITE);
-            this.board.initStone(4, 7, Stone.WHITE);
-            this.board.initStone(5, 7, Stone.WHITE);
-            this.board.initStone(6, 7, Stone.WHITE);
-            this.board.initStone(7, 7, Stone.BLACK);
+            this.board.initStone(1, 7, Cell.WHITE);
+            this.board.initStone(2, 7, Cell.WHITE);
+            this.board.initStone(3, 7, Cell.WHITE);
+            this.board.initStone(4, 7, Cell.WHITE);
+            this.board.initStone(5, 7, Cell.WHITE);
+            this.board.initStone(6, 7, Cell.WHITE);
+            this.board.initStone(7, 7, Cell.BLACK);
     
             // 石を置く
-            boolean result = this.board.putStone(0, 7, Stone.BLACK);
+            boolean result = this.board.putStone(0, 7, Cell.BLACK);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -996,26 +996,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(0, 0, Stone.BLACK);
-            ans.initStone(1, 1, Stone.BLACK);
-            ans.initStone(2, 2, Stone.BLACK);
-            ans.initStone(3, 3, Stone.BLACK);
-            ans.initStone(4, 4, Stone.BLACK);
-            ans.initStone(5, 5, Stone.BLACK);
-            ans.initStone(6, 6, Stone.BLACK);
-            ans.initStone(7, 7, Stone.BLACK);
+            ans.initStone(0, 0, Cell.BLACK);
+            ans.initStone(1, 1, Cell.BLACK);
+            ans.initStone(2, 2, Cell.BLACK);
+            ans.initStone(3, 3, Cell.BLACK);
+            ans.initStone(4, 4, Cell.BLACK);
+            ans.initStone(5, 5, Cell.BLACK);
+            ans.initStone(6, 6, Cell.BLACK);
+            ans.initStone(7, 7, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(1, 1, Stone.WHITE);
-            this.board.initStone(2, 2, Stone.WHITE);
-            this.board.initStone(3, 3, Stone.WHITE);
-            this.board.initStone(4, 4, Stone.WHITE);
-            this.board.initStone(5, 5, Stone.WHITE);
-            this.board.initStone(6, 6, Stone.WHITE);
-            this.board.initStone(7, 7, Stone.BLACK);
+            this.board.initStone(1, 1, Cell.WHITE);
+            this.board.initStone(2, 2, Cell.WHITE);
+            this.board.initStone(3, 3, Cell.WHITE);
+            this.board.initStone(4, 4, Cell.WHITE);
+            this.board.initStone(5, 5, Cell.WHITE);
+            this.board.initStone(6, 6, Cell.WHITE);
+            this.board.initStone(7, 7, Cell.BLACK);
     
             // 石を置く
-            boolean result = this.board.putStone(0, 0, Stone.BLACK);
+            boolean result = this.board.putStone(0, 0, Cell.BLACK);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -1045,26 +1045,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(0, 0, Stone.BLACK);
-            ans.initStone(0, 1, Stone.BLACK);
-            ans.initStone(0, 2, Stone.BLACK);
-            ans.initStone(0, 3, Stone.BLACK);
-            ans.initStone(0, 4, Stone.BLACK);
-            ans.initStone(0, 5, Stone.BLACK);
-            ans.initStone(0, 6, Stone.BLACK);
-            ans.initStone(0, 7, Stone.BLACK);
+            ans.initStone(0, 0, Cell.BLACK);
+            ans.initStone(0, 1, Cell.BLACK);
+            ans.initStone(0, 2, Cell.BLACK);
+            ans.initStone(0, 3, Cell.BLACK);
+            ans.initStone(0, 4, Cell.BLACK);
+            ans.initStone(0, 5, Cell.BLACK);
+            ans.initStone(0, 6, Cell.BLACK);
+            ans.initStone(0, 7, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(0, 1, Stone.WHITE);
-            this.board.initStone(0, 2, Stone.WHITE);
-            this.board.initStone(0, 3, Stone.WHITE);
-            this.board.initStone(0, 4, Stone.WHITE);
-            this.board.initStone(0, 5, Stone.WHITE);
-            this.board.initStone(0, 6, Stone.WHITE);
-            this.board.initStone(0, 7, Stone.BLACK);
+            this.board.initStone(0, 1, Cell.WHITE);
+            this.board.initStone(0, 2, Cell.WHITE);
+            this.board.initStone(0, 3, Cell.WHITE);
+            this.board.initStone(0, 4, Cell.WHITE);
+            this.board.initStone(0, 5, Cell.WHITE);
+            this.board.initStone(0, 6, Cell.WHITE);
+            this.board.initStone(0, 7, Cell.BLACK);
     
             // 石を置く
-            boolean result = this.board.putStone(0, 0, Stone.BLACK);
+            boolean result = this.board.putStone(0, 0, Cell.BLACK);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -1095,26 +1095,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(0, 7, Stone.BLACK);
-            ans.initStone(1, 6, Stone.BLACK);
-            ans.initStone(2, 5, Stone.BLACK);
-            ans.initStone(3, 4, Stone.BLACK);
-            ans.initStone(4, 3, Stone.BLACK);
-            ans.initStone(5, 2, Stone.BLACK);
-            ans.initStone(6, 1, Stone.BLACK);
-            ans.initStone(7, 0, Stone.BLACK);
+            ans.initStone(0, 7, Cell.BLACK);
+            ans.initStone(1, 6, Cell.BLACK);
+            ans.initStone(2, 5, Cell.BLACK);
+            ans.initStone(3, 4, Cell.BLACK);
+            ans.initStone(4, 3, Cell.BLACK);
+            ans.initStone(5, 2, Cell.BLACK);
+            ans.initStone(6, 1, Cell.BLACK);
+            ans.initStone(7, 0, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(0, 7, Stone.BLACK);
-            this.board.initStone(1, 6, Stone.WHITE);
-            this.board.initStone(2, 5, Stone.WHITE);
-            this.board.initStone(3, 4, Stone.WHITE);
-            this.board.initStone(4, 3, Stone.WHITE);
-            this.board.initStone(5, 2, Stone.WHITE);
-            this.board.initStone(6, 1, Stone.WHITE);
+            this.board.initStone(0, 7, Cell.BLACK);
+            this.board.initStone(1, 6, Cell.WHITE);
+            this.board.initStone(2, 5, Cell.WHITE);
+            this.board.initStone(3, 4, Cell.WHITE);
+            this.board.initStone(4, 3, Cell.WHITE);
+            this.board.initStone(5, 2, Cell.WHITE);
+            this.board.initStone(6, 1, Cell.WHITE);
     
             // 石を置く
-            boolean result = this.board.putStone(7, 0, Stone.BLACK);
+            boolean result = this.board.putStone(7, 0, Cell.BLACK);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -1145,26 +1145,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(0, 0, Stone.BLACK);
-            ans.initStone(1, 0, Stone.BLACK);
-            ans.initStone(2, 0, Stone.BLACK);
-            ans.initStone(3, 0, Stone.BLACK);
-            ans.initStone(4, 0, Stone.BLACK);
-            ans.initStone(5, 0, Stone.BLACK);
-            ans.initStone(6, 0, Stone.BLACK);
-            ans.initStone(7, 0, Stone.BLACK);
+            ans.initStone(0, 0, Cell.BLACK);
+            ans.initStone(1, 0, Cell.BLACK);
+            ans.initStone(2, 0, Cell.BLACK);
+            ans.initStone(3, 0, Cell.BLACK);
+            ans.initStone(4, 0, Cell.BLACK);
+            ans.initStone(5, 0, Cell.BLACK);
+            ans.initStone(6, 0, Cell.BLACK);
+            ans.initStone(7, 0, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(0, 0, Stone.BLACK);
-            this.board.initStone(1, 0, Stone.WHITE);
-            this.board.initStone(2, 0, Stone.WHITE);
-            this.board.initStone(3, 0, Stone.WHITE);
-            this.board.initStone(4, 0, Stone.WHITE);
-            this.board.initStone(5, 0, Stone.WHITE);
-            this.board.initStone(6, 0, Stone.WHITE);
+            this.board.initStone(0, 0, Cell.BLACK);
+            this.board.initStone(1, 0, Cell.WHITE);
+            this.board.initStone(2, 0, Cell.WHITE);
+            this.board.initStone(3, 0, Cell.WHITE);
+            this.board.initStone(4, 0, Cell.WHITE);
+            this.board.initStone(5, 0, Cell.WHITE);
+            this.board.initStone(6, 0, Cell.WHITE);
     
             // 石を置く
-            boolean result = this.board.putStone(7, 0, Stone.BLACK);
+            boolean result = this.board.putStone(7, 0, Cell.BLACK);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -1195,26 +1195,26 @@ public class BoardTest {
     
             // 石の配置が正しいか判定するための盤面を生成
             Board ans = new Board();
-            ans.initStone(0, 0, Stone.BLACK);
-            ans.initStone(1, 1, Stone.BLACK);
-            ans.initStone(2, 2, Stone.BLACK);
-            ans.initStone(3, 3, Stone.BLACK);
-            ans.initStone(4, 4, Stone.BLACK);
-            ans.initStone(5, 5, Stone.BLACK);
-            ans.initStone(6, 6, Stone.BLACK);
-            ans.initStone(7, 7, Stone.BLACK);
+            ans.initStone(0, 0, Cell.BLACK);
+            ans.initStone(1, 1, Cell.BLACK);
+            ans.initStone(2, 2, Cell.BLACK);
+            ans.initStone(3, 3, Cell.BLACK);
+            ans.initStone(4, 4, Cell.BLACK);
+            ans.initStone(5, 5, Cell.BLACK);
+            ans.initStone(6, 6, Cell.BLACK);
+            ans.initStone(7, 7, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(0, 0, Stone.BLACK);
-            this.board.initStone(1, 1, Stone.WHITE);
-            this.board.initStone(2, 2, Stone.WHITE);
-            this.board.initStone(3, 3, Stone.WHITE);
-            this.board.initStone(4, 4, Stone.WHITE);
-            this.board.initStone(5, 5, Stone.WHITE);
-            this.board.initStone(6, 6, Stone.WHITE);
+            this.board.initStone(0, 0, Cell.BLACK);
+            this.board.initStone(1, 1, Cell.WHITE);
+            this.board.initStone(2, 2, Cell.WHITE);
+            this.board.initStone(3, 3, Cell.WHITE);
+            this.board.initStone(4, 4, Cell.WHITE);
+            this.board.initStone(5, 5, Cell.WHITE);
+            this.board.initStone(6, 6, Cell.WHITE);
     
             // 石を置く
-            boolean result = this.board.putStone(7, 7, Stone.BLACK);
+            boolean result = this.board.putStone(7, 7, Cell.BLACK);
     
             // 戻り値チェック
             Assert.assertTrue(result);
@@ -1243,32 +1243,32 @@ public class BoardTest {
         public void putStoneでの黒石配置で間に空白があってどこもひっくり返せないとき戻り値False() {
     
             // 石を配置する
-            this.board.initStone(0, 0, Stone.BLACK);
-            this.board.initStone(3, 0, Stone.BLACK);
-            this.board.initStone(6, 0, Stone.BLACK);
-            this.board.initStone(0, 3, Stone.BLACK);
-            this.board.initStone(7, 3, Stone.BLACK);
-            this.board.initStone(0, 6, Stone.BLACK);
-            this.board.initStone(0, 7, Stone.BLACK);
-            this.board.initStone(3, 7, Stone.BLACK);
+            this.board.initStone(0, 0, Cell.BLACK);
+            this.board.initStone(3, 0, Cell.BLACK);
+            this.board.initStone(6, 0, Cell.BLACK);
+            this.board.initStone(0, 3, Cell.BLACK);
+            this.board.initStone(7, 3, Cell.BLACK);
+            this.board.initStone(0, 6, Cell.BLACK);
+            this.board.initStone(0, 7, Cell.BLACK);
+            this.board.initStone(3, 7, Cell.BLACK);
     
-            this.board.initStone(2, 2, Stone.WHITE);
-            this.board.initStone(3, 2, Stone.WHITE);
-            this.board.initStone(4, 2, Stone.WHITE);
-            this.board.initStone(2, 3, Stone.WHITE);
-            this.board.initStone(4, 3, Stone.WHITE);
-            this.board.initStone(5, 3, Stone.WHITE);
-            this.board.initStone(2, 4, Stone.WHITE);
-            this.board.initStone(3, 4, Stone.WHITE);
-            this.board.initStone(4, 4, Stone.WHITE);
-            this.board.initStone(3, 5, Stone.WHITE);
-            this.board.initStone(5, 5, Stone.WHITE);
+            this.board.initStone(2, 2, Cell.WHITE);
+            this.board.initStone(3, 2, Cell.WHITE);
+            this.board.initStone(4, 2, Cell.WHITE);
+            this.board.initStone(2, 3, Cell.WHITE);
+            this.board.initStone(4, 3, Cell.WHITE);
+            this.board.initStone(5, 3, Cell.WHITE);
+            this.board.initStone(2, 4, Cell.WHITE);
+            this.board.initStone(3, 4, Cell.WHITE);
+            this.board.initStone(4, 4, Cell.WHITE);
+            this.board.initStone(3, 5, Cell.WHITE);
+            this.board.initStone(5, 5, Cell.WHITE);
     
             // 石の配置が等しいインスタンスを生成
             Board ans = new Board(this.board);
     
             // 石を置く
-            boolean result = this.board.putStone(3, 3, Stone.BLACK);
+            boolean result = this.board.putStone(3, 3, Cell.BLACK);
     
             // 戻り値チェック
             Assert.assertFalse(result);
@@ -1297,46 +1297,46 @@ public class BoardTest {
         public void putStoneでの黒石配置で黒石がなくてどこもひっくり返せないとき戻り値False() {
     
             // 石を配置する
-            this.board.initStone(0, 0, Stone.WHITE);
-            this.board.initStone(3, 0, Stone.WHITE);
-            this.board.initStone(6, 0, Stone.WHITE);
+            this.board.initStone(0, 0, Cell.WHITE);
+            this.board.initStone(3, 0, Cell.WHITE);
+            this.board.initStone(6, 0, Cell.WHITE);
     
-            this.board.initStone(1, 1, Stone.WHITE);
-            this.board.initStone(3, 1, Stone.WHITE);
-            this.board.initStone(5, 1, Stone.WHITE);
+            this.board.initStone(1, 1, Cell.WHITE);
+            this.board.initStone(3, 1, Cell.WHITE);
+            this.board.initStone(5, 1, Cell.WHITE);
     
-            this.board.initStone(2, 2, Stone.WHITE);
-            this.board.initStone(3, 2, Stone.WHITE);
-            this.board.initStone(4, 2, Stone.WHITE);
+            this.board.initStone(2, 2, Cell.WHITE);
+            this.board.initStone(3, 2, Cell.WHITE);
+            this.board.initStone(4, 2, Cell.WHITE);
     
-            this.board.initStone(0, 3, Stone.WHITE);
-            this.board.initStone(1, 3, Stone.WHITE);
-            this.board.initStone(2, 3, Stone.WHITE);
-            this.board.initStone(4, 3, Stone.WHITE);
-            this.board.initStone(5, 3, Stone.WHITE);
-            this.board.initStone(6, 3, Stone.WHITE);
-            this.board.initStone(7, 3, Stone.WHITE);
+            this.board.initStone(0, 3, Cell.WHITE);
+            this.board.initStone(1, 3, Cell.WHITE);
+            this.board.initStone(2, 3, Cell.WHITE);
+            this.board.initStone(4, 3, Cell.WHITE);
+            this.board.initStone(5, 3, Cell.WHITE);
+            this.board.initStone(6, 3, Cell.WHITE);
+            this.board.initStone(7, 3, Cell.WHITE);
     
-            this.board.initStone(2, 4, Stone.WHITE);
-            this.board.initStone(3, 4, Stone.WHITE);
-            this.board.initStone(4, 4, Stone.WHITE);
+            this.board.initStone(2, 4, Cell.WHITE);
+            this.board.initStone(3, 4, Cell.WHITE);
+            this.board.initStone(4, 4, Cell.WHITE);
     
-            this.board.initStone(1, 5, Stone.WHITE);
-            this.board.initStone(3, 5, Stone.WHITE);
-            this.board.initStone(5, 5, Stone.WHITE);
+            this.board.initStone(1, 5, Cell.WHITE);
+            this.board.initStone(3, 5, Cell.WHITE);
+            this.board.initStone(5, 5, Cell.WHITE);
     
-            this.board.initStone(0, 6, Stone.WHITE);
-            this.board.initStone(3, 6, Stone.WHITE);
-            this.board.initStone(6, 6, Stone.WHITE);
+            this.board.initStone(0, 6, Cell.WHITE);
+            this.board.initStone(3, 6, Cell.WHITE);
+            this.board.initStone(6, 6, Cell.WHITE);
     
-            this.board.initStone(3, 7, Stone.WHITE);
-            this.board.initStone(7, 7, Stone.WHITE);
+            this.board.initStone(3, 7, Cell.WHITE);
+            this.board.initStone(7, 7, Cell.WHITE);
     
             // 石の位置が等しい異なるインスタンスを生成
             Board ans = new Board(this.board);
     
             // 石を置く
-            boolean result = this.board.putStone(3, 3, Stone.BLACK);
+            boolean result = this.board.putStone(3, 3, Cell.BLACK);
     
             // 戻り値チェック
             Assert.assertFalse(result);
@@ -1348,8 +1348,8 @@ public class BoardTest {
         
         @Test
         public void putStoneで石が置いてある場所を指定するとFalse() {
-            this.board.initStone(0, 0, Stone.BLACK);
-            Assert.assertFalse(this.board.putStone(0, 0, Stone.BLACK));
+            this.board.initStone(0, 0, Cell.BLACK);
+            Assert.assertFalse(this.board.putStone(0, 0, Cell.BLACK));
         }
     }
     
@@ -1379,17 +1379,17 @@ public class BoardTest {
             Board b = new Board();
     
             // 石を配置
-            this.board.initStone(0, 0, Stone.WHITE);
-            b.initStone(0, 0, Stone.WHITE);
+            this.board.initStone(0, 0, Cell.WHITE);
+            b.initStone(0, 0, Cell.WHITE);
     
-            this.board.initStone(1, 0, Stone.BLACK);
-            b.initStone(1, 0, Stone.BLACK);
+            this.board.initStone(1, 0, Cell.BLACK);
+            b.initStone(1, 0, Cell.BLACK);
     
-            this.board.initStone(6, 6, Stone.WHITE);
-            b.initStone(6, 6, Stone.WHITE);
+            this.board.initStone(6, 6, Cell.WHITE);
+            b.initStone(6, 6, Cell.WHITE);
     
-            this.board.initStone(4, 2, Stone.BLACK);
-            b.initStone(4, 2, Stone.BLACK);
+            this.board.initStone(4, 2, Cell.BLACK);
+            b.initStone(4, 2, Cell.BLACK);
     
             // 比較
             Assert.assertTrue(this.board.equals(b));
@@ -1408,16 +1408,16 @@ public class BoardTest {
             Board b = new Board();
     
             // 石を配置
-            this.board.initStone(0, 0, Stone.WHITE);
-            b.initStone(0, 0, Stone.WHITE);
+            this.board.initStone(0, 0, Cell.WHITE);
+            b.initStone(0, 0, Cell.WHITE);
     
-            this.board.initStone(1, 0, Stone.BLACK);
-            b.initStone(1, 0, Stone.BLACK);
+            this.board.initStone(1, 0, Cell.BLACK);
+            b.initStone(1, 0, Cell.BLACK);
     
-            this.board.initStone(6, 6, Stone.WHITE);
-            b.initStone(6, 6, Stone.WHITE);
+            this.board.initStone(6, 6, Cell.WHITE);
+            b.initStone(6, 6, Cell.WHITE);
     
-            this.board.initStone(4, 2, Stone.BLACK);
+            this.board.initStone(4, 2, Cell.BLACK);
     
             // 比較
             Assert.assertFalse(this.board.equals(b));
