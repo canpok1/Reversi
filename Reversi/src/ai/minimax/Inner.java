@@ -35,7 +35,7 @@ public class Inner extends GameTree {
         super(level, board);
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNothing(cell);
+        ArgumentCheckUtil.checkNotNothing(cell);
 
         // 置ける場所のリスト
         ArrayList<int[]> moves = new ArrayList<int[]>();

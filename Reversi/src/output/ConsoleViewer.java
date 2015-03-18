@@ -20,7 +20,7 @@ public class ConsoleViewer implements GameViewer {
     public void view(Board board) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNull(board);
+        ArgumentCheckUtil.checkNotNull(board);
 
         // 行番号を表示
         System.out.print(" ");
@@ -73,7 +73,7 @@ public class ConsoleViewer implements GameViewer {
     public void view(String message) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNull(message);
+        ArgumentCheckUtil.checkNotNull(message);
 
         System.out.println(message);
 

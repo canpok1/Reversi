@@ -27,7 +27,7 @@ public class Human implements GamePlayer {
     public Human(NextMoveSelector inputter) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNull(inputter);
+        ArgumentCheckUtil.checkNotNull(inputter);
 
         this.selector = inputter;
 

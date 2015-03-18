@@ -77,10 +77,10 @@ public class GameManager implements Runnable {
     public GameManager(GamePlayer p1, GamePlayer p2, Board board, GameViewer viewer) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNull(p1);
-        ArgumentCheckUtil.CheckNotNull(p2);
-        ArgumentCheckUtil.CheckNotNull(board);
-        ArgumentCheckUtil.CheckNotNull(viewer);
+        ArgumentCheckUtil.checkNotNull(p1);
+        ArgumentCheckUtil.checkNotNull(p2);
+        ArgumentCheckUtil.checkNotNull(board);
+        ArgumentCheckUtil.checkNotNull(viewer);
 
         this.players = new GamePlayer[PLAYER_COUNT];
         this.players[0] = p1;

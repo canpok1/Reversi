@@ -44,7 +44,7 @@ public class PlayerFactory {
     public PlayerFactory(NextMoveSelector input) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNull(input);
+        ArgumentCheckUtil.checkNotNull(input);
 
         this.input = input;
 

@@ -35,8 +35,8 @@ public abstract class GameTree {
     public GameTree(int level, Board board) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNegativeValue(level);
-        ArgumentCheckUtil.CheckNotNull(board);
+        ArgumentCheckUtil.checkNotNegativeValue(level);
+        ArgumentCheckUtil.checkNotNull(board);
 
         this.level = level;
         this.board = new Board(board);

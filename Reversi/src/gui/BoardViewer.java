@@ -69,8 +69,8 @@ public class BoardViewer {
     public BoardViewer(int width, int height) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotZeroAndNegativeValue(width);
-        ArgumentCheckUtil.CheckNotZeroAndNegativeValue(height);
+        ArgumentCheckUtil.checkNotZeroAndNegativeValue(width);
+        ArgumentCheckUtil.checkNotZeroAndNegativeValue(height);
 
         this.boardWidth = width;
         this.boardHeight = height;
@@ -199,7 +199,7 @@ public class BoardViewer {
     public void draw(PApplet parent) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNull(parent);
+        ArgumentCheckUtil.checkNotNull(parent);
 
         parent.rectMode(PApplet.CORNER);
         parent.ellipseMode(PApplet.CORNER);

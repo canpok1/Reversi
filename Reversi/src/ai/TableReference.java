@@ -33,7 +33,7 @@ public class TableReference implements GamePlayer {
     public TableReference(int delayTime) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNegativeValue(delayTime);
+        ArgumentCheckUtil.checkNotNegativeValue(delayTime);
 
         this.delayTime = delayTime;
 

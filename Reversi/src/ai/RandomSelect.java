@@ -31,7 +31,7 @@ public class RandomSelect implements GamePlayer {
     public RandomSelect(int delayTime) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNegativeValue(delayTime);
+        ArgumentCheckUtil.checkNotNegativeValue(delayTime);
 
         this.delayTime = delayTime;
 
@@ -57,8 +57,8 @@ public class RandomSelect implements GamePlayer {
     public NextMove think(Cell cell, Board board) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNothing(cell);
-        ArgumentCheckUtil.CheckNotNull(board);
+        ArgumentCheckUtil.checkNotNothing(cell);
+        ArgumentCheckUtil.checkNotNull(board);
 
         // 置ける場所
         ArrayList<int[]> points = new ArrayList<int[]>();

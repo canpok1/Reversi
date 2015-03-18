@@ -324,7 +324,7 @@ public class GameApplet extends PApplet
     public void view(Board board) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNull(board);
+        ArgumentCheckUtil.checkNotNull(board);
         if((this.board.getBoardWidth() != board.getWidth())
                 || (this.board.getBoardHeight() != board.getHeight())) {
             throw new IllegalArgumentException("盤面サイズがビューワーと異なります.");
@@ -350,7 +350,7 @@ public class GameApplet extends PApplet
     public void view(String message) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNull(message);
+        ArgumentCheckUtil.checkNotNull(message);
 
         this.message.setMessage(message);
 

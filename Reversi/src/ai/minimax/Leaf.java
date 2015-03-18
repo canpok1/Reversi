@@ -121,7 +121,7 @@ public class Leaf extends GameTree {
     public void evalValue(Cell cell) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNothing(cell);
+        ArgumentCheckUtil.checkNotNothing(cell);
 
         // 評価値
         int result = 0;

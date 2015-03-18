@@ -46,7 +46,7 @@ public class Board {
     public Board(Board board) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNull(board);
+        ArgumentCheckUtil.checkNotNull(board);
 
         this.cells = new Cell[BOARD_HEIGHT][BOARD_WIDTH];
 
@@ -120,12 +120,12 @@ public class Board {
      * @throws ArrayIndexOutOfBoundsException
      *  盤面の範囲外を指定した場合に発生
      * @throws IllegalArgumentException
-     *  第三引数が{@link Board#WHITE_STONE}でも{@link Board#BLACK_STONE}でもない場合に発生
+     *  第三引数が{@link Cell#WHITE}でも{@link Cell#BLACK}でもない場合に発生
      */
     public boolean putStone(int x, int y, Cell cell) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNothing(cell);
+        ArgumentCheckUtil.checkNotNothing(cell);
 
         // 指定のマス目に石が置かれていないことをチェック
         if(this.getStone(x, y) != Cell.NOTHING) {
@@ -188,12 +188,12 @@ public class Board {
      * @return 石を置くことができる場合は<code>true</code>、置けない場合は<code>false</code>
      * @throws ArrayIndexOutOfBoundsException 盤面の範囲外を指定した場合に発生
      * @throws IllegalArgumentException
-     *     第三引数が{@link Board#WHITE_STONE}でも{@link Board#BLACK_STONE}でもない場合に発生
+     *     第三引数が{@link Cell#WHITE}でも{@link Cell#BLACK}でもない場合に発生
      */
     public boolean canPut(int x, int y, Cell cell) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNothing(cell);
+        ArgumentCheckUtil.checkNotNothing(cell);
 
         // CHECKSTYLE:OFF
         // 上方向のチェック
@@ -261,7 +261,7 @@ public class Board {
         };
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNothing(cell);
+        ArgumentCheckUtil.checkNotNothing(cell);
         if((direction < 0)
                 || (direction >= dir.length)) {
             throw new IllegalArgumentException("方向を表す値が不正です.");

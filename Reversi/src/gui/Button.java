@@ -49,8 +49,8 @@ public class Button {
     public Button(int width, int height) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotZeroAndNegativeValue(width);
-        ArgumentCheckUtil.CheckNotZeroAndNegativeValue(height);
+        ArgumentCheckUtil.checkNotZeroAndNegativeValue(width);
+        ArgumentCheckUtil.checkNotZeroAndNegativeValue(height);
 
         this.x = 0;
         this.y = 0;
@@ -70,7 +70,7 @@ public class Button {
     public void draw(PApplet parent) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNull(parent);
+        ArgumentCheckUtil.checkNotNull(parent);
 
         parent.rectMode(PApplet.CORNER);
 
@@ -109,7 +109,7 @@ public class Button {
     public void setText(String text) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNull(text);
+        ArgumentCheckUtil.checkNotNull(text);
 
         this.text = text;
 

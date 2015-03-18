@@ -55,8 +55,8 @@ public class MessageBox {
     public MessageBox(int width, int height) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotZeroAndNegativeValue(width);
-        ArgumentCheckUtil.CheckNotZeroAndNegativeValue(height);
+        ArgumentCheckUtil.checkNotZeroAndNegativeValue(width);
+        ArgumentCheckUtil.checkNotZeroAndNegativeValue(height);
 
         this.x = 0;
         this.y = 0;
@@ -75,7 +75,7 @@ public class MessageBox {
     public void draw(PApplet parent) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNull(parent);
+        ArgumentCheckUtil.checkNotNull(parent);
 
         parent.rectMode(PApplet.CORNER);
 
@@ -113,7 +113,7 @@ public class MessageBox {
     public void setMessage(String message) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNull(message);
+        ArgumentCheckUtil.checkNotNull(message);
 
         this.message = message;
 

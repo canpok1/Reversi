@@ -23,7 +23,7 @@ public class ConsoleSelector implements NextMoveSelector {
     public NextMove select(Cell cell, String message) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNothing(cell);
+        ArgumentCheckUtil.checkNotNothing(cell);
 
         BufferedReader reader = new BufferedReader(
                 new InputStreamReader(System.in), 1);
@@ -116,7 +116,7 @@ public class ConsoleSelector implements NextMoveSelector {
     public void dispImportantMessage(String message) {
 
         // 引数チェック
-        ArgumentCheckUtil.CheckNotNull(message);
+        ArgumentCheckUtil.checkNotNull(message);
 
         this.dispMessage(message);
         System.out.print("Please input something. >> ");
