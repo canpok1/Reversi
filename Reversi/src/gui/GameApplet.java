@@ -189,95 +189,11 @@ public class GameApplet extends PApplet
         switch(this.scene) {
 
             case MODE_SELECT :
-    
-                int no1 = -1;
-                int no2 = -1;
-                int delayTime = 0;
-    
-                // TODO プレイヤーを充実させる
-    
-                // CHECKSTYLE:OFF
-                if(this.buttons[0].isContain(this.mouseX, this.mouseY)) {
-                    // P1 VS P2
-                    no1 = PlayerFactory.HUMAN;
-                    no2 = PlayerFactory.HUMAN;
-                } else if(this.buttons[1].isContain(this.mouseX, this.mouseY)) {
-                    // P1 VS CP(LV1)
-                    no1 = PlayerFactory.HUMAN;
-                    no2 = PlayerFactory.RANDOM;
-                    delayTime = 500;
-                } else if(this.buttons[2].isContain(this.mouseX, this.mouseY)) {
-                    // CP(LV1) VS P1
-                    no1 = PlayerFactory.RANDOM;
-                    no2 = PlayerFactory.HUMAN;
-                    delayTime = 500;
-                } else if(this.buttons[3].isContain(this.mouseX, this.mouseY)) {
-                    // P1 VS CP(LV2)
-                    no1 = PlayerFactory.HUMAN;
-                    no2 = PlayerFactory.MAXIMUM;
-                    delayTime = 500;
-                } else if(this.buttons[4].isContain(this.mouseX, this.mouseY)) {
-                    // CP(LV2) VS P1
-                    no1 = PlayerFactory.MAXIMUM;
-                    no2 = PlayerFactory.HUMAN;
-                    delayTime = 500;
-                } else if(this.buttons[5].isContain(this.mouseX, this.mouseY)) {
-                    // P1 VS CP(LV3)
-                    no1 = PlayerFactory.HUMAN;
-                    no2 = PlayerFactory.TABLE;
-                    delayTime = 400;
-                } else if(this.buttons[6].isContain(this.mouseX, this.mouseY)) {
-                    // CP(LV3) VS P1
-                    no1 = PlayerFactory.TABLE;
-                    no2 = PlayerFactory.HUMAN;
-                    delayTime = 500;
-                }
-                // CHECKSTYLE:ON
-
-                if(no2 >= 0) {
-    
-                    Board b = new Board();
-                    GamePlayer p1 = this.factory.create(no1, delayTime);
-                    GamePlayer p2 = this.factory.create(no2, delayTime);
-                    this.manager = new GameManager(p1, p2, b, this);
-    
-                    this.manager.gameStart();
-    
-                    this.changeScene(SCENE.GAME_PLAYING);
-    
-                }
-    
+                this.selectMode();
                 break;
     
             case GAME_PLAYING :
-    
-                int cellX = this.board.getCellX(this.mouseX);
-                int cellY = this.board.getCellY(this.mouseY);
-    
-                if((cellX >= 0) && (cellY >= 0)) {
-    
-                    // マウスカーソルが盤面上
-                    if((this.nextStone == Cell.BLACK)
-                            || (this.nextStone == Cell.WHITE)) {
-                        this.nextMove = new NextMove(cellX, cellY, this.nextStone);
-                    }
-    
-                } else if(this.buttons[GameApplet.CANCEL_BUTTON]
-                            .isContain(this.mouseX, this.mouseY)) {
-    
-                    // ゲーム終了を選択
-                    if(!this.buttons[GameApplet.CANCEL_BUTTON].getPressed()) {
-                        this.nextMove = new NextMove(-1, -1, this.manager.getCurrentStone());
-                        this.buttons[GameApplet.CANCEL_BUTTON].setPressed(true);
-                    }
-    
-                } else if(this.buttons[GameApplet.OK_BUTTON].isContain(this.mouseX, this.mouseY)) {
-    
-                    // パス
-                    this.buttons[GameApplet.OK_BUTTON].setPressed(true);
-    
-                }
-    
+                this.playGame();
                 break;
     
             case GAME_RESULT :
@@ -293,6 +209,100 @@ public class GameApplet extends PApplet
                 throw new UnsupportedOperationException();
         }
 
+    }
+    
+    /**
+     * ゲーム選択処理.
+     */
+    private void selectMode() {
+        int no1 = -1;
+        int no2 = -1;
+        int delayTime = 0;
+
+        // TODO プレイヤーを充実させる
+
+        // CHECKSTYLE:OFF
+        if(this.buttons[0].isContain(this.mouseX, this.mouseY)) {
+            // P1 VS P2
+            no1 = PlayerFactory.HUMAN;
+            no2 = PlayerFactory.HUMAN;
+        } else if(this.buttons[1].isContain(this.mouseX, this.mouseY)) {
+            // P1 VS CP(LV1)
+            no1 = PlayerFactory.HUMAN;
+            no2 = PlayerFactory.RANDOM;
+            delayTime = 500;
+        } else if(this.buttons[2].isContain(this.mouseX, this.mouseY)) {
+            // CP(LV1) VS P1
+            no1 = PlayerFactory.RANDOM;
+            no2 = PlayerFactory.HUMAN;
+            delayTime = 500;
+        } else if(this.buttons[3].isContain(this.mouseX, this.mouseY)) {
+            // P1 VS CP(LV2)
+            no1 = PlayerFactory.HUMAN;
+            no2 = PlayerFactory.MAXIMUM;
+            delayTime = 500;
+        } else if(this.buttons[4].isContain(this.mouseX, this.mouseY)) {
+            // CP(LV2) VS P1
+            no1 = PlayerFactory.MAXIMUM;
+            no2 = PlayerFactory.HUMAN;
+            delayTime = 500;
+        } else if(this.buttons[5].isContain(this.mouseX, this.mouseY)) {
+            // P1 VS CP(LV3)
+            no1 = PlayerFactory.HUMAN;
+            no2 = PlayerFactory.TABLE;
+            delayTime = 400;
+        } else if(this.buttons[6].isContain(this.mouseX, this.mouseY)) {
+            // CP(LV3) VS P1
+            no1 = PlayerFactory.TABLE;
+            no2 = PlayerFactory.HUMAN;
+            delayTime = 500;
+        }
+        // CHECKSTYLE:ON
+
+        if(no2 >= 0) {
+
+            Board b = new Board();
+            GamePlayer p1 = this.factory.create(no1, delayTime);
+            GamePlayer p2 = this.factory.create(no2, delayTime);
+            this.manager = new GameManager(p1, p2, b, this);
+
+            this.manager.gameStart();
+
+            this.changeScene(SCENE.GAME_PLAYING);
+
+        }
+    }
+    
+    /**
+     * ゲーム中の処理.
+     */
+    private void playGame() {
+        int cellX = this.board.getCellX(this.mouseX);
+        int cellY = this.board.getCellY(this.mouseY);
+
+        if((cellX >= 0) && (cellY >= 0)) {
+
+            // マウスカーソルが盤面上
+            if((this.nextStone == Cell.BLACK)
+                    || (this.nextStone == Cell.WHITE)) {
+                this.nextMove = new NextMove(cellX, cellY, this.nextStone);
+            }
+
+        } else if(this.buttons[GameApplet.CANCEL_BUTTON]
+                    .isContain(this.mouseX, this.mouseY)) {
+
+            // ゲーム終了を選択
+            if(!this.buttons[GameApplet.CANCEL_BUTTON].getPressed()) {
+                this.nextMove = new NextMove(-1, -1, this.manager.getCurrentStone());
+                this.buttons[GameApplet.CANCEL_BUTTON].setPressed(true);
+            }
+
+        } else if(this.buttons[GameApplet.OK_BUTTON].isContain(this.mouseX, this.mouseY)) {
+
+            // パス
+            this.buttons[GameApplet.OK_BUTTON].setPressed(true);
+
+        }
     }
 
 
