@@ -49,24 +49,7 @@ public class Inner extends GameTree {
 
                 if(nextBoard.putStone(x, y, cell)) {
 
-                    // 次に置く石
-                    Cell nextStone;
-
-                    if(cell == Cell.BLACK) {
-                        nextStone = Cell.WHITE;
-                    } else {
-                        nextStone = Cell.BLACK;
-                    }
-
-                    // 一手先のレベル
-                    int nextLevel = level - 1;
-
-                    if(nextLevel <= 0) {
-                        nodes.add(new Leaf(nextLevel, nextBoard, nextStone));
-                    } else {
-                        nodes.add(new Inner(nextLevel, nextBoard, nextStone));
-                    }
-
+                    nodes.add(makeNextNode(level, cell, nextBoard));
                     moves.add(new int[]{x, y});
 
                 }
@@ -105,6 +88,32 @@ public class Inner extends GameTree {
         }
     }
 
+    /**
+     * 次のレベルのノードを生成します.
+     * @param currentLevel 現在のレベル
+     * @param currentCell 現在の石
+     * @param nextBoard 次のレベルで評価すべき盤面
+     * @return 次のレベルのノード
+     */
+    private GameTree makeNextNode(int currentLevel, Cell currentCell, Board nextBoard) {
+        // 次に置く石
+        Cell nextStone;
+
+        if(currentCell == Cell.BLACK) {
+            nextStone = Cell.WHITE;
+        } else {
+            nextStone = Cell.BLACK;
+        }
+
+        // 一手先のレベル
+        int nextLevel = currentLevel - 1;
+
+        if(nextLevel <= 0) {
+            return new Leaf(nextLevel, nextBoard, nextStone);
+        } else {
+            return new Inner(nextLevel, nextBoard, nextStone);
+        }
+    }
 
     /**
      * 最善手を取得します.

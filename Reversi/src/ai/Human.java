@@ -68,11 +68,20 @@ public class Human implements GamePlayer {
             return null;
         }
 
+        NextMove move = putStone(cell, board);
 
-        ////////////////////////////////////
-        // 石を置く
-        ////////////////////////////////////
+        return move;
 
+    }
+
+
+    /**
+     * 置く場所を考えます.
+     * @param cell 置きたい石
+     * @param board 現在の盤面
+     * @return 置く場所
+     */
+    private NextMove putStone(Cell cell, Board board) {
         NextMove move = null;
 
         boolean isCompleted = false;
@@ -92,37 +101,40 @@ public class Human implements GamePlayer {
             try {
                 if(board.putStone(move.getX(), move.getY(), cell)) {
                     isCompleted = true;
-                } else {
-                    if(cell == Cell.BLACK) {
-                        message = "Cannot put the stone."
-                                + " Please input the place which put the black stone.";
-                    } else if(cell == Cell.WHITE) {
-                        message = "Cannot put the stone."
-                                + " Please input the place which put the white stone.";
-                    }
+                    continue;
+                }
+                if(cell == Cell.BLACK) {
+                    message = "Cannot put the stone."
+                            + " Please input the place which put the black stone.";
+                    continue;
+                }
+                if(cell == Cell.WHITE) {
+                    message = "Cannot put the stone."
+                            + " Please input the place which put the white stone.";
+                    continue;
                 }
             } catch(ArrayIndexOutOfBoundsException e) {
                 if((move.getX() < 0) || (move.getY() < 0)) {
                     // ゲーム中断
                     isCompleted = true;
-                } else {
-                    if(cell == Cell.BLACK) {
-                        message = "A cell does not exist."
-                                + " Please input the place which put the black stone.";
-                    } else if(cell == Cell.WHITE) {
-                        message = "A cell does not exist."
-                                + " Please input the place which put the white stone.";
-                    } else {
-                        // ゲーム中断
-                        isCompleted = true;
-                    }
+                    continue;
                 }
+                if(cell == Cell.BLACK) {
+                    message = "A cell does not exist."
+                            + " Please input the place which put the black stone.";
+                    continue;
+                }
+                if(cell == Cell.WHITE) {
+                    message = "A cell does not exist."
+                            + " Please input the place which put the white stone.";
+                    continue;
+                }
+                // ゲーム中断
+                isCompleted = true;
             }
 
         }
-
         return move;
-
     }
 
 
