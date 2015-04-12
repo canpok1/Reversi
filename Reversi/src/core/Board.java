@@ -261,11 +261,9 @@ public class Board {
         };
 
         // 引数チェック
-        ArgumentCheckUtil.checkNotNothing(cell);
-        if((direction < 0)
-                || (direction >= dir.length)) {
-            throw new IllegalArgumentException("方向を表す値が不正です.");
-        }
+        assert (cell != null);
+        assert (direction >= 0);
+        assert (direction < dir.length);
 
         // 方向を表す変数です.
         int dirX = dir[direction][0];
