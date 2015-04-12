@@ -2,7 +2,8 @@
 
 package core;
 
-import junit.framework.Assert;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -24,7 +25,7 @@ public class BoardTest {
             
             for(int y = 0; y < instance.getHeight(); y++) {
                 for(int x = 0; x < instance.getWidth(); x++) {
-                    Assert.assertEquals(Cell.NOTHING, instance.getStone(x, y));
+                    assertThat(instance.getStone(x, y), is(Cell.NOTHING));
                 }
             }
         }
@@ -50,11 +51,10 @@ public class BoardTest {
             Board copy = new Board(instance);
     
             // 石の配置が等しいかをチェック
-            Assert.assertTrue(instance.equals(copy));
+            assertThat(instance, is(copy));
     
             // 異なるインスタンスかをチェック
-            Assert.assertFalse(instance == copy);
-    
+            assertThat(instance, is(not(sameInstance(copy))));
         }
         
         @Test(expected=IllegalArgumentException.class)
@@ -99,19 +99,19 @@ public class BoardTest {
     
             // 左上に配置
             this.board.initStone(left, top, cell);
-            Assert.assertEquals(cell, this.board.getStone(left, top));
+            assertThat(this.board.getStone(left, top), is(cell));
     
             // 右上に配置
             this.board.initStone(right, top, cell);
-            Assert.assertEquals(cell, this.board.getStone(right, top));
+            assertThat(this.board.getStone(right, top), is(cell));
     
             // 左下に配置
             this.board.initStone(left, under, cell);
-            Assert.assertEquals(cell, this.board.getStone(left, under));
+            assertThat(this.board.getStone(left, under), is(cell));
     
             // 右下に配置
             this.board.initStone(right, under, cell);
-            Assert.assertEquals(cell, this.board.getStone(right, under));
+            assertThat(this.board.getStone(right, under), is(cell));
     
         }
 
@@ -137,19 +137,19 @@ public class BoardTest {
     
             // 左上に配置
             this.board.initStone(left, top, cell);
-            Assert.assertEquals(cell, this.board.getStone(left, top));
+            assertThat(this.board.getStone(left, top), is(cell));
     
             // 右上に配置
             this.board.initStone(right, top, cell);
-            Assert.assertEquals(cell, this.board.getStone(right, top));
+            assertThat(this.board.getStone(right, top), is(cell));
     
             // 左下に配置
             this.board.initStone(left, under, cell);
-            Assert.assertEquals(cell, this.board.getStone(left, under));
+            assertThat(this.board.getStone(left, under), is(cell));
     
             // 右下に配置
             this.board.initStone(right, under, cell);
-            Assert.assertEquals(cell, this.board.getStone(right, under));
+            assertThat(this.board.getStone(right, under), is(cell));
     
         }
     
@@ -175,19 +175,19 @@ public class BoardTest {
     
             // 左上に配置
             this.board.initStone(left, top, cell);
-            Assert.assertEquals(cell, this.board.getStone(left, top));
+            assertThat(this.board.getStone(left, top), is(cell));
     
             // 右上に配置
             this.board.initStone(right, top, cell);
-            Assert.assertEquals(cell, this.board.getStone(right, top));
+            assertThat(this.board.getStone(right, top), is(cell));
     
             // 左下に配置
             this.board.initStone(left, under, cell);
-            Assert.assertEquals(cell, this.board.getStone(left, under));
+            assertThat(this.board.getStone(left, under), is(cell));
     
             // 右下に配置
             this.board.initStone(right, under, cell);
-            Assert.assertEquals(cell, this.board.getStone(right, under));
+            assertThat(this.board.getStone(right, under), is(cell));
     
         }
     
@@ -231,7 +231,7 @@ public class BoardTest {
             // 石がないマス目の数
             int count = this.board.getWidth() * this.board.getHeight() - 3 - 3;
     
-            Assert.assertEquals(count, this.board.getStoneCount(Cell.NOTHING));
+            assertThat(this.board.getStoneCount(Cell.NOTHING), is(count));
     
         }
     
@@ -256,7 +256,7 @@ public class BoardTest {
             // 白石の数
             int count = 3;
     
-            Assert.assertEquals(count, this.board.getStoneCount(Cell.WHITE));
+            assertThat(this.board.getStoneCount(Cell.WHITE), is(count));
     
         }
     
@@ -281,7 +281,7 @@ public class BoardTest {
             // 黒石の数
             int count = 3;
     
-            Assert.assertEquals(count, this.board.getStoneCount(Cell.BLACK));
+            assertThat(this.board.getStoneCount(Cell.BLACK), is(count));
     
         }
         
@@ -315,49 +315,49 @@ public class BoardTest {
         @Test
         public void canPutが上方向反転可能なときにTrueを返すか() {
             setStoneForUp(this.board, Cell.WHITE, Cell.BLACK);
-            Assert.assertTrue(this.board.canPut(0, 7, Cell.WHITE));
+            assertThat(this.board.canPut(0, 7, Cell.WHITE), is(true));
         }
         
         @Test
         public void canPutが右上方向反転可能なときにTrueを返すか() {
             setStoneForRightUp(this.board, Cell.WHITE, Cell.BLACK);
-            Assert.assertTrue(this.board.canPut(0, 7, Cell.WHITE));
+            assertThat(this.board.canPut(0, 7, Cell.WHITE), is(true));
         }
         
         @Test
         public void canPutが右方向反転可能なときにTrueを返すか() {
             setStoneForRight(this.board, Cell.WHITE, Cell.BLACK);
-            Assert.assertTrue(this.board.canPut(0, 7, Cell.WHITE));
+            assertThat(this.board.canPut(0, 7, Cell.WHITE), is(true));
         }
         
         @Test
         public void canPutが右下方向反転可能なときにTrueを返すか() {
             setStoneForRightDown(this.board, Cell.WHITE, Cell.BLACK);
-            Assert.assertTrue(this.board.canPut(0, 0, Cell.WHITE));
+            assertThat(this.board.canPut(0, 0, Cell.WHITE), is(true));
         }
         
         @Test
         public void canPutが下方向反転可能なときにTrueを返すか() {
             setStoneForDown(this.board, Cell.WHITE, Cell.BLACK);
-            Assert.assertTrue(this.board.canPut(0, 0, Cell.WHITE));
+            assertThat(this.board.canPut(0, 0, Cell.WHITE), is(true));
         }
         
         @Test
         public void canPutが左下方向反転可能なときにTrueを返すか() {
             setStoneForLeftDown(this.board, Cell.WHITE, Cell.BLACK);
-            Assert.assertTrue(this.board.canPut(7, 0, Cell.WHITE));
+            assertThat(this.board.canPut(7, 0, Cell.WHITE), is(true));
         }
 
         @Test
         public void canPutが左方向反転可能なときにTrueを返すか() {
             setStoneForLeft(this.board, Cell.WHITE, Cell.BLACK);
-            Assert.assertTrue(this.board.canPut(7, 0, Cell.WHITE));
+            assertThat(this.board.canPut(7, 0, Cell.WHITE), is(true));
         }
         
         @Test
         public void canPutが左上方向反転可能なときにTrueを返すか() {
             setStoneForLeftUp(this.board, Cell.WHITE, Cell.BLACK);
-            Assert.assertTrue(this.board.canPut(7, 7, Cell.WHITE));
+            assertThat(this.board.canPut(7, 7, Cell.WHITE), is(true));
         }
     }
     
@@ -411,10 +411,10 @@ public class BoardTest {
             boolean result = this.board.putStone(0, 7, Cell.WHITE);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
     
         }
     
@@ -454,11 +454,10 @@ public class BoardTest {
             boolean result = this.board.putStone(0, 7, Cell.WHITE);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
-    
+            assertThat(this.board, is(ans));
         }
     
     
@@ -498,11 +497,10 @@ public class BoardTest {
             boolean result = this.board.putStone(0, 7, Cell.WHITE);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
-    
+            assertThat(this.board, is(ans));
         }
     
         /**
@@ -541,11 +539,10 @@ public class BoardTest {
             boolean result = this.board.putStone(0, 0, Cell.WHITE);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
-    
+            assertThat(this.board, is(ans));
         }
     
         /**
@@ -584,10 +581,10 @@ public class BoardTest {
             boolean result = this.board.putStone(0, 0, Cell.WHITE);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
     
         }
     
@@ -628,11 +625,10 @@ public class BoardTest {
             boolean result = this.board.putStone(7, 0, Cell.WHITE);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
-    
+            assertThat(this.board, is(ans));
         }
     
     
@@ -672,10 +668,10 @@ public class BoardTest {
             boolean result = this.board.putStone(7, 0, Cell.WHITE);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
     
         }
     
@@ -716,10 +712,10 @@ public class BoardTest {
             boolean result = this.board.putStone(7, 7, Cell.WHITE);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
     
         }
     
@@ -770,10 +766,11 @@ public class BoardTest {
             boolean result = this.board.putStone(3, 3, Cell.WHITE);
     
             // 戻り値チェック
-            Assert.assertFalse(result);
+            assertThat(result, is(false));
+
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
     
         }
     
@@ -837,10 +834,11 @@ public class BoardTest {
             boolean result = this.board.putStone(3, 3, Cell.WHITE);
     
             // 戻り値チェック
-            Assert.assertFalse(result);
+            assertThat(result, is(false));
+
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
     
         }
     
@@ -881,10 +879,10 @@ public class BoardTest {
             boolean result = this.board.putStone(0, 7, Cell.BLACK);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
     
         }
     
@@ -924,10 +922,10 @@ public class BoardTest {
             boolean result = this.board.putStone(0, 7, Cell.BLACK);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
     
         }
     
@@ -967,10 +965,10 @@ public class BoardTest {
             boolean result = this.board.putStone(0, 7, Cell.BLACK);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
     
         }
     
@@ -1010,10 +1008,11 @@ public class BoardTest {
             boolean result = this.board.putStone(0, 0, Cell.BLACK);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
+
     
         }
     
@@ -1053,10 +1052,11 @@ public class BoardTest {
             boolean result = this.board.putStone(0, 0, Cell.BLACK);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
+
     
         }
     
@@ -1097,10 +1097,11 @@ public class BoardTest {
             boolean result = this.board.putStone(7, 0, Cell.BLACK);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
+
     
         }
     
@@ -1141,10 +1142,11 @@ public class BoardTest {
             boolean result = this.board.putStone(7, 0, Cell.BLACK);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
+
     
         }
     
@@ -1185,10 +1187,11 @@ public class BoardTest {
             boolean result = this.board.putStone(7, 7, Cell.BLACK);
     
             // 戻り値チェック
-            Assert.assertTrue(result);
+            assertThat(result, is(true));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
+
     
         }
     
@@ -1239,10 +1242,12 @@ public class BoardTest {
             boolean result = this.board.putStone(3, 3, Cell.BLACK);
     
             // 戻り値チェック
-            Assert.assertFalse(result);
+            assertThat(result, is(false));
+
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
+
     
         }
     
@@ -1307,17 +1312,18 @@ public class BoardTest {
             boolean result = this.board.putStone(3, 3, Cell.BLACK);
     
             // 戻り値チェック
-            Assert.assertFalse(result);
+            assertThat(result, is(false));
     
             // 石の配置をチェック
-            Assert.assertTrue(this.board.equals(ans));
+            assertThat(this.board, is(ans));
+
     
         }
         
         @Test
         public void putStoneで石が置いてある場所を指定するとFalse() {
             this.board.initStone(0, 0, Cell.BLACK);
-            Assert.assertFalse(this.board.putStone(0, 0, Cell.BLACK));
+            assertThat(this.board.putStone(0, 0, Cell.BLACK), is(false));
         }
     }
     
@@ -1360,8 +1366,7 @@ public class BoardTest {
             b.initStone(4, 2, Cell.BLACK);
     
             // 比較
-            Assert.assertTrue(this.board.equals(b));
-    
+            assertThat(this.board, is(b));
         }
     
     
@@ -1388,19 +1393,19 @@ public class BoardTest {
             this.board.initStone(4, 2, Cell.BLACK);
     
             // 比較
-            Assert.assertFalse(this.board.equals(b));
+            assertThat(this.board, is(not(b)));
     
         }
         
         @Test
         public void 同じインスタンスの比較結果はTrue() {
-            Assert.assertTrue(board.equals(board));
+            assertThat(board, is(board));
         }
         
         @Test
         public void 型が違うインスタンスの比較結果はFalse() {
             Object other = new Object();
-            Assert.assertFalse(board.equals(other));
+            assertThat(board, is(not(other)));
         }
         
     }

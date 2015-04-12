@@ -2,7 +2,8 @@
 
 package core;
 
-import junit.framework.Assert;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 import org.junit.Test;
 
@@ -22,8 +23,8 @@ public class NextMoveTest {
 
         NextMove nextMove = new NextMove(1, 0, Cell.NOTHING);
 
-        Assert.assertEquals(1, nextMove.getX());
-
+        assertThat(nextMove.getX(), is(1));
+        
     }
 
 
@@ -36,8 +37,8 @@ public class NextMoveTest {
 
         NextMove nextMove = new NextMove(-1, 0, Cell.NOTHING);
 
-        Assert.assertEquals(-1, nextMove.getX());
-
+        assertThat(nextMove.getX(), is(-1));
+        
     }
 
 
@@ -50,7 +51,7 @@ public class NextMoveTest {
 
         NextMove nextMove = new NextMove(0, 0, Cell.NOTHING);
 
-        Assert.assertEquals(0, nextMove.getX());
+        assertThat(nextMove.getX(), is(0));
 
     }
 
@@ -64,8 +65,8 @@ public class NextMoveTest {
 
         NextMove nextMove = new NextMove(0, 1, Cell.NOTHING);
 
-        Assert.assertEquals(1, nextMove.getY());
-
+        assertThat(nextMove.getY(), is(1));
+        
     }
 
 
@@ -78,8 +79,8 @@ public class NextMoveTest {
 
         NextMove nextMove = new NextMove(0, -1, Cell.NOTHING);
 
-        Assert.assertEquals(-1, nextMove.getY());
-
+        assertThat(nextMove.getY(), is(-1));
+        
     }
 
 
@@ -92,8 +93,8 @@ public class NextMoveTest {
 
         NextMove nextMove = new NextMove(0, 0, Cell.NOTHING);
 
-        Assert.assertEquals(0, nextMove.getY());
-
+        assertThat(nextMove.getY(), is(0));
+        
     }
 
 
@@ -106,15 +107,17 @@ public class NextMoveTest {
 
         NextMove nextMove = new NextMove(0, 0, Cell.NOTHING);
 
-        Assert.assertEquals(Cell.NOTHING, nextMove.getStone());
+        assertThat(nextMove.getStone(), is(Cell.NOTHING));
 
     }
 
     @Test
     public void コンストラクタで与えた座標を表示できること() {
+        
         NextMove nextMove = new NextMove(0, 0, Cell.NOTHING);
-        String expected = "(0, 0)";
-        Assert.assertEquals(expected, nextMove.toString());
+        
+        assertThat(nextMove.toString(), is("(0, 0)"));
+        
     }
 
 }

@@ -1,6 +1,7 @@
 package ai.minimax;
 
-import junit.framework.Assert;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 import org.junit.Test;
 
@@ -69,7 +70,7 @@ public class LeafTest {
 
         Leaf leaf = new Leaf(level, board, Cell.BLACK);
 
-        Assert.assertEquals(level, leaf.getLevel());
+        assertThat(leaf.getLevel(), is(level));
 
     }
 
@@ -86,7 +87,7 @@ public class LeafTest {
 
         Leaf leaf = new Leaf(level, board, Cell.BLACK);
 
-        Assert.assertFalse(board == leaf.getBoard());
+        assertThat(leaf.getBoard(), is(not(sameInstance(board))));
 
     }
 
@@ -103,7 +104,7 @@ public class LeafTest {
 
         Leaf leaf = new Leaf(level, board, Cell.BLACK);
 
-        Assert.assertTrue(board.equals(leaf.getBoard()));
+        assertThat(leaf.getBoard(), is(board));
 
     }
 

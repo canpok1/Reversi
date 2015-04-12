@@ -4,7 +4,9 @@ package core;
 
 import mockit.Mocked;
 
-import org.junit.Assert;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
+
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
@@ -70,7 +72,7 @@ public class GameManagerTest {
                     mockPlayer2,
                     mockBoard,
                     mockViewer);
-            Assert.assertTrue(manager.isFinish());
+            assertThat(manager.isFinish(), is(true));
         }
     }
 }
