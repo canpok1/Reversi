@@ -297,6 +297,70 @@ public class BoardTest {
         
     }
     
+    public static class 石の反転可否判断テスト {
+        
+        /**
+         * テスト用のインスタンス
+         */
+        private Board board;
+        
+        /**
+         * インスタンスを新たに作成します.
+         */
+        @Before
+        public void setup() {
+            board = new Board();
+        }
+        
+        @Test
+        public void canPutが上方向反転可能なときにTrueを返すか() {
+            setStoneForUp(this.board, Cell.WHITE, Cell.BLACK);
+            Assert.assertTrue(this.board.canPut(0, 7, Cell.WHITE));
+        }
+        
+        @Test
+        public void canPutが右上方向反転可能なときにTrueを返すか() {
+            setStoneForRightUp(this.board, Cell.WHITE, Cell.BLACK);
+            Assert.assertTrue(this.board.canPut(0, 7, Cell.WHITE));
+        }
+        
+        @Test
+        public void canPutが右方向反転可能なときにTrueを返すか() {
+            setStoneForRight(this.board, Cell.WHITE, Cell.BLACK);
+            Assert.assertTrue(this.board.canPut(0, 7, Cell.WHITE));
+        }
+        
+        @Test
+        public void canPutが右下方向反転可能なときにTrueを返すか() {
+            setStoneForRightDown(this.board, Cell.WHITE, Cell.BLACK);
+            Assert.assertTrue(this.board.canPut(0, 0, Cell.WHITE));
+        }
+        
+        @Test
+        public void canPutが下方向反転可能なときにTrueを返すか() {
+            setStoneForDown(this.board, Cell.WHITE, Cell.BLACK);
+            Assert.assertTrue(this.board.canPut(0, 0, Cell.WHITE));
+        }
+        
+        @Test
+        public void canPutが左下方向反転可能なときにTrueを返すか() {
+            setStoneForLeftDown(this.board, Cell.WHITE, Cell.BLACK);
+            Assert.assertTrue(this.board.canPut(7, 0, Cell.WHITE));
+        }
+
+        @Test
+        public void canPutが左方向反転可能なときにTrueを返すか() {
+            setStoneForLeft(this.board, Cell.WHITE, Cell.BLACK);
+            Assert.assertTrue(this.board.canPut(7, 0, Cell.WHITE));
+        }
+        
+        @Test
+        public void canPutが左上方向反転可能なときにTrueを返すか() {
+            setStoneForLeftUp(this.board, Cell.WHITE, Cell.BLACK);
+            Assert.assertTrue(this.board.canPut(7, 7, Cell.WHITE));
+        }
+    }
+    
     public static class 石の反転テスト {
         /**
          * テスト用のインスタンス.
@@ -341,13 +405,7 @@ public class BoardTest {
             ans.initStone(0, 7, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(0, 0, Cell.WHITE);
-            this.board.initStone(0, 1, Cell.BLACK);
-            this.board.initStone(0, 2, Cell.BLACK);
-            this.board.initStone(0, 3, Cell.BLACK);
-            this.board.initStone(0, 4, Cell.BLACK);
-            this.board.initStone(0, 5, Cell.BLACK);
-            this.board.initStone(0, 6, Cell.BLACK);
+            setStoneForUp(this.board, Cell.WHITE, Cell.BLACK);
     
             // 石を置く
             boolean result = this.board.putStone(0, 7, Cell.WHITE);
@@ -390,13 +448,7 @@ public class BoardTest {
             ans.initStone(0, 7, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(7, 0, Cell.WHITE);
-            this.board.initStone(6, 1, Cell.BLACK);
-            this.board.initStone(5, 2, Cell.BLACK);
-            this.board.initStone(4, 3, Cell.BLACK);
-            this.board.initStone(3, 4, Cell.BLACK);
-            this.board.initStone(2, 5, Cell.BLACK);
-            this.board.initStone(1, 6, Cell.BLACK);
+            setStoneForRightUp(board, Cell.WHITE, Cell.BLACK);
     
             // 石を置く
             boolean result = this.board.putStone(0, 7, Cell.WHITE);
@@ -440,13 +492,7 @@ public class BoardTest {
             ans.initStone(7, 7, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(1, 7, Cell.BLACK);
-            this.board.initStone(2, 7, Cell.BLACK);
-            this.board.initStone(3, 7, Cell.BLACK);
-            this.board.initStone(4, 7, Cell.BLACK);
-            this.board.initStone(5, 7, Cell.BLACK);
-            this.board.initStone(6, 7, Cell.BLACK);
-            this.board.initStone(7, 7, Cell.WHITE);
+            setStoneForRight(this.board, Cell.WHITE, Cell.BLACK);
     
             // 石を置く
             boolean result = this.board.putStone(0, 7, Cell.WHITE);
@@ -489,13 +535,7 @@ public class BoardTest {
             ans.initStone(7, 7, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(1, 1, Cell.BLACK);
-            this.board.initStone(2, 2, Cell.BLACK);
-            this.board.initStone(3, 3, Cell.BLACK);
-            this.board.initStone(4, 4, Cell.BLACK);
-            this.board.initStone(5, 5, Cell.BLACK);
-            this.board.initStone(6, 6, Cell.BLACK);
-            this.board.initStone(7, 7, Cell.WHITE);
+            setStoneForRightDown(this.board, Cell.WHITE, Cell.BLACK);
     
             // 石を置く
             boolean result = this.board.putStone(0, 0, Cell.WHITE);
@@ -538,13 +578,7 @@ public class BoardTest {
             ans.initStone(0, 7, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(0, 1, Cell.BLACK);
-            this.board.initStone(0, 2, Cell.BLACK);
-            this.board.initStone(0, 3, Cell.BLACK);
-            this.board.initStone(0, 4, Cell.BLACK);
-            this.board.initStone(0, 5, Cell.BLACK);
-            this.board.initStone(0, 6, Cell.BLACK);
-            this.board.initStone(0, 7, Cell.WHITE);
+            setStoneForDown(this.board, Cell.WHITE, Cell.BLACK);
     
             // 石を置く
             boolean result = this.board.putStone(0, 0, Cell.WHITE);
@@ -588,13 +622,7 @@ public class BoardTest {
             ans.initStone(7, 0, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(0, 7, Cell.WHITE);
-            this.board.initStone(1, 6, Cell.BLACK);
-            this.board.initStone(2, 5, Cell.BLACK);
-            this.board.initStone(3, 4, Cell.BLACK);
-            this.board.initStone(4, 3, Cell.BLACK);
-            this.board.initStone(5, 2, Cell.BLACK);
-            this.board.initStone(6, 1, Cell.BLACK);
+            setStoneForLeftDown(this.board, Cell.WHITE, Cell.BLACK);
     
             // 石を置く
             boolean result = this.board.putStone(7, 0, Cell.WHITE);
@@ -638,13 +666,7 @@ public class BoardTest {
             ans.initStone(7, 0, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(0, 0, Cell.WHITE);
-            this.board.initStone(1, 0, Cell.BLACK);
-            this.board.initStone(2, 0, Cell.BLACK);
-            this.board.initStone(3, 0, Cell.BLACK);
-            this.board.initStone(4, 0, Cell.BLACK);
-            this.board.initStone(5, 0, Cell.BLACK);
-            this.board.initStone(6, 0, Cell.BLACK);
+            setStoneForLeft(this.board, Cell.WHITE, Cell.BLACK);
     
             // 石を置く
             boolean result = this.board.putStone(7, 0, Cell.WHITE);
@@ -688,13 +710,7 @@ public class BoardTest {
             ans.initStone(7, 7, Cell.WHITE);
     
             // 石を配置する
-            this.board.initStone(0, 0, Cell.WHITE);
-            this.board.initStone(1, 1, Cell.BLACK);
-            this.board.initStone(2, 2, Cell.BLACK);
-            this.board.initStone(3, 3, Cell.BLACK);
-            this.board.initStone(4, 4, Cell.BLACK);
-            this.board.initStone(5, 5, Cell.BLACK);
-            this.board.initStone(6, 6, Cell.BLACK);
+            setStoneForLeftUp(this.board, Cell.WHITE, Cell.BLACK);
     
             // 石を置く
             boolean result = this.board.putStone(7, 7, Cell.WHITE);
@@ -859,13 +875,7 @@ public class BoardTest {
             ans.initStone(0, 7, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(0, 0, Cell.BLACK);
-            this.board.initStone(0, 1, Cell.WHITE);
-            this.board.initStone(0, 2, Cell.WHITE);
-            this.board.initStone(0, 3, Cell.WHITE);
-            this.board.initStone(0, 4, Cell.WHITE);
-            this.board.initStone(0, 5, Cell.WHITE);
-            this.board.initStone(0, 6, Cell.WHITE);
+            setStoneForUp(this.board, Cell.BLACK, Cell.WHITE);
     
             // 石を置く
             boolean result = this.board.putStone(0, 7, Cell.BLACK);
@@ -908,13 +918,7 @@ public class BoardTest {
             ans.initStone(7, 0, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(1, 6, Cell.WHITE);
-            this.board.initStone(2, 5, Cell.WHITE);
-            this.board.initStone(3, 4, Cell.WHITE);
-            this.board.initStone(4, 3, Cell.WHITE);
-            this.board.initStone(5, 2, Cell.WHITE);
-            this.board.initStone(6, 1, Cell.WHITE);
-            this.board.initStone(7, 0, Cell.BLACK);
+            setStoneForRightUp(this.board, Cell.BLACK, Cell.WHITE);
     
             // 石を置く
             boolean result = this.board.putStone(0, 7, Cell.BLACK);
@@ -957,13 +961,7 @@ public class BoardTest {
             ans.initStone(7, 7, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(1, 7, Cell.WHITE);
-            this.board.initStone(2, 7, Cell.WHITE);
-            this.board.initStone(3, 7, Cell.WHITE);
-            this.board.initStone(4, 7, Cell.WHITE);
-            this.board.initStone(5, 7, Cell.WHITE);
-            this.board.initStone(6, 7, Cell.WHITE);
-            this.board.initStone(7, 7, Cell.BLACK);
+            setStoneForRight(this.board, Cell.BLACK, Cell.WHITE);
     
             // 石を置く
             boolean result = this.board.putStone(0, 7, Cell.BLACK);
@@ -1006,13 +1004,7 @@ public class BoardTest {
             ans.initStone(7, 7, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(1, 1, Cell.WHITE);
-            this.board.initStone(2, 2, Cell.WHITE);
-            this.board.initStone(3, 3, Cell.WHITE);
-            this.board.initStone(4, 4, Cell.WHITE);
-            this.board.initStone(5, 5, Cell.WHITE);
-            this.board.initStone(6, 6, Cell.WHITE);
-            this.board.initStone(7, 7, Cell.BLACK);
+            setStoneForRightDown(this.board, Cell.BLACK, Cell.WHITE);
     
             // 石を置く
             boolean result = this.board.putStone(0, 0, Cell.BLACK);
@@ -1055,13 +1047,7 @@ public class BoardTest {
             ans.initStone(0, 7, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(0, 1, Cell.WHITE);
-            this.board.initStone(0, 2, Cell.WHITE);
-            this.board.initStone(0, 3, Cell.WHITE);
-            this.board.initStone(0, 4, Cell.WHITE);
-            this.board.initStone(0, 5, Cell.WHITE);
-            this.board.initStone(0, 6, Cell.WHITE);
-            this.board.initStone(0, 7, Cell.BLACK);
+            setStoneForDown(this.board, Cell.BLACK, Cell.WHITE);
     
             // 石を置く
             boolean result = this.board.putStone(0, 0, Cell.BLACK);
@@ -1105,13 +1091,7 @@ public class BoardTest {
             ans.initStone(7, 0, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(0, 7, Cell.BLACK);
-            this.board.initStone(1, 6, Cell.WHITE);
-            this.board.initStone(2, 5, Cell.WHITE);
-            this.board.initStone(3, 4, Cell.WHITE);
-            this.board.initStone(4, 3, Cell.WHITE);
-            this.board.initStone(5, 2, Cell.WHITE);
-            this.board.initStone(6, 1, Cell.WHITE);
+            setStoneForLeftDown(this.board, Cell.BLACK, Cell.WHITE);
     
             // 石を置く
             boolean result = this.board.putStone(7, 0, Cell.BLACK);
@@ -1155,13 +1135,7 @@ public class BoardTest {
             ans.initStone(7, 0, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(0, 0, Cell.BLACK);
-            this.board.initStone(1, 0, Cell.WHITE);
-            this.board.initStone(2, 0, Cell.WHITE);
-            this.board.initStone(3, 0, Cell.WHITE);
-            this.board.initStone(4, 0, Cell.WHITE);
-            this.board.initStone(5, 0, Cell.WHITE);
-            this.board.initStone(6, 0, Cell.WHITE);
+            setStoneForLeft(this.board, Cell.BLACK, Cell.WHITE);
     
             // 石を置く
             boolean result = this.board.putStone(7, 0, Cell.BLACK);
@@ -1205,13 +1179,7 @@ public class BoardTest {
             ans.initStone(7, 7, Cell.BLACK);
     
             // 石を配置する
-            this.board.initStone(0, 0, Cell.BLACK);
-            this.board.initStone(1, 1, Cell.WHITE);
-            this.board.initStone(2, 2, Cell.WHITE);
-            this.board.initStone(3, 3, Cell.WHITE);
-            this.board.initStone(4, 4, Cell.WHITE);
-            this.board.initStone(5, 5, Cell.WHITE);
-            this.board.initStone(6, 6, Cell.WHITE);
+            setStoneForLeftUp(this.board, Cell.BLACK, Cell.WHITE);
     
             // 石を置く
             boolean result = this.board.putStone(7, 7, Cell.BLACK);
@@ -1435,6 +1403,188 @@ public class BoardTest {
             Assert.assertFalse(board.equals(other));
         }
         
+    }
+
+    /**
+     * 石を配置します.<br>
+     * -が石がないマス、mが自分の石、oが相手の石を表します.<br>
+     * m-------<br>
+     * o-------<br>
+     * o-------<br>
+     * o-------<br>
+     * o-------<br>
+     * o-------<br>
+     * o-------<br>
+     * --------<br>
+     * @param board 配置先
+     * @param mine 自分の石
+     * @param other 相手の石
+     */
+    public static void setStoneForUp(Board board, Cell mine, Cell other) {
+        board.initStone(0, 0, mine);
+        board.initStone(0, 1, other);
+        board.initStone(0, 2, other);
+        board.initStone(0, 3, other);
+        board.initStone(0, 4, other);
+        board.initStone(0, 5, other);
+        board.initStone(0, 6, other);
+    }
+    
+    /**
+     * 石を配置します.<br>
+     * -が石がないマス、mが自分の石、oが相手の石を表します.<br>
+     * -------m<br>
+     * ------o-<br>
+     * -----o--<br>
+     * ----o---<br>
+     * ---o----<br>
+     * --o-----<br>
+     * -o------<br>
+     * --------<br>
+     */
+    public static void setStoneForRightUp(Board board, Cell mine, Cell other) {
+        board.initStone(7, 0, mine);
+        board.initStone(6, 1, other);
+        board.initStone(5, 2, other);
+        board.initStone(4, 3, other);
+        board.initStone(3, 4, other);
+        board.initStone(2, 5, other);
+        board.initStone(1, 6, other);
+    }
+    
+    /**
+     * 石を配置します.<br>
+     * -が石がないマス、mが自分の石、oが相手の石を表します.<br>
+     * --------<br>
+     * --------<br>
+     * --------<br>
+     * --------<br>
+     * --------<br>
+     * --------<br>
+     * --------<br>
+     * -oooooom<br>
+     */
+    public static void setStoneForRight(Board board, Cell mine, Cell other) {
+        board.initStone(1, 7, other);
+        board.initStone(2, 7, other);
+        board.initStone(3, 7, other);
+        board.initStone(4, 7, other);
+        board.initStone(5, 7, other);
+        board.initStone(6, 7, other);
+        board.initStone(7, 7, mine);
+    }
+
+    /**
+     * 石を配置します.<br>
+     * -が石がないマス、mが自分の石、oが相手の石を表します.<br>
+     * --------<br>
+     * -o------<br>
+     * --o-----<br>
+     * ---o----<br>
+     * ----o---<br>
+     * -----o--<br>
+     * ------o-<br>
+     * -------m<br>
+     */
+    public static void setStoneForRightDown(Board board, Cell mine, Cell other) {
+        board.initStone(1, 1, other);
+        board.initStone(2, 2, other);
+        board.initStone(3, 3, other);
+        board.initStone(4, 4, other);
+        board.initStone(5, 5, other);
+        board.initStone(6, 6, other);
+        board.initStone(7, 7, mine);
+    }
+    
+    /**
+     * 石を配置します.<br>
+     * -が石がないマス、mが自分の石、oが相手の石を表します.<br>
+     * --------<br>
+     * o-------<br>
+     * o-------<br>
+     * o-------<br>
+     * o-------<br>
+     * o-------<br>
+     * o-------<br>
+     * m-------<br>
+     */
+    public static void setStoneForDown(Board board, Cell mine, Cell other) {
+        board.initStone(0, 1, other);
+        board.initStone(0, 2, other);
+        board.initStone(0, 3, other);
+        board.initStone(0, 4, other);
+        board.initStone(0, 5, other);
+        board.initStone(0, 6, other);
+        board.initStone(0, 7, mine);
+    }
+
+
+    /**
+     * 石を配置します.<br>
+     * -が石がないマス、mが自分の石、oが相手の石を表します.<br>
+     * --------<br>
+     * ------o-<br>
+     * -----o--<br>
+     * ----o---<br>
+     * ---o----<br>
+     * --o-----<br>
+     * -o------<br>
+     * m-------<br>
+     */
+    public static void setStoneForLeftDown(Board board, Cell mine, Cell other) {
+        // 石を配置する
+        board.initStone(0, 7, mine);
+        board.initStone(1, 6, other);
+        board.initStone(2, 5, other);
+        board.initStone(3, 4, other);
+        board.initStone(4, 3, other);
+        board.initStone(5, 2, other);
+        board.initStone(6, 1, other);
+    }
+
+
+    /**
+     * 石を配置します.<br>
+     * -が石がないマス、mが自分の石、oが相手の石を表します.<br>
+     * moooooo-<br>
+     * --------<br>
+     * --------<br>
+     * --------<br>
+     * --------<br>
+     * --------<br>
+     * --------<br>
+     * --------<br>
+     */
+    public static void setStoneForLeft(Board board, Cell mine, Cell other) {
+        board.initStone(0, 0, mine);
+        board.initStone(1, 0, other);
+        board.initStone(2, 0, other);
+        board.initStone(3, 0, other);
+        board.initStone(4, 0, other);
+        board.initStone(5, 0, other);
+        board.initStone(6, 0, other);
+    }
+    
+    /**
+     * 石を配置します.<br>
+     * -が石がないマス、mが自分の石、oが相手の石を表します.<br>
+     * m-------<br>
+     * -o------<br>
+     * --o-----<br>
+     * ---o----<br>
+     * ----o---<br>
+     * -----o--<br>
+     * ------o-<br>
+     * --------<br>
+     */
+    public static void setStoneForLeftUp(Board board, Cell mine, Cell other) {
+        board.initStone(0, 0, mine);
+        board.initStone(1, 1, other);
+        board.initStone(2, 2, other);
+        board.initStone(3, 3, other);
+        board.initStone(4, 4, other);
+        board.initStone(5, 5, other);
+        board.initStone(6, 6, other);
     }
 }
 
